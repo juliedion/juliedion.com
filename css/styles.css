@@ -1597,8 +1597,8 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
   .footer-grid { grid-template-columns: 1fr; }
   .home-hero {
     background:
-      linear-gradient(180deg, rgba(5,27,45,0.55) 0%, rgba(5,27,45,0.15) 60%, rgba(5,27,45,0.0) 100%),
-      url("../images/julie-dion-cover-photo-m.jpg") center 60% / cover no-repeat;
+      linear-gradient(180deg, rgba(5,27,45,0.75) 0%, rgba(5,27,45,0.6) 40%, rgba(5,27,45,0.0) 55%, rgba(5,27,45,0.0) 100%),
+      url("../images/julie-dion-cover-photo-m.jpg") center bottom / cover no-repeat;
     min-height: 100vh;
     padding-bottom: 0;
   }
