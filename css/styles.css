@@ -1602,7 +1602,7 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
     min-height: 100vh;
     padding: 0 !important;
   }
-  .home-hero .container { padding-top: 25px !important; }
+  .home-hero .container { padding-top: 35px !important; }
   .home-hero h1 { font-size: 26px; }
   .home-work-grid { grid-template-columns: 1fr !important; }
   .home-about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
