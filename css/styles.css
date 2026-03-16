@@ -1603,6 +1603,10 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .home-hero { padding: 50px 0 60px; }
+  .home-work-grid { grid-template-columns: 1fr !important; }
+  .home-about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .home-about-section { padding: 56px 0 !important; }
+  .home-about-grid img { max-height: 320px !important; }
   .section { padding: 40px 0; }
   .cal-day { min-height: 60px; }
   .cal-day .cal-event-dot { display: none; }
