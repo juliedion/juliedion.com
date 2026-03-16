@@ -1603,7 +1603,10 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
   .hero-mobile-photo {
     display: block;
     width: 100%;
-    margin-top: -18px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center 60%;
+    margin-top: 8px;
   }
   .home-work-grid { grid-template-columns: 1fr !important; }
   .home-about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
