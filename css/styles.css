@@ -1598,8 +1598,8 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
     background:
       linear-gradient(180deg, rgba(5, 27, 45, 0.45) 0%, rgba(5, 27, 45, 0.15) 100%),
       url("../images/julie-dion-cover-photo-m.jpg") center bottom/cover no-repeat;
-    min-height: 860px;
-    padding: 50px 0 440px;
+    min-height: 1050px;
+    padding: 50px 0 620px;
   }
   .home-hero h1 { font-size: 26px; }
   .home-work-grid { grid-template-columns: 1fr !important; }
