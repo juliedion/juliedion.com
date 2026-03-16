@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julie Dion — Portfolio & Resume</title>
   <meta name="description" content="Portfolio and resume for Julie Dion — designer and developer building engaging digital experiences.">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="stylesheet" href="css/styles.css?v=9">
   <link rel="icon" href="images/favicon.png">
 </head>
 <body>
@@ -183,6 +183,9 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.innerWidth <= 768) {
+      document.getElementById('hero-container').style.paddingTop = '35px';
+    }
   </script>
   <script src="js/app.js"></script>
 </body>
