@@ -1600,8 +1600,9 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
       linear-gradient(180deg, rgba(5,27,45,0.75) 0%, rgba(5,27,45,0.6) 40%, rgba(5,27,45,0.0) 55%, rgba(5,27,45,0.0) 100%),
       url("../images/julie-dion-cover-photo-m.jpg") center bottom / cover no-repeat;
     min-height: 100vh;
-    padding: 25px 0 0 !important;
+    padding: 0 !important;
   }
+  .home-hero .container { padding-top: 25px !important; }
   .home-hero h1 { font-size: 26px; }
   .home-work-grid { grid-template-columns: 1fr !important; }
   .home-about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
