@@ -907,7 +907,7 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
   z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px !important;
 }
 .home-hero .eyebrow {
   font-family: 'Urbanist', sans-serif;
@@ -1602,7 +1602,7 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
     min-height: 100vh;
     padding: 0 !important;
   }
-  #hero-container { padding-top: 35px !important; }
+  #hero-container { padding-top: 40px !important; }
   .home-hero h1 { font-size: 26px; }
   .home-work-grid { grid-template-columns: 1fr !important; }
   .home-about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
