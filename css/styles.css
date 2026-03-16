@@ -888,9 +888,9 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
 
 @media (max-width: 767px) {
   .home-hero {
-    background: 
+    background:
       linear-gradient(135deg, rgba(5, 27, 45, 0.55) 0%, rgba(13, 63, 92, 0.55) 100%),
-      url("../images/julie-dion-cover-photo.jpg") top center/cover no-repeat;
+      url("../images/julie-dion-cover-photo-m.jpg") top center/cover no-repeat;
     min-height: 620px;
     padding: 88px 0 180px;
   }
