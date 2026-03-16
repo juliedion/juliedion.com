@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Charter Spectrum Business — Julie Dion</title>
+  <meta name="description" content="Case study: Julie Dion's work as Senior UI Designer on the full redesign of Charter Spectrum's small business web platform — homepage, internet, mobile, and a large-scale SEO-driven insights hub built in Adobe Experience Manager.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.png">
+  <style>
+    /* Spectrum brand overrides */
+    --spectrum-blue:   #0057b8;
+    --spectrum-accent: #00aaff;
+
+    .cs-hero {
+      position: relative;
+      min-height: 540px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding-bottom: 56px;
+    }
+    .cs-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #001a3a 0%, #003580 60%, #0057b8 100%);
+      z-index: 0;
+    }
+    .cs-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/spectrum-preview.jpg');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.18;
+      mix-blend-mode: luminosity;
+    }
+    .cs-hero .container { position: relative; z-index: 1; }
+    .cs-hero .eyebrow { color: #00aaff; font-weight: 700; letter-spacing: .08em; font-size: 13px; text-transform: uppercase; margin-bottom: 12px; }
+    .cs-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; line-height: 1.15; }
+    .cs-hero .cs-meta { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 24px; }
+    .cs-meta-item { font-size: 13px; opacity: .75; }
+    .cs-meta-item strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .07em; opacity: .7; margin-bottom: 3px; }
+
+    .cs-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin: 32px 0; }
+    .cs-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 24px 20px; text-align: center; }
+    .cs-stat .stat-num { font-size: 2rem; font-weight: 900; color: #00aaff; line-height: 1; margin-bottom: 6px; }
+    .cs-stat .stat-label { font-size: 13px; opacity: .7; line-height: 1.4; }
+
+    .cs-section-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #00aaff; margin-bottom: 10px; }
+    .cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    @media (max-width: 720px) { .cs-two-col { grid-template-columns: 1fr; } }
+
+    .cs-feature-list { list-style: none; padding: 0; margin: 0; }
+    .cs-feature-list li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 15px; line-height: 1.6; }
+    .cs-feature-list li:last-child { border-bottom: none; }
+    .cs-feature-list li::before { content: '→'; color: #00aaff; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+
+    .cs-img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px; }
+    .cs-img-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.1); }
+
+    .cs-back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #00aaff; text-decoration: none; opacity: .85; margin-bottom: 32px; }
+    .cs-back-link:hover { opacity: 1; }
+
+    .cs-page-card { border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 28px 28px 24px; background: rgba(255,255,255,0.04); margin-bottom: 20px; }
+    .cs-page-card h4 { font-size: 1rem; margin: 0 0 8px; color: #fff; }
+    .cs-page-card .cs-page-url { font-size: 12px; color: #00aaff; opacity: .8; margin-bottom: 12px; display: block; }
+    .cs-page-card p { font-size: 14px; line-height: 1.65; opacity: .8; margin: 0; }
+
+    .cs-highlight-box { border-left: 4px solid #00aaff; background: rgba(0,170,255,0.07); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 28px; margin: 32px 0; }
+    .cs-highlight-box h3 { margin: 0 0 10px; font-size: 1.1rem; }
+    .cs-highlight-box p { margin: 0; font-size: 15px; line-height: 1.7; opacity: .88; }
+
+    .tool-tag { display: inline-block; background: rgba(0,170,255,0.12); border: 1px solid rgba(0,170,255,0.25); color: #00aaff; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 4px 4px 4px 0; }
+
+    .cs-cta-bar { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 48px; }
+    .cs-cta-bar h3 { margin: 0 0 4px; font-size: 1.15rem; }
+    .cs-cta-bar p { margin: 0; opacity: .7; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="images/julie-dion-logo-04.png" alt="Julie Dion" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="cs-hero">
+    <div class="cs-hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <p class="eyebrow">Charter Spectrum · Small Business</p>
+      <h1>Redesigning Spectrum<br><span style="color:#00aaff;">for Small Business.</span></h1>
+      <p style="max-width:600px;font-size:17px;opacity:.88;line-height:1.65;">A full-platform UI redesign of Spectrum's small business web presence — homepage, internet, mobile, and a large-scale SEO-driven insights hub — serving millions of business customers across the United States.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><strong>Role</strong>Senior UI Designer</div>
+        <div class="cs-meta-item"><strong>Company</strong>Charter Communications</div>
+        <div class="cs-meta-item"><strong>Scope</strong>UI Design, CMS, SEO, A/B Testing</div>
+        <div class="cs-meta-item"><strong>Live Site</strong><a href="https://www.spectrum.com/business" target="_blank" rel="noopener" style="color:#00aaff;">spectrum.com/business ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TITLE BLOCK -->
+  <section style="padding: 44px 0 0;">
+    <div class="container">
+      <a href="portfolio.html" class="cs-back-link">← Back to Portfolio</a>
+      <div style="border-left: 4px solid #00aaff; padding: 6px 0 6px 24px; margin-bottom: 44px;">
+        <p style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#00aaff;margin:0 0 10px;">Case Study</p>
+        <h2 style="font-size:clamp(1.7rem,3.5vw,2.5rem);margin:0 0 10px;line-height:1.2;">Charter Spectrum Business Website Redesign</h2>
+        <p style="font-size:14px;opacity:.65;margin:0;">Enterprise UI Design &nbsp;·&nbsp; SEO Strategy &nbsp;·&nbsp; CMS &amp; Personalization &nbsp;·&nbsp; Charter Communications</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section section-sm" style="padding-top:0;">
+    <div class="container">
+      <div class="cs-stat-grid">
+        <div class="cs-stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Major page families redesigned</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">M+</div>
+          <div class="stat-label">Small business customers reached</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Article pages built for the Insights hub</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">AEM</div>
+          <div class="stat-label">Adobe Experience Manager CMS</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">A/B</div>
+          <div class="stat-label">Adobe Target personalization &amp; testing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXT -->
+  <section class="section" style="background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));">
+    <div class="container">
+      <div class="cs-two-col">
+        <div>
+          <p class="cs-section-label">The Context</p>
+          <h2 style="margin-top:0;">Senior UI Designer on a national enterprise platform.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">At Charter Communications, I served as Senior UI Designer on the team responsible for the complete redesign and rebuild of Spectrum's small business web platform. This was a high-stakes, cross-functional initiative involving designers, front-end developers, project managers, UX writers, copywriters, and SEO analysts working in parallel across multiple product lines.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">My work spanned the full small business experience — from the top-level homepage through individual product pages for internet, mobile, and voice — with the goal of presenting Spectrum's enterprise-grade products in a way that was clear, credible, and conversion-focused for small business owners and IT decision-makers.</p>
+        </div>
+        <div>
+          <p class="cs-section-label">My Role</p>
+          <h2 style="margin-top:0;">Design lead across four major platform areas.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I led UI design across the homepage, internet, mobile, and insights sections of the small business platform. This meant owning page layouts, component design, visual hierarchy, and consistency with Spectrum's enterprise design language — while translating complex product offerings into scannable, persuasive experiences that could serve both technical buyers and first-time customers.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I collaborated daily with developers building in Adobe Experience Manager, and worked directly with Adobe Target to specify and QA personalization zones and A/B test variants across key pages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGES -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="section-heading">
+        <p class="cs-section-label" style="text-align:center;">The Work</p>
+        <h2>Pages I Designed</h2>
+        <div class="accent-line"></div>
+      </div>
+
+      <div class="cs-page-card">
+        <h4>Small Business Homepage</h4>
+        <span class="cs-page-url">spectrum.com/business</span>
+        <p>The top-level entry point for all small business customers. Designed to orient visitors quickly — showcasing bundled service offerings, trust signals, and clear paths to internet, mobile, TV, and voice products. Strong visual hierarchy and persuasive layout to reduce drop-off and increase product page engagement.</p>
+      </div>
+
+      <div class="cs-page-card">
+        <h4>Business Internet</h4>
+        <span class="cs-page-url">spectrum.com/business/internet</span>
+        <p>A product detail page for Spectrum's flagship small business internet plans. Designed to clearly communicate speed tiers, pricing, and differentiators against competitors — with a layout that serves both the quick-scanning business owner and the detail-oriented IT buyer making a purchasing decision.</p>
+      </div>
+
+      <div class="cs-page-card">
+        <h4>Business Mobile</h4>
+        <span class="cs-page-url">spectrum.com/business/mobile</span>
+        <p>The mobile product page targeting small businesses looking to add or switch wireless lines. Designed to present plan options, byod compatibility, and bundle savings in a clean, comparison-friendly layout that drives trial and conversion without overwhelming users with carrier-speak.</p>
+      </div>
+
+      <div class="cs-page-card" style="border-color: rgba(0,170,255,0.4); background: rgba(0,170,255,0.06);">
+        <h4>Business Insights <span style="font-size:11px;background:#00aaff;color:#001a3a;font-weight:800;padding:2px 8px;border-radius:10px;margin-left:8px;letter-spacing:.05em;">Featured Project</span></h4>
+        <span class="cs-page-url">spectrum.com/business/insights</span>
+        <p>The articles and content hub — a large-scale content marketing platform designed specifically to drive SEO growth for the small business vertical. See the full breakdown below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS DEEP DIVE -->
+  <section class="section" style="background:linear-gradient(135deg,rgba(0,170,255,0.05),rgba(255,255,255,0));">
+    <div class="container">
+      <p class="cs-section-label">Featured Project</p>
+      <h2 style="margin-top:0;margin-bottom:24px;">The Insights Hub: A Platform Built to Win on Search</h2>
+
+      <div class="cs-highlight-box">
+        <h3>Why it mattered</h3>
+        <p>Charter's small business revenue was under pressure, and leadership identified organic search as a high-leverage growth channel. The Insights hub — Spectrum's article and content marketing platform for small businesses — was identified as the vehicle to capture that traffic. The problem: the existing content experience was generic, unbranded, and not designed to support the volume or variety of content needed to compete in search.</p>
+      </div>
+
+      <div class="cs-two-col" style="margin-top:40px;">
+        <div>
+          <p class="cs-section-label">The Challenge</p>
+          <h3 style="margin-top:0;">Design for both humans and search engines — at scale.</h3>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">The Insights hub needed to serve two audiences simultaneously: real small business owners looking for practical advice, and search engines evaluating content authority and relevance. The design had to support a high volume of articles across dozens of topics while maintaining a consistent, professional feel that reinforced the Spectrum brand.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">Content would be authored by copywriters who weren't designers — so the system had to be flexible enough to serve varied content structures without breaking visual consistency.</p>
+        </div>
+        <div>
+          <p class="cs-section-label">The Solution</p>
+          <h3 style="margin-top:0;">A modular, CMS-driven content system built in Adobe Experience Manager.</h3>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I designed a modular article template system within Adobe Experience Manager (AEM) — building a library of flexible, on-brand components that copywriters and editors could assemble without touching code. Every component was designed with SEO structure in mind: proper heading hierarchy, structured data-friendly layouts, and visually distinct calls-to-action that supported on-page conversion while keeping readers engaged.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I also worked closely with Adobe Target to define personalization zones — areas of the page where content and CTAs could be swapped based on visitor segment — supporting the broader A/B testing strategy developed by the SEO analysts and marketing team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY CONTRIBUTIONS -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="section-heading">
+        <p class="cs-section-label" style="text-align:center;">What I Built</p>
+        <h2>Key Design Contributions</h2>
+        <div class="accent-line"></div>
+      </div>
+
+      <div class="cs-two-col" style="gap:48px;">
+        <div>
+          <ul class="cs-feature-list">
+            <li>Full UI redesign of the Spectrum small business homepage — visual hierarchy, service promotion, and conversion pathways for millions of monthly visitors</li>
+            <li>Product page designs for Business Internet and Business Mobile — translating complex pricing and plan structures into clear, scannable layouts</li>
+            <li>Modular article template system in Adobe Experience Manager, enabling non-designers to publish branded content at scale</li>
+            <li>Component library for the Insights hub — including article cards, category navigation, related content modules, and inline CTAs</li>
+            <li>Collaborated with SEO analysts to ensure all UI decisions supported on-page SEO best practices: heading structure, content density, internal linking patterns</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="cs-feature-list">
+            <li>Worked with Adobe Target to specify and QA personalization zones — defining which areas of each page could be dynamically swapped for A/B testing</li>
+            <li>Cross-functional design collaboration with UX writers, copywriters, front-end developers, and project managers throughout the build</li>
+            <li>Maintained consistency with Charter's enterprise design language while adapting layouts for the distinct needs of the small business audience</li>
+            <li>QA of AEM component implementations — verifying visual fidelity and responsive behavior across breakpoints</li>
+            <li>Contributed to design documentation and component specs used by the broader development team during the CMS build</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS & PROCESS -->
+  <section class="section section-sm" style="background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));">
+    <div class="container">
+      <div class="cs-two-col">
+        <div>
+          <p class="cs-section-label">Tools &amp; Tech</p>
+          <h2 style="margin-top:0;">Enterprise-grade stack, enterprise-scale team.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">Working at Charter meant learning and operating within an enterprise content and personalization stack used by one of the largest telecoms in the United States. I came up to speed on a new CMS quickly and became a productive contributor to the design-to-dev pipeline within a large cross-functional team.</p>
+          <div style="margin-top:20px;">
+            <span class="tool-tag">Adobe Experience Manager (AEM)</span>
+            <span class="tool-tag">Adobe Target</span>
+            <span class="tool-tag">Figma</span>
+            <span class="tool-tag">HTML / CSS</span>
+            <span class="tool-tag">SEO Strategy</span>
+            <span class="tool-tag">A/B Testing</span>
+            <span class="tool-tag">Content Design</span>
+            <span class="tool-tag">Responsive Design</span>
+            <span class="tool-tag">Component Systems</span>
+          </div>
+        </div>
+        <div>
+          <p class="cs-section-label">The Team</p>
+          <h2 style="margin-top:0;">A full cross-functional build.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">This project ran as a coordinated effort across multiple disciplines. My daily work involved close collaboration with:</p>
+          <ul class="cs-feature-list" style="margin-top:16px;">
+            <li>UI &amp; UX designers — shared design systems and page patterns</li>
+            <li>Front-end developers — translating designs into AEM components</li>
+            <li>Project managers — sprint planning, handoff, and delivery coordination</li>
+            <li>Copywriters — designing templates that served their content needs</li>
+            <li>SEO analysts — aligning design decisions with organic search strategy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cs-cta-bar">
+        <div>
+          <h3>See the live site</h3>
+          <p>The small business platform at spectrum.com/business.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.spectrum.com/business" target="_blank" rel="noopener" class="btn btn-primary">Visit spectrum.com/business ↗</a>
+          <a href="portfolio.html" class="btn btn-outline">← Back to Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-circle">
+            <img src="images/julie-dion-logo-04.png" alt="Julie Dion">
+          </div>
+          <p>Thanks for taking a look! Every project is built with a focus on people and practical results.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Connect</div>
+          <ul class="footer-links">
+            <li><a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Julie Dion. Built with HTML &amp; CSS.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

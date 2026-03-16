@@ -1,0 +1,12 @@
+.DS_Store
+.claude/
+*.tmp
+*.psd
+*.ai
+*.tif
+pagebg copy*.mp4
+pagebg.mov
+pagebg.mp4
+page_background
+# HCS videos replaced by Vimeo embeds
+images/hcs/*.mp4

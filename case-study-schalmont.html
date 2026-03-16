@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Schalmont PTO Website — Julie Dion</title>
+  <meta name="description" content="Case study: How Julie Dion designed and built the Schalmont Central Schools PTO website from scratch — a full multi-school community platform serving 2,000+ students.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.png">
+  <style>
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 20px; }
+    .cs-meta-item { font-size: 13px; opacity: .75; }
+    .cs-meta-item strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .07em; opacity: .7; margin-bottom: 3px; }
+
+    .cs-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin: 32px 0; }
+    .cs-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 24px 20px; text-align: center; }
+    .cs-stat .stat-num { font-size: 2rem; font-weight: 900; color: #a5e54a; line-height: 1; margin-bottom: 6px; }
+    .cs-stat .stat-label { font-size: 13px; opacity: .7; line-height: 1.4; }
+
+    .cs-section-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #a5e54a; margin-bottom: 10px; }
+    .cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    @media (max-width: 720px) { .cs-two-col { grid-template-columns: 1fr; } }
+
+    .cs-feature-list { list-style: none; padding: 0; margin: 0; }
+    .cs-feature-list li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 15px; line-height: 1.6; }
+    .cs-feature-list li:last-child { border-bottom: none; }
+    .cs-feature-list li::before { content: '→'; color: #a5e54a; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+
+    .cs-hero { position: relative; min-height: 420px; display: flex; align-items: center; overflow: hidden; padding: 64px 0 48px; }
+    .cs-hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1a3d24 0%, #295c38 60%, #3d7a4e 100%); z-index: 0; }
+    .cs-hero .container { position: relative; z-index: 1; }
+    .cs-hero .eyebrow { color: #a5e54a; font-weight: 700; letter-spacing: .08em; font-size: 13px; text-transform: uppercase; margin-bottom: 12px; }
+    .cs-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; line-height: 1.15; }
+    .cs-hero .hero-meta { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 24px; }
+    .cs-hero .hero-meta-item { font-size: 13px; opacity: .75; color: #fff; }
+    .cs-hero .hero-meta-item strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .07em; opacity: .7; margin-bottom: 3px; color: #fff; }
+
+    .cs-back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #a5e54a; text-decoration: none; opacity: .85; margin-bottom: 32px; }
+    .cs-back-link:hover { opacity: 1; }
+
+    .cs-cta-bar { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 48px; }
+    .cs-cta-bar h3 { margin: 0 0 4px; font-size: 1.15rem; }
+    .cs-cta-bar p { margin: 0; opacity: .7; font-size: 14px; }
+
+    /* Video player */
+    .pto-video-wrap {
+      position: relative;
+      background: #e8ecee;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.20);
+      margin: 0;
+    }
+    .pto-video-wrap video {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+    .pto-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: rgba(165,229,74,0.92);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+      transition: transform .15s, background .15s;
+      z-index: 10;
+    }
+    .pto-play-btn:hover { background: #a5e54a; transform: translate(-50%, -50%) scale(1.08); }
+
+    /* Gallery */
+    .cs-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .cs-gallery-card { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; cursor: zoom-in; box-shadow: 0 4px 20px rgba(0,0,0,0.14); transition: transform .2s, box-shadow .2s; }
+    .cs-gallery-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.22); }
+    .cs-gallery-card img { width: 100%; height: 240px; object-fit: cover; object-position: top; display: block; }
+    .cs-enlarge-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(41,92,56,0.88); color: #fff; font-size: 13px; font-weight: 800; padding: 6px 14px; border-radius: 20px; letter-spacing: .04em; pointer-events: none; }
+
+    /* Lightbox */
+    #lb-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 9999; align-items: center; justify-content: center; }
+    #lb-overlay.open { display: flex; }
+    #lb-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 10px; }
+    #lb-close { position: absolute; top: 16px; right: 24px; color: #fff; font-size: 2.2rem; cursor: pointer; line-height: 1; background: none; border: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="images/julie-dion-logo-04.png" alt="Julie Dion" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="cs-hero">
+    <div class="cs-hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;">
+        <div>
+          <p class="eyebrow">Schalmont PTO &nbsp;·&nbsp; Web Design &amp; Development &nbsp;·&nbsp; 2026</p>
+          <h1 style="color:#fff;">Creators of <span style="color:#a5e54a;">the magic.</span></h1>
+          <p style="font-size:17px;opacity:.88;line-height:1.65;color:#fff;">Designed and built the Schalmont Central Schools PTO website from scratch — a community platform serving 4 schools, 2,000+ students, and the entire Schalmont district.</p>
+          <div class="hero-meta">
+            <div class="hero-meta-item"><strong>Role</strong>Designer &amp; Developer</div>
+            <div class="hero-meta-item"><strong>Year</strong>2026</div>
+            <div class="hero-meta-item"><strong>Scope</strong>Full-stack web design, UX, HTML/CSS/JS</div>
+            <div class="hero-meta-item"><strong>Live Site</strong><a href="https://schalmontpto.com" target="_blank" rel="noopener" style="color:#a5e54a;">schalmontpto.com ↗</a></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;">
+          <img src="images/pto/Schalmont-logo-FNL-white.png" alt="Schalmont Central PTO" style="max-height:200px;max-width:220px;width:auto;filter:drop-shadow(0 2px 14px rgba(0,0,0,0.45));">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TITLE BLOCK -->
+  <section style="padding: 44px 0 32px;">
+    <div class="container">
+      <a href="portfolio.html" class="cs-back-link">← Back to Portfolio</a>
+      <div style="border-left: 4px solid #a5e54a; padding: 6px 0 6px 24px; margin-bottom: 36px;">
+        <p style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a5e54a;margin:0 0 10px;">Case Study</p>
+        <h1 style="font-size:clamp(1.7rem,3.5vw,2.5rem);margin:0 0 10px;line-height:1.2;">Schalmont Central Schools PTO Website</h1>
+        <p style="font-size:14px;opacity:.65;margin:0 0 20px;">Web Design &amp; Development &nbsp;·&nbsp; Community Platform &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Julie Dion</p>
+        <div class="cs-meta" style="margin-top:0;">
+          <div class="cs-meta-item"><strong>Role</strong>Designer &amp; Developer</div>
+          <div class="cs-meta-item"><strong>Year</strong>2026</div>
+          <div class="cs-meta-item"><strong>Scope</strong>Full-stack web design, UX, HTML/CSS/JS</div>
+          <div class="cs-meta-item"><strong>Live Site</strong><a href="https://schalmontpto.com" target="_blank" rel="noopener" style="color:#a5e54a;">schalmontpto.com ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO VIDEO -->
+  <section style="padding: 0 0 40px;">
+    <div class="container">
+      <div class="pto-video-wrap">
+        <video id="pto-video" poster="images/pto-screenshots/pto-beautyshot-1.png">
+          <source src="images/pto-website.mp4" type="video/mp4">
+        </video>
+        <button class="pto-play-btn" id="pto-play" aria-label="Play video">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="white" style="margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section-sm" style="padding-top:32px;">
+    <div class="container">
+      <div class="cs-stat-grid">
+        <div class="cs-stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Schools served across one platform</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">2,000+</div>
+          <div class="stat-label">Students represented district-wide</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">40+</div>
+          <div class="stat-label">Events planned and published</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">$60K+</div>
+          <div class="stat-label">Raised over two years</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">2,500+</div>
+          <div class="stat-label">Social followers grown from zero</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAUTYSHOT - full width -->
+  <section style="padding: 0 0 8px;">
+    <div class="container">
+      <img src="images/pto-screenshots/pto-beautyshot-1.png" alt="Schalmont PTO website — all pages overview" style="width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.18);display:block;">
+    </div>
+  </section>
+
+  <!-- CHALLENGE + SOLUTION -->
+  <section class="section" style="background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));">
+    <div class="container">
+      <div class="cs-two-col">
+        <div>
+          <p class="cs-section-label">The Challenge</p>
+          <h2 style="margin-top:0;">One community. Four schools. No central home.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">The Schalmont Central Schools PTO had no unified digital presence. Event information was scattered across Facebook, paper flyers, and email chains. Parents didn't know what was happening at their child's school — let alone across the district. Families new to the district had no clear onboarding path, and volunteers had no easy way to stay connected.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">As Executive President of the PTO, I knew that solving this problem required more than a Facebook page update. It required a purpose-built platform that could grow with the organization and serve every family, at every school, in one place.</p>
+        </div>
+        <div>
+          <p class="cs-section-label">The Solution</p>
+          <h2 style="margin-top:0;">A full community platform, designed and built from scratch.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I designed and built the Schalmont PTO website entirely from scratch using HTML, CSS, and JavaScript — no templates, no page builders. Every page, component, and interaction was crafted with the community's real needs in mind: busy parents who need information fast, volunteers who need to stay in the loop, and administrators who need to update content without a tech background.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">The site launched to immediate positive community response and became the central hub for PTO communications, events, and resources across all four schools.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section style="background:#f3f4f6;padding:56px 0;">
+    <div class="container">
+      <h2 style="color:#1a1a1a;margin:0 0 6px;">Site Screenshots</h2>
+      <p style="color:#666;font-size:15px;margin-bottom:28px;">Click any image to view full screen</p>
+      <div class="cs-gallery">
+        <div class="cs-gallery-card" data-index="0"><img src="images/pto-screenshots/keepers.png" alt="Schalmont PTO — Keepers"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="1"><img src="images/pto-screenshots/leaders.png" alt="Schalmont PTO — Leaders"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="2"><img src="images/pto-screenshots/makers-mobile.png" alt="Schalmont PTO — Makers mobile"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="3"><img src="images/pto-screenshots/pto1.png" alt="Schalmont PTO homepage"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="4"><img src="images/pto-screenshots/pto3.png" alt="Schalmont PTO events calendar"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="5"><img src="images/pto-screenshots/pto4.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="6"><img src="images/pto-screenshots/pto5.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="7"><img src="images/pto-screenshots/pto17.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+        <div class="cs-gallery-card" data-index="8"><img src="images/pto-screenshots/pto20.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="section-heading">
+        <p class="cs-section-label" style="text-align:center;">What I Built</p>
+        <h2>Key Features &amp; Design Decisions</h2>
+        <div class="accent-line"></div>
+      </div>
+
+      <div class="cs-two-col" style="gap:48px;">
+        <div>
+          <ul class="cs-feature-list">
+            <li>Multi-school architecture with dedicated sections for Woestina Pre-K, Jefferson Elementary, Middle School, and High School — each with their own events, programs, and resources</li>
+            <li>"Today at Schalmont" live widget showing real-time weather for Schenectady, NY and today's school schedule pulled from Google Calendar feeds</li>
+            <li>Hero image slider with admin-facing upload and remove controls — empowering non-technical board members to manage photos without a CMS</li>
+            <li>Integrated Google Calendar embeds and iCal proxy for events across all four schools with color-coded school badges</li>
+            <li>Member directory with login/register flow and role-based access controls</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="cs-feature-list">
+            <li>Spirit shop, fundraiser pages, and yearbook ordering — each school-specific and kept up to date across the school year</li>
+            <li>Photo gallery organized by event, with dedicated pages for Casino Night, Trail of Treats, Glitz &amp; Glam Dance, and more</li>
+            <li>Accessible, keyboard-navigable navigation with nested dropdown menus and a collapsible sidebar for mobile</li>
+            <li>Sponsor ad slot system with leaderboard and square placements for community business partners</li>
+            <li>Full responsive design — optimized for the reality that most parents check the site on their phone at pickup</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS + RESULTS -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="cs-two-col">
+        <div>
+          <p class="cs-section-label">My Process</p>
+          <h2 style="margin-top:0;">Wearing every hat.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">This project was unique because I wasn't just the designer and developer — I was also the client. As Executive President of the PTO, I deeply understood the user needs, the organizational constraints, and the community dynamics at play.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I started by mapping out every audience: parents, students, teachers, administrators, volunteers, and sponsors. From there I built an information architecture that could serve all of them without overwhelming any. I then moved into design, working directly in code rather than Figma to keep iteration fast and deployment immediate.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I deployed, maintained, and iterated on the site throughout the school year — adding new pages for new events, expanding features based on community feedback, and building admin tools that let other board members contribute content without technical help.</p>
+        </div>
+        <div>
+          <p class="cs-section-label">Results</p>
+          <h2 style="margin-top:0;">"Creators of the magic."</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">The site became the go-to resource for the entire Schalmont community — referenced at school board meetings, shared in teacher newsletters, and bookmarked by hundreds of families.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">It helped the PTO grow social followership from zero to 2,500+ across platforms, and directly supported the events and fundraising efforts that raised over $60,000 in two years. Board members who had previously relied entirely on Facebook now had a professional, centralized presence they were proud to share.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">More than anything, it gave a volunteer-run organization the kind of digital presence typically reserved for companies with full-time web teams — and it runs on zero budget.</p>
+        </div>
+      </div>
+
+      <div class="cs-cta-bar">
+        <div>
+          <h3>See the live site</h3>
+          <p>schalmontpto.com — the full, living version of this project.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://schalmontpto.com" target="_blank" rel="noopener" class="btn btn-primary">Visit schalmontpto.com ↗</a>
+          <a href="portfolio.html" class="btn btn-outline">← Back to Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-circle">
+            <img src="images/julie-dion-logo-04.png" alt="Julie Dion">
+          </div>
+          <p>Thanks for taking a look! Every project is built with a focus on people and practical results.</p>
+          <a href="contact.html" class="btn btn-outline" style="margin-top:12px;display:inline-block;">Contact Me</a>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Connect</div>
+          <ul class="footer-links">
+            <li><a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Julie Dion. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDESHOW OVERLAY -->
+  <div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image slideshow" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:9999;align-items:center;justify-content:center;flex-direction:column;">
+    <button id="lb-close" aria-label="Close" style="position:absolute;top:16px;right:24px;color:#fff;font-size:2.2rem;cursor:pointer;background:none;border:none;line-height:1;">×</button>
+    <button id="lb-prev" aria-label="Previous" style="position:absolute;top:50%;left:16px;transform:translateY(-50%);color:#fff;font-size:2.8rem;cursor:pointer;background:rgba(255,255,255,0.12);border:none;padding:8px 18px;border-radius:8px;line-height:1;">‹</button>
+    <img id="lb-img" src="" alt="" style="max-width:88vw;max-height:80vh;object-fit:contain;border-radius:10px;">
+    <button id="lb-next" aria-label="Next" style="position:absolute;top:50%;right:16px;transform:translateY(-50%);color:#fff;font-size:2.8rem;cursor:pointer;background:rgba(255,255,255,0.12);border:none;padding:8px 18px;border-radius:8px;line-height:1;">›</button>
+    <div id="lb-counter" style="position:absolute;bottom:20px;color:rgba(255,255,255,0.55);font-size:13px;"></div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // Video custom play
+    (function () {
+      var vid = document.getElementById('pto-video');
+      var btn = document.getElementById('pto-play');
+      vid.addEventListener('loadedmetadata', function () { vid.currentTime = 1.5; });
+      btn.addEventListener('click', function () { btn.style.display = 'none'; vid.controls = true; vid.play(); });
+      vid.addEventListener('pause', function () { if (!vid.ended) btn.style.display = 'flex'; });
+      vid.addEventListener('ended', function () { btn.style.display = 'flex'; });
+    })();
+
+    // Gallery slideshow
+    (function () {
+      var cards = Array.from(document.querySelectorAll('.cs-gallery-card'));
+      var overlay = document.getElementById('lb-overlay');
+      var img = document.getElementById('lb-img');
+      var ctr = document.getElementById('lb-counter');
+      var curIdx = 0;
+
+      function show(idx) {
+        curIdx = (idx + cards.length) % cards.length;
+        var t = cards[curIdx].querySelector('img');
+        img.src = t.src; img.alt = t.alt;
+        ctr.textContent = (curIdx + 1) + ' / ' + cards.length;
+      }
+      function open(idx) { show(idx); overlay.style.display = 'flex'; }
+      function close() { overlay.style.display = 'none'; }
+
+      cards.forEach(function (card) {
+        card.addEventListener('click', function () { open(parseInt(card.dataset.index) || 0); });
+      });
+      document.getElementById('lb-close').addEventListener('click', close);
+      document.getElementById('lb-prev').addEventListener('click', function () { show(curIdx - 1); });
+      document.getElementById('lb-next').addEventListener('click', function () { show(curIdx + 1); });
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (overlay.style.display !== 'flex') return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(curIdx - 1);
+        if (e.key === 'ArrowRight') show(curIdx + 1);
+      });
+    })();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

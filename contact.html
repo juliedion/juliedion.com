@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Julie Dion</title>
+  <meta name="description" content="Get in touch with Julie Dion for design, development, or collaboration opportunities.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="images/julie-dion-logo-04.png" alt="Julie Dion" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact</h1>
+      <p>I'm always happy to connect — whether it's a new project, freelance work, or just to say hello.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;">
+    <div class="container">
+      <div class="grid-2" style="gap:40px;align-items:flex-start;">
+
+        <div>
+          <h2 style="color:#1a1a1a;">Let's chat</h2>
+          <p style="color:#333;line-height:1.7">Send a message using the form below, or reach out directly by phone, email, or LinkedIn.</p>
+
+          <div style="background:#f7f8fa;border:1px solid rgba(0,0,0,0.08);border-radius:var(--radius-lg);padding:24px;margin-top:20px;">
+            <h3 style="margin-top:0;color:#1a1a1a;">Contact Info</h3>
+            <p style="margin:8px 0;color:#333;"><strong>Phone:</strong> <a href="tel:5188927495">518.892.7495</a></p>
+            <p style="margin:8px 0;color:#333;"><strong>Email:</strong> <a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></p>
+            <p style="margin:8px 0;color:#333;"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">linkedin.com/in/julie-aileen-dion</a></p>
+          </div>
+
+          <div style="margin-top:30px;">
+            <h3 style="margin-top:0;color:#1a1a1a;">Availability</h3>
+            <p style="color:#333;line-height:1.7;">I typically respond within 1–2 business days. If you're contacting about a project, please include a brief overview of the opportunity.</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2 style="font-size:22px;margin-bottom:6px;color:#1a1a1a;">Send a Message</h2>
+          <p style="font-size:14px;color:#555;margin-bottom:24px">Fill out the form and I'll follow up as soon as I can.</p>
+
+          <div id="contact-alert"></div>
+
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ct-name">Your Name *</label>
+                <input type="text" id="ct-name" name="name" required placeholder="Jane Smith">
+              </div>
+              <div class="form-group">
+                <label for="ct-email">Email Address *</label>
+                <input type="email" id="ct-email" name="email" required placeholder="jane@email.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ct-subject">Subject *</label>
+              <select id="ct-subject" name="subject" required>
+                <option value="">— Select a topic —</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Project Opportunity">Project Opportunity</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ct-message">Message *</label>
+              <textarea id="ct-message" name="message" required rows="6" placeholder="Tell me a bit about your project or question..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/julie-dion-logo-04.png" alt="Julie Dion" style="width:110px;height:auto;margin-bottom:16px;display:block;">
+          <p>Looking forward to hearing from you — whether it’s a short hello or a long-term partnership.</p>
+          <a href="contact.html" class="btn btn-outline" style="margin-top:12px;display:inline-block;">Contact Me</a>
+        </div>
+
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Connect</div>
+          <ul class="footer-links">
+            <li><a href="tel:5188927495">518.892.7495</a></li>
+            <li><a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Julie Dion. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

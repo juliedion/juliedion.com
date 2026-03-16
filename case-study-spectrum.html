@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Charter Spectrum Business — Julie Dion</title>
+  <meta name="description" content="Case study: Julie Dion's work as Senior UI Designer on the full redesign of Charter Spectrum's small business web platform — homepage, internet, mobile, and a large-scale SEO-driven insights hub built in Adobe Experience Manager.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.png">
+  <style>
+    .cs-hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 64px 0;
+    }
+    .cs-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #001a3a 0%, #003580 60%, #0057b8 100%);
+      z-index: 0;
+    }
+.cs-hero .container { position: relative; z-index: 1; }
+    .cs-hero .eyebrow { color: #00aaff; font-weight: 700; letter-spacing: .08em; font-size: 13px; text-transform: uppercase; margin-bottom: 12px; }
+    .cs-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; line-height: 1.15; }
+    .cs-hero .cs-meta { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 24px; }
+    .cs-hero .cs-meta-item { font-size: 13px; opacity: .85; color: #fff; }
+    .cs-hero .cs-meta-item strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .07em; opacity: .7; margin-bottom: 3px; color: #fff; }
+    .cs-meta-item { font-size: 13px; }
+    .cs-meta-item strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 3px; }
+
+    .cs-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin: 32px 0; }
+    .cs-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 24px 20px; text-align: center; }
+    .cs-stat .stat-num { font-size: 2rem; font-weight: 900; color: #00aaff; line-height: 1; margin-bottom: 6px; }
+    .cs-stat .stat-label { font-size: 13px; opacity: .7; line-height: 1.4; }
+
+    .cs-section-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #00aaff; margin-bottom: 10px; }
+    .cs-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    @media (max-width: 720px) { .cs-two-col { grid-template-columns: 1fr; } }
+
+    .cs-feature-list { list-style: none; padding: 0; margin: 0; }
+    .cs-feature-list li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 15px; line-height: 1.6; }
+    .cs-feature-list li:last-child { border-bottom: none; }
+    .cs-feature-list li::before { content: '→'; color: #00aaff; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+
+    .cs-img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px; }
+    .cs-img-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.1); }
+
+    .cs-back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #00aaff; text-decoration: none; opacity: .85; margin-bottom: 32px; }
+    .cs-back-link:hover { opacity: 1; }
+
+    .cs-page-card { border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 28px 28px 24px; background: rgba(255,255,255,0.04); margin-bottom: 20px; }
+    .cs-page-card h4 { font-size: 1rem; margin: 0 0 8px; color: #fff; }
+    .cs-page-card .cs-page-url { font-size: 12px; color: #00aaff; opacity: .8; margin-bottom: 12px; display: block; }
+    .cs-page-card p { font-size: 14px; line-height: 1.65; opacity: .8; margin: 0; }
+
+    .cs-highlight-box { border-left: 4px solid #00aaff; background: rgba(0,170,255,0.07); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 28px; margin: 32px 0; }
+    .cs-highlight-box h3 { margin: 0 0 10px; font-size: 1.1rem; }
+    .cs-highlight-box p { margin: 0; font-size: 15px; line-height: 1.7; opacity: .88; }
+
+    .tool-tag { display: inline-block; background: rgba(0,170,255,0.12); border: 1px solid rgba(0,170,255,0.25); color: #00aaff; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 4px 4px 4px 0; }
+
+    .cs-cta-bar { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-top: 48px; }
+    .cs-cta-bar h3 { margin: 0 0 4px; font-size: 1.15rem; }
+    .cs-cta-bar p { margin: 0; opacity: .7; font-size: 14px; }
+
+    /* Lightbox */
+    .lb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 28px 0; }
+    .lb-card { border-radius: 12px; overflow: hidden; cursor: zoom-in; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 18px rgba(0,0,0,0.20); transition: transform .15s, box-shadow .15s; }
+    .lb-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .lb-card img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .lb-card { position: relative; }
+    .lb-card .lb-cap { padding: 10px 14px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.75); background: rgba(0,0,0,0.45); letter-spacing: .03em; }
+    .lb-enlarge-badge { position: absolute; top: 12px; right: 12px; background: rgba(0,57,128,0.88); color: #fff; font-size: 13px; font-weight: 800; padding: 6px 14px; border-radius: 20px; pointer-events: none; }
+    #lb-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; }
+    #lb-overlay.open { display: flex; }
+    #lb-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 10px; }
+    #lb-close { position: absolute; top: 16px; right: 24px; color: #fff; font-size: 2.2rem; cursor: pointer; line-height: 1; background: none; border: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="images/julie-dion-logo-04.png" alt="Julie Dion" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="cs-hero">
+    <div class="cs-hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;">
+        <div>
+          <p class="eyebrow">Charter Communications &nbsp;·&nbsp; Enterprise UI Design &nbsp;·&nbsp; 2016–2022</p>
+          <h1 style="color:#fff;">Redesigning <span style="color:#00aaff;">Spectrum Business.</span></h1>
+          <p style="font-size:17px;opacity:.88;line-height:1.65;color:#fff;">Senior UI Designer on the complete redesign of Charter Spectrum's small business web presence — homepage, internet, mobile, and a large-scale SEO-driven insights hub built in Adobe Experience Manager.</p>
+          <div class="cs-meta">
+            <div class="cs-meta-item"><strong>Role</strong>Senior UI Designer</div>
+            <div class="cs-meta-item"><strong>Company</strong>Charter Communications</div>
+            <div class="cs-meta-item"><strong>Scope</strong>UI Design, CMS, SEO, A/B Testing</div>
+            <div class="cs-meta-item"><strong>Live Site</strong><a href="https://www.spectrum.com/business" target="_blank" rel="noopener" style="color:#00aaff;">spectrum.com/business ↗</a></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;">
+          <img src="images/Charter/spectrum-business-logo.avif" alt="Spectrum Business" style="max-height:120px;max-width:240px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.4));">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TITLE BLOCK -->
+  <section style="padding: 44px 0 32px;">
+    <div class="container">
+      <a href="portfolio.html" class="cs-back-link">← Back to Portfolio</a>
+      <div style="border-left: 4px solid #00aaff; padding: 6px 0 6px 24px; margin-bottom: 36px;">
+        <p style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#00aaff;margin:0 0 10px;">Case Study</p>
+        <h1 style="font-size:clamp(1.7rem,3.5vw,2.5rem);margin:0 0 10px;line-height:1.2;">Charter Spectrum Business Website Redesign</h1>
+        <p style="font-size:14px;opacity:.65;margin:0 0 20px;">Enterprise UI Design &nbsp;·&nbsp; SEO Strategy &nbsp;·&nbsp; CMS &amp; Personalization &nbsp;·&nbsp; Charter Communications</p>
+        <div class="cs-meta" style="margin-top:0;">
+          <div class="cs-meta-item"><strong>Role</strong>Senior UI Designer</div>
+          <div class="cs-meta-item"><strong>Company</strong>Charter Communications</div>
+          <div class="cs-meta-item"><strong>Scope</strong>UI Design, CMS, SEO, A/B Testing</div>
+          <div class="cs-meta-item"><strong>Live Site</strong><a href="https://www.spectrum.com/business" target="_blank" rel="noopener" style="color:#00aaff;">spectrum.com/business ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section section-sm" style="padding-top:0;">
+    <div class="container">
+      <div class="cs-stat-grid">
+        <div class="cs-stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Business Lines Rebranded &amp; Redesigned</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">Millions</div>
+          <div class="stat-label">Residential &amp; small business customers reached</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Article pages designed &amp; developed</div>
+        </div>
+        <div class="cs-stat">
+          <div class="stat-num">35%</div>
+          <div class="stat-label">Increase in engagement after article project</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOMEPAGE HERO IMAGE -->
+  <section style="padding: 0 0 48px;">
+    <div class="container">
+      <a href="https://www.spectrum.com/business" target="_blank" rel="noopener" style="display:block;text-decoration:none;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.4);position:relative;">
+        <img src="images/Charter/FireShot Capture 001 - Spectrum Business Services & Solutions - Spectrum Business_ - [www.spectrum.com].png" alt="Spectrum Business homepage" style="width:100%;max-height:580px;object-fit:cover;object-position:top;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 28px;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <span style="color:#fff;font-weight:700;font-size:15px;">Spectrum Business Homepage</span>
+          <span style="color:#00aaff;font-size:13px;font-weight:700;background:rgba(0,0,0,0.4);padding:6px 14px;border-radius:20px;border:1px solid rgba(0,170,255,0.4);">Visit spectrum.com/business ↗</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTEXT + ROLE -->
+  <section class="section section-sm" style="background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));">
+    <div class="container">
+      <div class="cs-two-col">
+        <div>
+          <p class="cs-section-label">The Context</p>
+          <h2 style="margin-top:0;">Senior UI Designer on a national enterprise platform.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">At Charter Communications, I served as Senior UI Designer on the team responsible for the complete redesign and rebuild of Spectrum's small business web platform. This was a high-stakes, cross-functional initiative involving designers, front-end developers, project managers, UX writers, copywriters, and SEO analysts working in parallel across multiple product lines.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I designed across 4 lines of business including Residential, Mobile, Small Business (SMB), and Enterprise. My primary focus was SMB.</p>
+        </div>
+        <div>
+          <p class="cs-section-label">My Role</p>
+          <h2 style="margin-top:0;">Design lead across four major platform areas.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I led UI design across the homepage, internet, mobile, and insights sections of the small business platform. This meant owning page layouts, component design, visual hierarchy, and consistency with Spectrum's enterprise design language — while translating complex product offerings into scannable, persuasive experiences that could serve both technical buyers and first-time customers.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I collaborated daily with developers building in Adobe Experience Manager, and worked directly with Adobe Target to specify and QA personalization zones and A/B test variants across key pages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS INTERNET FEATURE -->
+  <section style="padding: 0 0 56px;">
+    <div class="container">
+      <p class="cs-section-label" style="margin-bottom:8px;">Page Design</p>
+      <h2 style="margin:0 0 20px;">Business Internet</h2>
+      <div class="lb-card" data-src="images/Charter/FireShot Capture 002 - Spectrum Business Internet - Get Plans and Pricing - [www.spectrum.com].png" data-alt="Spectrum Business Internet page" style="border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.4);">
+        <img src="images/Charter/FireShot Capture 002 - Spectrum Business Internet - Get Plans and Pricing - [www.spectrum.com].png" alt="Spectrum Business Internet page" style="width:100%;max-height:580px;object-fit:cover;object-position:top;height:auto;">
+        <div class="lb-cap" style="font-size:13px;padding:12px 18px;">Business Internet — spectrum.com/business/internet &nbsp;·&nbsp; Click to enlarge</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGES I DESIGNED -->
+  <section style="background:#f3f4f6;padding:56px 0;">
+    <div class="container">
+      <h2 style="color:#1a1a1a;margin:0 0 6px;">Pages I Designed</h2>
+      <p style="color:#666;font-size:15px;margin-bottom:36px;">Click any image to view full screen</p>
+
+      <!-- Small Business Homepage -->
+      <div style="margin-bottom:56px;">
+        <p class="cs-section-label">Page Design</p>
+        <h3 style="margin:0 0 4px;font-size:1.25rem;">Small Business Homepage</h3>
+        <span class="cs-page-url" style="display:block;margin-bottom:16px;">spectrum.com/business</span>
+        <p style="font-size:15px;line-height:1.7;opacity:.85;margin-bottom:20px;">The top-level entry point for all small business customers. Designed to orient visitors quickly — showcasing bundled service offerings, trust signals, and clear paths to internet, mobile, TV, and voice products. Strong visual hierarchy and persuasive layout to reduce drop-off and increase product page engagement.</p>
+        <div class="lb-card" data-src="images/Charter/FireShot Capture 001 - Spectrum Business Services & Solutions - Spectrum Business_ - [www.spectrum.com].png" data-alt="Spectrum Business homepage" style="border-radius:14px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,0.35);">
+          <img src="images/Charter/FireShot Capture 001 - Spectrum Business Services & Solutions - Spectrum Business_ - [www.spectrum.com].png" alt="Spectrum Business homepage" style="width:100%;max-height:500px;object-fit:cover;object-position:top;height:auto;">
+          <div class="lb-cap" style="font-size:13px;padding:12px 18px;">Business Homepage — Click to enlarge</div>
+          <div class="lb-enlarge-badge">⌕ Enlarge</div>
+        </div>
+      </div>
+
+      <!-- Business Internet -->
+      <div style="margin-bottom:56px;">
+        <p class="cs-section-label">Page Design</p>
+        <h3 style="margin:0 0 4px;font-size:1.25rem;">Business Internet</h3>
+        <span class="cs-page-url" style="display:block;margin-bottom:16px;">spectrum.com/business/internet</span>
+        <p style="font-size:15px;line-height:1.7;opacity:.85;margin-bottom:20px;">A product detail page for Spectrum's flagship small business internet plans. Designed to clearly communicate speed tiers, pricing, and differentiators against competitors — with a layout that serves both the quick-scanning business owner and the detail-oriented IT buyer making a purchasing decision.</p>
+        <div class="lb-card" data-src="images/Charter/FireShot Capture 002 - Spectrum Business Internet - Get Plans and Pricing - [www.spectrum.com].png" data-alt="Spectrum Business Internet page" style="border-radius:14px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,0.35);">
+          <img src="images/Charter/FireShot Capture 002 - Spectrum Business Internet - Get Plans and Pricing - [www.spectrum.com].png" alt="Spectrum Business Internet page" style="width:100%;max-height:500px;object-fit:cover;object-position:top;height:auto;">
+          <div class="lb-cap" style="font-size:13px;padding:12px 18px;">Business Internet — Click to enlarge</div>
+          <div class="lb-enlarge-badge">⌕ Enlarge</div>
+        </div>
+      </div>
+
+      <!-- Business Mobile -->
+      <div style="margin-bottom:56px;">
+        <p class="cs-section-label">Page Design</p>
+        <h3 style="margin:0 0 4px;font-size:1.25rem;">Business Mobile</h3>
+        <span class="cs-page-url" style="display:block;margin-bottom:16px;">spectrum.com/business/mobile</span>
+        <p style="font-size:15px;line-height:1.7;opacity:.85;margin-bottom:20px;">The mobile product page targeting small businesses looking to add or switch wireless lines. Designed to present plan options, BYOD compatibility, and bundle savings in a clean, comparison-friendly layout that drives trial and conversion without overwhelming users with carrier-speak.</p>
+        <div class="lb-card" data-src="images/Charter/FireShot Capture 003 - Business Mobile Plans and Solutions - Spectrum Business - [www.spectrum.com].png" data-alt="Spectrum Business Mobile page" style="border-radius:14px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,0.35);">
+          <img src="images/Charter/FireShot Capture 003 - Business Mobile Plans and Solutions - Spectrum Business - [www.spectrum.com].png" alt="Spectrum Business Mobile page" style="width:100%;max-height:500px;object-fit:cover;object-position:top;height:auto;">
+          <div class="lb-cap" style="font-size:13px;padding:12px 18px;">Business Mobile — Click to enlarge</div>
+          <div class="lb-enlarge-badge">⌕ Enlarge</div>
+        </div>
+      </div>
+
+      <!-- Business Bundles / Vertical Landing -->
+      <div style="margin-bottom:56px;">
+        <p class="cs-section-label">Page Design</p>
+        <h3 style="margin:0 0 4px;font-size:1.25rem;">Business Bundles — Vertical Landing Pages</h3>
+        <span class="cs-page-url" style="display:block;margin-bottom:16px;">spectrum.com/business/bundles</span>
+        <p style="font-size:15px;line-height:1.7;opacity:.85;margin-bottom:20px;">Industry-specific landing pages targeting business verticals like restaurants, retail, and healthcare. Designed to lead with relevant use cases and reinforce the value of bundled services to owners in each vertical, driving more qualified leads through tailored messaging and layouts.</p>
+        <div class="lb-card" data-src="images/Charter/FireShot Capture 004 - Bar & Restaurant - Spectrum Business Bundles and Deals - [www.spectrum.com].png" data-alt="Spectrum Business Bundles — Bar & Restaurant vertical" style="border-radius:14px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,0.35);">
+          <img src="images/Charter/FireShot Capture 004 - Bar & Restaurant - Spectrum Business Bundles and Deals - [www.spectrum.com].png" alt="Spectrum Business Bundles — Bar & Restaurant vertical" style="width:100%;max-height:500px;object-fit:cover;object-position:top;height:auto;">
+          <div class="lb-cap" style="font-size:13px;padding:12px 18px;">Business Bundles — Bar &amp; Restaurant Vertical — Click to enlarge</div>
+          <div class="lb-enlarge-badge">⌕ Enlarge</div>
+        </div>
+      </div>
+
+      <!-- Business Insights Hub -->
+      <div style="margin-bottom:16px;">
+        <p class="cs-section-label">Featured Page Design</p>
+        <h3 style="margin:0 0 4px;font-size:1.25rem;">Business Insights Hub <span style="font-size:11px;background:#00aaff;color:#001a3a;font-weight:800;padding:2px 8px;border-radius:10px;margin-left:8px;letter-spacing:.05em;">Featured Project</span></h3>
+        <span class="cs-page-url" style="display:block;margin-bottom:16px;">spectrum.com/business/insights</span>
+        <p style="font-size:15px;line-height:1.7;opacity:.85;margin-bottom:20px;">The articles and content hub — a large-scale content marketing platform designed to drive SEO growth for the small business vertical. Modular AEM templates allowed non-designers to publish on-brand content at scale. See the full breakdown in the section below.</p>
+        <div class="lb-card" data-src="images/Charter/FireShot Capture 005 - Empowering Business Owners - [www.spectrum.com].png" data-alt="Spectrum Business Insights hub" style="border-radius:14px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,0.35);border:1px solid rgba(0,170,255,0.25);">
+          <img src="images/Charter/FireShot Capture 005 - Empowering Business Owners - [www.spectrum.com].png" alt="Spectrum Business Insights hub" style="width:100%;max-height:500px;object-fit:cover;object-position:top;height:auto;">
+          <div class="lb-cap" style="font-size:13px;padding:12px 18px;">Business Insights Hub — spectrum.com/business/insights — Click to enlarge</div>
+          <div class="lb-enlarge-badge">⌕ Enlarge</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS DEEP DIVE -->
+  <section class="section" style="background:linear-gradient(135deg,rgba(0,170,255,0.05),rgba(255,255,255,0));">
+    <div class="container">
+      <p class="cs-section-label">Featured Project</p>
+      <h2 style="margin-top:0;margin-bottom:24px;">The Insights Hub: A Platform Built to Win on Search</h2>
+
+      <div class="cs-highlight-box">
+        <h3>Why it mattered</h3>
+        <p>Charter's small business revenue was under pressure, and leadership identified organic search as a high-leverage growth channel. The Insights hub — Spectrum's article and content marketing platform for small businesses — was identified as the vehicle to capture that traffic. The problem: the existing content experience was generic, unbranded, and not designed to support the volume or variety of content needed to compete in search.</p>
+      </div>
+
+      <div class="cs-two-col" style="margin-top:40px;">
+        <div>
+          <p class="cs-section-label">The Challenge</p>
+          <h3 style="margin-top:0;">Design for both humans and search engines — at scale.</h3>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">The Insights hub needed to serve two audiences simultaneously: real small business owners looking for practical advice, and search engines evaluating content authority and relevance. The design had to support a high volume of articles across dozens of topics while maintaining a consistent, professional feel that reinforced the Spectrum brand.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">Content would be authored by copywriters who weren't designers — so the system had to be flexible enough to serve varied content structures without breaking visual consistency.</p>
+        </div>
+        <div>
+          <p class="cs-section-label">The Solution</p>
+          <h3 style="margin-top:0;">A modular, CMS-driven content system built in Adobe Experience Manager.</h3>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I designed a modular article template system within Adobe Experience Manager (AEM) — building a library of flexible, on-brand components that copywriters and editors could assemble without touching code. Every component was designed with SEO structure in mind: proper heading hierarchy, structured data-friendly layouts, and visually distinct calls-to-action that supported on-page conversion while keeping readers engaged.</p>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I also worked closely with Adobe Target to define personalization zones — areas of the page where content and CTAs could be swapped based on visitor segment — supporting the broader A/B testing strategy developed by the SEO analysts and marketing team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY CONTRIBUTIONS -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="section-heading">
+        <p class="cs-section-label" style="text-align:center;">What I Built</p>
+        <h2>Key Design Contributions</h2>
+        <div class="accent-line"></div>
+      </div>
+
+      <div class="cs-two-col" style="gap:48px;">
+        <div>
+          <ul class="cs-feature-list">
+            <li>Full UI redesign of the Spectrum small business homepage — visual hierarchy, service promotion, and conversion pathways for millions of monthly visitors</li>
+            <li>Product page designs for Business Internet and Business Mobile — translating complex pricing and plan structures into clear, scannable layouts</li>
+            <li>Modular article template system in Adobe Experience Manager, enabling non-designers to publish branded content at scale</li>
+            <li>Component library for the Insights hub — including article cards, category navigation, related content modules, and inline CTAs</li>
+            <li>Collaborated with SEO analysts to ensure all UI decisions supported on-page SEO best practices: heading structure, content density, internal linking patterns</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="cs-feature-list">
+            <li>Worked with Adobe Target to specify and QA personalization zones — defining which areas of each page could be dynamically swapped for A/B testing</li>
+            <li>Cross-functional design collaboration with UX writers, copywriters, front-end developers, and project managers throughout the build</li>
+            <li>Maintained consistency with Charter's enterprise design language while adapting layouts for the distinct needs of the small business audience</li>
+            <li>QA of AEM component implementations — verifying visual fidelity and responsive behavior across breakpoints</li>
+            <li>Contributed to design documentation and component specs used by the broader development team during the CMS build</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:40px;">
+        <img src="images/Charter/charter.jpg" alt="Charter Spectrum Business — design work overview" style="width:100%;border-radius:14px;box-shadow:0 6px 28px rgba(0,0,0,0.28);display:block;">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TOOLS & PROCESS -->
+  <section class="section section-sm" style="background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));">
+    <div class="container">
+      <div class="cs-two-col">
+        <div>
+          <p class="cs-section-label">Tools &amp; Tech</p>
+          <h2 style="margin-top:0;">Enterprise-grade stack, enterprise-scale team.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">I used multiple tools in Adobe Creative Suite to design pages including Illustrator, Photoshop, XD, and Figma. I used Adobe Experience Manager, HTML, CSS, JavaScript, WordPress, and Claude Code to deliver the pages. I used Adobe Premiere and After Effects to create videos.</p>
+          <div style="margin-top:20px;">
+            <span class="tool-tag">Adobe Experience Manager (AEM)</span>
+            <span class="tool-tag">Adobe Target</span>
+            <span class="tool-tag">Figma</span>
+            <span class="tool-tag">HTML / CSS</span>
+            <span class="tool-tag">SEO Strategy</span>
+            <span class="tool-tag">A/B Testing</span>
+            <span class="tool-tag">Content Design</span>
+            <span class="tool-tag">Responsive Design</span>
+            <span class="tool-tag">Component Systems</span>
+          </div>
+        </div>
+        <div>
+          <p class="cs-section-label">The Team</p>
+          <h2 style="margin-top:0;">A full cross-functional build.</h2>
+          <p style="font-size:16px;line-height:1.75;opacity:.88;">This project ran as a coordinated effort across multiple disciplines. My daily work involved close collaboration with:</p>
+          <ul class="cs-feature-list" style="margin-top:16px;">
+            <li>UI &amp; UX designers — shared design systems and page patterns</li>
+            <li>Front-end developers — translating designs into AEM components</li>
+            <li>Project managers — sprint planning, handoff, and delivery coordination</li>
+            <li>Copywriters — designing templates that served their content needs</li>
+            <li>SEO analysts — aligning design decisions with organic search strategy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cs-cta-bar">
+        <div>
+          <h3>See the live site</h3>
+          <p>The small business platform at spectrum.com/business.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.spectrum.com/business" target="_blank" rel="noopener" class="btn btn-primary">Visit spectrum.com/business ↗</a>
+          <a href="portfolio.html" class="btn btn-outline">← Back to Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-circle">
+            <img src="images/julie-dion-logo-04.png" alt="Julie Dion">
+          </div>
+          <p>Thanks for taking a look! Every project is built with a focus on people and practical results.</p>
+          <a href="contact.html" class="btn btn-outline" style="margin-top:12px;display:inline-block;">Contact Me</a>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Connect</div>
+          <ul class="footer-links">
+            <li><a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Julie Dion. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <button id="lb-close" aria-label="Close">×</button>
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function () {
+      var overlay = document.getElementById('lb-overlay');
+      var img = document.getElementById('lb-img');
+      document.querySelectorAll('.lb-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          img.src = card.dataset.src;
+          img.alt = card.dataset.alt;
+          overlay.classList.add('open');
+        });
+      });
+      document.getElementById('lb-close').addEventListener('click', function () { overlay.classList.remove('open'); });
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.classList.remove('open'); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') overlay.classList.remove('open'); });
+    })();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
