@@ -132,111 +132,160 @@
     </div>
   </section>
 
-  <!-- TITLE BLOCK -->
-  <section style="padding: 44px 0 32px;">
+
+  <!-- STATS RIBBON -->
+  <div style="background:linear-gradient(135deg,#1a3d24 0%,#295c38 100%);padding:32px 0;">
     <div class="container">
-      <a href="portfolio.html" class="cs-back-link">← Back to Portfolio</a>
-      <div style="border-left: 4px solid #a5e54a; padding: 6px 0 6px 24px; margin-bottom: 36px;">
-        <p style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a5e54a;margin:0 0 10px;">Case Study</p>
-        <h1 style="font-size:clamp(1.7rem,3.5vw,2.5rem);margin:0 0 10px;line-height:1.2;">Schalmont Central Schools PTO Website</h1>
-        <p style="font-size:14px;opacity:.65;margin:0 0 20px;">Web Design &amp; Development &nbsp;·&nbsp; Community Platform &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Julie Dion</p>
-        <div class="cs-meta" style="margin-top:0;">
-          <div class="cs-meta-item"><strong>Role</strong>Designer &amp; Developer</div>
-          <div class="cs-meta-item"><strong>Year</strong>2026</div>
-          <div class="cs-meta-item"><strong>Scope</strong>Full-stack web design, UX, HTML/CSS/JS</div>
-          <div class="cs-meta-item"><strong>Live Site</strong><a href="https://schalmontpto.com" target="_blank" rel="noopener" style="color:#a5e54a;">schalmontpto.com ↗</a></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.2);">
+        <div style="padding:26px 20px;text-align:center;">
+          <div style="font-size:2rem;font-weight:900;color:#a5e54a;line-height:1;margin-bottom:8px;">4</div>
+          <div style="font-size:12px;opacity:.8;line-height:1.4;color:#fff;">Schools on one platform</div>
+        </div>
+        <div style="padding:26px 20px;text-align:center;">
+          <div style="font-size:2rem;font-weight:900;color:#a5e54a;line-height:1;margin-bottom:8px;">2,000+</div>
+          <div style="font-size:12px;opacity:.8;line-height:1.4;color:#fff;">Students represented</div>
+        </div>
+        <div style="padding:26px 20px;text-align:center;">
+          <div style="font-size:2rem;font-weight:900;color:#a5e54a;line-height:1;margin-bottom:8px;">40+</div>
+          <div style="font-size:12px;opacity:.8;line-height:1.4;color:#fff;">Events planned &amp; published</div>
+        </div>
+        <div style="padding:26px 20px;text-align:center;">
+          <div style="font-size:2rem;font-weight:900;color:#a5e54a;line-height:1;margin-bottom:8px;">$60K+</div>
+          <div style="font-size:12px;opacity:.8;line-height:1.4;color:#fff;">Raised in two years</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- HERO VIDEO -->
-  <section style="padding: 0 0 40px;">
+  <!-- VIDEO + OVERVIEW -->
+  <section style="padding:48px 0 40px;">
     <div class="container">
-      <div class="pto-video-wrap">
-        <video id="pto-video" poster="images/pto-screenshots/pto-beautyshot-1.png">
-          <source src="images/pto-website.mp4" type="video/mp4">
-        </video>
-        <button class="pto-play-btn" id="pto-play" aria-label="Play video">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="white" style="margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- OVERVIEW -->
-  <section class="section section-sm" style="padding-top:32px;">
-    <div class="container">
-      <div class="cs-stat-grid">
-        <div class="cs-stat">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Schools served across one platform</div>
-        </div>
-        <div class="cs-stat">
-          <div class="stat-num">2,000+</div>
-          <div class="stat-label">Students represented district-wide</div>
-        </div>
-        <div class="cs-stat">
-          <div class="stat-num">40+</div>
-          <div class="stat-label">Events planned and published</div>
-        </div>
-        <div class="cs-stat">
-          <div class="stat-num">$60K+</div>
-          <div class="stat-label">Raised over two years</div>
-        </div>
-        <div class="cs-stat">
-          <div class="stat-num">2,500+</div>
-          <div class="stat-label">Social followers grown from zero</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BEAUTYSHOT - full width -->
-  <section style="padding: 0 0 8px;">
-    <div class="container">
-      <img src="images/pto-screenshots/pto-beautyshot-1.png" alt="Schalmont PTO website — all pages overview" style="width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.18);display:block;">
-    </div>
-  </section>
-
-  <!-- CHALLENGE + SOLUTION -->
-  <section class="section" style="background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0));">
-    <div class="container">
-      <div class="cs-two-col">
+      <a href="portfolio.html" class="cs-back-link" style="margin-bottom:28px;">← Back to Portfolio</a>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;">
         <div>
-          <p class="cs-section-label">The Challenge</p>
-          <h2 style="margin-top:0;">One community. Four schools. No central home.</h2>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">The Schalmont Central Schools PTO had no unified digital presence. Event information was scattered across Facebook, paper flyers, and email chains. Parents didn't know what was happening at their child's school — let alone across the district. Families new to the district had no clear onboarding path, and volunteers had no easy way to stay connected.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">As Executive President of the PTO, I knew that solving this problem required more than a Facebook page update. It required a purpose-built platform that could grow with the organization and serve every family, at every school, in one place.</p>
+          <div class="pto-video-wrap">
+            <video id="pto-video" poster="images/pto-screenshots/pto-beautyshot-1.png">
+              <source src="images/pto-website.mp4" type="video/mp4">
+            </video>
+            <button class="pto-play-btn" id="pto-play" aria-label="Play video">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="white" style="margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+          </div>
         </div>
         <div>
-          <p class="cs-section-label">The Solution</p>
-          <h2 style="margin-top:0;">A full community platform, designed and built from scratch.</h2>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">I designed and built the Schalmont PTO website entirely from scratch using HTML, CSS, and JavaScript — no templates, no page builders. Every page, component, and interaction was crafted with the community's real needs in mind: busy parents who need information fast, volunteers who need to stay in the loop, and administrators who need to update content without a tech background.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">The site launched to immediate positive community response and became the central hub for PTO communications, events, and resources across all four schools.</p>
+          <p class="cs-section-label">The Project</p>
+          <h2 style="margin-top:0;">Built from scratch. For the community.</h2>
+          <p style="font-size:15px;line-height:1.75;opacity:.88;">As Executive President of the Schalmont Central Schools PTO, I designed and built the district's community website from scratch — wearing every hat as designer, developer, and client. With event info scattered across Facebook and paper flyers, and no unified digital presence across four schools, I built a purpose-built platform in HTML, CSS, and JavaScript that could serve every family, at every school, in one place.</p>
+          <p style="font-size:15px;line-height:1.75;opacity:.88;">The site launched to immediate community response and became the go-to resource for the entire district — referenced at school board meetings, shared in teacher newsletters, and bookmarked by hundreds of families. It grew PTO social followership to 2,500+, directly supported over $60,000 in fundraising across two years, and gave a volunteer-run organization the kind of digital presence typically reserved for companies with full-time web teams.</p>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section style="background:#f3f4f6;padding:56px 0;">
+  <!-- MAIN PAGES I DESIGNED -->
+  <section style="background:#f3f4f6;padding:56px 0 20px;">
     <div class="container">
-      <h2 style="color:#1a1a1a;margin:0 0 6px;">Site Screenshots</h2>
-      <p style="color:#666;font-size:15px;margin-bottom:28px;">Click any image to view full screen</p>
-      <div class="cs-gallery">
-        <div class="cs-gallery-card" data-index="0"><img src="images/pto-screenshots/keepers.png" alt="Schalmont PTO — Keepers"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="1"><img src="images/pto-screenshots/leaders.png" alt="Schalmont PTO — Leaders"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="2"><img src="images/pto-screenshots/makers-mobile.png" alt="Schalmont PTO — Makers mobile"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="3"><img src="images/pto-screenshots/pto1.png" alt="Schalmont PTO homepage"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="4"><img src="images/pto-screenshots/pto3.png" alt="Schalmont PTO events calendar"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="5"><img src="images/pto-screenshots/pto4.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="6"><img src="images/pto-screenshots/pto5.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="7"><img src="images/pto-screenshots/pto17.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="8"><img src="images/pto-screenshots/pto20.png" alt="Schalmont PTO page"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="9"><img src="images/pto-screenshots/pto-sports.png" alt="Schalmont PTO — Sports"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
-        <div class="cs-gallery-card" data-index="10"><img src="images/pto-screenshots/pto-fundraisers.png" alt="Schalmont PTO — Fundraisers"><div class="cs-enlarge-badge">⌕ Enlarge</div></div>
+      <h2 style="color:#1a1a1a;margin:0 0 8px;">Main Pages I Designed</h2>
+      <p style="color:#555;font-size:15px;margin-bottom:32px;">Homepage, Directory, Events, and About — click any image to visit the live page.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto7.png" alt="Schalmont PTO Homepage" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">Homepage</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">schalmontpto.com</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">District-wide entry point — weather, today's schedule, upcoming events, and quick links to every school.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com/directory" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto3.png" alt="Schalmont PTO Parent Directory" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">Directory</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">Parent Directory</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">Login-protected member directory with search, role-based access, and family listings by school.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com/events" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto17.png" alt="Schalmont PTO Events Calendar" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">Events</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">PTO/School Calendars</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">Live Google Calendar embeds for all four schools with color-coded badges and iCal sync.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com/about" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto4.png" alt="About the Schalmont PTO" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">About</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">About the Schalmont PTO</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">Mission, board members, team bios, and the story behind the organization — with stats and meet-the-team section.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECONDARY PAGES ROW -->
+  <section style="background:#f3f4f6;padding:20px 0 56px;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com/sports" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto-sports.png" alt="Schalmont PTO Sports" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">Sports</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">Sports &amp; Activities</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">School sports schedules, activities, and events organized by school and season.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com/social-media" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto5.png" alt="Schalmont PTO Social Media" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">Social</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">Social Media Hub</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">Central hub linking all PTO and school Facebook groups — grew from zero to 2,500+ followers across platforms.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com/fundraisers" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto-fundraisers.png" alt="Schalmont PTO Fundraisers" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">Fundraisers</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">Fundraiser Pages</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">Partner fundraisers and school-specific campaigns — helping raise $60K+ across two school years.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#fff;">
+          <a href="https://schalmontpto.com/yearbook" target="_blank" rel="noopener" style="display:block;overflow:hidden;flex-shrink:0;">
+            <img src="images/pto-screenshots/pto18.png" alt="Schalmont PTO Yearbook" style="width:100%;height:260px;object-fit:cover;object-position:top;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform=''">
+          </a>
+          <div style="padding:16px 18px 20px;flex:1;">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#a5e54a;margin-bottom:6px;">Yearbook</div>
+            <h3 style="margin:0 0 8px;font-size:.95rem;color:#1a1a1a;line-height:1.3;">Yearbooks &amp; Photo Submissions</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#444;">Per-school yearbook ordering, photo upload deadlines, and direct links to Balfour and Entourage.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -274,26 +323,9 @@
     </div>
   </section>
 
-  <!-- PROCESS + RESULTS -->
+  <!-- CTA -->
   <section class="section section-sm">
     <div class="container">
-      <div class="cs-two-col">
-        <div>
-          <p class="cs-section-label">My Process</p>
-          <h2 style="margin-top:0;">Wearing every hat.</h2>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">This project was unique because I wasn't just the designer and developer — I was also the client. As Executive President of the PTO, I deeply understood the user needs, the organizational constraints, and the community dynamics at play.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">I started by mapping out every audience: parents, students, teachers, administrators, volunteers, and sponsors. From there I built an information architecture that could serve all of them without overwhelming any. I then moved into design, working directly in code rather than Figma to keep iteration fast and deployment immediate.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">I deployed, maintained, and iterated on the site throughout the school year — adding new pages for new events, expanding features based on community feedback, and building admin tools that let other board members contribute content without technical help.</p>
-        </div>
-        <div>
-          <p class="cs-section-label">Results</p>
-          <h2 style="margin-top:0;">"Creators of the magic."</h2>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">The site became the go-to resource for the entire Schalmont community — referenced at school board meetings, shared in teacher newsletters, and bookmarked by hundreds of families.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">It helped the PTO grow social followership from zero to 2,500+ across platforms, and directly supported the events and fundraising efforts that raised over $60,000 in two years. Board members who had previously relied entirely on Facebook now had a professional, centralized presence they were proud to share.</p>
-          <p style="font-size:16px;line-height:1.75;opacity:.88;">More than anything, it gave a volunteer-run organization the kind of digital presence typically reserved for companies with full-time web teams — and it runs on zero budget.</p>
-        </div>
-      </div>
-
       <div class="cs-cta-bar">
         <div>
           <h3>See the live site</h3>
