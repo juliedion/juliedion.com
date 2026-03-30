@@ -152,7 +152,7 @@
           <a href="about.html" class="btn btn-primary btn-lg">Learn More About Me</a>
         </div>
         <div>
-          <img src="images/julie/julie-award.jpg" alt="Julie Dion" style="width:100%;max-height:480px;object-fit:cover;object-position:top;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,0.5);display:block;">
+          <img src="images/julie/julie-award.jpg" alt="Julie Dion — Press Release" id="press-release-thumb" style="width:100%;max-height:480px;object-fit:cover;object-position:top;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,0.5);display:block;cursor:zoom-in;" onclick="document.getElementById('pr-lightbox').style.display='flex'">
         </div>
       </div>
     </div>
@@ -194,6 +194,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Press Release Lightbox -->
+  <div id="pr-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;padding:20px;" onclick="this.style.display='none'">
+    <img src="images/julie/julie-award.jpg" alt="Press Release" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 16px 60px rgba(0,0,0,0.6);display:block;">
+    <button onclick="document.getElementById('pr-lightbox').style.display='none'" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:28px;line-height:1;cursor:pointer;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;">&times;</button>
+  </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
