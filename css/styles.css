@@ -1598,7 +1598,7 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
   .home-hero {
     background:
       linear-gradient(180deg, rgba(5,27,45,0.75) 0%, rgba(5,27,45,0.6) 40%, rgba(5,27,45,0.0) 55%, rgba(5,27,45,0.0) 100%),
-      url("../images/julie-dion-cover-photo-m3.jpg") center bottom / cover no-repeat;
+      url("../images/julie-dion-cover-photo-m3.jpg") center center / cover no-repeat;
     min-height: 100vh;
     padding: 0 !important;
   }
