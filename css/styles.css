@@ -960,7 +960,6 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 48px;
 }
 
 /* Each statement */
@@ -1695,7 +1694,7 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
     justify-content: center;
   }
   .hero-statement { font-size: clamp(28px, 7.5vw, 42px); }
-  .hero-statements { min-height: 120px; margin-bottom: 36px; }
+  .hero-statements { min-height: 120px; }
   .home-hero .eyebrow { font-size: 17px; }
   .hero-scroll-hint { display: none; }
   .home-work-grid { grid-template-columns: 1fr !important; }
@@ -1978,4 +1977,330 @@ select   { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xm
   .testimonials-grid { grid-template-columns: 1fr; }
   .strengths-grid { grid-template-columns: repeat(2, 1fr); }
   .section-title-lg { margin-bottom: 28px; }
+}
+
+/* ============================================================
+   HERO BOTTOM BAR — scroll hint + contact info
+   ============================================================ */
+.hero-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 48px 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.hero-scroll-col {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #505050;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.hero-scroll-col::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: #505050;
+  margin-bottom: 8px;
+}
+
+.hero-contact-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  pointer-events: auto;
+}
+
+.hero-contact-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.hero-contact-label {
+  font-family: 'Rubik', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #505050;
+}
+
+.hero-contact-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-contact-item {
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #0b0b0b;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.18s;
+}
+.hero-contact-item:hover { color: #00959f; }
+
+.hero-contact-icon {
+  font-family: 'Material Symbols Rounded';
+  font-size: 16px;
+  line-height: 1;
+  color: #505050;
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.hero-location {
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #505050;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ============================================================
+   CASE STUDIES SECTION — pill header + landscape cards
+   ============================================================ */
+.cs-section {
+  background: #ffffff;
+  padding: 96px 0;
+}
+
+.cs-section-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.cs-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+/* Pill label above section title */
+.cs-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f4f9fa;
+  border: 1px solid rgba(0,149,159,0.18);
+  border-radius: 100px;
+  padding: 6px 14px 6px 10px;
+}
+
+.cs-pill-icon {
+  font-family: 'Material Symbols Rounded';
+  font-size: 16px;
+  line-height: 1;
+  color: #00959f;
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.cs-pill-text {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #00959f;
+}
+
+.cs-section-title {
+  font-family: 'Afacad', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  color: #0b0b0b;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Stack of cards */
+.cs-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Single landscape card */
+.cs-card {
+  background: #f4f9fa;
+  border-radius: 40px;
+  padding: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+  overflow: hidden;
+}
+.cs-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Text side */
+.cs-card-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-card-company {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00959f;
+  margin: 0;
+}
+
+.cs-card-title {
+  font-family: 'Afacad', sans-serif;
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 500;
+  color: #0b0b0b;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.cs-card-desc {
+  font-family: 'Rubik', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #505050;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cs-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-tag {
+  font-family: 'Rubik', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #505050;
+  background: rgba(0,0,0,0.06);
+  border-radius: 100px;
+  padding: 4px 12px;
+}
+
+.cs-card-metrics {
+  display: flex;
+  gap: 32px;
+}
+
+.cs-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs-metric-value {
+  font-family: 'Afacad', sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #0b0b0b;
+  line-height: 1;
+}
+
+.cs-metric-label {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #505050;
+}
+
+.cs-card-actions {
+  margin-top: 4px;
+}
+
+.cs-link-primary {
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #00959f;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.18s;
+}
+.cs-link-primary:hover { gap: 10px; }
+
+.cs-arrow-icon {
+  font-family: 'Material Symbols Rounded';
+  font-size: 18px;
+  line-height: 1;
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Image side */
+.cs-card-image {
+  flex: 1;
+  min-width: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #e4eef0;
+}
+.cs-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE — new components
+   ============================================================ */
+@media (max-width: 900px) {
+  .cs-section-inner { padding: 0 24px; }
+  .cs-card, .cs-card:nth-child(even) {
+    flex-direction: column;
+    border-radius: 28px;
+    padding: 32px;
+    gap: 28px;
+  }
+  .cs-card-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  .hero-bottom-bar { padding: 0 24px 24px; }
+}
+
+@media (max-width: 600px) {
+  .hero-bottom-bar { display: none; }
+  .cs-section { padding: 64px 0; }
+  .cs-section-header { margin-bottom: 36px; }
+  .cs-card-metrics { gap: 20px; }
+  .cs-metric-value { font-size: 22px; }
+  .strengths-grid { grid-template-columns: 1fr; }
 }
