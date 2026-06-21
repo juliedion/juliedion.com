@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft Motion & Digital — Julie Dion</title>
+  <link rel="icon" href="/Users/juliedion/Library/CloudStorage/Dropbox/Career/Personal Brand/julie-portfolio/images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cyan: #00C8E8; --blue: #0077B6;
+      --grad: linear-gradient(135deg, #0077B6 0%, #00C8E8 100%);
+      --dark: #111827; --mid: #374151; --muted: #6B7280;
+      --light: #F9FAFB; --white: #fff; --border: #E5E7EB;
+      --radius: 12px; --shadow: 0 4px 24px rgba(0,0,0,.08); --trans: .3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .topbar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; }
+    .topbar-back { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--muted); transition: color var(--trans); }
+    .topbar-back:hover { color: var(--blue); }
+    .topbar-logo img { height: 32px; }
+    .topbar-tags { display: flex; gap: 8px; }
+    .topbar-tag { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.08); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+    .cs-hero { background: var(--dark); padding: 80px 48px 64px; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
+    .cs-hero-inner { max-width: 900px; }
+    .cs-client { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 24px; }
+    .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 32px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
+    .cs-meta-item label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); display: block; margin-bottom: 4px; }
+    .cs-meta-item span { font-size: 14px; font-weight: 500; color: var(--white); }
+    .stats-bar { background: var(--grad); padding: 40px 48px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .1em; margin-top: 6px; }
+    .cs-section { padding: 72px 48px; }
+    .cs-section-alt { background: var(--white); }
+    .cs-section-dark { background: var(--dark); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 10px; }
+    .section-label-light { color: rgba(255,255,255,.4); background: none; -webkit-text-fill-color: rgba(255,255,255,.4); }
+    .cs-h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+    .cs-h2-light { color: var(--white); }
+    .cs-p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; max-width: 760px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .two-col-reverse { direction: rtl; }
+    .two-col-reverse > * { direction: ltr; }
+    @media(max-width:768px) { .two-col { grid-template-columns: 1fr; } .two-col-reverse { direction: ltr; } }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
+    .process-step { background: var(--white); border-radius: var(--radius); padding: 28px 24px; border: 1.5px solid var(--border); }
+    .process-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 12px; }
+    .process-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .process-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .role-tag { padding: 7px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; background: rgba(0,119,182,.07); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+    .deliverable-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-start; }
+    .deliverable-icon { width: 48px; height: 48px; border-radius: 10px; background: var(--grad); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .deliverable-icon i { color: white; font-size: 20px; }
+    .deliverable-info h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .deliverable-info p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .deliverable-tag { display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.07); color: var(--blue); border: 1px solid rgba(0,119,182,.15); margin-top: 8px; }
+    .team-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .team-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 40px; }
+    .result-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px 20px; text-align: center; }
+    .result-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .result-label { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 8px; line-height: 1.5; }
+    .next-project { background: var(--dark); padding: 64px 48px; text-align: center; }
+    .next-project p { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+    .next-project h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin-bottom: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: all var(--trans); cursor: pointer; }
+    .btn-primary { background: var(--grad); color: var(--white); box-shadow: 0 4px 20px rgba(0,119,182,.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,119,182,.5); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.25); margin-left: 12px; }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+    @media(max-width:768px) { .topbar { padding: 14px 20px; } .cs-hero { padding: 60px 20px 48px; } .cs-section { padding: 56px 20px; } .stats-bar { padding: 36px 20px; } .next-project { padding: 56px 20px; } }
+
+    /* ── Process Journey Illustrations ── */
+    .pj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; }
+    @media(max-width:700px) { .pj-grid { grid-template-columns: 1fr; } }
+    .pj-card { border-radius: 14px; overflow: hidden; position: relative; min-height: 270px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,.2); }
+    .pj-lbl { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 22px; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 100%); }
+    .pj-stg { display: block; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 3px; }
+    .pj-nm { font-size: 14px; font-weight: 700; color: white; }
+    /* Brainstorm */
+    .bs-ill { background: #0d1b2a; }
+    .bs-wrap { position: relative; width: 200px; height: 148px; }
+    .bs-tbl { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 140px; height: 70px; background: #1a2744; border-radius: 35px; border: 2px solid #243a6a; }
+    .bs-lp { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 42px; height: 28px; background: #243a6a; border-radius: 3px 3px 0 0; border: 1.5px solid #3a5090; }
+    .bs-lp::after { content: ''; position: absolute; bottom: -4px; left: -5px; right: -5px; height: 4px; background: #1a2744; border-radius: 0 0 3px 3px; }
+    .bs-p { position: absolute; display: flex; flex-direction: column; align-items: center; }
+    .bs-p .h { width: 18px; height: 18px; border-radius: 50%; }
+    .bs-p .b { width: 28px; height: 11px; border-radius: 6px 6px 0 0; margin-top: 2px; opacity: .85; }
+    .bs-p.tp { top: -8px; left: 50%; transform: translateX(-50%); }
+    .bs-p.bl { bottom: -8px; left: 10px; }
+    .bs-p.br { bottom: -8px; right: 10px; }
+    .bs-p.lt { top: 50%; left: -6px; transform: translateY(-50%) rotate(-90deg); }
+    .bs-p.rt { top: 50%; right: -6px; transform: translateY(-50%) rotate(90deg); }
+    .bs-sk { position: absolute; width: 22px; height: 22px; border-radius: 2px; }
+    /* Whiteboard */
+    .wb-ill { background: #eef0f2; }
+    .wb-bd { background: white; border-radius: 8px; border: 3px solid #c5cad0; box-shadow: 3px 3px 0 #c5cad0; padding: 14px; width: 240px; }
+    .wb-tr { height: 6px; background: #c5cad0; border-radius: 3px; margin-bottom: 12px; }
+    .wb-rw { display: flex; align-items: center; gap: 5px; margin-bottom: 6px; }
+    .wb-nd { border: 2px solid; border-radius: 5px; padding: 4px 8px; font-size: 9px; font-weight: 700; white-space: nowrap; }
+    .wb-bl { border-color: #0077B6; color: #0077B6; background: white; }
+    .wb-fl { border-color: #0077B6; background: #0077B6; color: white; }
+    .wb-ar { font-size: 11px; color: #adb5bd; }
+    .wb-ps { display: flex; gap: 5px; margin-top: 10px; }
+    .wb-pt { width: 42px; height: 42px; border-radius: 2px; font-size: 7px; font-weight: 600; padding: 4px; line-height: 1.4; color: rgba(0,0,0,.7); }
+    /* Device Showcase */
+    .dv-ill { background: #0d1117; flex-direction: row; padding: 22px; gap: 16px; }
+    .dv-mon { flex-shrink: 0; }
+    .dv-sc { width: 190px; height: 118px; background: #161b22; border-radius: 5px 5px 0 0; border: 5px solid #30363d; overflow: hidden; }
+    .dv-sc img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .dv-nk { width: 28px; height: 10px; background: #30363d; margin: 0 auto; }
+    .dv-st { width: 64px; height: 6px; background: #30363d; border-radius: 3px; margin: 0 auto; }
+    .dv-ph { flex-shrink: 0; margin-top: 18px; }
+    .dv-ps { width: 56px; height: 104px; background: #161b22; border-radius: 11px; border: 4px solid #30363d; overflow: hidden; position: relative; }
+    .dv-ps::before { content: ''; position: absolute; top: 5px; left: 50%; transform: translateX(-50%); width: 14px; height: 3px; background: #30363d; border-radius: 2px; z-index: 2; }
+    .dv-ps img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    /* Wireframe */
+    .wf-ill { background: #0d1117; padding: 22px; }
+    .wf-win { width: 100%; max-width: 240px; background: #161b22; border-radius: 8px; border: 1.5px solid #30363d; overflow: hidden; }
+    .wf-tb { background: #21262d; padding: 7px 10px; display: flex; align-items: center; gap: 4px; }
+    .wf-d { width: 7px; height: 7px; border-radius: 50%; }
+    .wf-u { flex: 1; background: #30363d; border-radius: 3px; height: 12px; margin: 0 5px; }
+    .wf-hr { padding: 12px; background: #0d1117; }
+    .wf-ln { height: 7px; border-radius: 4px; margin-bottom: 5px; }
+    .wf-la { background: linear-gradient(90deg, #0077B6, #00C8E8); width: 72%; }
+    .wf-lb { background: #21262d; width: 58%; }
+    .wf-lc { background: #21262d; width: 42%; }
+    .wf-bt { width: 64px; height: 18px; background: linear-gradient(135deg, #0077B6, #00C8E8); border-radius: 4px; margin-top: 8px; }
+    .wf-gr { padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .wf-tl { background: #21262d; border-radius: 4px; overflow: hidden; }
+    .wf-ti { height: 34px; background: linear-gradient(135deg, #0d1117, #21262d); }
+    .wf-bd2 { padding: 5px; }
+    .wf-tln { height: 4px; background: #30363d; border-radius: 2px; margin-bottom: 3px; }
+    .wf-tls { width: 55%; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html#portfolio" class="topbar-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <div class="topbar-logo"><img src="images/logos/julie-dion-logo-07.png" alt="Julie Dion" /></div>
+  <div class="topbar-tags">
+    <span class="topbar-tag">Motion Design</span>
+    <span class="topbar-tag">Video Production</span>
+    <span class="topbar-tag">Technology</span>
+  </div>
+</div>
+
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <div class="cs-client"><i class="fab fa-microsoft"></i> Microsoft — Dynamics 365</div>
+    <h1 class="cs-title">Motion, Video &amp; <span>Digital Campaign Design</span></h1>
+    <p class="cs-subtitle">Motion design and digital advertising for Microsoft Dynamics 365 — including tablet carousel animations, Facebook video ads, LinkedIn animated campaigns, and illustrated motion graphics targeted at enterprise buyers across key sales initiatives.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item"><label>My Role</label><span>Motion Designer / Digital Creative</span></div>
+      <div class="cs-meta-item"><label>Client</label><span>Microsoft (Dynamics 365)</span></div>
+      <div class="cs-meta-item"><label>Deliverables</label><span>Video · Motion · Animated Ads</span></div>
+      <div class="cs-meta-item"><label>Platforms</label><span>Facebook · LinkedIn · Web · Tablet</span></div>
+      <div class="cs-meta-item"><label>Industry</label><span>Technology</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Motion Deliverables</div></div>
+  <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Platforms: FB · LI · Web</div></div>
+  <div class="stat-item"><div class="stat-num">D365</div><div class="stat-label">Dynamics 365 Enterprise Suite</div></div>
+  <div class="stat-item"><div class="stat-num">B2B</div><div class="stat-label">Enterprise Audience Targeting</div></div>
+</div>
+
+<section class="cs-section cs-section-alt">
+  <div class="two-col">
+    <div>
+      <span class="section-label">The Work</span>
+      <h2 class="cs-h2">Motion &amp; Video for<br /><em>Enterprise Software</em></h2>
+      <p class="cs-p">Microsoft's Dynamics 365 Sell campaign required motion-first creative to reach enterprise decision-makers across social and digital channels. I designed and produced a suite of motion deliverables — each tailored to its platform while maintaining consistent messaging around the D365 three-way value proposition: sell, service, and market.</p>
+      <p class="cs-p">The work required balancing Microsoft's strict brand system with creative motion that would stop the scroll on Facebook and LinkedIn — a challenge that demanded both technical precision and creative boldness within tight corporate guidelines.</p>
+      <div class="role-tags">
+        <span class="role-tag"><i class="fas fa-film"></i> Motion Design</span>
+        <span class="role-tag"><i class="fas fa-video"></i> Video Production</span>
+        <span class="role-tag"><i class="fas fa-mobile-alt"></i> Social Ad Design</span>
+        <span class="role-tag"><i class="fas fa-tablet-alt"></i> Tablet UX Animation</span>
+        <span class="role-tag"><i class="fab fa-linkedin"></i> LinkedIn Creative</span>
+      </div>
+    </div>
+    <div class="pj-card bs-ill" style="min-height:300px; border-radius:var(--radius);">
+  <div class="bs-wrap">
+    <div class="bs-tbl"><div class="bs-lp"></div></div>
+    <div class="bs-p tp"><div class="h" style="background:#0077B6"></div><div class="b" style="background:#0077B6"></div></div>
+    <div class="bs-p bl"><div class="h" style="background:#00C8E8"></div><div class="b" style="background:#00C8E8"></div></div>
+    <div class="bs-p br"><div class="h" style="background:#EF476F"></div><div class="b" style="background:#EF476F"></div></div>
+    <div class="bs-p lt"><div class="h" style="background:#FFD166"></div><div class="b" style="background:#FFD166"></div></div>
+    <div class="bs-p rt"><div class="h" style="background:#06D6A0"></div><div class="b" style="background:#06D6A0"></div></div>
+    <div class="bs-sk" style="background:#FFD166;top:16px;right:24px;transform:rotate(8deg)"></div>
+    <div class="bs-sk" style="background:#EF476F;top:36px;right:8px;transform:rotate(-5deg)"></div>
+    <div class="bs-sk" style="background:#06D6A0;bottom:16px;left:16px;transform:rotate(12deg)"></div>
+    <div class="bs-sk" style="background:#0077B6;bottom:28px;right:36px;transform:rotate(-8deg)"></div>
+  </div>
+  <div class="pj-lbl"><span class="pj-stg">Process</span><div class="pj-nm">Team Collaboration &amp; Brainstorm</div></div>
+</div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <span class="section-label">Campaign Deliverables</span>
+  <h2 class="cs-h2">Four Motion Assets, <em>One Campaign Voice</em></h2>
+  <p class="cs-p">The Microsoft D365 Sell campaign was delivered as a coordinated set of motion assets — each optimized for its platform's viewing context, format requirements, and audience behavior.</p>
+
+  <div class="deliverable-card">
+    <div class="deliverable-icon"><i class="fas fa-tablet-alt"></i></div>
+    <div class="deliverable-info">
+      <h4>Tablet Carousel — D365 Sell Service</h4>
+      <p>Animated tablet carousel showcasing the Dynamics 365 Sell &amp; Service capabilities — designed for use in sales presentations and digital displays. Smooth transitions between product feature screens with key benefit callouts.</p>
+      <span class="deliverable-tag">MP4 · Tablet Format</span>
+    </div>
+  </div>
+
+  <div class="deliverable-card">
+    <div class="deliverable-icon"><i class="fab fa-facebook"></i></div>
+    <div class="deliverable-info">
+      <h4>Facebook Video Ad — 3-Way Sale &amp; Marketing ROI</h4>
+      <p>1200×1200 Facebook video ad targeting enterprise buyers with a "3-Way Sale &amp; Marketing Reduced Cost" message. Dynamic text animation with illustrated data visualization, optimized for in-feed autoplay with sound-off viewing.</p>
+      <span class="deliverable-tag">MP4 · 1200×1200 · Facebook</span>
+    </div>
+  </div>
+
+  <div class="deliverable-card">
+    <div class="deliverable-icon"><i class="fab fa-linkedin"></i></div>
+    <div class="deliverable-info">
+      <h4>LinkedIn Animated Campaign — Case Study Series</h4>
+      <p>LinkedIn-native animated ad in the 1st Party eBook Standard format — a case study-driven creative unit illustrating Dynamics 365 ROI through motion. Designed for the professional decision-maker audience with longer read time than Facebook.</p>
+      <span class="deliverable-tag">MP4 · 1200×1200 · LinkedIn</span>
+    </div>
+  </div>
+
+  <div class="deliverable-card">
+    <div class="deliverable-icon"><i class="fas fa-magic"></i></div>
+    <div class="deliverable-info">
+      <h4>Illustration GIF — Statistic Animation</h4>
+      <p>Looping illustrated GIF for web and email deployment — custom illustration with animated statistics highlight. Designed in Microsoft's illustration style with motion added for digital channels.</p>
+      <span class="deliverable-tag">Animated GIF · Web &amp; Email</span>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section cs-section-alt">
+  <span class="section-label">Process</span>
+  <h2 class="cs-h2">Motion Design Process</h2>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-title">Brand System Mastery</div>
+      <div class="process-desc">Immersed in Microsoft's strict brand motion guidelines — Fluent Design System principles, approved illustration styles, type hierarchies, and platform-specific creative specs for Facebook, LinkedIn, and web.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-title">Storyboarding</div>
+      <div class="process-desc">Built detailed motion storyboards for each deliverable — mapping out timing, transitions, on-screen text appearance, and the narrative arc that each format would carry within its 15–30 second window.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-title">Motion Production</div>
+      <div class="process-desc">Produced final motion in After Effects and Premiere — sound-off optimized for social autoplay, with caption-level copy integrated into the motion rather than relying on audio to convey the message.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-title">Format Optimization</div>
+      <div class="process-desc">Delivered each asset in the precise technical specifications required by Microsoft's trafficking team — resolution, codec, bitrate, aspect ratio, and safe zone compliance for each platform.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section cs-section-dark">
+  <div style="max-width:900px; margin:0 auto;">
+    <span class="section-label section-label-light">Results</span>
+    <h2 class="cs-h2 cs-h2-light">Enterprise-Grade Motion<br /><em style="color:var(--cyan);">at Microsoft Scale</em></h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">4</div><div class="result-label">Motion deliverables across tablet, Facebook, LinkedIn, and web</div></div>
+      <div class="result-card"><div class="result-num">3</div><div class="result-label">Social platforms targeted: Facebook, LinkedIn, in-app web</div></div>
+      <div class="result-card"><div class="result-num">D365</div><div class="result-label">Dynamics 365 enterprise campaign — global audience reach</div></div>
+      <div class="result-card"><div class="result-num">B2B</div><div class="result-label">Enterprise decision-maker targeting with sound-off optimized creative</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="next-project">
+  <p>Next Case Study</p>
+  <h3>Lexington Public Schools — Logo &amp; Brand Identity Design</h3>
+  <a href="cs-lexington-logo.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View Case Study</a>
+  <a href="index.html#portfolio" class="btn btn-outline">Back to Portfolio</a>
+</div>
+
+</body>
+</html>

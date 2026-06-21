@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merck Millipore Campaigns — Julie Dion</title>
+  <link rel="icon" href="/Users/juliedion/Library/CloudStorage/Dropbox/Career/Personal Brand/julie-portfolio/images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cyan: #00C8E8; --blue: #0077B6;
+      --grad: linear-gradient(135deg, #0077B6 0%, #00C8E8 100%);
+      --dark: #111827; --mid: #374151; --muted: #6B7280;
+      --light: #F9FAFB; --white: #fff; --border: #E5E7EB;
+      --radius: 12px; --shadow: 0 4px 24px rgba(0,0,0,.08); --trans: .3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .topbar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; }
+    .topbar-back { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--muted); transition: color var(--trans); }
+    .topbar-back:hover { color: var(--blue); }
+    .topbar-logo img { height: 32px; }
+    .topbar-tags { display: flex; gap: 8px; }
+    .topbar-tag { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.08); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+    .cs-hero { background: var(--dark); padding: 80px 48px 64px; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
+    .cs-hero-inner { max-width: 900px; }
+    .cs-client { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 24px; }
+    .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 32px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
+    .cs-meta-item label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); display: block; margin-bottom: 4px; }
+    .cs-meta-item span { font-size: 14px; font-weight: 500; color: var(--white); }
+    .stats-bar { background: var(--grad); padding: 40px 48px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .1em; margin-top: 6px; }
+    .cs-section { padding: 72px 48px; }
+    .cs-section-alt { background: var(--white); }
+    .cs-section-dark { background: var(--dark); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 10px; }
+    .section-label-light { color: rgba(255,255,255,.4); background: none; -webkit-text-fill-color: rgba(255,255,255,.4); }
+    .cs-h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+    .cs-h2-light { color: var(--white); }
+    .cs-p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; max-width: 760px; }
+    .cs-p-light { color: rgba(255,255,255,.6); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .two-col-reverse { direction: rtl; }
+    .two-col-reverse > * { direction: ltr; }
+    @media(max-width:768px) { .two-col { grid-template-columns: 1fr; } .two-col-reverse { direction: ltr; } }
+    .img-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.18); }
+    .img-frame img { width: 100%; display: block; }
+    .figma-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.22); background: #1e1e1e; }
+    .figma-titlebar { background: #2c2c2c; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
+    .figma-dots { display: flex; gap: 6px; }
+    .figma-dots span { width: 12px; height: 12px; border-radius: 50%; }
+    .figma-dots .d1 { background: #FF5F57; } .figma-dots .d2 { background: #FEBC2E; } .figma-dots .d3 { background: #28C840; }
+    .figma-title { font-size: 12px; color: rgba(255,255,255,.5); margin-left: 8px; }
+    .figma-body { background: #fff; }
+    .figma-body img { width: 100%; display: block; }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
+    .process-step { background: var(--white); border-radius: var(--radius); padding: 28px 24px; border: 1.5px solid var(--border); }
+    .process-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 12px; }
+    .process-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .process-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .role-tag { padding: 7px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; background: rgba(0,119,182,.07); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+    .img-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+    @media(max-width:600px) { .img-grid-2 { grid-template-columns: 1fr; } }
+    .team-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .team-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+    .cs-quote { border-left: 3px solid var(--cyan); padding: 20px 28px; background: rgba(0,200,232,.05); border-radius: 0 var(--radius) var(--radius) 0; margin: 32px 0; }
+    .cs-quote p { font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic; color: var(--mid); line-height: 1.7; }
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 40px; }
+    .result-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px 20px; text-align: center; }
+    .result-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .result-label { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 8px; line-height: 1.5; }
+    .award-badge { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,215,0,.08); border: 1px solid rgba(255,215,0,.2); border-radius: 50px; padding: 10px 20px; margin-top: 20px; }
+    .award-badge i { color: gold; font-size: 18px; }
+    .award-badge span { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); }
+    .next-project { background: var(--dark); padding: 64px 48px; text-align: center; }
+    .next-project p { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+    .next-project h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin-bottom: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: all var(--trans); cursor: pointer; }
+    .btn-primary { background: var(--grad); color: var(--white); box-shadow: 0 4px 20px rgba(0,119,182,.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,119,182,.5); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.25); margin-left: 12px; }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+    @media(max-width:768px) { .topbar { padding: 14px 20px; } .cs-hero { padding: 60px 20px 48px; } .cs-section { padding: 56px 20px; } .stats-bar { padding: 36px 20px; } .next-project { padding: 56px 20px; } }
+
+    /* ── Process Journey Illustrations ── */
+    .pj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; }
+    @media(max-width:700px) { .pj-grid { grid-template-columns: 1fr; } }
+    .pj-card { border-radius: 14px; overflow: hidden; position: relative; min-height: 270px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,.2); }
+    .pj-lbl { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 22px; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 100%); }
+    .pj-stg { display: block; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 3px; }
+    .pj-nm { font-size: 14px; font-weight: 700; color: white; }
+    /* Brainstorm */
+    .bs-ill { background: #0d1b2a; }
+    .bs-wrap { position: relative; width: 200px; height: 148px; }
+    .bs-tbl { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 140px; height: 70px; background: #1a2744; border-radius: 35px; border: 2px solid #243a6a; }
+    .bs-lp { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 42px; height: 28px; background: #243a6a; border-radius: 3px 3px 0 0; border: 1.5px solid #3a5090; }
+    .bs-lp::after { content: ''; position: absolute; bottom: -4px; left: -5px; right: -5px; height: 4px; background: #1a2744; border-radius: 0 0 3px 3px; }
+    .bs-p { position: absolute; display: flex; flex-direction: column; align-items: center; }
+    .bs-p .h { width: 18px; height: 18px; border-radius: 50%; }
+    .bs-p .b { width: 28px; height: 11px; border-radius: 6px 6px 0 0; margin-top: 2px; opacity: .85; }
+    .bs-p.tp { top: -8px; left: 50%; transform: translateX(-50%); }
+    .bs-p.bl { bottom: -8px; left: 10px; }
+    .bs-p.br { bottom: -8px; right: 10px; }
+    .bs-p.lt { top: 50%; left: -6px; transform: translateY(-50%) rotate(-90deg); }
+    .bs-p.rt { top: 50%; right: -6px; transform: translateY(-50%) rotate(90deg); }
+    .bs-sk { position: absolute; width: 22px; height: 22px; border-radius: 2px; }
+    /* Whiteboard */
+    .wb-ill { background: #eef0f2; }
+    .wb-bd { background: white; border-radius: 8px; border: 3px solid #c5cad0; box-shadow: 3px 3px 0 #c5cad0; padding: 14px; width: 240px; }
+    .wb-tr { height: 6px; background: #c5cad0; border-radius: 3px; margin-bottom: 12px; }
+    .wb-rw { display: flex; align-items: center; gap: 5px; margin-bottom: 6px; }
+    .wb-nd { border: 2px solid; border-radius: 5px; padding: 4px 8px; font-size: 9px; font-weight: 700; white-space: nowrap; }
+    .wb-bl { border-color: #0077B6; color: #0077B6; background: white; }
+    .wb-fl { border-color: #0077B6; background: #0077B6; color: white; }
+    .wb-ar { font-size: 11px; color: #adb5bd; }
+    .wb-ps { display: flex; gap: 5px; margin-top: 10px; }
+    .wb-pt { width: 42px; height: 42px; border-radius: 2px; font-size: 7px; font-weight: 600; padding: 4px; line-height: 1.4; color: rgba(0,0,0,.7); }
+    /* Device Showcase */
+    .dv-ill { background: #0d1117; flex-direction: row; padding: 22px; gap: 16px; }
+    .dv-mon { flex-shrink: 0; }
+    .dv-sc { width: 190px; height: 118px; background: #161b22; border-radius: 5px 5px 0 0; border: 5px solid #30363d; overflow: hidden; }
+    .dv-sc img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .dv-nk { width: 28px; height: 10px; background: #30363d; margin: 0 auto; }
+    .dv-st { width: 64px; height: 6px; background: #30363d; border-radius: 3px; margin: 0 auto; }
+    .dv-ph { flex-shrink: 0; margin-top: 18px; }
+    .dv-ps { width: 56px; height: 104px; background: #161b22; border-radius: 11px; border: 4px solid #30363d; overflow: hidden; position: relative; }
+    .dv-ps::before { content: ''; position: absolute; top: 5px; left: 50%; transform: translateX(-50%); width: 14px; height: 3px; background: #30363d; border-radius: 2px; z-index: 2; }
+    .dv-ps img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    /* Wireframe */
+    .wf-ill { background: #0d1117; padding: 22px; }
+    .wf-win { width: 100%; max-width: 240px; background: #161b22; border-radius: 8px; border: 1.5px solid #30363d; overflow: hidden; }
+    .wf-tb { background: #21262d; padding: 7px 10px; display: flex; align-items: center; gap: 4px; }
+    .wf-d { width: 7px; height: 7px; border-radius: 50%; }
+    .wf-u { flex: 1; background: #30363d; border-radius: 3px; height: 12px; margin: 0 5px; }
+    .wf-hr { padding: 12px; background: #0d1117; }
+    .wf-ln { height: 7px; border-radius: 4px; margin-bottom: 5px; }
+    .wf-la { background: linear-gradient(90deg, #0077B6, #00C8E8); width: 72%; }
+    .wf-lb { background: #21262d; width: 58%; }
+    .wf-lc { background: #21262d; width: 42%; }
+    .wf-bt { width: 64px; height: 18px; background: linear-gradient(135deg, #0077B6, #00C8E8); border-radius: 4px; margin-top: 8px; }
+    .wf-gr { padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .wf-tl { background: #21262d; border-radius: 4px; overflow: hidden; }
+    .wf-ti { height: 34px; background: linear-gradient(135deg, #0d1117, #21262d); }
+    .wf-bd2 { padding: 5px; }
+    .wf-tln { height: 4px; background: #30363d; border-radius: 2px; margin-bottom: 3px; }
+    .wf-tls { width: 55%; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html#portfolio" class="topbar-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <div class="topbar-logo"><img src="images/logos/julie-dion-logo-07.png" alt="Julie Dion" /></div>
+  <div class="topbar-tags">
+    <span class="topbar-tag">Print Design</span>
+    <span class="topbar-tag">Campaign Creative</span>
+    <span class="topbar-tag">Healthcare</span>
+  </div>
+</div>
+
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <div class="cs-client"><i class="fas fa-flask"></i> Merck KGaA — Millipore Sigma</div>
+    <h1 class="cs-title">Five Years of <span>Award-Winning Science Campaigns</span></h1>
+    <p class="cs-subtitle">Campaign art direction, print advertising, tradeshow creative, and experiential marketing for Merck Millipore — spanning Science, Nature, and Boston Business Journal placements, a branded mobile lab tour, and 5 consecutive GD USA awards.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item"><label>My Role</label><span>Art Director / Senior Designer</span></div>
+      <div class="cs-meta-item"><label>Client</label><span>Merck KGaA / MilliporeSigma</span></div>
+      <div class="cs-meta-item"><label>Timeline</label><span>2010 – 2015</span></div>
+      <div class="cs-meta-item"><label>Deliverables</label><span>Print · OOH · Experiential · Tradeshow</span></div>
+      <div class="cs-meta-item"><label>Industry</label><span>Healthcare · Technology</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Consecutive GD USA Awards</div></div>
+  <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">National Publications</div></div>
+  <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Life:Expressed Mobile Lab Tour</div></div>
+  <div class="stat-item"><div class="stat-num">OOH</div><div class="stat-label">ASCB Denver Billboard Campaign</div></div>
+</div>
+
+<section class="cs-section cs-section-alt">
+  <div class="two-col">
+    <div>
+      <span class="section-label">The Work</span>
+      <h2 class="cs-h2">Campaign Art Direction<br /><em>at a Global Scale</em></h2>
+      <p class="cs-p">Merck Millipore required a partner who could translate complex life science products into compelling, award-worthy visual campaigns. I led art direction for their most high-profile initiatives — full-page ads in Science, Nature, and Boston Business Journal, and the Muse Cell Analyzer launch campaign.</p>
+      <p class="cs-p">The work spanned 5 years of consistent creative leadership, producing campaigns recognized annually by GD USA. The Muse Cell Analyzer "Have you seen it? Heard it? Touched it?" owl campaign drove exceptional product launch awareness at ASCB 2011 in Denver, including a dramatic building-facade billboard installation.</p>
+      <div class="role-tags">
+        <span class="role-tag"><i class="fas fa-paint-brush"></i> Campaign Art Direction</span>
+        <span class="role-tag"><i class="fas fa-newspaper"></i> Print Advertising</span>
+        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> OOH / Billboard</span>
+        <span class="role-tag"><i class="fas fa-bus"></i> Experiential Design</span>
+        <span class="role-tag"><i class="fas fa-layer-group"></i> Tradeshow Creative</span>
+      </div>
+    </div>
+    <div class="img-frame">
+      <img src="images/Merck Millipore/MM-Feature.jpg" alt="Merck Millipore Portfolio Overview" />
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <span class="section-label">Campaign Spotlight</span>
+  <h2 class="cs-h2">Muse Cell Analyzer — <em>"Have You Seen It?"</em></h2>
+  <p class="cs-p">The Muse Cell Analyzer launch campaign used a mysterious owl motif across a multi-channel rollout — full-page magazine ads, ASCB conference materials, and an ambitious building-facade billboard in downtown Denver during the 2011 conference. The curiosity-driven approach generated significant pre-launch buzz and won a GD USA 2012 award.</p>
+  <div class="img-grid-2">
+    <div class="img-frame">
+      <img src="images/Merck Millipore/MM-layout-1.jpg" alt="Muse Campaign — Have You Seen It?" />
+    </div>
+    <div class="img-frame">
+      <img src="images/Merck Millipore/MM-layout-2.jpg" alt="GD USA 2011 Winners — Green Campaign" />
+    </div>
+  </div>
+</section>
+
+<section class="cs-section cs-section-alt">
+  <div class="two-col two-col-reverse">
+    <div>
+      <span class="section-label">Campaign Creative</span>
+      <h2 class="cs-h2">Mobius by Millipore —<br /><em>"Curiosity Killed Our Competition"</em></h2>
+      <p class="cs-p">The Mobius product line campaign featured striking gymnast silhouettes in high-contrast black and white, paired with the bold tagline "CURIOSITY killed our competition." Designed for Science and Nature full-page placements, the campaign positioned Mobius as the bold disruptor in single-use bioprocessing.</p>
+      <p class="cs-p">The gymnast motif conveyed flexibility, precision, and performance — all core attributes of the Mobius product family — while standing out dramatically against the dense editorial environment of scientific journals.</p>
+    </div>
+    <div class="img-frame">
+      <img src="images/Merck Millipore/JulieDionPortfolio_202112.jpg" alt="Mobius Campaign — Curiosity Killed Our Competition" />
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <span class="section-label">Process</span>
+  <h2 class="cs-h2">Five Years of Creative Leadership</h2>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-title">Product Launch Campaigns</div>
+      <div class="process-desc">Led full creative development from concept through production for Muse Cell Analyzer, Mobius, and CORE product families — including audience strategy, visual concepting, and copywriting direction.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-title">Tradeshow & OOH</div>
+      <div class="process-desc">Designed tradeshow booth graphics, event materials, and the ASCB 2011 Denver billboard campaign — a building-facade takeover that became a conference landmark and GD USA winner.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-title">Life:Expressed Mobile Tour</div>
+      <div class="process-desc">Developed branding for the Life:Expressed mobile laboratory bus — a traveling experiential marketing vehicle showcasing Merck's bioprocessing capabilities to research institutions nationwide.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-title">Sales Meeting Branding</div>
+      <div class="process-desc">Produced "Engage the Future" and "The Time is NOW" internal sales event branding — motivational creative systems for Merck's global commercial teams, complete with environmental graphics and collateral.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section cs-section-alt">
+  <div class="two-col">
+    <div class="pj-card bs-ill" style="min-height:300px; border-radius:var(--radius);">
+  <div class="bs-wrap">
+    <div class="bs-tbl"><div class="bs-lp"></div></div>
+    <div class="bs-p tp"><div class="h" style="background:#0077B6"></div><div class="b" style="background:#0077B6"></div></div>
+    <div class="bs-p bl"><div class="h" style="background:#00C8E8"></div><div class="b" style="background:#00C8E8"></div></div>
+    <div class="bs-p br"><div class="h" style="background:#EF476F"></div><div class="b" style="background:#EF476F"></div></div>
+    <div class="bs-p lt"><div class="h" style="background:#FFD166"></div><div class="b" style="background:#FFD166"></div></div>
+    <div class="bs-p rt"><div class="h" style="background:#06D6A0"></div><div class="b" style="background:#06D6A0"></div></div>
+    <div class="bs-sk" style="background:#FFD166;top:16px;right:24px;transform:rotate(8deg)"></div>
+    <div class="bs-sk" style="background:#EF476F;top:36px;right:8px;transform:rotate(-5deg)"></div>
+    <div class="bs-sk" style="background:#06D6A0;bottom:16px;left:16px;transform:rotate(12deg)"></div>
+    <div class="bs-sk" style="background:#0077B6;bottom:28px;right:36px;transform:rotate(-8deg)"></div>
+  </div>
+  <div class="pj-lbl"><span class="pj-stg">Process</span><div class="pj-nm">Team Collaboration &amp; Brainstorm</div></div>
+</div>
+    <div>
+      <span class="section-label">Recognition</span>
+      <h2 class="cs-h2">Five Consecutive <em>GD USA Awards</em></h2>
+      <p class="cs-p">Winning GD USA recognition five years in a row is a testament to the sustained creative quality delivered across every Merck Millipore campaign. Each award represented a different product family or campaign — from the Muse owl campaign to the Mobius gymnast ads to the ASCB billboard installation.</p>
+      <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2012 — Muse Cell Analyzer Campaign</span></div><br/>
+      <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2011 — ASCB Denver Billboard</span></div><br/>
+      <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2010–2014 — 5 Consecutive Wins</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section cs-section-dark">
+  <div style="max-width:900px; margin:0 auto;">
+    <span class="section-label section-label-light">Results</span>
+    <h2 class="cs-h2 cs-h2-light">A Legacy of Creative <em style="color:var(--cyan);">Excellence</em></h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">5</div><div class="result-label">Consecutive GD USA awards across 5 years of campaigns</div></div>
+      <div class="result-card"><div class="result-num">3+</div><div class="result-label">National publications: Science, Nature, Boston Business Journal</div></div>
+      <div class="result-card"><div class="result-num">OOH</div><div class="result-label">Building-facade ASCB Denver billboard — conference standout</div></div>
+      <div class="result-card"><div class="result-num">Bus</div><div class="result-label">Life:Expressed branded mobile lab — national experiential tour</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Work Samples Gallery -->
+<section class="cs-section cs-section-alt">
+  <span class="section-label">Work Samples</span>
+  <h2 class="cs-h2">Campaign & Print Portfolio</h2>
+  <div class="gs-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:32px;">
+      <div class="gs-item"><img src="images/Merck Millipore/MUSE_Billboard_Page_1.jpg" alt="MUSE billboard 1" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/MUSE_Billboard_Page_2.jpg" alt="MUSE billboard 2" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/MUSE_Billboard_Page_3.jpg" alt="MUSE billboard 3" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/MUSE_Billboard_Page_4.jpg" alt="MUSE billboard 4" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/BiotechNowAd.jpg" alt="BiotechNow ad" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/Mobius_michaelangelo_p1.jpg" alt="Mobius Michelangelo campaign" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/GSM.jpg" alt="GSM campaign" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/LSSM.jpg" alt="LSSM campaign" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/BPGSM_STDC P10.jpg" alt="BPGSM trade show" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/BS-GEN-09-01457 Pittcon 2009 Mailer_FNL_Page_1.jpg" alt="Pittcon 2009 mailer" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/JulieDionPortfolio_20218.jpg" alt="Portfolio piece 8" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/JulieDionPortfolio_20219.jpg" alt="Portfolio piece 9" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/Glivec_Patient Starter Brochure_Final_081816.jpg" alt="Glivec patient brochure" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/core.png" alt="Core campaign" loading="lazy" /></div>
+      <div class="gs-item"><img src="images/Merck Millipore/ehsaward.png" alt="EHS award" loading="lazy" /></div>
+  </div>
+</section>
+<style>
+  .gs-item { border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6; }
+  .gs-item img { width:100%;height:220px;object-fit:cover;display:block; }
+</style>
+
+<div class="next-project">
+  <p>Next Case Study</p>
+  <h3>Schalmont PTO — Community Web Platform &amp; Event Design</h3>
+  <a href="cs-pto-schalmont.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View Case Study</a>
+  <a href="index.html#portfolio" class="btn btn-outline">Back to Portfolio</a>
+</div>
+
+</body>
+</html>
