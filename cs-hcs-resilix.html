@@ -38,12 +38,7 @@
     .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
     .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
-    .cs-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
-    .cs-meta-item:nth-child(1) { grid-column:1; grid-row:1; }
-    .cs-meta-item:nth-child(2) { grid-column:1; grid-row:2; }
-    .cs-meta-item:nth-child(3) { grid-column:1; grid-row:3; }
-    .cs-meta-item:nth-child(4) { grid-column:2; grid-row:1; }
-    .cs-meta-item:nth-child(5) { grid-column:2; grid-row:2; }
+    .cs-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 40px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
     .cs-meta-item label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); display: block; margin-bottom: 4px; }
     .cs-meta-item span { font-size: 14px; font-weight: 500; color: var(--white); }
     .stats-bar { background: var(--grad); padding: 40px 48px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
