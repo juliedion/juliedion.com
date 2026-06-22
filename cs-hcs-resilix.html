@@ -229,6 +229,180 @@
 </div>
 </div>
 
+<!-- Work Collection -->
+<section class="cs-section cs-section-alt">
+  <span class="section-label">Work Collection</span>
+  <h2 class="cs-h2">HCS Platform &amp; Campaign Deliverables</h2>
+  <p class="cs-p" style="margin-bottom:40px;">Six major deliverable categories spanning UX design, brand identity, patient engagement, and pharma sales — all produced as Creative Director on the Resilix engagement.</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
+
+    <div class="lb-card" onclick="openHcsLb('platform')">
+      <div class="lb-card-img"><img src="images/Human Care Systems/JulieDionPortfolio_20212.jpg" alt="Resilix Platform" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">UX/UI Design</div>
+        <h3 class="lb-card-title">Resilix Platform</h3>
+        <p class="lb-card-desc">Nurse-facing dashboard, scheduler, patient records, free text messaging — designed in Axure across 10+ iterations.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openHcsLb('brand')">
+      <div class="lb-card-img"><img src="images/Human Care Systems/Resilix.jpg" alt="Resilix Brand Identity" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Brand Identity</div>
+        <h3 class="lb-card-title">Resilix Brand System</h3>
+        <p class="lb-card-desc">Full brand creation — logo, color palette, typography, and visual language conveying clinical credibility and patient warmth.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openHcsLb('award')">
+      <div class="lb-card-img"><img src="images/HCS/LinkedIn_GDUSA.png" alt="GD USA Award" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Award Winner</div>
+        <h3 class="lb-card-title">2019 GD USA Award</h3>
+        <p class="lb-card-desc">Health &amp; Wellness Interactive Award recognizing the full Resilix design ecosystem — platform UI, brand, and marketing campaign.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openHcsLb('collateral')">
+      <div class="lb-card-img"><img src="images/Human Care Systems/Resilix-01.jpg" alt="Sales Collateral" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Sales Materials</div>
+        <h3 class="lb-card-title">Capability Presentations</h3>
+        <p class="lb-card-desc">Pharma client decks, capability slides, and evidence-based barrier data — directly contributing to $1.26M in new program sales.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openHcsLb('portal')">
+      <div class="lb-card-img"><img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_1.png" alt="Provider Portal" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Digital Product</div>
+        <h3 class="lb-card-title">Provider Preference Portal</h3>
+        <p class="lb-card-desc">Enrollment and preference management flow for pharma providers — 5-screen onboarding experience built with Novartis.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openHcsLb('campaigns')">
+      <div class="lb-card-img"><img src="images/Human Care Systems/Omnichannel_Adherence_ad_v3b.png" alt="Omnichannel Campaigns" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Campaign Design</div>
+        <h3 class="lb-card-title">Omnichannel Campaigns</h3>
+        <p class="lb-card-desc">Digital ads, infographics, patient surveys, and recruitment materials spanning print, digital, and video touchpoints.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HCS Lightbox -->
+<div id="hcs-lb-modal" onclick="if(event.target===this)closeHcsLb()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:14px;width:100%;max-width:1100px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.5);">
+    <!-- Modal header -->
+    <div style="padding:16px 24px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <div>
+        <div id="hcs-lb-tag" style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#0077B6;margin-bottom:3px;"></div>
+        <div id="hcs-lb-title" style="font-size:17px;font-weight:700;color:#111827;"></div>
+      </div>
+      <button onclick="closeHcsLb()" style="background:#f3f4f6;border:none;border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;color:#6b7280;">✕</button>
+    </div>
+    <!-- Gallery -->
+    <div id="hcs-lb-gallery" style="flex:1;overflow-y:auto;padding:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;background:#f9fafb;">
+    </div>
+  </div>
+</div>
+
+<script>
+const hcsLbData = {
+  platform: {
+    tag: 'UX/UI Design', title: 'Resilix Platform',
+    imgs: [
+      ['images/Human Care Systems/JulieDionPortfolio_20212.jpg','GDUSA Device Showcase'],
+      ['images/Human Care Systems/Resilix-04.jpg','Multi-Device Platform View'],
+      ['images/Human Care Systems/Free_Text_Capabilities.png','Free Text Capabilities'],
+      ['images/Human Care Systems/Patient_Support_Screen_PDT1_v1.png','Patient Support Screen'],
+      ['images/Human Care Systems/Version_Launch_v1-01.png','Version Launch'],
+      ['images/Human Care Systems/roadmap6-01.png','2020 Product Roadmap'],
+    ]
+  },
+  brand: {
+    tag: 'Brand Identity', title: 'Resilix Brand System',
+    imgs: [
+      ['images/Human Care Systems/Resilix.jpg','Resilix Brand'],
+      ['images/Human Care Systems/HCS-Feature.jpg','HCS Feature Campaign'],
+      ['images/Human Care Systems/HCS_Pride.png','HCS Pride Campaign'],
+      ['images/Human Care Systems/WinningTeam.png','HCS Team'],
+    ]
+  },
+  award: {
+    tag: 'Award Winner', title: '2019 GD USA Award',
+    imgs: [
+      ['images/HCS/LinkedIn_GDUSA.png','GD USA LinkedIn Post'],
+      ['images/Human Care Systems/JulieDionPortfolio_20212.jpg','GDUSA 2019 Winner Spread'],
+      ['images/Human Care Systems/JulieDionPortfolio_20213.jpg','Voice to Keyword UX Design'],
+      ['images/Human Care Systems/JulieDionPortfolio_20214.jpg','GDUSA 2020 Poster Winner'],
+      ['images/Human Care Systems/JulieDionPortfolio_20215.jpg','GDUSA Infographic Winner'],
+    ]
+  },
+  collateral: {
+    tag: 'Sales Materials', title: 'Capability Presentations',
+    imgs: [
+      ['images/Human Care Systems/Resilix-01.jpg','Capability Slides Set 1'],
+      ['images/Human Care Systems/Resilix-03-new.jpg','Capability Slides Set 2'],
+      ['images/Human Care Systems/Resilix-05.jpg','Capability Slides Set 3'],
+      ['images/Human Care Systems/Resilix_Support_infographic-01.png','Support Infographic'],
+      ['images/Human Care Systems/Omnichannel_infographic-01 copy.png','Omnichannel Infographic'],
+      ['images/Human Care Systems/JulieDionPortfolio_202121.jpg','Detail Aid — Tasigna/Glivec'],
+    ]
+  },
+  portal: {
+    tag: 'Digital Product', title: 'Provider Preference Portal',
+    imgs: [
+      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_1.png','Portal — Welcome & Enrollment'],
+      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_2.png','Portal — Enrollment Flow'],
+      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_3.png','Portal — Page 3'],
+      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_4.png','Portal — Page 4'],
+      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_5.png','Portal — Page 5'],
+    ]
+  },
+  campaigns: {
+    tag: 'Campaign Design', title: 'Omnichannel Campaigns',
+    imgs: [
+      ['images/Human Care Systems/Omnichannel_Adherence_ad_v3b.png','Omnichannel Adherence Ad'],
+      ['images/Human Care Systems/Patient_Experience_Survey-01.png','Patient Experience Survey'],
+      ['images/Human Care Systems/HCS_Recruitment_AdS_v1-01.png','Recruitment Ad 1'],
+      ['images/Human Care Systems/HCS_Recruitment_AdS_v1-02.png','Recruitment Ad 2'],
+      ['images/Human Care Systems/Genentech_Survey_Quote_v1.png','Genentech Survey Quote'],
+      ['images/Human Care Systems/Cerus_postcard.png','Cerus Postcard'],
+    ]
+  }
+};
+function openHcsLb(key) {
+  const d = hcsLbData[key];
+  document.getElementById('hcs-lb-tag').textContent = d.tag;
+  document.getElementById('hcs-lb-title').textContent = d.title;
+  const gallery = document.getElementById('hcs-lb-gallery');
+  gallery.innerHTML = d.imgs.map(([src,alt]) =>
+    `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;">
+      <img src="${src}" alt="${alt}" style="width:100%;display:block;object-fit:cover;" loading="lazy" />
+      <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">${alt}</div>
+    </div>`
+  ).join('');
+  const modal = document.getElementById('hcs-lb-modal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeHcsLb() {
+  document.getElementById('hcs-lb-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); });
+</script>
+
 <section class="cs-section cs-section-alt">
   <span class="section-label">The Work</span>
   <h2 class="cs-h2">Platform Design, Brand &amp; <em>Marketing Ecosystem</em></h2>
@@ -931,179 +1105,7 @@
 </section>
 
 
-<!-- Work Collection -->
-<section class="cs-section cs-section-alt">
-  <span class="section-label">Work Collection</span>
-  <h2 class="cs-h2">HCS Platform &amp; Campaign Deliverables</h2>
-  <p class="cs-p" style="margin-bottom:40px;">Six major deliverable categories spanning UX design, brand identity, patient engagement, and pharma sales — all produced as Creative Director on the Resilix engagement.</p>
-  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
 
-    <div class="lb-card" onclick="openHcsLb('platform')">
-      <div class="lb-card-img"><img src="images/Human Care Systems/JulieDionPortfolio_20212.jpg" alt="Resilix Platform" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">UX/UI Design</div>
-        <h3 class="lb-card-title">Resilix Platform</h3>
-        <p class="lb-card-desc">Nurse-facing dashboard, scheduler, patient records, free text messaging — designed in Axure across 10+ iterations.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
-      </div>
-    </div>
-
-    <div class="lb-card" onclick="openHcsLb('brand')">
-      <div class="lb-card-img"><img src="images/Human Care Systems/Resilix.jpg" alt="Resilix Brand Identity" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Brand Identity</div>
-        <h3 class="lb-card-title">Resilix Brand System</h3>
-        <p class="lb-card-desc">Full brand creation — logo, color palette, typography, and visual language conveying clinical credibility and patient warmth.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
-      </div>
-    </div>
-
-    <div class="lb-card" onclick="openHcsLb('award')">
-      <div class="lb-card-img"><img src="images/HCS/LinkedIn_GDUSA.png" alt="GD USA Award" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Award Winner</div>
-        <h3 class="lb-card-title">2019 GD USA Award</h3>
-        <p class="lb-card-desc">Health &amp; Wellness Interactive Award recognizing the full Resilix design ecosystem — platform UI, brand, and marketing campaign.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
-      </div>
-    </div>
-
-    <div class="lb-card" onclick="openHcsLb('collateral')">
-      <div class="lb-card-img"><img src="images/Human Care Systems/Resilix-01.jpg" alt="Sales Collateral" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Sales Materials</div>
-        <h3 class="lb-card-title">Capability Presentations</h3>
-        <p class="lb-card-desc">Pharma client decks, capability slides, and evidence-based barrier data — directly contributing to $1.26M in new program sales.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
-      </div>
-    </div>
-
-    <div class="lb-card" onclick="openHcsLb('portal')">
-      <div class="lb-card-img"><img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_1.png" alt="Provider Portal" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Digital Product</div>
-        <h3 class="lb-card-title">Provider Preference Portal</h3>
-        <p class="lb-card-desc">Enrollment and preference management flow for pharma providers — 5-screen onboarding experience built with Novartis.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
-      </div>
-    </div>
-
-    <div class="lb-card" onclick="openHcsLb('campaigns')">
-      <div class="lb-card-img"><img src="images/Human Care Systems/Omnichannel_Adherence_ad_v3b.png" alt="Omnichannel Campaigns" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Campaign Design</div>
-        <h3 class="lb-card-title">Omnichannel Campaigns</h3>
-        <p class="lb-card-desc">Digital ads, infographics, patient surveys, and recruitment materials spanning print, digital, and video touchpoints.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- HCS Lightbox -->
-<div id="hcs-lb-modal" onclick="if(event.target===this)closeHcsLb()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;padding:24px;">
-  <div style="background:#fff;border-radius:14px;width:100%;max-width:1100px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.5);">
-    <!-- Modal header -->
-    <div style="padding:16px 24px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
-      <div>
-        <div id="hcs-lb-tag" style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#0077B6;margin-bottom:3px;"></div>
-        <div id="hcs-lb-title" style="font-size:17px;font-weight:700;color:#111827;"></div>
-      </div>
-      <button onclick="closeHcsLb()" style="background:#f3f4f6;border:none;border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;color:#6b7280;">✕</button>
-    </div>
-    <!-- Gallery -->
-    <div id="hcs-lb-gallery" style="flex:1;overflow-y:auto;padding:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;background:#f9fafb;">
-    </div>
-  </div>
-</div>
-
-<script>
-const hcsLbData = {
-  platform: {
-    tag: 'UX/UI Design', title: 'Resilix Platform',
-    imgs: [
-      ['images/Human Care Systems/JulieDionPortfolio_20212.jpg','GDUSA Device Showcase'],
-      ['images/Human Care Systems/Resilix-04.jpg','Multi-Device Platform View'],
-      ['images/Human Care Systems/Free_Text_Capabilities.png','Free Text Capabilities'],
-      ['images/Human Care Systems/Patient_Support_Screen_PDT1_v1.png','Patient Support Screen'],
-      ['images/Human Care Systems/Version_Launch_v1-01.png','Version Launch'],
-      ['images/Human Care Systems/roadmap6-01.png','2020 Product Roadmap'],
-    ]
-  },
-  brand: {
-    tag: 'Brand Identity', title: 'Resilix Brand System',
-    imgs: [
-      ['images/Human Care Systems/Resilix.jpg','Resilix Brand'],
-      ['images/Human Care Systems/HCS-Feature.jpg','HCS Feature Campaign'],
-      ['images/Human Care Systems/HCS_Pride.png','HCS Pride Campaign'],
-      ['images/Human Care Systems/WinningTeam.png','HCS Team'],
-    ]
-  },
-  award: {
-    tag: 'Award Winner', title: '2019 GD USA Award',
-    imgs: [
-      ['images/HCS/LinkedIn_GDUSA.png','GD USA LinkedIn Post'],
-      ['images/Human Care Systems/JulieDionPortfolio_20212.jpg','GDUSA 2019 Winner Spread'],
-      ['images/Human Care Systems/JulieDionPortfolio_20213.jpg','Voice to Keyword UX Design'],
-      ['images/Human Care Systems/JulieDionPortfolio_20214.jpg','GDUSA 2020 Poster Winner'],
-      ['images/Human Care Systems/JulieDionPortfolio_20215.jpg','GDUSA Infographic Winner'],
-    ]
-  },
-  collateral: {
-    tag: 'Sales Materials', title: 'Capability Presentations',
-    imgs: [
-      ['images/Human Care Systems/Resilix-01.jpg','Capability Slides Set 1'],
-      ['images/Human Care Systems/Resilix-03-new.jpg','Capability Slides Set 2'],
-      ['images/Human Care Systems/Resilix-05.jpg','Capability Slides Set 3'],
-      ['images/Human Care Systems/Resilix_Support_infographic-01.png','Support Infographic'],
-      ['images/Human Care Systems/Omnichannel_infographic-01 copy.png','Omnichannel Infographic'],
-      ['images/Human Care Systems/JulieDionPortfolio_202121.jpg','Detail Aid — Tasigna/Glivec'],
-    ]
-  },
-  portal: {
-    tag: 'Digital Product', title: 'Provider Preference Portal',
-    imgs: [
-      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_1.png','Portal — Welcome & Enrollment'],
-      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_2.png','Portal — Enrollment Flow'],
-      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_3.png','Portal — Page 3'],
-      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_4.png','Portal — Page 4'],
-      ['images/Human Care Systems/RTH_Provider_Pref_Portal_Page_5.png','Portal — Page 5'],
-    ]
-  },
-  campaigns: {
-    tag: 'Campaign Design', title: 'Omnichannel Campaigns',
-    imgs: [
-      ['images/Human Care Systems/Omnichannel_Adherence_ad_v3b.png','Omnichannel Adherence Ad'],
-      ['images/Human Care Systems/Patient_Experience_Survey-01.png','Patient Experience Survey'],
-      ['images/Human Care Systems/HCS_Recruitment_AdS_v1-01.png','Recruitment Ad 1'],
-      ['images/Human Care Systems/HCS_Recruitment_AdS_v1-02.png','Recruitment Ad 2'],
-      ['images/Human Care Systems/Genentech_Survey_Quote_v1.png','Genentech Survey Quote'],
-      ['images/Human Care Systems/Cerus_postcard.png','Cerus Postcard'],
-    ]
-  }
-};
-function openHcsLb(key) {
-  const d = hcsLbData[key];
-  document.getElementById('hcs-lb-tag').textContent = d.tag;
-  document.getElementById('hcs-lb-title').textContent = d.title;
-  const gallery = document.getElementById('hcs-lb-gallery');
-  gallery.innerHTML = d.imgs.map(([src,alt]) =>
-    `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;">
-      <img src="${src}" alt="${alt}" style="width:100%;display:block;object-fit:cover;" loading="lazy" />
-      <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">${alt}</div>
-    </div>`
-  ).join('');
-  const modal = document.getElementById('hcs-lb-modal');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeHcsLb() {
-  document.getElementById('hcs-lb-modal').style.display = 'none';
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); });
-</script>
 
 <div class="next-project">
   <p>Next Case Study</p>
