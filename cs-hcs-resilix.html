@@ -278,28 +278,227 @@
   <span class="section-label">Platform UI</span>
   <h2 class="cs-h2">Nurse-Facing Interface Design</h2>
   <p class="cs-p">The Resilix platform needed to give nurse case managers an intuitive tool to manage patient communication across text, phone, and email — while tracking barriers, scheduling, and reimbursement in one view. I designed the full UI across desktop and mobile breakpoints.</p>
-  <div class="img-grid-2">
-    <div class="figma-frame">
-      <div class="figma-titlebar">
-        <div class="figma-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-        <span class="figma-title">Resilix — Provider Preference Portal</span>
-        <i class="figma-icon fab fa-figma" style="color:#A259FF; font-size:14px;"></i>
+
+  <!-- Mock Resilix Application -->
+  <div style="margin-top:40px; border-radius:14px; overflow:hidden; box-shadow:0 24px 72px rgba(0,0,0,.28); border:1px solid #d1d5db;">
+
+    <!-- Browser Chrome -->
+    <div style="background:#e8e8e8; padding:10px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #ccc;">
+      <div style="display:flex; gap:6px;">
+        <span style="width:12px;height:12px;border-radius:50%;background:#FF5F57;display:block;"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#FEBC2E;display:block;"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#28C840;display:block;"></span>
       </div>
-      <div class="figma-body">
-        <img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_1.png" alt="Provider Preference Portal" />
+      <div style="flex:1; background:#fff; border-radius:6px; padding:5px 12px; font-size:11px; color:#666; border:1px solid #ddd; max-width:380px; margin:0 auto; text-align:center;">
+        <i class="fas fa-lock" style="color:#28C840;margin-right:5px;font-size:9px;"></i>app.resilix.humancaresystems.com
+      </div>
+      <div style="display:flex; gap:12px; color:#888; font-size:13px;">
+        <i class="fas fa-arrow-left"></i><i class="fas fa-arrow-right"></i><i class="fas fa-redo" style="font-size:11px;"></i>
       </div>
     </div>
-    <div class="figma-frame">
-      <div class="figma-titlebar">
-        <div class="figma-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-        <span class="figma-title">Resilix — Enrollment Flow</span>
-        <i class="figma-icon fab fa-figma" style="color:#A259FF; font-size:14px;"></i>
+
+    <!-- App Shell -->
+    <div style="display:flex; height:580px; background:#f4f6f8;">
+
+      <!-- Left Sidebar -->
+      <div style="width:200px; flex-shrink:0; background:#1a2744; display:flex; flex-direction:column; padding:0;">
+        <!-- Logo -->
+        <div style="padding:18px 20px 14px; border-bottom:1px solid rgba(255,255,255,.08);">
+          <div style="font-size:15px; font-weight:800; color:#fff; letter-spacing:-.01em;">RESIL<span style="color:#00C8E8;">IX</span></div>
+          <div style="font-size:9px; color:rgba(255,255,255,.4); letter-spacing:.1em; text-transform:uppercase; margin-top:1px;">Treatment Adherence Platform</div>
+        </div>
+        <!-- Nav Items -->
+        <nav style="padding:12px 0; flex:1;">
+          <div class="rx-nav-item rx-nav-active" onclick="rxTab('dashboard')">
+            <i class="fas fa-th-large"></i><span>Dashboard</span>
+          </div>
+          <div class="rx-nav-item" onclick="rxTab('patients')">
+            <i class="fas fa-users"></i><span>Patients</span>
+          </div>
+          <div class="rx-nav-item" onclick="rxTab('messages')">
+            <i class="fas fa-comment-alt"></i><span>Messages</span>
+            <span style="background:#EF476F;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;margin-left:auto;">4</span>
+          </div>
+          <div class="rx-nav-item" onclick="rxTab('portal')">
+            <i class="fas fa-file-medical"></i><span>Provider Portal</span>
+          </div>
+          <div class="rx-nav-item" onclick="rxTab('capabilities')">
+            <i class="fas fa-chart-bar"></i><span>Capabilities</span>
+          </div>
+          <div class="rx-nav-item" onclick="rxTab('roadmap')">
+            <i class="fas fa-road"></i><span>Roadmap</span>
+          </div>
+        </nav>
+        <!-- User -->
+        <div style="padding:14px 16px; border-top:1px solid rgba(255,255,255,.08); display:flex; align-items:center; gap:10px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;">JD</div>
+          <div><div style="font-size:11px;font-weight:600;color:#fff;">Julie Dion</div><div style="font-size:9px;color:rgba(255,255,255,.4);">Nurse Case Manager</div></div>
+        </div>
       </div>
-      <div class="figma-body">
-        <img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_2.png" alt="Enrollment Flow" />
+
+      <!-- Main Content -->
+      <div style="flex:1; overflow:hidden; position:relative;">
+
+        <!-- Tab: Dashboard -->
+        <div id="rx-dashboard" class="rx-panel" style="display:block;">
+          <!-- App Top Bar -->
+          <div style="background:#fff; border-bottom:1px solid #e5e7eb; padding:10px 20px; display:flex; align-items:center; justify-content:space-between;">
+            <div>
+              <div style="font-size:14px;font-weight:700;color:#111827;">Good morning, Julie</div>
+              <div style="font-size:11px;color:#9ca3af;">Monday, March 18, 2019 · 12 patients due today</div>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <div style="background:#f3f4f6;border-radius:6px;padding:6px 12px;font-size:11px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-filter" style="margin-right:4px;"></i>Filter</div>
+              <div style="background:linear-gradient(135deg,#0077B6,#00C8E8);border-radius:6px;padding:6px 14px;font-size:11px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-plus" style="margin-right:4px;"></i>New Task</div>
+            </div>
+          </div>
+          <!-- Stat Cards Row -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:14px 20px 10px;">
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Active Patients</div>
+              <div style="font-size:22px;font-weight:700;color:#111827;">147</div>
+              <div style="font-size:10px;color:#10b981;margin-top:2px;"><i class="fas fa-arrow-up"></i> 12 this week</div>
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Adherence Rate</div>
+              <div style="font-size:22px;font-weight:700;color:#0077B6;">85%</div>
+              <div style="font-size:10px;color:#10b981;margin-top:2px;"><i class="fas fa-arrow-up"></i> vs 60% non-enrolled</div>
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Pending Follow-ups</div>
+              <div style="font-size:22px;font-weight:700;color:#f59e0b;">23</div>
+              <div style="font-size:10px;color:#f59e0b;margin-top:2px;"><i class="fas fa-clock"></i> 6 overdue</div>
+            </div>
+            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Texts Today</div>
+              <div style="font-size:22px;font-weight:700;color:#00C8E8;">41</div>
+              <div style="font-size:10px;color:#10b981;margin-top:2px;"><i class="fas fa-comment-alt"></i> 3 unread</div>
+            </div>
+          </div>
+          <!-- Patient Table -->
+          <div style="margin:0 20px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;overflow:hidden;">
+            <div style="padding:10px 14px;border-bottom:1px solid #f3f4f6;display:flex;align-items:center;gap:8px;">
+              <span style="font-size:12px;font-weight:700;color:#111827;">Today's Patient Queue</span>
+              <span style="background:#f3f4f6;border-radius:10px;font-size:10px;font-weight:600;color:#6b7280;padding:2px 8px;">12 due</span>
+            </div>
+            <table style="width:100%;border-collapse:collapse;font-size:11px;">
+              <thead><tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;">
+                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Patient</th>
+                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Therapy</th>
+                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Stage</th>
+                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Last Contact</th>
+                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Status</th>
+                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Action</th>
+              </tr></thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #f3f4f6;">
+                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">M. Thornton</div><div style="color:#9ca3af;font-size:10px;">ID #4821</div></td>
+                  <td style="padding:9px 14px;color:#374151;">Beovu — Oncology</td>
+                  <td style="padding:9px 14px;"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Initiation</span></td>
+                  <td style="padding:9px 14px;color:#6b7280;">Mar 15, 2019</td>
+                  <td style="padding:9px 14px;"><span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Follow-up Due</span></td>
+                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Call <i class="fas fa-phone" style="font-size:9px;"></i></span></td>
+                </tr>
+                <tr style="border-bottom:1px solid #f3f4f6; background:#fafafa;">
+                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">R. Caldwell</div><div style="color:#9ca3af;font-size:10px;">ID #3976</div></td>
+                  <td style="padding:9px 14px;color:#374151;">Rare Disease — Oral</td>
+                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Persistent</span></td>
+                  <td style="padding:9px 14px;color:#6b7280;">Mar 17, 2019</td>
+                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">On Track</span></td>
+                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Text <i class="fas fa-comment-alt" style="font-size:9px;"></i></span></td>
+                </tr>
+                <tr style="border-bottom:1px solid #f3f4f6;">
+                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">A. Patel</div><div style="color:#9ca3af;font-size:10px;">ID #5104</div></td>
+                  <td style="padding:9px 14px;color:#374151;">Specialty — Injection</td>
+                  <td style="padding:9px 14px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">At Risk</span></td>
+                  <td style="padding:9px 14px;color:#6b7280;">Mar 10, 2019</td>
+                  <td style="padding:9px 14px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Barrier Flagged</span></td>
+                  <td style="padding:9px 14px;"><span style="color:#EF476F;font-weight:700;cursor:pointer;">Urgent <i class="fas fa-exclamation-circle" style="font-size:9px;"></i></span></td>
+                </tr>
+                <tr style="border-bottom:1px solid #f3f4f6; background:#fafafa;">
+                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">S. Nguyen</div><div style="color:#9ca3af;font-size:10px;">ID #3312</div></td>
+                  <td style="padding:9px 14px;color:#374151;">Oncology — IV</td>
+                  <td style="padding:9px 14px;"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Enrollment</span></td>
+                  <td style="padding:9px 14px;color:#6b7280;">Mar 18, 2019</td>
+                  <td style="padding:9px 14px;"><span style="background:#f3f4f6;color:#374151;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Welcome Call</span></td>
+                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Call <i class="fas fa-phone" style="font-size:9px;"></i></span></td>
+                </tr>
+                <tr>
+                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">L. Hernandez</div><div style="color:#9ca3af;font-size:10px;">ID #2891</div></td>
+                  <td style="padding:9px 14px;color:#374151;">Rare Disease — Sub-Q</td>
+                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Persistent</span></td>
+                  <td style="padding:9px 14px;color:#6b7280;">Mar 16, 2019</td>
+                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">On Track</span></td>
+                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Log Note <i class="fas fa-pen" style="font-size:9px;"></i></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab: Patients (Free Text Capabilities) -->
+        <div id="rx-patients" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
+          <img src="images/Human Care Systems/Free_Text_Capabilities.png" alt="Resilix Free Text Capabilities" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
+        </div>
+
+        <!-- Tab: Messages -->
+        <div id="rx-messages" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
+          <img src="images/Human Care Systems/Resilix-05.jpg" alt="Resilix Capabilities" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
+        </div>
+
+        <!-- Tab: Provider Portal -->
+        <div id="rx-portal" class="rx-panel" style="display:none; height:100%; overflow:auto; background:#fff;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;height:100%;">
+            <img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_1.png" alt="Provider Preference Portal" style="width:100%;height:100%;object-fit:contain;background:#f8f9fa;padding:8px;" />
+            <img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_2.png" alt="Enrollment Flow" style="width:100%;height:100%;object-fit:contain;background:#f8f9fa;padding:8px;border-left:1px solid #e5e7eb;" />
+          </div>
+        </div>
+
+        <!-- Tab: Capabilities -->
+        <div id="rx-capabilities" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
+          <img src="images/Human Care Systems/Resilix-01.jpg" alt="Resilix Capability Slides" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
+        </div>
+
+        <!-- Tab: Roadmap -->
+        <div id="rx-roadmap" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
+          <img src="images/Human Care Systems/roadmap6-01.png" alt="Resilix 2020 Roadmap" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
+        </div>
+
       </div>
     </div>
   </div>
+
+  <!-- Screen label below -->
+  <div style="display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap;">
+    <button class="rx-tab-btn rx-tab-active" onclick="rxTab('dashboard')">Dashboard</button>
+    <button class="rx-tab-btn" onclick="rxTab('patients')">Free Text</button>
+    <button class="rx-tab-btn" onclick="rxTab('messages')">Capabilities</button>
+    <button class="rx-tab-btn" onclick="rxTab('portal')">Provider Portal</button>
+    <button class="rx-tab-btn" onclick="rxTab('capabilities')">Marketing Slides</button>
+    <button class="rx-tab-btn" onclick="rxTab('roadmap')">Product Roadmap</button>
+  </div>
+
+  <style>
+    .rx-nav-item { display:flex; align-items:center; gap:10px; padding:9px 18px; font-size:12px; font-weight:500; color:rgba(255,255,255,.55); cursor:pointer; transition:all .2s; border-left:3px solid transparent; }
+    .rx-nav-item:hover { background:rgba(255,255,255,.06); color:rgba(255,255,255,.9); }
+    .rx-nav-active { background:rgba(0,200,232,.1); color:#00C8E8 !important; border-left-color:#00C8E8 !important; font-weight:700; }
+    .rx-nav-item i { width:14px; text-align:center; font-size:12px; }
+    .rx-tab-btn { padding:7px 16px; border-radius:20px; border:1.5px solid #d1d5db; background:#fff; font-size:11px; font-weight:600; color:#6b7280; cursor:pointer; transition:all .2s; }
+    .rx-tab-btn:hover { border-color:#0077B6; color:#0077B6; }
+    .rx-tab-active { background:linear-gradient(135deg,#0077B6,#00C8E8); color:#fff !important; border-color:transparent !important; }
+  </style>
+  <script>
+    function rxTab(id) {
+      document.querySelectorAll('.rx-panel').forEach(p => p.style.display = 'none');
+      document.querySelectorAll('.rx-nav-item').forEach(n => n.classList.remove('rx-nav-active'));
+      document.querySelectorAll('.rx-tab-btn').forEach(b => b.classList.remove('rx-tab-active'));
+      document.getElementById('rx-' + id).style.display = 'block';
+      const navMap = { dashboard:0, patients:1, messages:2, portal:3, capabilities:4, roadmap:5 };
+      const btnMap = { dashboard:0, patients:1, messages:2, portal:3, capabilities:4, roadmap:5 };
+      document.querySelectorAll('.rx-nav-item')[navMap[id]].classList.add('rx-nav-active');
+      document.querySelectorAll('.rx-tab-btn')[btnMap[id]].classList.add('rx-tab-active');
+    }
+  </script>
 </section>
 
 <section class="cs-section">
