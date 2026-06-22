@@ -63,7 +63,7 @@
     }
     .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
-    .cs-meta { display: flex; flex-wrap: wrap; gap: 32px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
+    .cs-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px 32px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
     .cs-meta-item label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); display: block; margin-bottom: 4px; }
     .cs-meta-item span { font-size: 14px; font-weight: 500; color: var(--white); }
 
@@ -201,8 +201,16 @@
       .topbar { padding: 14px 20px; }
       .cs-hero { padding: 60px 20px 48px; }
       .cs-section { padding: 56px 20px; }
-      .stats-bar { padding: 36px 20px; }
+      .stats-bar { padding: 36px 20px; flex-direction: column; align-items: center; text-align: center; }
       .next-project { padding: 56px 20px; }
+    }
+    @media(max-width:600px) {
+      .cs-meta { grid-template-columns: 1fr 1fr; }
+      .cs-title { font-size: clamp(26px, 8vw, 42px); }
+      .cs-subtitle { font-size: 15px; }
+      .stat-number { font-size: clamp(28px, 8vw, 48px); }
+      .process-grid { grid-template-columns: 1fr; }
+      .role-tags { gap: 6px; }
     }
 
     /* ── Hero Two-Col ── */
@@ -531,6 +539,8 @@
         <span class="role-tag"><i class="fas fa-code"></i> AEM Authoring</span>
         <span class="role-tag"><i class="fas fa-users"></i> Stakeholder Presentations</span>
         <span class="role-tag"><i class="fas fa-flask"></i> A/B Testing</span>
+        <span class="role-tag"><i class="fas fa-bullseye"></i> Adobe Targeting</span>
+        <span class="role-tag"><i class="fas fa-code"></i> HTML/CSS</span>
       </div>
     </div>
     <div>
