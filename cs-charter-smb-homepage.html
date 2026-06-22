@@ -837,25 +837,52 @@
             </div>
             <!-- Canvas content -->
             <div style="display:flex;align-items:flex-start;justify-content:center;padding:24px 40px 40px;min-height:calc(100% - 20px);">
-              <div style="display:flex;flex-direction:column;align-items:center;gap:40px;">
-                <!-- Artboard label -->
-                <div id="lb-figma-artboard-label" style="align-self:flex-start;color:#888;font-size:11px;font-weight:500;margin-bottom:-32px;"></div>
-                <!-- Artboard -->
-                <div style="position:relative;">
-                  <!-- Selection handles -->
-                  <div style="position:absolute;inset:-6px;border:2px solid #18a0fb;pointer-events:none;border-radius:1px;">
-                    <div style="position:absolute;top:-3px;left:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
-                    <div style="position:absolute;top:-3px;right:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
-                    <div style="position:absolute;bottom:-3px;left:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
-                    <div style="position:absolute;bottom:-3px;right:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
-                    <div style="position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
-                    <div style="position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
+              <div style="display:flex;flex-direction:row;align-items:flex-start;gap:48px;padding-bottom:48px;">
+
+                <!-- Desktop artboard -->
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div id="lb-figma-artboard-label" style="color:#888;font-size:11px;font-weight:500;align-self:flex-start;"></div>
+                  <div style="position:relative;">
+                    <div style="position:absolute;inset:-6px;border:2px solid #18a0fb;pointer-events:none;border-radius:1px;">
+                      <div style="position:absolute;top:-3px;left:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
+                      <div style="position:absolute;top:-3px;right:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
+                      <div style="position:absolute;bottom:-3px;left:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
+                      <div style="position:absolute;bottom:-3px;right:-3px;width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
+                      <div style="position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
+                      <div style="position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:#18a0fb;border-radius:1px;"></div>
+                    </div>
+                    <div id="lb-figma-img-wrap" style="background:#fff;box-shadow:0 4px 32px rgba(0,0,0,.6);width:580px;overflow:hidden;"></div>
                   </div>
-                  <div id="lb-figma-img-wrap" style="background:#fff;box-shadow:0 4px 32px rgba(0,0,0,.6);width:660px;overflow:hidden;"></div>
                 </div>
-                <!-- Red guide line -->
-                <div style="position:absolute;top:96px;left:0;right:0;height:1px;background:rgba(255,80,80,.5);pointer-events:none;"></div>
+
+                <!-- Tablet artboard -->
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="color:#666;font-size:11px;font-weight:500;align-self:flex-start;" id="lb-figma-tablet-label"></div>
+                  <div style="position:relative;">
+                    <div id="lb-figma-tablet-wrap" style="background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.5);width:260px;overflow:hidden;opacity:.7;"></div>
+                  </div>
+                </div>
+
+                <!-- Mobile artboard -->
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="color:#666;font-size:11px;font-weight:500;align-self:flex-start;" id="lb-figma-mobile-label"></div>
+                  <div style="position:relative;">
+                    <!-- phone shell -->
+                    <div style="background:#111;border-radius:24px;padding:12px 8px;box-shadow:0 4px 20px rgba(0,0,0,.6);width:130px;">
+                      <div style="background:#000;border-radius:4px 4px 0 0;height:8px;display:flex;align-items:center;justify-content:center;margin-bottom:2px;">
+                        <div style="width:40px;height:4px;background:#222;border-radius:4px;"></div>
+                      </div>
+                      <div id="lb-figma-mobile-wrap" style="background:#fff;overflow:hidden;width:100%;opacity:.7;"></div>
+                      <div style="background:#000;border-radius:0 0 4px 4px;height:8px;margin-top:2px;display:flex;align-items:center;justify-content:center;">
+                        <div style="width:24px;height:4px;background:#222;border-radius:4px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
+              <!-- Red guide line -->
+              <div style="position:absolute;top:96px;left:0;right:0;height:1px;background:rgba(255,80,80,.5);pointer-events:none;"></div>
             </div>
           </div>
 
@@ -1322,6 +1349,18 @@ function openLb(key) {
   // --- FIGMA panel ---
   document.getElementById('lb-figma-filename').textContent = p.title;
   document.getElementById('lb-figma-artboard-label').textContent = p.title + ' — Desktop / 1440';
+  document.getElementById('lb-figma-tablet-label').textContent = p.title + ' — Tablet / 768';
+  document.getElementById('lb-figma-mobile-label').textContent = p.title + ' — Mobile / 375';
+  const tabletWrap = document.getElementById('lb-figma-tablet-wrap');
+  const mobileWrap = document.getElementById('lb-figma-mobile-wrap');
+  if (p.img) {
+    tabletWrap.innerHTML = `<img src="${p.img}" alt="${p.title} tablet" style="width:100%;display:block;" />`;
+    mobileWrap.innerHTML = `<img src="${p.img}" alt="${p.title} mobile" style="width:100%;display:block;" />`;
+  } else {
+    const placeholder = `<div style="height:160px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;"><span style="color:#bbb;font-size:9px;font-family:sans-serif;">No preview</span></div>`;
+    tabletWrap.innerHTML = placeholder;
+    mobileWrap.innerHTML = placeholder;
+  }
 
   // Layer tree with Figma-style icons
   const layerIcons = {'🖥':'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="1" width="8" height="8" rx="1" stroke="#aaa" stroke-width="1"/></svg>',
