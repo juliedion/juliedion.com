@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Process — How a Page Gets Made at Charter Spectrum — Julie Dion</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cyan: #00C8E8; --blue: #0077B6;
+      --grad: linear-gradient(135deg, #0077B6 0%, #00C8E8 100%);
+      --dark: #111827; --mid: #374151; --muted: #6B7280;
+      --light: #F9FAFB; --white: #fff; --border: #E5E7EB;
+      --radius: 12px; --shadow: 0 4px 24px rgba(0,0,0,.08); --trans: .3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 48px;
+    }
+    .topbar-back { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--muted); transition: color var(--trans); }
+    .topbar-back:hover { color: var(--blue); }
+    .topbar-logo img { height: 32px; }
+    .topbar-tags { display: flex; gap: 8px; }
+    .topbar-tag { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.08); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+
+    .cs-hero {
+      background: var(--dark); padding: 80px 48px 64px;
+      background-image: radial-gradient(ellipse at 70% 50%, rgba(0,119,182,.2) 0%, transparent 65%);
+      text-align: center;
+    }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 12px; }
+    .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+    .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin: 0 auto; }
+
+    .cs-section { padding: 72px 48px; }
+    .cs-section-alt { background: var(--white); }
+    .cs-h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+    .cs-p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; max-width: 760px; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; margin-bottom: 56px; }
+    .process-step { background: var(--white); border-radius: var(--radius); padding: 28px 24px; border: 1.5px solid var(--border); }
+    .process-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 12px; }
+    .process-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .process-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    .workflow-track { position: relative; }
+    .wf-step { display: flex; gap: 24px; align-items: flex-start; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 28px 28px 28px 24px; }
+    .wf-step-final { border-color: var(--cyan); background: rgba(0,200,232,.04); }
+    .wf-step-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,119,182,.1); border: 1.5px solid rgba(0,119,182,.2); display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 16px; margin-top: 2px; }
+    .wf-step-icon-live { background: rgba(0,200,232,.15); border-color: var(--cyan); color: var(--cyan); }
+    .wf-step-role { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); margin-bottom: 4px; }
+    .wf-step-title { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .wf-step-desc { font-size: 14px; color: var(--muted); line-height: 1.8; }
+    .wf-connector { text-align: center; padding: 8px 0; color: rgba(0,200,232,.5); font-size: 18px; }
+    .wf-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .wf-tool { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--blue); background: rgba(0,119,182,.07); border: 1px solid rgba(0,119,182,.15); border-radius: 50px; padding: 4px 12px; }
+
+    .next-project { background: var(--dark); padding: 64px 48px; text-align: center; }
+    .next-project p { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+    .next-project h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin-bottom: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: all var(--trans); cursor: pointer; }
+    .btn-primary { background: var(--grad); color: var(--white); box-shadow: 0 4px 20px rgba(0,119,182,.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,119,182,.5); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.25); margin-left: 12px; }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    @media(max-width:768px) {
+      .topbar { padding: 14px 20px; }
+      .cs-hero { padding: 60px 20px 48px; }
+      .cs-section { padding: 56px 20px; }
+      .next-project { padding: 56px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="cs-charter-smb-homepage.html" class="topbar-back">
+    <i class="fas fa-arrow-left"></i> Back to Charter Spectrum
+  </a>
+  <div class="topbar-logo">
+    <img src="images/logos/julie-dion-logo-07.png" alt="Julie Dion" />
+  </div>
+  <div class="topbar-tags">
+    <span class="topbar-tag">UX/UI Design</span>
+    <span class="topbar-tag">AEM</span>
+    <span class="topbar-tag">Telecom</span>
+  </div>
+</div>
+
+<section class="cs-hero">
+  <span class="section-label">Charter Spectrum — Behind the Work</span>
+  <h1 class="cs-title">The Process<br /><span>How a Page Gets Made</span></h1>
+  <p class="cs-subtitle">Every Spectrum Business page moved through a disciplined cross-functional workflow — from a Jira ticket to a live URL — covering discovery, copy, SEO review, high-fidelity design in Adobe XD, AEM authoring, and cross-browser QA.</p>
+</section>
+
+<section class="cs-section cs-section-alt" style="text-align:center;">
+  <div style="max-width:760px; margin:0 auto;">
+    <span class="section-label">The Four Stages</span>
+    <h2 class="cs-h2">Design to Launch</h2>
+    <p class="cs-p" style="margin:0 auto;">Each sprint was scoped, designed, authored, and shipped in a two-week cycle — with cross-functional handoffs keeping every stakeholder aligned from brief to browser.</p>
+  </div>
+
+  <div class="process-grid" style="text-align:left;">
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <div class="process-title">Discovery & Briefing</div>
+      <div class="process-desc">Aligned with product, marketing, and engineering stakeholders to define promotional goals, user segments, and content priorities for each sprint.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-title">Copy & SEO Review</div>
+      <div class="process-desc">Copywriters drafted headlines and CTAs; the SEO team reviewed keyword density, H-tag hierarchy, and meta descriptions before design began.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-title">High-Fidelity UI Design</div>
+      <div class="process-desc">Built pixel-perfect mockups across desktop, tablet, and mobile in Adobe XD using the 200+ component Spectrum Business design system.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-title">AEM Authoring & Launch</div>
+      <div class="process-desc">Authored final designs directly in AEM production, working alongside developers for QA across browsers and devices before each launch.</div>
+    </div>
+  </div>
+
+  <div style="max-width:760px; margin:0 auto;">
+    <span class="section-label">Step by Step</span>
+    <h2 class="cs-h2">The Full Team Workflow</h2>
+    <p class="cs-p" style="margin:0 auto 40px;">Every page update followed handoffs between creative leadership, content, SEO, design, development, and QA — from Jira ticket to live URL.</p>
+  </div>
+
+  <div class="workflow-track" style="text-align:left;">
+    <div class="wf-step">
+      <div class="wf-step-icon"><i class="fas fa-ticket"></i></div>
+      <div class="wf-step-body">
+        <div class="wf-step-role">Creative Manager</div>
+        <div class="wf-step-title">Jira Ticket Created</div>
+        <p class="wf-step-desc">The creative manager opened a Jira ticket defining the promotional objective (e.g., "Stack your savings" bundle push), target audience, page location, and deadline. This ticket anchored all downstream work and tracked status through every handoff.</p>
+      </div>
+    </div>
+    <div class="wf-connector"><i class="fas fa-arrow-down"></i></div>
+    <div class="wf-step">
+      <div class="wf-step-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="wf-step-body">
+        <div class="wf-step-role">Copywriters</div>
+        <div class="wf-step-title">Messaging & Copy Development</div>
+        <p class="wf-step-desc">Copywriters drafted headline options, body copy, and CTA language aligned to the promotional offer — hitting tone, word count limits, and the Small Business audience's decision-making language focused on value, speed, and reliability.</p>
+      </div>
+    </div>
+    <div class="wf-connector"><i class="fas fa-arrow-down"></i></div>
+    <div class="wf-step">
+      <div class="wf-step-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+      <div class="wf-step-body">
+        <div class="wf-step-role">SEO Team</div>
+        <div class="wf-step-title">SEO Review & Keyword Alignment</div>
+        <p class="wf-step-desc">Copy was routed to the SEO team before any design began. They reviewed headline structure, keyword density, meta descriptions, and H-tag hierarchy — returning blocking edits through Jira before the design ticket could move forward.</p>
+      </div>
+    </div>
+    <div class="wf-connector"><i class="fas fa-arrow-down"></i></div>
+    <div class="wf-step">
+      <div class="wf-step-icon"><i class="fas fa-pen-ruler"></i></div>
+      <div class="wf-step-body">
+        <div class="wf-step-role">Design — Julie Dion, Senior UI Designer</div>
+        <div class="wf-step-title">Mockups in Adobe XD</div>
+        <p class="wf-step-desc">With approved copy in hand, I built high-fidelity mockups across all three breakpoints — desktop, tablet, and mobile — in Adobe XD using the Spectrum Business design system. Component tokens, spacing rules, and color variables kept designs consistent across the 200+ component library. Figma was used for collaborative annotation and stakeholder review presentations.</p>
+        <div class="wf-tools">
+          <span class="wf-tool"><i class="fas fa-vector-square"></i> Adobe XD</span>
+          <span class="wf-tool"><i class="fab fa-figma"></i> Figma</span>
+          <span class="wf-tool"><i class="fas fa-table-cells-large"></i> Spectrum Design System</span>
+        </div>
+      </div>
+    </div>
+    <div class="wf-connector"><i class="fas fa-arrow-down"></i></div>
+    <div class="wf-step">
+      <div class="wf-step-icon"><i class="fas fa-code"></i></div>
+      <div class="wf-step-body">
+        <div class="wf-step-role">Development & AEM Authoring</div>
+        <div class="wf-step-title">Built in Adobe Experience Manager</div>
+        <p class="wf-step-desc">Approved designs were handed off to the development team and — uniquely — I also authored pages directly in AEM myself. Working inside Charter's production CMS, I placed components, set tokens, configured promotional modules, and previewed across breakpoints before passing to front-end developers for final QA. This dual role significantly reduced revision cycles and gave me direct control over the live output.</p>
+        <div class="wf-tools">
+          <span class="wf-tool"><i class="fas fa-layer-group"></i> Adobe Experience Manager</span>
+          <span class="wf-tool"><i class="fas fa-code-branch"></i> Dev Handoff</span>
+        </div>
+      </div>
+    </div>
+    <div class="wf-connector"><i class="fas fa-arrow-down"></i></div>
+    <div class="wf-step wf-step-final">
+      <div class="wf-step-icon wf-step-icon-live"><i class="fas fa-rocket"></i></div>
+      <div class="wf-step-body">
+        <div class="wf-step-role">Live</div>
+        <div class="wf-step-title">Launched on spectrum.com/business</div>
+        <p class="wf-step-desc">After cross-browser QA, stakeholder sign-off, and a final promotional deadline review, the page went live on Spectrum Business — reaching 45M+ monthly visitors. Post-launch, performance data fed back into the next sprint's Jira ticket to iterate on what moved the needle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next-project">
+  <p>Back to</p>
+  <h3>Charter Spectrum Case Study</h3>
+  <a href="cs-charter-smb-homepage.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Return to Case Study</a>
+  <a href="index.html#portfolio" class="btn btn-outline"><i class="fas fa-table-cells-large"></i> All Work</a>
+</section>
+
+</body>
+</html>
