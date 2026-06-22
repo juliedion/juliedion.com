@@ -279,224 +279,635 @@
   <h2 class="cs-h2">Nurse-Facing Interface Design</h2>
   <p class="cs-p">The Resilix platform needed to give nurse case managers an intuitive tool to manage patient communication across text, phone, and email — while tracking barriers, scheduling, and reimbursement in one view. I designed the full UI across desktop and mobile breakpoints.</p>
 
-  <!-- Mock Resilix Application -->
-  <div style="margin-top:40px; border-radius:14px; overflow:hidden; box-shadow:0 24px 72px rgba(0,0,0,.28); border:1px solid #d1d5db;">
+  <!-- Resilix Prototype -->
+  <style>
+    /* ── Resilix App Prototype ── */
+    .rx-app { margin-top:40px; border-radius:14px; overflow:hidden; box-shadow:0 24px 72px rgba(0,0,0,.3); border:1px solid #c9cdd4; font-family:'Inter',sans-serif; }
+    .rx-browser { background:#e2e4e8; padding:9px 14px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #c5c7cb; }
+    .rx-dots { display:flex; gap:6px; }
+    .rx-dots span { width:12px; height:12px; border-radius:50%; display:block; }
+    .rx-url { flex:1; background:#fff; border-radius:5px; padding:4px 12px; font-size:11px; color:#666; border:1px solid #d1d5db; max-width:400px; margin:0 auto; text-align:center; }
+    .rx-shell { display:flex; height:620px; }
+    /* Icon rail */
+    .rx-rail { width:48px; flex-shrink:0; background:#0f1e3d; display:flex; flex-direction:column; align-items:center; padding:10px 0; gap:4px; }
+    .rx-rail-ico { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:14px; color:rgba(255,255,255,.4); cursor:pointer; transition:.15s; }
+    .rx-rail-ico:hover, .rx-rail-ico.active { background:rgba(0,200,232,.15); color:#00C8E8; }
+    .rx-rail-logo { font-size:11px; font-weight:900; color:#fff; letter-spacing:-.02em; margin-bottom:8px; }
+    /* Top global nav bar */
+    .rx-topnav { background:#1a3a6b; padding:0 16px; display:flex; align-items:center; gap:0; border-bottom:1px solid rgba(255,255,255,.08); height:38px; }
+    .rx-topnav-tab { padding:0 14px; height:38px; display:flex; align-items:center; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.5); cursor:pointer; border-bottom:2px solid transparent; white-space:nowrap; transition:.15s; }
+    .rx-topnav-tab:hover { color:rgba(255,255,255,.85); }
+    .rx-topnav-tab.active { color:#fff; border-bottom-color:#00C8E8; }
+    /* Panels */
+    .rx-panel { display:none; height:100%; overflow:hidden; }
+    .rx-panel.active { display:flex; }
+    /* Screen tab pills */
+    .rx-screenbtn { padding:7px 18px; border-radius:20px; border:1.5px solid #d1d5db; background:#fff; font-size:11px; font-weight:600; color:#6b7280; cursor:pointer; transition:.2s; }
+    .rx-screenbtn:hover { border-color:#0077B6; color:#0077B6; }
+    .rx-screenbtn.active { background:linear-gradient(135deg,#0077B6,#00C8E8); color:#fff; border-color:transparent; }
+  </style>
 
-    <!-- Browser Chrome -->
-    <div style="background:#e8e8e8; padding:10px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #ccc;">
-      <div style="display:flex; gap:6px;">
-        <span style="width:12px;height:12px;border-radius:50%;background:#FF5F57;display:block;"></span>
-        <span style="width:12px;height:12px;border-radius:50%;background:#FEBC2E;display:block;"></span>
-        <span style="width:12px;height:12px;border-radius:50%;background:#28C840;display:block;"></span>
+  <div class="rx-app">
+    <!-- Browser chrome -->
+    <div class="rx-browser">
+      <div class="rx-dots">
+        <span style="background:#FF5F57"></span><span style="background:#FEBC2E"></span><span style="background:#28C840"></span>
       </div>
-      <div style="flex:1; background:#fff; border-radius:6px; padding:5px 12px; font-size:11px; color:#666; border:1px solid #ddd; max-width:380px; margin:0 auto; text-align:center;">
-        <i class="fas fa-lock" style="color:#28C840;margin-right:5px;font-size:9px;"></i>app.resilix.humancaresystems.com
-      </div>
-      <div style="display:flex; gap:12px; color:#888; font-size:13px;">
-        <i class="fas fa-arrow-left"></i><i class="fas fa-arrow-right"></i><i class="fas fa-redo" style="font-size:11px;"></i>
+      <div class="rx-url"><i class="fas fa-lock" style="color:#28C840;margin-right:5px;font-size:9px;"></i>app.resilix.humancaresystems.com</div>
+      <div style="display:flex;gap:10px;color:#999;font-size:12px;margin-left:auto;">
+        <i class="fas fa-arrow-left"></i><i class="fas fa-arrow-right"></i><i class="fas fa-redo" style="font-size:10px;"></i>
       </div>
     </div>
 
-    <!-- App Shell -->
-    <div style="display:flex; height:580px; background:#f4f6f8;">
+    <!-- App shell -->
+    <div class="rx-shell">
 
-      <!-- Left Sidebar -->
-      <div style="width:200px; flex-shrink:0; background:#1a2744; display:flex; flex-direction:column; padding:0;">
-        <!-- Logo -->
-        <div style="padding:18px 20px 14px; border-bottom:1px solid rgba(255,255,255,.08);">
-          <div style="font-size:15px; font-weight:800; color:#fff; letter-spacing:-.01em;">RESIL<span style="color:#00C8E8;">IX</span></div>
-          <div style="font-size:9px; color:rgba(255,255,255,.4); letter-spacing:.1em; text-transform:uppercase; margin-top:1px;">Treatment Adherence Platform</div>
+      <!-- Icon rail -->
+      <div class="rx-rail">
+        <div class="rx-rail-logo">RX</div>
+        <div class="rx-rail-ico active" onclick="rxScreen('scheduler')" title="Scheduler"><i class="fas fa-calendar-alt"></i></div>
+        <div class="rx-rail-ico" onclick="rxScreen('patient')" title="Patient Record"><i class="fas fa-user-injured"></i></div>
+        <div class="rx-rail-ico" onclick="rxScreen('list')" title="Patient List"><i class="fas fa-list"></i></div>
+        <div class="rx-rail-ico" onclick="rxScreen('messaging')" title="Messaging"><i class="fas fa-comment-dots"></i>
+          <span style="position:absolute;top:-2px;right:-2px;width:8px;height:8px;border-radius:50%;background:#EF476F;display:block;"></span>
         </div>
-        <!-- Nav Items -->
-        <nav style="padding:12px 0; flex:1;">
-          <div class="rx-nav-item rx-nav-active" onclick="rxTab('dashboard')">
-            <i class="fas fa-th-large"></i><span>Dashboard</span>
-          </div>
-          <div class="rx-nav-item" onclick="rxTab('patients')">
-            <i class="fas fa-users"></i><span>Patients</span>
-          </div>
-          <div class="rx-nav-item" onclick="rxTab('messages')">
-            <i class="fas fa-comment-alt"></i><span>Messages</span>
-            <span style="background:#EF476F;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;margin-left:auto;">4</span>
-          </div>
-          <div class="rx-nav-item" onclick="rxTab('portal')">
-            <i class="fas fa-file-medical"></i><span>Provider Portal</span>
-          </div>
-          <div class="rx-nav-item" onclick="rxTab('capabilities')">
-            <i class="fas fa-chart-bar"></i><span>Capabilities</span>
-          </div>
-          <div class="rx-nav-item" onclick="rxTab('roadmap')">
-            <i class="fas fa-road"></i><span>Roadmap</span>
-          </div>
-        </nav>
-        <!-- User -->
-        <div style="padding:14px 16px; border-top:1px solid rgba(255,255,255,.08); display:flex; align-items:center; gap:10px;">
-          <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;">JD</div>
-          <div><div style="font-size:11px;font-weight:600;color:#fff;">Julie Dion</div><div style="font-size:9px;color:rgba(255,255,255,.4);">Nurse Case Manager</div></div>
-        </div>
+        <div style="flex:1;"></div>
+        <div class="rx-rail-ico" title="Settings"><i class="fas fa-cog"></i></div>
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-top:6px;">JD</div>
       </div>
 
-      <!-- Main Content -->
-      <div style="flex:1; overflow:hidden; position:relative;">
+      <!-- Screens -->
+      <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;">
 
-        <!-- Tab: Dashboard -->
-        <div id="rx-dashboard" class="rx-panel" style="display:block;">
-          <!-- App Top Bar -->
-          <div style="background:#fff; border-bottom:1px solid #e5e7eb; padding:10px 20px; display:flex; align-items:center; justify-content:space-between;">
-            <div>
-              <div style="font-size:14px;font-weight:700;color:#111827;">Good morning, Julie</div>
-              <div style="font-size:11px;color:#9ca3af;">Monday, March 18, 2019 · 12 patients due today</div>
-            </div>
-            <div style="display:flex; gap:8px;">
-              <div style="background:#f3f4f6;border-radius:6px;padding:6px 12px;font-size:11px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-filter" style="margin-right:4px;"></i>Filter</div>
-              <div style="background:linear-gradient(135deg,#0077B6,#00C8E8);border-radius:6px;padding:6px 14px;font-size:11px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-plus" style="margin-right:4px;"></i>New Task</div>
+        <!-- ══ SCREEN 1: Scheduler ══ -->
+        <div id="rx-scheduler" class="rx-panel active" style="flex-direction:column;">
+          <!-- Top nav tabs -->
+          <div class="rx-topnav">
+            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;margin-right:20px;white-space:nowrap;">RESIL<span style="color:#00C8E8;">IX</span></span>
+            <div class="rx-topnav-tab active">Scheduler</div>
+            <div class="rx-topnav-tab">Patient List</div>
+            <div class="rx-topnav-tab">Reports</div>
+            <div style="flex:1;"></div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:4px 10px;display:flex;align-items:center;gap:6px;font-size:10px;color:rgba(255,255,255,.6);"><i class="fas fa-search"></i><span>Search patients…</span></div>
+              <div style="width:28px;height:28px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;">JD</div>
             </div>
           </div>
-          <!-- Stat Cards Row -->
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:14px 20px 10px;">
-            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Active Patients</div>
-              <div style="font-size:22px;font-weight:700;color:#111827;">147</div>
-              <div style="font-size:10px;color:#10b981;margin-top:2px;"><i class="fas fa-arrow-up"></i> 12 this week</div>
+          <!-- Scheduler content -->
+          <div style="flex:1;display:flex;overflow:hidden;background:#f7f8fa;">
+            <!-- Week header + calendar -->
+            <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+              <!-- Week nav -->
+              <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:8px 16px;display:flex;align-items:center;gap:12px;">
+                <button style="background:#f3f4f6;border:none;border-radius:5px;padding:4px 10px;font-size:11px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-chevron-left"></i></button>
+                <span style="font-size:12px;font-weight:700;color:#111827;">Week of Mar 18 – 22, 2019</span>
+                <button style="background:#f3f4f6;border:none;border-radius:5px;padding:4px 10px;font-size:11px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-chevron-right"></i></button>
+                <span style="background:#dbeafe;color:#1d4ed8;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;margin-left:4px;">Today</span>
+                <div style="flex:1;"></div>
+                <div style="display:flex;gap:6px;font-size:10px;">
+                  <span style="padding:3px 10px;border-radius:5px;background:#1a3a6b;color:#fff;font-weight:700;cursor:pointer;">Week</span>
+                  <span style="padding:3px 10px;border-radius:5px;color:#6b7280;cursor:pointer;">Day</span>
+                  <span style="padding:3px 10px;border-radius:5px;color:#6b7280;cursor:pointer;">Month</span>
+                </div>
+                <button style="background:linear-gradient(135deg,#0077B6,#00C8E8);border:none;border-radius:5px;padding:5px 12px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-plus" style="margin-right:4px;"></i>Add Call</button>
+              </div>
+              <!-- Calendar grid -->
+              <div style="flex:1;overflow:auto;display:flex;">
+                <!-- Time labels -->
+                <div style="width:52px;flex-shrink:0;border-right:1px solid #e5e7eb;padding-top:36px;">
+                  <div style="height:64px;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">8 AM</div>
+                  <div style="height:64px;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">9 AM</div>
+                  <div style="height:64px;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">10 AM</div>
+                  <div style="height:64px;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">11 AM</div>
+                  <div style="height:64px;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">12 PM</div>
+                  <div style="height:64px;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">1 PM</div>
+                  <div style="height:64px;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">2 PM</div>
+                </div>
+                <!-- Day columns -->
+                <div style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);">
+                  <!-- Column headers -->
+                  <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid #e5e7eb;">
+                    <div style="text-align:center;padding:6px 4px;border-right:1px solid #f0f0f0;">
+                      <div style="font-size:9px;color:#9ca3af;font-weight:600;">MON</div>
+                      <div style="font-size:16px;font-weight:800;color:#fff;background:#1a3a6b;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;margin:2px auto 0;">18</div>
+                    </div>
+                    <div style="text-align:center;padding:6px 4px;border-right:1px solid #f0f0f0;">
+                      <div style="font-size:9px;color:#9ca3af;font-weight:600;">TUE</div>
+                      <div style="font-size:16px;font-weight:700;color:#374151;margin-top:2px;">19</div>
+                    </div>
+                    <div style="text-align:center;padding:6px 4px;border-right:1px solid #f0f0f0;">
+                      <div style="font-size:9px;color:#9ca3af;font-weight:600;">WED</div>
+                      <div style="font-size:16px;font-weight:700;color:#374151;margin-top:2px;">20</div>
+                    </div>
+                    <div style="text-align:center;padding:6px 4px;border-right:1px solid #f0f0f0;">
+                      <div style="font-size:9px;color:#9ca3af;font-weight:600;">THU</div>
+                      <div style="font-size:16px;font-weight:700;color:#374151;margin-top:2px;">21</div>
+                    </div>
+                    <div style="text-align:center;padding:6px 4px;">
+                      <div style="font-size:9px;color:#9ca3af;font-weight:600;">FRI</div>
+                      <div style="font-size:16px;font-weight:700;color:#374151;margin-top:2px;">22</div>
+                    </div>
+                  </div>
+                  <!-- Mon -->
+                  <div style="border-right:1px solid #f0f0f0;position:relative;min-height:448px;">
+                    <div style="position:absolute;top:4px;left:3px;right:3px;height:56px;background:#dbeafe;border-left:3px solid #1d4ed8;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#1d4ed8;">8:00 – 9:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#1e3a8a;">M. Thornton</div>
+                      <div style="font-size:9px;color:#3b82f6;">Initiation call · Beovu</div>
+                    </div>
+                    <div style="position:absolute;top:196px;left:3px;right:3px;height:44px;background:#fef3c7;border-left:3px solid #f59e0b;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#92400e;">11:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#78350f;">A. Patel</div>
+                      <div style="font-size:9px;color:#b45309;">Barrier follow-up</div>
+                    </div>
+                    <div style="position:absolute;top:324px;left:3px;right:3px;height:44px;background:#d1fae5;border-left:3px solid #10b981;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#065f46;">1:30</div>
+                      <div style="font-size:10px;font-weight:700;color:#064e3b;">L. Hernandez</div>
+                      <div style="font-size:9px;color:#059669;">Check-in · On Track</div>
+                    </div>
+                  </div>
+                  <!-- Tue -->
+                  <div style="border-right:1px solid #f0f0f0;position:relative;">
+                    <div style="position:absolute;top:68px;left:3px;right:3px;height:56px;background:#fce7f3;border-left:3px solid #db2777;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#9d174d;">9:00 – 10:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#831843;">C. Williams</div>
+                      <div style="font-size:9px;color:#be185d;">Urgent — missed dose</div>
+                    </div>
+                    <div style="position:absolute;top:260px;left:3px;right:3px;height:44px;background:#dbeafe;border-left:3px solid #3b82f6;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#1d4ed8;">12:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#1e3a8a;">R. Caldwell</div>
+                      <div style="font-size:9px;color:#3b82f6;">Persistence check</div>
+                    </div>
+                    <div style="position:absolute;top:388px;left:3px;right:3px;height:44px;background:#d1fae5;border-left:3px solid #10b981;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#065f46;">2:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#064e3b;">T. Brooks</div>
+                      <div style="font-size:9px;color:#059669;">Welcome call</div>
+                    </div>
+                  </div>
+                  <!-- Wed -->
+                  <div style="border-right:1px solid #f0f0f0;position:relative;">
+                    <div style="position:absolute;top:4px;left:3px;right:3px;height:44px;background:#dbeafe;border-left:3px solid #3b82f6;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#1d4ed8;">8:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#1e3a8a;">S. Nguyen</div>
+                      <div style="font-size:9px;color:#3b82f6;">Enrollment · Oncology IV</div>
+                    </div>
+                    <div style="position:absolute;top:132px;left:3px;right:3px;height:56px;background:#fef3c7;border-left:3px solid #f59e0b;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#92400e;">10:00 – 11:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#78350f;">D. Martinez</div>
+                      <div style="font-size:9px;color:#b45309;">Reimbursement review</div>
+                    </div>
+                    <div style="position:absolute;top:324px;left:3px;right:3px;height:44px;background:#ede9fe;border-left:3px solid #7c3aed;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#5b21b6;">1:30</div>
+                      <div style="font-size:10px;font-weight:700;color:#4c1d95;">Group Webinar</div>
+                      <div style="font-size:9px;color:#7c3aed;">Adherence strategies</div>
+                    </div>
+                  </div>
+                  <!-- Thu -->
+                  <div style="border-right:1px solid #f0f0f0;position:relative;">
+                    <div style="position:absolute;top:68px;left:3px;right:3px;height:44px;background:#d1fae5;border-left:3px solid #10b981;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#065f46;">9:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#064e3b;">P. Johnson</div>
+                      <div style="font-size:9px;color:#059669;">On track — Oral Rare</div>
+                    </div>
+                    <div style="position:absolute;top:196px;left:3px;right:3px;height:56px;background:#fce7f3;border-left:3px solid #db2777;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#9d174d;">11:00 – 12:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#831843;">K. Anderson</div>
+                      <div style="font-size:9px;color:#be185d;">Adverse event follow-up</div>
+                    </div>
+                    <div style="position:absolute;top:388px;left:3px;right:3px;height:44px;background:#dbeafe;border-left:3px solid #3b82f6;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#1d4ed8;">2:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#1e3a8a;">B. Thomas</div>
+                      <div style="font-size:9px;color:#3b82f6;">Month 3 check-in</div>
+                    </div>
+                  </div>
+                  <!-- Fri -->
+                  <div style="position:relative;">
+                    <div style="position:absolute;top:4px;left:3px;right:3px;height:44px;background:#d1fae5;border-left:3px solid #10b981;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#065f46;">8:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#064e3b;">Team Huddle</div>
+                      <div style="font-size:9px;color:#059669;">Weekly review</div>
+                    </div>
+                    <div style="position:absolute;top:132px;left:3px;right:3px;height:44px;background:#dbeafe;border-left:3px solid #3b82f6;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#1d4ed8;">10:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#1e3a8a;">J. Rivera</div>
+                      <div style="font-size:9px;color:#3b82f6;">Initiation · Sub-Q</div>
+                    </div>
+                    <div style="position:absolute;top:260px;left:3px;right:3px;height:56px;background:#fef3c7;border-left:3px solid #f59e0b;border-radius:4px;padding:4px 6px;">
+                      <div style="font-size:9px;font-weight:700;color:#92400e;">12:00 – 1:00</div>
+                      <div style="font-size:10px;font-weight:700;color:#78350f;">N. Clark</div>
+                      <div style="font-size:9px;color:#b45309;">Barrier assessment</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Adherence Rate</div>
-              <div style="font-size:22px;font-weight:700;color:#0077B6;">85%</div>
-              <div style="font-size:10px;color:#10b981;margin-top:2px;"><i class="fas fa-arrow-up"></i> vs 60% non-enrolled</div>
-            </div>
-            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Pending Follow-ups</div>
-              <div style="font-size:22px;font-weight:700;color:#f59e0b;">23</div>
-              <div style="font-size:10px;color:#f59e0b;margin-top:2px;"><i class="fas fa-clock"></i> 6 overdue</div>
-            </div>
-            <div style="background:#fff;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">Texts Today</div>
-              <div style="font-size:22px;font-weight:700;color:#00C8E8;">41</div>
-              <div style="font-size:10px;color:#10b981;margin-top:2px;"><i class="fas fa-comment-alt"></i> 3 unread</div>
+            <!-- Right mini panel -->
+            <div style="width:180px;flex-shrink:0;border-left:1px solid #e5e7eb;background:#fff;overflow-y:auto;padding:10px;">
+              <div style="font-size:10px;font-weight:700;color:#374151;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em;">Today's Priority</div>
+              <div style="margin-bottom:6px;padding:8px;background:#fee2e2;border-radius:6px;border-left:3px solid #ef4444;">
+                <div style="font-size:9px;font-weight:700;color:#991b1b;">URGENT</div>
+                <div style="font-size:10px;font-weight:700;color:#7f1d1d;margin-top:1px;">A. Patel</div>
+                <div style="font-size:9px;color:#b91c1c;">Barrier flagged</div>
+              </div>
+              <div style="margin-bottom:6px;padding:8px;background:#fef3c7;border-radius:6px;border-left:3px solid #f59e0b;">
+                <div style="font-size:9px;font-weight:700;color:#92400e;">FOLLOW-UP</div>
+                <div style="font-size:10px;font-weight:700;color:#78350f;margin-top:1px;">M. Thornton</div>
+                <div style="font-size:9px;color:#b45309;">Call scheduled 8 AM</div>
+              </div>
+              <div style="margin-bottom:6px;padding:8px;background:#f3f4f6;border-radius:6px;">
+                <div style="font-size:9px;font-weight:700;color:#6b7280;">ENROLLMENT</div>
+                <div style="font-size:10px;font-weight:700;color:#374151;margin-top:1px;">S. Nguyen</div>
+                <div style="font-size:9px;color:#9ca3af;">Welcome call Wed</div>
+              </div>
+              <div style="font-size:10px;font-weight:700;color:#374151;margin:12px 0 8px;text-transform:uppercase;letter-spacing:.08em;">Legend</div>
+              <div style="display:flex;flex-direction:column;gap:4px;font-size:9px;">
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:2px;background:#dbeafe;border-left:3px solid #3b82f6;flex-shrink:0;"></div>Outreach Call</div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:2px;background:#d1fae5;border-left:3px solid #10b981;flex-shrink:0;"></div>On Track / Completed</div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:2px;background:#fef3c7;border-left:3px solid #f59e0b;flex-shrink:0;"></div>Follow-up / Barrier</div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:2px;background:#fce7f3;border-left:3px solid #db2777;flex-shrink:0;"></div>Urgent / Adverse</div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:10px;height:10px;border-radius:2px;background:#ede9fe;border-left:3px solid #7c3aed;flex-shrink:0;"></div>Group / Webinar</div>
+              </div>
             </div>
           </div>
-          <!-- Patient Table -->
-          <div style="margin:0 20px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;overflow:hidden;">
-            <div style="padding:10px 14px;border-bottom:1px solid #f3f4f6;display:flex;align-items:center;gap:8px;">
-              <span style="font-size:12px;font-weight:700;color:#111827;">Today's Patient Queue</span>
-              <span style="background:#f3f4f6;border-radius:10px;font-size:10px;font-weight:600;color:#6b7280;padding:2px 8px;">12 due</span>
+        </div>
+
+        <!-- ══ SCREEN 2: Patient Record ══ -->
+        <div id="rx-patient" class="rx-panel" style="flex-direction:column;">
+          <div class="rx-topnav">
+            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;margin-right:20px;">RESIL<span style="color:#00C8E8;">IX</span></span>
+            <div class="rx-topnav-tab active">Patient Name</div>
+            <div class="rx-topnav-tab">Caregiver</div>
+            <div class="rx-topnav-tab">Opt-In &amp; Reminders</div>
+            <div class="rx-topnav-tab">Treatments</div>
+            <div class="rx-topnav-tab">Barriers</div>
+            <div class="rx-topnav-tab">Assessments</div>
+            <div class="rx-topnav-tab" style="color:#ef4444;font-weight:700;">Adverse Events <span style="background:#ef4444;color:#fff;border-radius:50%;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;font-size:8px;margin-left:4px;">2</span></div>
+            <div class="rx-topnav-tab">Communications</div>
+            <div style="flex:1;"></div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:3px 8px;font-size:10px;color:rgba(255,255,255,.5);"><i class="fas fa-search"></i></div>
+              <div style="width:26px;height:26px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;">JD</div>
             </div>
-            <table style="width:100%;border-collapse:collapse;font-size:11px;">
-              <thead><tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;">
-                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Patient</th>
-                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Therapy</th>
-                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Stage</th>
-                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Last Contact</th>
-                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Status</th>
-                <th style="padding:8px 14px;text-align:left;font-weight:600;color:#6b7280;font-size:10px;letter-spacing:.05em;text-transform:uppercase;">Action</th>
-              </tr></thead>
-              <tbody>
-                <tr style="border-bottom:1px solid #f3f4f6;">
-                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">M. Thornton</div><div style="color:#9ca3af;font-size:10px;">ID #4821</div></td>
-                  <td style="padding:9px 14px;color:#374151;">Beovu — Oncology</td>
-                  <td style="padding:9px 14px;"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Initiation</span></td>
-                  <td style="padding:9px 14px;color:#6b7280;">Mar 15, 2019</td>
-                  <td style="padding:9px 14px;"><span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Follow-up Due</span></td>
-                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Call <i class="fas fa-phone" style="font-size:9px;"></i></span></td>
-                </tr>
-                <tr style="border-bottom:1px solid #f3f4f6; background:#fafafa;">
-                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">R. Caldwell</div><div style="color:#9ca3af;font-size:10px;">ID #3976</div></td>
-                  <td style="padding:9px 14px;color:#374151;">Rare Disease — Oral</td>
-                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Persistent</span></td>
-                  <td style="padding:9px 14px;color:#6b7280;">Mar 17, 2019</td>
-                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">On Track</span></td>
-                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Text <i class="fas fa-comment-alt" style="font-size:9px;"></i></span></td>
-                </tr>
-                <tr style="border-bottom:1px solid #f3f4f6;">
-                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">A. Patel</div><div style="color:#9ca3af;font-size:10px;">ID #5104</div></td>
-                  <td style="padding:9px 14px;color:#374151;">Specialty — Injection</td>
-                  <td style="padding:9px 14px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">At Risk</span></td>
-                  <td style="padding:9px 14px;color:#6b7280;">Mar 10, 2019</td>
-                  <td style="padding:9px 14px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Barrier Flagged</span></td>
-                  <td style="padding:9px 14px;"><span style="color:#EF476F;font-weight:700;cursor:pointer;">Urgent <i class="fas fa-exclamation-circle" style="font-size:9px;"></i></span></td>
-                </tr>
-                <tr style="border-bottom:1px solid #f3f4f6; background:#fafafa;">
-                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">S. Nguyen</div><div style="color:#9ca3af;font-size:10px;">ID #3312</div></td>
-                  <td style="padding:9px 14px;color:#374151;">Oncology — IV</td>
-                  <td style="padding:9px 14px;"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Enrollment</span></td>
-                  <td style="padding:9px 14px;color:#6b7280;">Mar 18, 2019</td>
-                  <td style="padding:9px 14px;"><span style="background:#f3f4f6;color:#374151;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Welcome Call</span></td>
-                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Call <i class="fas fa-phone" style="font-size:9px;"></i></span></td>
-                </tr>
-                <tr>
-                  <td style="padding:9px 14px;"><div style="font-weight:600;color:#111827;">L. Hernandez</div><div style="color:#9ca3af;font-size:10px;">ID #2891</div></td>
-                  <td style="padding:9px 14px;color:#374151;">Rare Disease — Sub-Q</td>
-                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">Persistent</span></td>
-                  <td style="padding:9px 14px;color:#6b7280;">Mar 16, 2019</td>
-                  <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;font-weight:600;font-size:10px;">On Track</span></td>
-                  <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;">Log Note <i class="fas fa-pen" style="font-size:9px;"></i></span></td>
-                </tr>
-              </tbody>
-            </table>
+          </div>
+          <div style="flex:1;display:flex;overflow:hidden;background:#f7f8fa;">
+            <!-- Patient sidebar -->
+            <div style="width:190px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;overflow-y:auto;padding:14px 12px;font-size:11px;">
+              <!-- Avatar + ID -->
+              <div style="text-align:center;margin-bottom:12px;">
+                <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;margin:0 auto 6px;">AT</div>
+                <div style="font-weight:700;color:#111827;font-size:12px;">A. Torres</div>
+                <div style="color:#9ca3af;font-size:10px;">ID #5104</div>
+                <div style="margin-top:6px;display:flex;justify-content:center;gap:6px;">
+                  <span style="background:#fee2e2;color:#991b1b;padding:2px 7px;border-radius:8px;font-size:9px;font-weight:700;">At Risk</span>
+                </div>
+              </div>
+              <div style="border-top:1px solid #f0f0f0;padding-top:10px;">
+                <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Date of Birth</div><div style="color:#374151;">06/12/1962 (56 yr)</div></div>
+                <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Description</div><div style="color:#374151;">Has a new grandchild</div></div>
+                <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Home Phone</div><div style="color:#374151;">(212) 742-2975</div></div>
+                <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Mobile Phone</div><div style="color:#374151;">(212) 901-4038</div></div>
+                <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Best Time to Call</div><div style="color:#374151;">Afternoon</div></div>
+                <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Primary Caregiver</div><div style="color:#374151;">M. Torres (Daughter)</div></div>
+                <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Medication</div><div style="color:#374151;">Specialty Injection</div></div>
+              </div>
+              <!-- Quick actions -->
+              <div style="border-top:1px solid #f0f0f0;padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:6px 4px;font-size:9px;font-weight:600;color:#374151;cursor:pointer;text-align:center;"><i class="fas fa-phone" style="display:block;font-size:11px;color:#0077B6;margin-bottom:2px;"></i>Call</button>
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:6px 4px;font-size:9px;font-weight:600;color:#374151;cursor:pointer;text-align:center;"><i class="fas fa-comment-alt" style="display:block;font-size:11px;color:#00C8E8;margin-bottom:2px;"></i>Text</button>
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:6px 4px;font-size:9px;font-weight:600;color:#374151;cursor:pointer;text-align:center;"><i class="fas fa-envelope" style="display:block;font-size:11px;color:#7c3aed;margin-bottom:2px;"></i>Email</button>
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:6px 4px;font-size:9px;font-weight:600;color:#374151;cursor:pointer;text-align:center;"><i class="fas fa-pen" style="display:block;font-size:11px;color:#f59e0b;margin-bottom:2px;"></i>Log Note</button>
+              </div>
+            </div>
+            <!-- Main record area -->
+            <div style="flex:1;overflow-y:auto;padding:16px;">
+              <!-- Sub-tabs -->
+              <div style="display:flex;gap:0;border-bottom:1px solid #e5e7eb;margin-bottom:14px;">
+                <div style="padding:6px 16px;font-size:11px;font-weight:700;color:#0077B6;border-bottom:2px solid #0077B6;cursor:pointer;">CALL INFO</div>
+                <div style="padding:6px 16px;font-size:11px;font-weight:600;color:#9ca3af;border-bottom:2px solid transparent;cursor:pointer;">KEYWORD SEARCH</div>
+              </div>
+              <!-- Keyword visualization -->
+              <div style="margin-bottom:14px;">
+                <div style="font-size:10px;font-weight:700;color:#374151;margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;">Keywords by Call — Voice Analysis</div>
+                <!-- Waveform bars + keyword pills -->
+                <div style="display:flex;gap:10px;align-items:flex-end;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;overflow-x:auto;">
+                  <!-- Keyword 1: Headache -->
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                    <div style="display:flex;align-items:flex-end;gap:1px;height:48px;">
+                      <div style="width:3px;height:20px;background:#3b82f6;border-radius:2px;"></div><div style="width:3px;height:35px;background:#3b82f6;border-radius:2px;"></div><div style="width:3px;height:44px;background:#3b82f6;border-radius:2px;"></div><div style="width:3px;height:30px;background:#3b82f6;border-radius:2px;"></div><div style="width:3px;height:48px;background:#3b82f6;border-radius:2px;"></div><div style="width:3px;height:24px;background:#3b82f6;border-radius:2px;"></div><div style="width:3px;height:38px;background:#3b82f6;border-radius:2px;"></div>
+                    </div>
+                    <div style="background:#dbeafe;color:#1d4ed8;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">Headache <span style="opacity:.6;">88%</span></div>
+                    <div style="font-size:9px;color:#6b7280;text-align:center;max-width:80px;line-height:1.3;">"I get a nagging headache that just won't go away…"</div>
+                  </div>
+                  <!-- Keyword 2: Travel -->
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                    <div style="display:flex;align-items:flex-end;gap:1px;height:48px;">
+                      <div style="width:3px;height:16px;background:#0077B6;border-radius:2px;"></div><div style="width:3px;height:28px;background:#0077B6;border-radius:2px;"></div><div style="width:3px;height:36px;background:#0077B6;border-radius:2px;"></div><div style="width:3px;height:20px;background:#0077B6;border-radius:2px;"></div><div style="width:3px;height:40px;background:#0077B6;border-radius:2px;"></div>
+                    </div>
+                    <div style="background:#e0f2fe;color:#0369a1;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">Travel <span style="opacity:.6;">74%</span></div>
+                    <div style="font-size:9px;color:#6b7280;text-align:center;max-width:80px;line-height:1.3;">"…worried about taking my medication while I travel."</div>
+                  </div>
+                  <!-- Keyword 3: Knee Pain -->
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                    <div style="display:flex;align-items:flex-end;gap:1px;height:48px;">
+                      <div style="width:3px;height:30px;background:#7c3aed;border-radius:2px;"></div><div style="width:3px;height:48px;background:#7c3aed;border-radius:2px;"></div><div style="width:3px;height:22px;background:#7c3aed;border-radius:2px;"></div><div style="width:3px;height:42px;background:#7c3aed;border-radius:2px;"></div><div style="width:3px;height:34px;background:#7c3aed;border-radius:2px;"></div><div style="width:3px;height:18px;background:#7c3aed;border-radius:2px;"></div>
+                    </div>
+                    <div style="background:#ede9fe;color:#6d28d9;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">Knee Pain <span style="opacity:.6;">65%</span></div>
+                    <div style="font-size:9px;color:#6b7280;text-align:center;max-width:80px;line-height:1.3;">"My knee pain had just been awful — wasn't sure if it was a side effect."</div>
+                  </div>
+                  <!-- Keyword 4: Eye Pain -->
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                    <div style="display:flex;align-items:flex-end;gap:1px;height:48px;">
+                      <div style="width:3px;height:12px;background:#f59e0b;border-radius:2px;"></div><div style="width:3px;height:32px;background:#f59e0b;border-radius:2px;"></div><div style="width:3px;height:24px;background:#f59e0b;border-radius:2px;"></div><div style="width:3px;height:44px;background:#f59e0b;border-radius:2px;"></div>
+                    </div>
+                    <div style="background:#fef3c7;color:#92400e;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">Eye Pain <span style="opacity:.6;">59%</span></div>
+                    <div style="font-size:9px;color:#6b7280;text-align:center;max-width:80px;line-height:1.3;">"The eye pain has been getting definitely worse…"</div>
+                  </div>
+                  <!-- Keyword 5: Sinus Pressure -->
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                    <div style="display:flex;align-items:flex-end;gap:1px;height:48px;">
+                      <div style="width:3px;height:22px;background:#10b981;border-radius:2px;"></div><div style="width:3px;height:38px;background:#10b981;border-radius:2px;"></div><div style="width:3px;height:46px;background:#10b981;border-radius:2px;"></div><div style="width:3px;height:28px;background:#10b981;border-radius:2px;"></div><div style="width:3px;height:18px;background:#10b981;border-radius:2px;"></div>
+                    </div>
+                    <div style="background:#d1fae5;color:#065f46;font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">Sinus Pressure <span style="opacity:.6;">50%</span></div>
+                    <div style="font-size:9px;color:#6b7280;text-align:center;max-width:80px;line-height:1.3;">"…been losing sleep most of the time because of the sinus pressure."</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Adverse Events -->
+              <div style="font-size:10px;font-weight:700;color:#374151;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em;">Adverse Events</div>
+              <div style="margin-bottom:8px;border:1px solid #fecaca;border-radius:8px;padding:10px 12px;background:#fff;display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><div style="width:8px;height:8px;border-radius:50%;background:#ef4444;flex-shrink:0;"></div><div style="font-size:11px;font-weight:700;color:#111827;">Lower back pain</div></div>
+                  <div style="font-size:10px;color:#6b7280;line-height:1.5;">Patient indicated she has had lower back pain since last Tuesday. Pain is progressively getting worse. Using ice to help relieve the pain.</div>
+                </div>
+                <div style="text-align:right;font-size:9px;color:#9ca3af;flex-shrink:0;margin-left:12px;"><div>01/08/2019</div><div>Reported by: Patient</div></div>
+              </div>
+              <div style="border:1px solid #fed7aa;border-radius:8px;padding:10px 12px;background:#fff;display:flex;justify-content:space-between;align-items:flex-start;">
+                <div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;flex-shrink:0;"></div><div style="font-size:11px;font-weight:700;color:#111827;">Trouble breathing</div></div>
+                  <div style="font-size:10px;color:#6b7280;line-height:1.5;">Patient indicated she has had trouble breathing since last Tuesday.</div>
+                </div>
+                <div style="text-align:right;font-size:9px;color:#9ca3af;flex-shrink:0;margin-left:12px;"><div>01/08/2019</div><div>Reported by: Patient</div></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Tab: Patients (Free Text Capabilities) -->
-        <div id="rx-patients" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
-          <img src="images/Human Care Systems/Free_Text_Capabilities.png" alt="Resilix Free Text Capabilities" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
-        </div>
-
-        <!-- Tab: Messages -->
-        <div id="rx-messages" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
-          <img src="images/Human Care Systems/Resilix-05.jpg" alt="Resilix Capabilities" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
-        </div>
-
-        <!-- Tab: Provider Portal -->
-        <div id="rx-portal" class="rx-panel" style="display:none; height:100%; overflow:auto; background:#fff;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;height:100%;">
-            <img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_1.png" alt="Provider Preference Portal" style="width:100%;height:100%;object-fit:contain;background:#f8f9fa;padding:8px;" />
-            <img src="images/Human Care Systems/RTH_Provider_Pref_Portal_Page_2.png" alt="Enrollment Flow" style="width:100%;height:100%;object-fit:contain;background:#f8f9fa;padding:8px;border-left:1px solid #e5e7eb;" />
+        <!-- ══ SCREEN 3: Patient List ══ -->
+        <div id="rx-list" class="rx-panel" style="flex-direction:column;">
+          <div class="rx-topnav">
+            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;margin-right:20px;">RESIL<span style="color:#00C8E8;">IX</span></span>
+            <div class="rx-topnav-tab">Scheduler</div>
+            <div class="rx-topnav-tab active">Patient List</div>
+            <div class="rx-topnav-tab">Reports</div>
+            <div style="flex:1;"></div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:4px 10px;display:flex;align-items:center;gap:6px;font-size:10px;color:rgba(255,255,255,.6);"><i class="fas fa-search"></i><span>Search patients…</span></div>
+              <div style="width:26px;height:26px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;">JD</div>
+            </div>
+          </div>
+          <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;background:#fff;">
+            <!-- Filters + add -->
+            <div style="padding:10px 16px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;gap:10px;">
+              <div style="display:flex;gap:6px;">
+                <span style="padding:4px 12px;border-radius:14px;font-size:10px;font-weight:700;background:#1a3a6b;color:#fff;cursor:pointer;">All Patients</span>
+                <span style="padding:4px 12px;border-radius:14px;font-size:10px;font-weight:600;color:#6b7280;border:1px solid #e5e7eb;cursor:pointer;">At Risk</span>
+                <span style="padding:4px 12px;border-radius:14px;font-size:10px;font-weight:600;color:#6b7280;border:1px solid #e5e7eb;cursor:pointer;">Follow-up Due</span>
+                <span style="padding:4px 12px;border-radius:14px;font-size:10px;font-weight:600;color:#6b7280;border:1px solid #e5e7eb;cursor:pointer;">On Track</span>
+                <span style="padding:4px 12px;border-radius:14px;font-size:10px;font-weight:600;color:#6b7280;border:1px solid #e5e7eb;cursor:pointer;">New Enrollment</span>
+              </div>
+              <div style="flex:1;"></div>
+              <button style="background:linear-gradient(135deg,#0077B6,#00C8E8);border:none;border-radius:6px;padding:6px 14px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-plus" style="margin-right:4px;"></i>Add Patient</button>
+            </div>
+            <!-- Table -->
+            <div style="flex:1;overflow-y:auto;">
+              <table style="width:100%;border-collapse:collapse;font-size:11px;">
+                <thead style="position:sticky;top:0;z-index:1;">
+                  <tr style="background:#f9fafb;border-bottom:2px solid #e5e7eb;">
+                    <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;">Patient</th>
+                    <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;">Program</th>
+                    <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;">Therapy Stage</th>
+                    <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;">Enrolled</th>
+                    <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;">Last Contact</th>
+                    <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;">Status</th>
+                    <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid #f3f4f6;background:#fff8f8;">
+                    <td style="padding:9px 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:26px;height:26px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#991b1b;flex-shrink:0;">AT</div><div><div style="font-weight:600;color:#111827;">A. Torres</div><div style="color:#9ca3af;font-size:9px;">#5104</div></div></div></td>
+                    <td style="padding:9px 14px;color:#374151;">Specialty Injection</td>
+                    <td style="padding:9px 14px;"><span style="background:#fef3c7;color:#92400e;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">Persistence</span></td>
+                    <td style="padding:9px 14px;color:#6b7280;">Sep 4, 2018</td>
+                    <td style="padding:9px 14px;color:#ef4444;font-weight:600;">Mar 10 <span style="font-weight:400;color:#9ca3af;">· 8 days ago</span></td>
+                    <td style="padding:9px 14px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">⚠ At Risk</span></td>
+                    <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;margin-right:8px;"><i class="fas fa-phone" style="font-size:9px;"></i> Call</span><span style="color:#9ca3af;font-weight:600;cursor:pointer;"><i class="fas fa-ellipsis-h" style="font-size:9px;"></i></span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #f3f4f6;">
+                    <td style="padding:9px 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:26px;height:26px;border-radius:50%;background:#fef3c7;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#92400e;flex-shrink:0;">MT</div><div><div style="font-weight:600;color:#111827;">M. Thornton</div><div style="color:#9ca3af;font-size:9px;">#4821</div></div></div></td>
+                    <td style="padding:9px 14px;color:#374151;">Beovu · Oncology</td>
+                    <td style="padding:9px 14px;"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">Initiation</span></td>
+                    <td style="padding:9px 14px;color:#6b7280;">Mar 1, 2019</td>
+                    <td style="padding:9px 14px;color:#f59e0b;font-weight:600;">Mar 15 <span style="font-weight:400;color:#9ca3af;">· 3 days ago</span></td>
+                    <td style="padding:9px 14px;"><span style="background:#fef3c7;color:#92400e;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">Follow-up Due</span></td>
+                    <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;margin-right:8px;"><i class="fas fa-phone" style="font-size:9px;"></i> Call</span><span style="color:#9ca3af;font-weight:600;cursor:pointer;"><i class="fas fa-ellipsis-h" style="font-size:9px;"></i></span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #f3f4f6;background:#f0fdf4;">
+                    <td style="padding:9px 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:26px;height:26px;border-radius:50%;background:#d1fae5;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#065f46;flex-shrink:0;">RC</div><div><div style="font-weight:600;color:#111827;">R. Caldwell</div><div style="color:#9ca3af;font-size:9px;">#3976</div></div></div></td>
+                    <td style="padding:9px 14px;color:#374151;">Rare Disease · Oral</td>
+                    <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">Persistence</span></td>
+                    <td style="padding:9px 14px;color:#6b7280;">Jan 14, 2019</td>
+                    <td style="padding:9px 14px;color:#374151;">Mar 17 <span style="font-weight:400;color:#9ca3af;">· 1 day ago</span></td>
+                    <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">✓ On Track</span></td>
+                    <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;margin-right:8px;"><i class="fas fa-comment-alt" style="font-size:9px;"></i> Text</span><span style="color:#9ca3af;font-weight:600;cursor:pointer;"><i class="fas fa-ellipsis-h" style="font-size:9px;"></i></span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #f3f4f6;background:#f0fdf4;">
+                    <td style="padding:9px 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:26px;height:26px;border-radius:50%;background:#d1fae5;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#065f46;flex-shrink:0;">LH</div><div><div style="font-weight:600;color:#111827;">L. Hernandez</div><div style="color:#9ca3af;font-size:9px;">#2891</div></div></div></td>
+                    <td style="padding:9px 14px;color:#374151;">Rare Disease · Sub-Q</td>
+                    <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">Persistence</span></td>
+                    <td style="padding:9px 14px;color:#6b7280;">Nov 22, 2018</td>
+                    <td style="padding:9px 14px;color:#374151;">Mar 16 <span style="font-weight:400;color:#9ca3af;">· 2 days ago</span></td>
+                    <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">✓ On Track</span></td>
+                    <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;margin-right:8px;"><i class="fas fa-pen" style="font-size:9px;"></i> Log</span><span style="color:#9ca3af;font-weight:600;cursor:pointer;"><i class="fas fa-ellipsis-h" style="font-size:9px;"></i></span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #f3f4f6;">
+                    <td style="padding:9px 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:26px;height:26px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#1d4ed8;flex-shrink:0;">SN</div><div><div style="font-weight:600;color:#111827;">S. Nguyen</div><div style="color:#9ca3af;font-size:9px;">#3312</div></div></div></td>
+                    <td style="padding:9px 14px;color:#374151;">Oncology · IV</td>
+                    <td style="padding:9px 14px;"><span style="background:#dbeafe;color:#1d4ed8;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">Enrollment</span></td>
+                    <td style="padding:9px 14px;color:#6b7280;">Mar 18, 2019</td>
+                    <td style="padding:9px 14px;color:#374151;">Mar 18 <span style="font-weight:400;color:#9ca3af;">· Today</span></td>
+                    <td style="padding:9px 14px;"><span style="background:#f3f4f6;color:#374151;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">New — Welcome Call</span></td>
+                    <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;margin-right:8px;"><i class="fas fa-phone" style="font-size:9px;"></i> Call</span><span style="color:#9ca3af;font-weight:600;cursor:pointer;"><i class="fas fa-ellipsis-h" style="font-size:9px;"></i></span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #f3f4f6;background:#f0fdf4;">
+                    <td style="padding:9px 14px;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:26px;height:26px;border-radius:50%;background:#d1fae5;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#065f46;flex-shrink:0;">PJ</div><div><div style="font-weight:600;color:#111827;">P. Johnson</div><div style="color:#9ca3af;font-size:9px;">#4102</div></div></div></td>
+                    <td style="padding:9px 14px;color:#374151;">Oral Rare Disease</td>
+                    <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">Persistence</span></td>
+                    <td style="padding:9px 14px;color:#6b7280;">Aug 7, 2018</td>
+                    <td style="padding:9px 14px;color:#374151;">Mar 17 <span style="font-weight:400;color:#9ca3af;">· 1 day ago</span></td>
+                    <td style="padding:9px 14px;"><span style="background:#d1fae5;color:#065f46;padding:2px 9px;border-radius:10px;font-weight:700;font-size:10px;">✓ On Track</span></td>
+                    <td style="padding:9px 14px;"><span style="color:#0077B6;font-weight:600;cursor:pointer;margin-right:8px;"><i class="fas fa-phone" style="font-size:9px;"></i> Call</span><span style="color:#9ca3af;font-weight:600;cursor:pointer;"><i class="fas fa-ellipsis-h" style="font-size:9px;"></i></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
-        <!-- Tab: Capabilities -->
-        <div id="rx-capabilities" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
-          <img src="images/Human Care Systems/Resilix-01.jpg" alt="Resilix Capability Slides" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
-        </div>
-
-        <!-- Tab: Roadmap -->
-        <div id="rx-roadmap" class="rx-panel" style="display:none; height:100%; overflow:hidden;">
-          <img src="images/Human Care Systems/roadmap6-01.png" alt="Resilix 2020 Roadmap" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
+        <!-- ══ SCREEN 4: Messaging ══ -->
+        <div id="rx-messaging" class="rx-panel" style="flex-direction:column;">
+          <div class="rx-topnav">
+            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;margin-right:20px;">RESIL<span style="color:#00C8E8;">IX</span></span>
+            <div class="rx-topnav-tab active">Messages</div>
+            <div class="rx-topnav-tab">Templates</div>
+            <div style="flex:1;"></div>
+            <div style="background:rgba(255,255,255,.08);border-radius:5px;padding:3px 8px;font-size:10px;color:rgba(255,255,255,.5);"><i class="fas fa-search"></i></div>
+            <div style="width:26px;height:26px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;margin-left:8px;">JD</div>
+          </div>
+          <div style="flex:1;display:flex;overflow:hidden;background:#f7f8fa;">
+            <!-- Conversation list -->
+            <div style="width:220px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;overflow-y:auto;">
+              <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;background:#f9fafb;">
+                <input style="width:100%;border:1px solid #e5e7eb;border-radius:6px;padding:5px 10px;font-size:11px;color:#374151;background:#fff;outline:none;" placeholder="Search messages…" />
+              </div>
+              <!-- Unread - A. Torres -->
+              <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;background:#fff8f8;cursor:pointer;border-left:3px solid #ef4444;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div style="font-weight:700;color:#111827;font-size:11px;">A. Torres</div>
+                  <div style="font-size:9px;color:#9ca3af;">2:14 PM</div>
+                </div>
+                <div style="font-size:10px;color:#6b7280;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">I've been having trouble remembering to take…</div>
+                <div style="margin-top:4px;display:flex;align-items:center;gap:4px;"><span style="background:#ef4444;color:#fff;font-size:8px;font-weight:700;padding:1px 6px;border-radius:8px;">Unread</span><span style="background:#fee2e2;color:#991b1b;font-size:8px;font-weight:700;padding:1px 6px;border-radius:8px;">At Risk</span></div>
+              </div>
+              <!-- M. Thornton -->
+              <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div style="font-weight:600;color:#374151;font-size:11px;">M. Thornton</div>
+                  <div style="font-size:9px;color:#9ca3af;">Yesterday</div>
+                </div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Thank you for checking in, I'll call back…</div>
+              </div>
+              <!-- R. Caldwell -->
+              <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div style="font-weight:600;color:#374151;font-size:11px;">R. Caldwell</div>
+                  <div style="font-size:9px;color:#9ca3af;">Mar 16</div>
+                </div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Feeling great this week, adherence is going well</div>
+              </div>
+              <!-- L. Hernandez -->
+              <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div style="font-weight:600;color:#374151;font-size:11px;">L. Hernandez</div>
+                  <div style="font-size:9px;color:#9ca3af;">Mar 15</div>
+                </div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Hi Nurse, just wanted to let you know I took…</div>
+              </div>
+              <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div style="font-weight:600;color:#374151;font-size:11px;">C. Williams</div>
+                  <div style="font-size:9px;color:#9ca3af;">Mar 14</div>
+                </div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">I missed my dose on Tuesday — is that okay?</div>
+              </div>
+            </div>
+            <!-- Chat window -->
+            <div style="flex:1;display:flex;flex-direction:column;">
+              <!-- Chat header -->
+              <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 16px;display:flex;align-items:center;gap:10px;">
+                <div style="width:32px;height:32px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#991b1b;">AT</div>
+                <div><div style="font-weight:700;color:#111827;font-size:12px;">A. Torres</div><div style="font-size:10px;color:#9ca3af;">ID #5104 · Specialty Injection · <span style="color:#ef4444;font-weight:600;">At Risk</span></div></div>
+                <div style="flex:1;"></div>
+                <button style="background:#f3f4f6;border:none;border-radius:6px;padding:6px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-phone" style="margin-right:4px;color:#0077B6;"></i>Call</button>
+                <button style="background:#f3f4f6;border:none;border-radius:6px;padding:6px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-user" style="margin-right:4px;color:#7c3aed;"></i>Profile</button>
+              </div>
+              <!-- Messages -->
+              <div style="flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px;background:#f7f8fa;">
+                <div style="text-align:center;font-size:9px;color:#9ca3af;margin-bottom:4px;">Monday, March 18, 2019</div>
+                <!-- Nurse -->
+                <div style="display:flex;justify-content:flex-end;">
+                  <div style="max-width:68%;background:linear-gradient(135deg,#0077B6,#00C8E8);color:#fff;border-radius:12px 12px 2px 12px;padding:8px 12px;font-size:11px;line-height:1.5;">
+                    Hi! It's after our normal business hours and we are worried about you! Please contact us at your earliest convenience for important health information regarding your therapy.
+                    <div style="font-size:9px;color:rgba(255,255,255,.7);margin-top:4px;text-align:right;">2:01 PM · Delivered ✓</div>
+                  </div>
+                </div>
+                <!-- Patient -->
+                <div style="display:flex;justify-content:flex-start;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:#991b1b;flex-shrink:0;margin-right:8px;margin-top:2px;">AT</div>
+                  <div style="max-width:65%;background:#fff;border:1px solid #e5e7eb;border-radius:2px 12px 12px 12px;padding:8px 12px;font-size:11px;line-height:1.5;color:#374151;">
+                    Hi! I've been having trouble remembering to take my medication while traveling. I want to make sure I'm doing everything right.
+                    <div style="font-size:9px;color:#9ca3af;margin-top:4px;">2:14 PM</div>
+                  </div>
+                </div>
+                <!-- Nurse -->
+                <div style="display:flex;justify-content:flex-end;">
+                  <div style="max-width:68%;background:linear-gradient(135deg,#0077B6,#00C8E8);color:#fff;border-radius:12px 12px 2px 12px;padding:8px 12px;font-size:11px;line-height:1.5;">
+                    Hi Alex, I'm sorry to hear that. Would you be able to speak to someone on our clinical team today so we can help you get back on schedule?
+                    <div style="font-size:9px;color:rgba(255,255,255,.7);margin-top:4px;text-align:right;">2:18 PM · Delivered ✓</div>
+                  </div>
+                </div>
+                <!-- Patient -->
+                <div style="display:flex;justify-content:flex-start;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:#991b1b;flex-shrink:0;margin-right:8px;margin-top:2px;">AT</div>
+                  <div style="max-width:65%;background:#fff;border:1px solid #e5e7eb;border-radius:2px 12px 12px 12px;padding:8px 12px;font-size:11px;line-height:1.5;color:#374151;">
+                    I want to know how compliant I need to be and tell me what is happening.
+                    <div style="font-size:9px;color:#9ca3af;margin-top:4px;">2:22 PM</div>
+                  </div>
+                </div>
+                <!-- Nurse typing indicator -->
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:#fff;flex-shrink:0;">JD</div>
+                  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:8px 14px;">
+                    <div style="display:flex;gap:4px;align-items:center;height:12px;">
+                      <div style="width:6px;height:6px;border-radius:50%;background:#9ca3af;animation:typing .8s infinite;"></div>
+                      <div style="width:6px;height:6px;border-radius:50%;background:#9ca3af;animation:typing .8s .2s infinite;"></div>
+                      <div style="width:6px;height:6px;border-radius:50%;background:#9ca3af;animation:typing .8s .4s infinite;"></div>
+                    </div>
+                  </div>
+                  <div style="font-size:9px;color:#9ca3af;">Julie is typing…</div>
+                </div>
+              </div>
+              <!-- Compose -->
+              <div style="background:#fff;border-top:1px solid #e5e7eb;padding:10px 14px;">
+                <div style="display:flex;gap:8px;align-items:center;">
+                  <div style="display:flex;gap:6px;">
+                    <button style="background:#f3f4f6;border:none;border-radius:5px;padding:6px 8px;font-size:11px;color:#6b7280;cursor:pointer;" title="Template"><i class="fas fa-bolt"></i></button>
+                    <button style="background:#f3f4f6;border:none;border-radius:5px;padding:6px 8px;font-size:11px;color:#6b7280;cursor:pointer;" title="Emoji"><i class="fas fa-smile"></i></button>
+                    <button style="background:#f3f4f6;border:none;border-radius:5px;padding:6px 8px;font-size:11px;color:#6b7280;cursor:pointer;" title="Attach"><i class="fas fa-paperclip"></i></button>
+                  </div>
+                  <input style="flex:1;border:1px solid #e5e7eb;border-radius:8px;padding:7px 12px;font-size:11px;color:#374151;background:#f9fafb;outline:none;" placeholder="Type a message…" />
+                  <button style="background:linear-gradient(135deg,#0077B6,#00C8E8);border:none;border-radius:8px;padding:7px 14px;font-size:11px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
 
-  <!-- Screen label below -->
+  <!-- Screen pill nav -->
   <div style="display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap;">
-    <button class="rx-tab-btn rx-tab-active" onclick="rxTab('dashboard')">Dashboard</button>
-    <button class="rx-tab-btn" onclick="rxTab('patients')">Free Text</button>
-    <button class="rx-tab-btn" onclick="rxTab('messages')">Capabilities</button>
-    <button class="rx-tab-btn" onclick="rxTab('portal')">Provider Portal</button>
-    <button class="rx-tab-btn" onclick="rxTab('capabilities')">Marketing Slides</button>
-    <button class="rx-tab-btn" onclick="rxTab('roadmap')">Product Roadmap</button>
+    <button class="rx-screenbtn active" onclick="rxScreen('scheduler')"><i class="fas fa-calendar-alt" style="margin-right:5px;"></i>Scheduler</button>
+    <button class="rx-screenbtn" onclick="rxScreen('patient')"><i class="fas fa-user-injured" style="margin-right:5px;"></i>Patient Record</button>
+    <button class="rx-screenbtn" onclick="rxScreen('list')"><i class="fas fa-list" style="margin-right:5px;"></i>Patient List</button>
+    <button class="rx-screenbtn" onclick="rxScreen('messaging')"><i class="fas fa-comment-dots" style="margin-right:5px;"></i>Free Text Messaging</button>
   </div>
 
   <style>
-    .rx-nav-item { display:flex; align-items:center; gap:10px; padding:9px 18px; font-size:12px; font-weight:500; color:rgba(255,255,255,.55); cursor:pointer; transition:all .2s; border-left:3px solid transparent; }
-    .rx-nav-item:hover { background:rgba(255,255,255,.06); color:rgba(255,255,255,.9); }
-    .rx-nav-active { background:rgba(0,200,232,.1); color:#00C8E8 !important; border-left-color:#00C8E8 !important; font-weight:700; }
-    .rx-nav-item i { width:14px; text-align:center; font-size:12px; }
-    .rx-tab-btn { padding:7px 16px; border-radius:20px; border:1.5px solid #d1d5db; background:#fff; font-size:11px; font-weight:600; color:#6b7280; cursor:pointer; transition:all .2s; }
-    .rx-tab-btn:hover { border-color:#0077B6; color:#0077B6; }
-    .rx-tab-active { background:linear-gradient(135deg,#0077B6,#00C8E8); color:#fff !important; border-color:transparent !important; }
+    @keyframes typing { 0%,100%{opacity:.3;transform:translateY(0)} 50%{opacity:1;transform:translateY(-2px)} }
   </style>
   <script>
-    function rxTab(id) {
-      document.querySelectorAll('.rx-panel').forEach(p => p.style.display = 'none');
-      document.querySelectorAll('.rx-nav-item').forEach(n => n.classList.remove('rx-nav-active'));
-      document.querySelectorAll('.rx-tab-btn').forEach(b => b.classList.remove('rx-tab-active'));
-      document.getElementById('rx-' + id).style.display = 'block';
-      const navMap = { dashboard:0, patients:1, messages:2, portal:3, capabilities:4, roadmap:5 };
-      const btnMap = { dashboard:0, patients:1, messages:2, portal:3, capabilities:4, roadmap:5 };
-      document.querySelectorAll('.rx-nav-item')[navMap[id]].classList.add('rx-nav-active');
-      document.querySelectorAll('.rx-tab-btn')[btnMap[id]].classList.add('rx-tab-active');
+    function rxScreen(id) {
+      document.querySelectorAll('.rx-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.rx-screenbtn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.rx-rail-ico').forEach(i => i.classList.remove('active'));
+      document.getElementById('rx-' + id).classList.add('active');
+      const btns = document.querySelectorAll('.rx-screenbtn');
+      const rails = document.querySelectorAll('.rx-rail-ico');
+      const map = { scheduler:0, patient:1, list:2, messaging:3 };
+      btns[map[id]].classList.add('active');
+      rails[map[id]].classList.add('active');
     }
   </script>
 </section>
