@@ -26,8 +26,12 @@
     .topbar-logo img { height: 32px; }
     .topbar-tags { display: flex; gap: 8px; }
     .topbar-tag { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.08); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
-    .cs-hero { background: var(--dark); padding: 80px 48px 64px; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
-    .cs-hero-inner { max-width: 900px; }
+    .cs-hero { background: var(--dark); padding: 80px 48px 64px; overflow: hidden; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
+    .cs-hero-inner { max-width: 1400px; display: flex; gap: 56px; align-items: center; }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-visual { flex: 0 0 480px; overflow: hidden; display: flex; align-items: center; justify-content: center; align-self: stretch; margin-top: -36px; margin-bottom: -64px; }
+    .hero-visual img { width: 110%; max-width: none; filter: drop-shadow(0 24px 56px rgba(0,10,40,.92)) drop-shadow(0 6px 16px rgba(0,15,50,.85)); border-radius: 12px; }
+    @media(max-width:900px) { .cs-hero-inner { flex-direction: column; } .hero-visual { flex: none; width: 100%; margin: 0; } }
     .cs-client { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 24px; }
     .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
     .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -158,7 +162,7 @@
 
 <section class="cs-hero">
   <div class="cs-hero-inner">
-    <div class="cs-client"><i class="fab fa-microsoft"></i> Microsoft — Dynamics 365</div>
+    <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,42px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Microsoft Dynamics 365</div>
     <h1 class="cs-title">Motion, Video &amp;<br /><span>Digital Campaign Design</span></h1>
     <p class="cs-subtitle">Motion design and digital advertising for Microsoft Dynamics 365 — including tablet carousel animations, Facebook video ads, LinkedIn animated campaigns, and illustrated motion graphics targeted at enterprise buyers across key sales initiatives.</p>
     <div class="cs-meta">
@@ -166,16 +170,22 @@
       <div class="cs-meta-item"><label>Client</label><span>Microsoft (Dynamics 365)</span></div>
       <div class="cs-meta-item"><label>Deliverables</label><span>Video · Motion · Animated Ads</span></div>
       <div class="cs-meta-item"><label>Platforms</label><span>Facebook · LinkedIn · Web · Tablet</span></div>
-      <div class="cs-meta-item"><label>Industry</label><span>Technology</span></div>
+              <div class="cs-meta-item"><label>Design</label><span>Motion Design · Video Production · Social Ad Design</span></div>
+        <div class="cs-meta-item"><label>Platforms</label><span>Facebook · LinkedIn · Web · Tablet</span></div>
+        <div class="cs-meta-item"><label>Focus</label><span>B2B Enterprise Audience · Animated Campaigns · Illustrated Motion</span></div>
+        <div class="cs-meta-item"><label>Industry</label><span>Technology</span></div>
     </div>
   </div>
 </section>
 
-<div class="stats-bar">
+<div class="stats-bar" style="flex-direction:column; align-items:center; gap:0; padding:28px 48px 40px;">
+  <p style="font-size:14px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:32px;">Results &amp; Measurable Impact</p>
+  <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:24px; width:100%; padding-bottom:16px;">
   <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Motion Deliverables</div></div>
   <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Platforms: FB · LI · Web</div></div>
   <div class="stat-item"><div class="stat-num">D365</div><div class="stat-label">Dynamics 365 Enterprise Suite</div></div>
   <div class="stat-item"><div class="stat-num">B2B</div><div class="stat-label">Enterprise Audience Targeting</div></div>
+</div>
 </div>
 
 <section class="cs-section cs-section-alt">
