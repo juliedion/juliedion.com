@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Julie Dion — Senior Product Designer & Digital Marketing Leader</title>
-  <link rel="icon" href="/Users/juliedion/Library/CloudStorage/Dropbox/Career/Personal Brand/julie-portfolio/images/favicon.png" type="image/png" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -597,43 +597,65 @@
       background: var(--light);
     }
 
+    .filter-bar-wrap {
+      margin-bottom: 48px;
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .filter-group:last-child { margin-bottom: 0; }
+
+    .filter-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 7px;
+      min-width: 100px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 14px;
-    }
-
-    .filter-section-label {
-      width: 100%;
-      text-align: center;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
+      gap: 8px;
     }
 
     .filter-btn {
-      padding: 8px 18px;
-      border-radius: 50px;
+      padding: 6px 14px;
+      border-radius: 6px;
       font-size: 12px;
-      font-weight: 600;
-      border: 1.5px solid var(--border);
-      background: var(--white);
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: transparent;
       color: var(--mid);
       cursor: pointer;
-      transition: all var(--trans);
+      transition: all .18s ease;
+      letter-spacing: .01em;
     }
 
-    .filter-btn:hover,
+    .filter-btn:hover {
+      border-color: var(--cyan);
+      color: var(--blue);
+      background: rgba(0,200,232,.06);
+    }
+
     .filter-btn.active {
-      background: var(--grad);
-      border-color: transparent;
+      background: var(--dark);
+      border-color: var(--dark);
       color: var(--white);
-      box-shadow: 0 4px 16px rgba(0,119,182,.3);
     }
 
     .filter-divider {
@@ -643,13 +665,7 @@
       align-self: stretch;
     }
 
-    .filter-bar-wrap {
-      margin-bottom: 48px;
-    }
-
-    .industry-filters {
-      margin-top: 10px;
-    }
+    .industry-filters { margin-top: 0; }
 
     .portfolio-grid {
       display: grid;
@@ -1360,37 +1376,40 @@
     </div>
 
     <div class="filter-bar-wrap fade-up">
-      <div class="filter-bar" id="cat-filters">
-        <div class="filter-section-label">Filter by Category</div>
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="brand">Brand &amp; Identity</button>
-        <button class="filter-btn" data-filter="web">Web Design</button>
-        <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
-        <button class="filter-btn" data-filter="digital">Digital Marketing</button>
-        <button class="filter-btn" data-filter="print">Print Design</button>
-        <button class="filter-btn" data-filter="event">Event &amp; Community</button>
-        <button class="filter-btn" data-filter="presentation">Presentation</button>
-        <button class="filter-btn" data-filter="motion">Motion &amp; Video</button>
-        <button class="filter-btn" data-filter="packaging">Packaging &amp; Product</button>
-        <button class="filter-btn" data-filter="apparel">Apparel &amp; Merch</button>
-        <button class="filter-btn" data-filter="publication">Publication</button>
-        <button class="filter-btn" data-filter="environmental">Environmental</button>
-        <button class="filter-btn" data-filter="campaign">Campaign Dev</button>
+      <div class="filter-group">
+        <div class="filter-section-label">Category</div>
+        <div class="filter-bar" id="cat-filters">
+          <button class="filter-btn active" data-filter="all">All Work</button>
+          <button class="filter-btn" data-filter="brand">Brand &amp; Identity</button>
+          <button class="filter-btn" data-filter="web">Web Design</button>
+          <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
+          <button class="filter-btn" data-filter="digital">Digital Marketing</button>
+          <button class="filter-btn" data-filter="print">Print Design</button>
+          <button class="filter-btn" data-filter="event">Event &amp; Community</button>
+          <button class="filter-btn" data-filter="presentation">Presentation</button>
+          <button class="filter-btn" data-filter="motion">Motion &amp; Video</button>
+          <button class="filter-btn" data-filter="packaging">Packaging &amp; Product</button>
+          <button class="filter-btn" data-filter="apparel">Apparel &amp; Merch</button>
+          <button class="filter-btn" data-filter="publication">Publication</button>
+          <button class="filter-btn" data-filter="environmental">Environmental</button>
+          <button class="filter-btn" data-filter="campaign">Campaign Dev</button>
+        </div>
       </div>
-
-      <div class="filter-bar industry-filters" id="ind-filters">
-        <div class="filter-section-label">Filter by Industry</div>
-        <button class="filter-btn active" data-industry="all">All Industries</button>
-        <button class="filter-btn" data-industry="healthcare">Healthcare</button>
-        <button class="filter-btn" data-industry="telecom">Telecommunications</button>
-        <button class="filter-btn" data-industry="education">Education</button>
-        <button class="filter-btn" data-industry="nonprofit">Nonprofit</button>
-        <button class="filter-btn" data-industry="retail">Retail</button>
-        <button class="filter-btn" data-industry="ecommerce">E-Commerce</button>
-        <button class="filter-btn" data-industry="financial">Financial Services</button>
-        <button class="filter-btn" data-industry="travel">Travel &amp; Hospitality</button>
-        <button class="filter-btn" data-industry="technology">Technology</button>
-        <button class="filter-btn" data-industry="community">Community Org</button>
+      <div class="filter-group">
+        <div class="filter-section-label">Industry</div>
+        <div class="filter-bar" id="ind-filters">
+          <button class="filter-btn active" data-industry="all">All Industries</button>
+          <button class="filter-btn" data-industry="healthcare">Healthcare</button>
+          <button class="filter-btn" data-industry="telecom">Telecommunications</button>
+          <button class="filter-btn" data-industry="education">Education</button>
+          <button class="filter-btn" data-industry="nonprofit">Nonprofit</button>
+          <button class="filter-btn" data-industry="retail">Retail</button>
+          <button class="filter-btn" data-industry="ecommerce">E-Commerce</button>
+          <button class="filter-btn" data-industry="financial">Financial Services</button>
+          <button class="filter-btn" data-industry="travel">Travel &amp; Hospitality</button>
+          <button class="filter-btn" data-industry="technology">Technology</button>
+          <button class="filter-btn" data-industry="community">Community Org</button>
+        </div>
       </div>
     </div>
 
