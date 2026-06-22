@@ -63,7 +63,12 @@
     }
     .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
-    .cs-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px 32px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
+    .cs-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
+    .cs-meta-item:nth-child(1) { grid-column:1; grid-row:1; }
+    .cs-meta-item:nth-child(2) { grid-column:1; grid-row:2; }
+    .cs-meta-item:nth-child(3) { grid-column:1; grid-row:3; }
+    .cs-meta-item:nth-child(4) { grid-column:2; grid-row:1; }
+    .cs-meta-item:nth-child(5) { grid-column:2; grid-row:2; }
     .cs-meta-item label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); display: block; margin-bottom: 4px; }
     .cs-meta-item span { font-size: 14px; font-weight: 500; color: var(--white); }
 
@@ -549,7 +554,7 @@
         <div class="laptop-wrap">
           <div class="laptop-outer">
             <div class="laptop-screen-inner">
-              <img src="images/Charter Spectrum/FireShot-001-SMB-Homepage.jpg" alt="Spectrum Business Homepage — Desktop" />
+              <img src="images/Charter Spectrum/Artboard 1.jpg" alt="Spectrum Business Homepage — Desktop" />
             </div>
           </div>
           <div class="laptop-base"></div>
@@ -559,7 +564,7 @@
         <div class="mobile-wrap">
           <div class="mobile-outer">
             <div class="mobile-screen-inner">
-              <img src="images/Charter Spectrum/FireShot-003-Mobile.png" alt="Spectrum Business Homepage — Mobile" />
+              <img src="images/Charter Spectrum/FireShot-001-SMB-Homepage.jpg" alt="Spectrum Business Homepage — Mobile" />
             </div>
           </div>
           <p class="device-caption">Mobile</p>
@@ -569,13 +574,13 @@
   </div>
 </section>
 
-<!-- Process -->
+<!-- Process + Collaboration combined -->
 <section class="cs-section">
   <span class="section-label">My Process</span>
-  <h2 class="cs-h2">From Wireframes to Live Production</h2>
-  <p class="cs-p">Each sprint moved through a disciplined process — from stakeholder briefing to XD prototypes, cross-functional review, and final AEM authoring. Design decisions were validated against user research and A/B testing data.</p>
+  <h2 class="cs-h2">How a Page Gets Made<br /><em>at Charter Spectrum</em></h2>
+  <p class="cs-p">Each sprint moved through a disciplined cross-functional workflow — from a Jira ticket to a live URL — covering discovery, wireframing, high-fidelity design, AEM authoring, and QA across all three breakpoints.</p>
 
-  <div class="process-grid">
+  <div class="process-grid" style="margin-bottom:48px;">
     <div class="process-step">
       <div class="process-num">01</div>
       <div class="process-title">Discovery & Briefing</div>
@@ -594,18 +599,11 @@
     <div class="process-step">
       <div class="process-num">04</div>
       <div class="process-title">AEM Authoring & Launch</div>
-      <div class="process-desc">Authored the final designs directly in Adobe Experience Manager, working alongside front-end developers to QA across browsers and devices before each promotional launch.</div>
+      <div class="process-desc">Authored final designs directly in Adobe Experience Manager, working alongside developers to QA across browsers and devices before each promotional launch.</div>
     </div>
   </div>
-</section>
 
-<!-- Wireframes / Design Work -->
-<section class="cs-section cs-section-alt">
-  <span class="section-label">Design Process</span>
-  <h2 class="cs-h2">Wireframes, Prototypes & AEM Authoring</h2>
-  <p class="cs-p">The design-to-production workflow required close coordination across XD, the Spectrum design system, and AEM's component library. Here's a look at the process in action.</p>
-
-  <div style="margin-top:36px;">
+  <div style="margin-bottom:48px;">
     <div class="figma-frame">
       <div class="figma-titlebar">
         <div class="figma-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
@@ -618,12 +616,9 @@
     </div>
     <p style="font-size:12px; color:var(--muted); margin-top:10px; text-align:center;">Multi-breakpoint layout screens and AEM dev handoff — desktop, tablet, and mobile</p>
   </div>
-</section>
 
-<!-- Team / Collaboration -->
-<section class="cs-section">
-  <span class="section-label">Collaboration</span>
-  <h2 class="cs-h2">How a Page Gets Made<br /><em>at Charter Spectrum</em></h2>
+  <h3 style="font-size:18px; font-weight:700; color:var(--dark); margin-bottom:8px;">The Full Team Workflow</h3>
+  <p class="cs-p">Every page update followed handoffs between creative leadership, content, SEO, design, development, and QA — from Jira ticket to live URL.</p>
   <p class="cs-p">Every page update followed a structured cross-functional workflow — from a Jira ticket to a live URL — with handoffs between creative leadership, content, SEO, design, development, and QA.</p>
 
   <div class="workflow-track">

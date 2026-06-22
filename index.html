@@ -667,6 +667,7 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: transform var(--trans), box-shadow var(--trans);
+      cursor: pointer;
     }
 
     .portfolio-card:hover {
@@ -1296,33 +1297,30 @@
   <!-- ── Awards Strip ──────────────────────────────────────────────── -->
   <section style="background:var(--dark); padding:40px 60px; overflow:hidden;">
     <div style="text-align:center; color:rgba(255,255,255,.35); font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:28px;">Honors &amp; Awards</div>
-    <div style="display:flex; flex-wrap:wrap; gap:28px; justify-content:center; align-items:center;">
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:900px; margin:0 auto;">
       <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-trophy" style="color:#00C8E8; font-size:16px;"></i>
+        <i class="fas fa-trophy" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
         <div>
           <div style="font-size:13px; font-weight:600;">20 Most Outstanding Women</div>
           <div style="font-size:11px; color:rgba(255,255,255,.45);">Capital Region — 2024</div>
         </div>
       </div>
-      <div style="width:1px; background:rgba(255,255,255,.1); height:32px;"></div>
       <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-medal" style="color:#00C8E8; font-size:16px;"></i>
+        <i class="fas fa-medal" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
         <div>
           <div style="font-size:13px; font-weight:600;">MarCom Award Winner</div>
           <div style="font-size:11px; color:rgba(255,255,255,.45);">Halo Labs Butterfly Campaign — 2022</div>
         </div>
       </div>
-      <div style="width:1px; background:rgba(255,255,255,.1); height:32px;"></div>
       <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-star" style="color:#00C8E8; font-size:16px;"></i>
+        <i class="fas fa-star" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
         <div>
           <div style="font-size:13px; font-weight:600;">Graphic Design USA Winner</div>
           <div style="font-size:11px; color:rgba(255,255,255,.45);">UX/UI, Web &amp; Print — 2010, 2012, 2019</div>
         </div>
       </div>
-      <div style="width:1px; background:rgba(255,255,255,.1); height:32px;"></div>
       <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-award" style="color:#00C8E8; font-size:16px;"></i>
+        <i class="fas fa-award" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
         <div>
           <div style="font-size:13px; font-weight:600;">HOW Design &amp; In HOWSE Winner</div>
           <div style="font-size:11px; color:rgba(255,255,255,.45);">Print &amp; In-House Design — 2010, 2011, 2012</div>
@@ -2424,6 +2422,16 @@
       btn.classList.add('active');
       activeInd = btn.dataset.industry;
       filterCards();
+    });
+  });
+
+  /* ── Portfolio card — entire card clickable ──────────────────── */
+  document.querySelectorAll('.portfolio-card').forEach(card => {
+    const link = card.querySelector('.card-overlay-btn, .card-body a');
+    if (!link) return;
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return; // let real links handle themselves
+      window.open(link.href, link.target || '_blank');
     });
   });
 
