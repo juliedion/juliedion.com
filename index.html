@@ -599,18 +599,14 @@
 
     .filter-bar-wrap {
       margin-bottom: 48px;
-      background: var(--white);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 28px 32px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.05);
     }
 
     .filter-group {
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 20px;
+      align-items: center;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
     }
     .filter-group:last-child { margin-bottom: 0; }
 
@@ -621,50 +617,42 @@
       text-transform: uppercase;
       color: var(--muted);
       white-space: nowrap;
-      padding-top: 7px;
-      min-width: 100px;
-      text-align: right;
       flex-shrink: 0;
+      padding: 10px 20px 10px 0;
+      border-right: 1px solid var(--border);
+      margin-right: 8px;
     }
 
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 0;
     }
 
     .filter-btn {
-      padding: 6px 14px;
-      border-radius: 6px;
-      font-size: 12px;
+      padding: 10px 15px;
+      font-size: 13px;
       font-weight: 500;
-      border: 1px solid var(--border);
+      border: none;
+      border-bottom: 2px solid transparent;
       background: transparent;
-      color: var(--mid);
+      color: var(--muted);
       cursor: pointer;
-      transition: all .18s ease;
-      letter-spacing: .01em;
+      transition: color .15s ease, border-color .15s ease;
+      margin-bottom: -1px;
     }
 
     .filter-btn:hover {
-      border-color: var(--cyan);
-      color: var(--blue);
-      background: rgba(0,200,232,.06);
+      color: var(--dark);
     }
 
     .filter-btn.active {
-      background: var(--dark);
-      border-color: var(--dark);
-      color: var(--white);
+      color: var(--dark);
+      border-bottom-color: var(--cyan);
+      font-weight: 600;
     }
 
-    .filter-divider {
-      width: 1px;
-      background: var(--border);
-      margin: 0 6px;
-      align-self: stretch;
-    }
-
+    .filter-divider { display: none; }
     .industry-filters { margin-top: 0; }
 
     .portfolio-grid {
