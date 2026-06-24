@@ -214,7 +214,7 @@
     </div>
     </div>
     <div class="hero-visual">
-      <img src="images/Human Care Systems/HCS-Feature.jpg" alt="Human Care Systems" />
+      <img src="images/mockup-resilix.png" alt="Resilix Platform Mockup" />
     </div>
   </div>
 </section>
@@ -231,10 +231,11 @@
 
 <!-- Work Collection -->
 <section class="cs-section cs-section-alt">
+  <div style="max-width:1200px; margin:0 auto; text-align:center;">
   <span class="section-label">Work Collection</span>
   <h2 class="cs-h2">HCS Platform &amp; Campaign Deliverables</h2>
-  <p class="cs-p" style="margin-bottom:40px;">Six major deliverable categories spanning UX design, brand identity, patient engagement, and pharma sales — all produced as Creative Director on the Resilix engagement.</p>
-  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
+  <p class="cs-p" style="margin-bottom:40px; max-width:680px; margin-left:auto; margin-right:auto;">Six major deliverable categories spanning UX design, brand identity, patient engagement, and pharma sales — all produced as Creative Director on the Resilix engagement.</p>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; text-align:left;">
 
     <div class="lb-card" onclick="openHcsLb('platform')">
       <div class="lb-card-img"><img src="images/Human Care Systems/JulieDionPortfolio_20212.jpg" alt="Resilix Platform" /></div>
@@ -296,6 +297,7 @@
       </div>
     </div>
 
+  </div>
   </div>
 </section>
 
@@ -477,6 +479,48 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
     .rx-screenbtn { padding:7px 18px; border-radius:20px; border:1.5px solid #d1d5db; background:#fff; font-size:11px; font-weight:600; color:#6b7280; cursor:pointer; transition:.2s; }
     .rx-screenbtn:hover { border-color:#0077B6; color:#0077B6; }
     .rx-screenbtn.active { background:linear-gradient(135deg,#0077B6,#00C8E8); color:#fff; border-color:transparent; }
+
+    /* ── Mobile responsive ── */
+    @media (max-width:500px) {
+      /* Taller shell to fit stacked content */
+      .rx-shell { height:auto; min-height:580px; }
+      /* Shrink rail */
+      .rx-rail { width:38px; }
+      .rx-rail-ico { width:28px; height:28px; font-size:12px; }
+      .rx-rail-logo { font-size:9px; }
+      /* Topnav: scrollable tabs */
+      .rx-topnav { overflow-x:auto; overflow-y:hidden; gap:0; padding:0 10px; }
+      .rx-topnav::-webkit-scrollbar { display:none; }
+      .rx-topnav-tab { font-size:9px; padding:0 10px; white-space:nowrap; flex-shrink:0; }
+      /* Scheduler: show only 3 day columns, hide priority sidebar */
+      .rx-sched-priority { display:none !important; }
+      .rx-day-col:nth-child(n+4) { display:none; }
+      .rx-day-hdr:nth-child(n+4) { display:none; }
+      .rx-cal-grid { grid-template-columns:repeat(3,1fr) !important; }
+      .rx-cal-hdr  { grid-template-columns:repeat(3,1fr) !important; }
+      /* Patient record: stack sidebar on top */
+      .rx-patient-inner { flex-direction:column !important; overflow-y:auto !important; }
+      .rx-patient-sidebar { width:100% !important; border-right:none !important; border-bottom:1px solid #e5e7eb; flex-shrink:0; }
+      .rx-patient-sidebar .rx-quick-actions { grid-template-columns:repeat(4,1fr) !important; }
+      /* Patient list: horizontal scroll on table */
+      .rx-list-table-wrap { overflow-x:auto !important; }
+      /* Messaging: list hidden, show thread full width */
+      .rx-msg-list { display:none !important; }
+      .rx-msg-thread { width:100% !important; }
+      /* Screen pills: wrap */
+      .rx-screenbtn { padding:6px 12px; font-size:10px; }
+    }
+
+    @media (max-width:820px) {
+      /* Tablet: topnav scrollable */
+      .rx-topnav { overflow-x:auto; overflow-y:hidden; }
+      .rx-topnav::-webkit-scrollbar { display:none; }
+      .rx-topnav-tab { flex-shrink:0; }
+      /* Patient record sidebar narrower */
+      .rx-patient-sidebar { width:160px !important; }
+      /* Scheduler priority panel narrower */
+      .rx-sched-priority { width:200px !important; }
+    }
   </style>
 
   <div class="rx-app">
@@ -556,9 +600,9 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
                   <div style="height:64px;display:flex;align-items:flex-start;justify-content:flex-end;padding-right:8px;padding-top:4px;font-size:9px;color:#9ca3af;">2 PM</div>
                 </div>
                 <!-- Day columns -->
-                <div style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);">
+                <div class="rx-cal-grid" style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);">
                   <!-- Column headers -->
-                  <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid #e5e7eb;">
+                  <div class="rx-cal-hdr" style="grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid #e5e7eb;">
                     <div style="text-align:center;padding:6px 4px;border-right:1px solid #f0f0f0;">
                       <div style="font-size:9px;color:#9ca3af;font-weight:600;">MON</div>
                       <div style="font-size:16px;font-weight:800;color:#fff;background:#1a3a6b;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;margin:2px auto 0;">18</div>
@@ -571,11 +615,11 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
                       <div style="font-size:9px;color:#9ca3af;font-weight:600;">WED</div>
                       <div style="font-size:16px;font-weight:700;color:#374151;margin-top:2px;">20</div>
                     </div>
-                    <div style="text-align:center;padding:6px 4px;border-right:1px solid #f0f0f0;">
+                    <div class="rx-day-hdr" style="text-align:center;padding:6px 4px;border-right:1px solid #f0f0f0;">
                       <div style="font-size:9px;color:#9ca3af;font-weight:600;">THU</div>
                       <div style="font-size:16px;font-weight:700;color:#374151;margin-top:2px;">21</div>
                     </div>
-                    <div style="text-align:center;padding:6px 4px;">
+                    <div class="rx-day-hdr" style="text-align:center;padding:6px 4px;">
                       <div style="font-size:9px;color:#9ca3af;font-weight:600;">FRI</div>
                       <div style="font-size:16px;font-weight:700;color:#374151;margin-top:2px;">22</div>
                     </div>
@@ -635,7 +679,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
                     </div>
                   </div>
                   <!-- Thu -->
-                  <div style="border-right:1px solid #f0f0f0;position:relative;">
+                  <div class="rx-day-col" style="border-right:1px solid #f0f0f0;position:relative;">
                     <div style="position:absolute;top:68px;left:3px;right:3px;height:44px;background:#d1fae5;border-left:3px solid #10b981;border-radius:4px;padding:4px 6px;">
                       <div style="font-size:9px;font-weight:700;color:#065f46;">9:00</div>
                       <div style="font-size:10px;font-weight:700;color:#064e3b;">P. Johnson</div>
@@ -653,7 +697,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
                     </div>
                   </div>
                   <!-- Fri -->
-                  <div style="position:relative;">
+                  <div class="rx-day-col" style="position:relative;">
                     <div style="position:absolute;top:4px;left:3px;right:3px;height:44px;background:#d1fae5;border-left:3px solid #10b981;border-radius:4px;padding:4px 6px;">
                       <div style="font-size:9px;font-weight:700;color:#065f46;">8:00</div>
                       <div style="font-size:10px;font-weight:700;color:#064e3b;">Team Huddle</div>
@@ -674,7 +718,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
               </div>
             </div>
             <!-- Right mini panel -->
-            <div style="width:180px;flex-shrink:0;border-left:1px solid #e5e7eb;background:#fff;overflow-y:auto;padding:10px;">
+            <div class="rx-sched-priority" style="width:180px;flex-shrink:0;border-left:1px solid #e5e7eb;background:#fff;overflow-y:auto;padding:10px;">
               <div style="font-size:10px;font-weight:700;color:#374151;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em;">Today's Priority</div>
               <div style="margin-bottom:6px;padding:8px;background:#fee2e2;border-radius:6px;border-left:3px solid #ef4444;">
                 <div style="font-size:9px;font-weight:700;color:#991b1b;">URGENT</div>
@@ -721,9 +765,9 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
               <div style="width:26px;height:26px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;">JD</div>
             </div>
           </div>
-          <div style="flex:1;display:flex;overflow:hidden;background:#f7f8fa;">
+          <div class="rx-patient-inner" style="flex:1;display:flex;overflow:hidden;background:#f7f8fa;">
             <!-- Patient sidebar -->
-            <div style="width:190px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;overflow-y:auto;padding:14px 12px;font-size:11px;">
+            <div class="rx-patient-sidebar" style="width:190px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;overflow-y:auto;padding:14px 12px;font-size:11px;">
               <!-- Avatar + ID -->
               <div style="text-align:center;margin-bottom:12px;">
                 <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;margin:0 auto 6px;">AT</div>
@@ -743,7 +787,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
                 <div style="margin-bottom:8px;"><div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Medication</div><div style="color:#374151;">Specialty Injection</div></div>
               </div>
               <!-- Quick actions -->
-              <div style="border-top:1px solid #f0f0f0;padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div class="rx-quick-actions" style="border-top:1px solid #f0f0f0;padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
                 <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:6px 4px;font-size:9px;font-weight:600;color:#374151;cursor:pointer;text-align:center;"><i class="fas fa-phone" style="display:block;font-size:11px;color:#0077B6;margin-bottom:2px;"></i>Call</button>
                 <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:6px 4px;font-size:9px;font-weight:600;color:#374151;cursor:pointer;text-align:center;"><i class="fas fa-comment-alt" style="display:block;font-size:11px;color:#00C8E8;margin-bottom:2px;"></i>Text</button>
                 <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:6px 4px;font-size:9px;font-weight:600;color:#374151;cursor:pointer;text-align:center;"><i class="fas fa-envelope" style="display:block;font-size:11px;color:#7c3aed;margin-bottom:2px;"></i>Email</button>
@@ -851,8 +895,8 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
               <button style="background:linear-gradient(135deg,#0077B6,#00C8E8);border:none;border-radius:6px;padding:6px 14px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-plus" style="margin-right:4px;"></i>Add Patient</button>
             </div>
             <!-- Table -->
-            <div style="flex:1;overflow-y:auto;">
-              <table style="width:100%;border-collapse:collapse;font-size:11px;">
+            <div class="rx-list-table-wrap" style="flex:1;overflow-y:auto;">
+              <table style="width:100%;border-collapse:collapse;font-size:11px;min-width:600px;">
                 <thead style="position:sticky;top:0;z-index:1;">
                   <tr style="background:#f9fafb;border-bottom:2px solid #e5e7eb;">
                     <th style="padding:9px 14px;text-align:left;font-weight:700;color:#6b7280;font-size:10px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;">Patient</th>
@@ -937,7 +981,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
           </div>
           <div style="flex:1;display:flex;overflow:hidden;background:#f7f8fa;">
             <!-- Conversation list -->
-            <div style="width:220px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;overflow-y:auto;">
+            <div class="rx-msg-list" style="width:220px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;overflow-y:auto;">
               <div style="padding:10px 12px;border-bottom:1px solid #f0f0f0;background:#f9fafb;">
                 <input style="width:100%;border:1px solid #e5e7eb;border-radius:6px;padding:5px 10px;font-size:11px;color:#374151;background:#fff;outline:none;" placeholder="Search messages…" />
               </div>
@@ -983,7 +1027,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
               </div>
             </div>
             <!-- Chat window -->
-            <div style="flex:1;display:flex;flex-direction:column;">
+            <div class="rx-msg-thread" style="flex:1;display:flex;flex-direction:column;">
               <!-- Chat header -->
               <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 16px;display:flex;align-items:center;gap:10px;">
                 <div style="width:32px;height:32px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#991b1b;">AT</div>
@@ -1054,6 +1098,303 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
           </div>
         </div>
 
+        <!-- ══ SCREEN 5: Reports / Analytics ══ -->
+        <div id="rx-reports" class="rx-panel" style="flex-direction:column;">
+          <div class="rx-topnav">
+            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;margin-right:20px;white-space:nowrap;">RESIL<span style="color:#00C8E8;">IX</span></span>
+            <div class="rx-topnav-tab active">Reports</div>
+            <div class="rx-topnav-tab">Exports</div>
+            <div class="rx-topnav-tab">Benchmarks</div>
+            <div style="flex:1;"></div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button style="background:linear-gradient(135deg,#0077B6,#00C8E8);border:none;border-radius:5px;padding:5px 12px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-download" style="margin-right:4px;"></i>Export PDF</button>
+              <div style="width:26px;height:26px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;">JD</div>
+            </div>
+          </div>
+          <div style="flex:1;overflow-y:auto;background:#f7f8fa;padding:16px;display:flex;flex-direction:column;gap:14px;">
+            <!-- KPI row -->
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+              <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:12px 14px;">
+                <div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;">Active Patients</div>
+                <div style="font-size:26px;font-weight:800;color:#111827;line-height:1;">142</div>
+                <div style="font-size:10px;color:#10b981;margin-top:4px;font-weight:600;"><i class="fas fa-arrow-up" style="font-size:8px;"></i> +12 this month</div>
+              </div>
+              <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:12px 14px;">
+                <div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;">Adherence Rate</div>
+                <div style="font-size:26px;font-weight:800;color:#0077B6;line-height:1;">87<span style="font-size:14px;color:#9ca3af;">%</span></div>
+                <div style="font-size:10px;color:#10b981;margin-top:4px;font-weight:600;"><i class="fas fa-arrow-up" style="font-size:8px;"></i> +5% vs. Q4</div>
+              </div>
+              <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:12px 14px;">
+                <div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;">Calls This Week</div>
+                <div style="font-size:26px;font-weight:800;color:#111827;line-height:1;">38</div>
+                <div style="font-size:10px;color:#f59e0b;margin-top:4px;font-weight:600;"><i class="fas fa-minus" style="font-size:8px;"></i> Same as prior</div>
+              </div>
+              <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:12px 14px;">
+                <div style="font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;">Avg. Therapy Stage</div>
+                <div style="font-size:26px;font-weight:800;color:#7c3aed;line-height:1;">4.2<span style="font-size:14px;color:#9ca3af;">mo</span></div>
+                <div style="font-size:10px;color:#10b981;margin-top:4px;font-weight:600;"><i class="fas fa-arrow-up" style="font-size:8px;"></i> +0.8 vs. goal</div>
+              </div>
+            </div>
+            <!-- Charts row -->
+            <div style="display:grid;grid-template-columns:2fr 1fr;gap:10px;">
+              <!-- Adherence trend bar chart -->
+              <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:14px;">
+                <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:12px;">Adherence Rate — Monthly Trend</div>
+                <div style="display:flex;align-items:flex-end;gap:8px;height:100px;">
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                    <div style="width:100%;background:#bfdbfe;border-radius:4px 4px 0 0;height:62px;"></div>
+                    <div style="font-size:8px;color:#9ca3af;">Oct</div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                    <div style="width:100%;background:#93c5fd;border-radius:4px 4px 0 0;height:70px;"></div>
+                    <div style="font-size:8px;color:#9ca3af;">Nov</div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                    <div style="width:100%;background:#60a5fa;border-radius:4px 4px 0 0;height:74px;"></div>
+                    <div style="font-size:8px;color:#9ca3af;">Dec</div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                    <div style="width:100%;background:#3b82f6;border-radius:4px 4px 0 0;height:78px;"></div>
+                    <div style="font-size:8px;color:#9ca3af;">Jan</div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                    <div style="width:100%;background:#2563eb;border-radius:4px 4px 0 0;height:84px;"></div>
+                    <div style="font-size:8px;color:#9ca3af;">Feb</div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                    <div style="width:100%;background:#1d4ed8;border-radius:4px 4px 0 0;height:88px;"></div>
+                    <div style="font-size:8px;color:#374151;font-weight:700;">Mar</div>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid #f3f4f6;">
+                  <div style="font-size:10px;color:#6b7280;">Jan baseline: <b style="color:#374151;">79%</b></div>
+                  <div style="font-size:10px;color:#10b981;font-weight:700;">Current: 87% ↑</div>
+                </div>
+              </div>
+              <!-- Therapy stage donut-style breakdown -->
+              <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:14px;">
+                <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:12px;">Patient Stage Breakdown</div>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <div>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:10px;"><span style="color:#374151;font-weight:600;">Initiation</span><span style="color:#9ca3af;">34 pts</span></div>
+                    <div style="height:7px;background:#f3f4f6;border-radius:4px;overflow:hidden;"><div style="width:24%;height:100%;background:#3b82f6;border-radius:4px;"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:10px;"><span style="color:#374151;font-weight:600;">Persistence</span><span style="color:#9ca3af;">58 pts</span></div>
+                    <div style="height:7px;background:#f3f4f6;border-radius:4px;overflow:hidden;"><div style="width:41%;height:100%;background:#0077B6;border-radius:4px;"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:10px;"><span style="color:#374151;font-weight:600;">At Risk</span><span style="color:#9ca3af;">22 pts</span></div>
+                    <div style="height:7px;background:#f3f4f6;border-radius:4px;overflow:hidden;"><div style="width:15%;height:100%;background:#ef4444;border-radius:4px;"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:10px;"><span style="color:#374151;font-weight:600;">Discontinued</span><span style="color:#9ca3af;">11 pts</span></div>
+                    <div style="height:7px;background:#f3f4f6;border-radius:4px;overflow:hidden;"><div style="width:8%;height:100%;background:#d1d5db;border-radius:4px;"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:10px;"><span style="color:#374151;font-weight:600;">New Enrollment</span><span style="color:#9ca3af;">17 pts</span></div>
+                    <div style="height:7px;background:#f3f4f6;border-radius:4px;overflow:hidden;"><div style="width:12%;height:100%;background:#10b981;border-radius:4px;"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Recent activity table -->
+            <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:14px;">
+              <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:10px;">Top Barrier Themes — Q1 2019</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+                <div style="background:#fef3c7;border-radius:6px;padding:10px 12px;border-left:3px solid #f59e0b;">
+                  <div style="font-size:18px;font-weight:800;color:#92400e;">41%</div>
+                  <div style="font-size:10px;font-weight:700;color:#78350f;margin-top:2px;">Side Effects</div>
+                  <div style="font-size:9px;color:#b45309;margin-top:2px;">Headache, fatigue, injection site</div>
+                </div>
+                <div style="background:#fee2e2;border-radius:6px;padding:10px 12px;border-left:3px solid #ef4444;">
+                  <div style="font-size:18px;font-weight:800;color:#991b1b;">28%</div>
+                  <div style="font-size:10px;font-weight:700;color:#7f1d1d;margin-top:2px;">Cost / Insurance</div>
+                  <div style="font-size:9px;color:#b91c1c;margin-top:2px;">PA denials, copay concerns</div>
+                </div>
+                <div style="background:#ede9fe;border-radius:6px;padding:10px 12px;border-left:3px solid #7c3aed;">
+                  <div style="font-size:18px;font-weight:800;color:#5b21b6;">19%</div>
+                  <div style="font-size:10px;font-weight:700;color:#4c1d95;margin-top:2px;">Lifestyle / Travel</div>
+                  <div style="font-size:9px;color:#6d28d9;margin-top:2px;">Storage, schedule conflicts</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 6: Notifications / Alerts ══ -->
+        <div id="rx-alerts" class="rx-panel" style="flex-direction:column;">
+          <div class="rx-topnav">
+            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;margin-right:20px;white-space:nowrap;">RESIL<span style="color:#00C8E8;">IX</span></span>
+            <div class="rx-topnav-tab active">Alerts <span style="background:#ef4444;color:#fff;border-radius:50%;width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;font-size:8px;margin-left:6px;font-weight:800;">7</span></div>
+            <div class="rx-topnav-tab">Reminders</div>
+            <div class="rx-topnav-tab">System</div>
+            <div style="flex:1;"></div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:5px;padding:4px 10px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;">Mark All Read</button>
+              <div style="width:26px;height:26px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;">JD</div>
+            </div>
+          </div>
+          <div style="flex:1;overflow-y:auto;background:#f7f8fa;">
+            <!-- Today header -->
+            <div style="padding:10px 16px 6px;font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid #e5e7eb;background:#f7f8fa;position:sticky;top:0;">Today — March 18, 2019</div>
+            <!-- Alert 1 - critical -->
+            <div style="background:#fff8f8;border-left:4px solid #ef4444;border-bottom:1px solid #fee2e2;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:8px;background:#fee2e2;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-exclamation-triangle" style="color:#ef4444;font-size:13px;"></i></div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                  <div style="font-size:11px;font-weight:700;color:#7f1d1d;">Adverse Event Reported — A. Torres</div>
+                  <div style="font-size:9px;color:#9ca3af;white-space:nowrap;margin-left:10px;">8:42 AM</div>
+                </div>
+                <div style="font-size:10px;color:#374151;margin-top:3px;">Patient self-reported lower back pain and shortness of breath. Flagged for clinical review.</div>
+                <div style="margin-top:8px;display:flex;gap:6px;">
+                  <button style="background:#ef4444;border:none;border-radius:5px;padding:4px 12px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;">Review Now</button>
+                  <button style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:5px;padding:4px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;">Snooze 1hr</button>
+                </div>
+              </div>
+            </div>
+            <!-- Alert 2 - follow-up due -->
+            <div style="background:#fffbeb;border-left:4px solid #f59e0b;border-bottom:1px solid #fef3c7;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:8px;background:#fef3c7;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-clock" style="color:#f59e0b;font-size:13px;"></i></div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;">
+                  <div style="font-size:11px;font-weight:700;color:#78350f;">Follow-up Overdue — M. Thornton</div>
+                  <div style="font-size:9px;color:#9ca3af;">9:00 AM</div>
+                </div>
+                <div style="font-size:10px;color:#374151;margin-top:3px;">Scheduled call at 8 AM was not completed. Patient has not been contacted in 8 days.</div>
+                <div style="margin-top:8px;display:flex;gap:6px;">
+                  <button style="background:#f59e0b;border:none;border-radius:5px;padding:4px 12px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-phone" style="margin-right:4px;font-size:9px;"></i>Call Now</button>
+                  <button style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:5px;padding:4px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;">Reschedule</button>
+                </div>
+              </div>
+            </div>
+            <!-- Alert 3 - new enrollment -->
+            <div style="background:#f0fdf4;border-left:4px solid #10b981;border-bottom:1px solid #d1fae5;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:8px;background:#d1fae5;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user-plus" style="color:#10b981;font-size:13px;"></i></div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;">
+                  <div style="font-size:11px;font-weight:700;color:#064e3b;">New Patient Enrolled — S. Nguyen</div>
+                  <div style="font-size:9px;color:#9ca3af;">10:15 AM</div>
+                </div>
+                <div style="font-size:10px;color:#374151;margin-top:3px;">Oncology IV program. Initiation call scheduled for Wednesday, Mar 20 at 8:00 AM.</div>
+                <div style="margin-top:8px;">
+                  <button style="background:#f3f4f6;border:1px solid #e5e7eb;border-radius:5px;padding:4px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;">View Profile</button>
+                </div>
+              </div>
+            </div>
+            <!-- Alert 4 - message received -->
+            <div style="background:#fff;border-left:4px solid #00C8E8;border-bottom:1px solid #e5e7eb;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:8px;background:#e0f2fe;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-comment-dots" style="color:#0077B6;font-size:13px;"></i></div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;">
+                  <div style="font-size:11px;font-weight:700;color:#0c4a6e;">Inbound Message — C. Williams</div>
+                  <div style="font-size:9px;color:#9ca3af;">11:03 AM</div>
+                </div>
+                <div style="font-size:10px;color:#374151;margin-top:3px;">"I missed my dose on Tuesday — is that okay? Should I double up or skip it?"</div>
+                <div style="margin-top:8px;">
+                  <button style="background:#0077B6;border:none;border-radius:5px;padding:4px 12px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-reply" style="margin-right:4px;font-size:9px;"></i>Reply</button>
+                </div>
+              </div>
+            </div>
+            <!-- Yesterday header -->
+            <div style="padding:10px 16px 6px;font-size:9px;font-weight:700;color:#9ca3af;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid #e5e7eb;background:#f7f8fa;position:sticky;top:0;">Yesterday — March 17</div>
+            <!-- older alerts -->
+            <div style="background:#fff;border-left:4px solid #d1d5db;border-bottom:1px solid #f3f4f6;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;opacity:.7;">
+              <div style="width:34px;height:34px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check" style="color:#9ca3af;font-size:13px;"></i></div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;">
+                  <div style="font-size:11px;font-weight:600;color:#374151;">Call Completed — R. Caldwell</div>
+                  <div style="font-size:9px;color:#9ca3af;">Mar 17 · 3:30 PM</div>
+                </div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:3px;">Persistence check completed. No barriers reported. Next call in 2 weeks.</div>
+              </div>
+            </div>
+            <div style="background:#fff;border-left:4px solid #d1d5db;border-bottom:1px solid #f3f4f6;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;opacity:.7;">
+              <div style="width:34px;height:34px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check" style="color:#9ca3af;font-size:13px;"></i></div>
+              <div style="flex:1;">
+                <div style="display:flex;justify-content:space-between;">
+                  <div style="font-size:11px;font-weight:600;color:#374151;">PA Approval — L. Hernandez</div>
+                  <div style="font-size:9px;color:#9ca3af;">Mar 17 · 1:12 PM</div>
+                </div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:3px;">Prior authorization approved. Specialty pharmacy notified. Shipment en route.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SCREEN 7: Caregiver / Family Portal ══ -->
+        <div id="rx-caregiver" class="rx-panel" style="flex-direction:column;">
+          <div class="rx-topnav">
+            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;margin-right:20px;white-space:nowrap;">RESIL<span style="color:#00C8E8;">IX</span></span>
+            <div class="rx-topnav-tab active">Caregiver</div>
+            <div class="rx-topnav-tab">Opt-In &amp; Reminders</div>
+            <div class="rx-topnav-tab">Communications Log</div>
+            <div style="flex:1;"></div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button style="background:linear-gradient(135deg,#0077B6,#00C8E8);border:none;border-radius:5px;padding:5px 12px;font-size:10px;font-weight:700;color:#fff;cursor:pointer;"><i class="fas fa-plus" style="margin-right:4px;"></i>Add Caregiver</button>
+              <div style="width:26px;height:26px;border-radius:50%;background:#2a5298;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;">JD</div>
+            </div>
+          </div>
+          <div style="flex:1;overflow-y:auto;background:#f7f8fa;padding:16px;display:flex;flex-direction:column;gap:14px;">
+            <!-- Patient context banner -->
+            <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:12px 16px;display:flex;align-items:center;gap:12px;">
+              <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;">AT</div>
+              <div style="flex:1;">
+                <div style="font-size:12px;font-weight:700;color:#111827;">A. Torres — Patient Record</div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:1px;">ID #5104 · Specialty Injection · <span style="color:#ef4444;font-weight:600;">At Risk</span></div>
+              </div>
+              <div style="font-size:10px;color:#0077B6;font-weight:600;cursor:pointer;"><i class="fas fa-arrow-left" style="margin-right:4px;"></i>Back to Patient</div>
+            </div>
+            <!-- Caregiver card -->
+            <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;overflow:hidden;">
+              <div style="padding:12px 16px;background:#f9fafb;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center;">
+                <div style="font-size:11px;font-weight:700;color:#374151;">Primary Caregiver</div>
+                <span style="background:#d1fae5;color:#065f46;font-size:9px;font-weight:700;padding:2px 8px;border-radius:8px;">Opted In</span>
+              </div>
+              <div style="padding:14px 16px;display:flex;gap:16px;align-items:flex-start;">
+                <div style="width:44px;height:44px;border-radius:50%;background:#fef3c7;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#92400e;flex-shrink:0;">MT</div>
+                <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                  <div><div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Name</div><div style="font-size:11px;color:#111827;font-weight:600;">M. Torres (Daughter)</div></div>
+                  <div><div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Relationship</div><div style="font-size:11px;color:#374151;">Adult Child</div></div>
+                  <div><div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Mobile</div><div style="font-size:11px;color:#374151;">(212) 555-0187</div></div>
+                  <div><div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Email</div><div style="font-size:11px;color:#374151;">m.torres@email.com</div></div>
+                  <div><div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Preferred Contact</div><div style="font-size:11px;color:#374151;">Text Message</div></div>
+                  <div><div style="font-size:9px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;">Language</div><div style="font-size:11px;color:#374151;">English / Spanish</div></div>
+                </div>
+              </div>
+              <div style="padding:10px 16px;border-top:1px solid #f0f0f0;display:flex;gap:8px;">
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:5px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-comment-alt" style="margin-right:4px;color:#00C8E8;"></i>Send Text</button>
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:5px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-phone" style="margin-right:4px;color:#0077B6;"></i>Call</button>
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:5px 12px;font-size:10px;font-weight:600;color:#374151;cursor:pointer;"><i class="fas fa-envelope" style="margin-right:4px;color:#7c3aed;"></i>Email</button>
+                <div style="flex:1;"></div>
+                <button style="border:1px solid #e5e7eb;background:#fff;border-radius:5px;padding:5px 12px;font-size:10px;font-weight:600;color:#6b7280;cursor:pointer;"><i class="fas fa-edit" style="margin-right:4px;"></i>Edit</button>
+              </div>
+            </div>
+            <!-- Reminder opt-ins -->
+            <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;overflow:hidden;">
+              <div style="padding:12px 16px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-size:11px;font-weight:700;color:#374151;">Caregiver Notification Preferences</div>
+              <div style="padding:14px 16px;display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid #f3f4f6;">
+                  <div><div style="font-size:11px;font-weight:600;color:#374151;">Missed Dose Alerts</div><div style="font-size:10px;color:#9ca3af;margin-top:1px;">Notified when patient misses a scheduled dose</div></div>
+                  <div style="width:36px;height:20px;border-radius:10px;background:#0077B6;position:relative;cursor:pointer;flex-shrink:0;"><div style="position:absolute;right:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;"></div></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid #f3f4f6;">
+                  <div><div style="font-size:11px;font-weight:600;color:#374151;">Appointment Reminders</div><div style="font-size:10px;color:#9ca3af;margin-top:1px;">24hr and 1hr before nurse call</div></div>
+                  <div style="width:36px;height:20px;border-radius:10px;background:#0077B6;position:relative;cursor:pointer;flex-shrink:0;"><div style="position:absolute;right:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;"></div></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid #f3f4f6;">
+                  <div><div style="font-size:11px;font-weight:600;color:#374151;">Adverse Event Notifications</div><div style="font-size:10px;color:#9ca3af;margin-top:1px;">Immediately when a clinical event is logged</div></div>
+                  <div style="width:36px;height:20px;border-radius:10px;background:#0077B6;position:relative;cursor:pointer;flex-shrink:0;"><div style="position:absolute;right:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;"></div></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div><div style="font-size:11px;font-weight:600;color:#374151;">Weekly Progress Summary</div><div style="font-size:10px;color:#9ca3af;margin-top:1px;">Email digest every Friday</div></div>
+                  <div style="width:36px;height:20px;border-radius:10px;background:#d1d5db;position:relative;cursor:pointer;flex-shrink:0;"><div style="position:absolute;left:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1064,6 +1405,9 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
     <button class="rx-screenbtn" onclick="rxScreen('patient')"><i class="fas fa-user-injured" style="margin-right:5px;"></i>Patient Record</button>
     <button class="rx-screenbtn" onclick="rxScreen('list')"><i class="fas fa-list" style="margin-right:5px;"></i>Patient List</button>
     <button class="rx-screenbtn" onclick="rxScreen('messaging')"><i class="fas fa-comment-dots" style="margin-right:5px;"></i>Free Text Messaging</button>
+    <button class="rx-screenbtn" onclick="rxScreen('reports')"><i class="fas fa-chart-bar" style="margin-right:5px;"></i>Reports</button>
+    <button class="rx-screenbtn" onclick="rxScreen('alerts')"><i class="fas fa-bell" style="margin-right:5px;"></i>Alerts</button>
+    <button class="rx-screenbtn" onclick="rxScreen('caregiver')"><i class="fas fa-heart" style="margin-right:5px;"></i>Caregiver</button>
   </div>
 
   <style>
@@ -1077,9 +1421,9 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeHcsLb(); }
       document.getElementById('rx-' + id).classList.add('active');
       const btns = document.querySelectorAll('.rx-screenbtn');
       const rails = document.querySelectorAll('.rx-rail-ico');
-      const map = { scheduler:0, patient:1, list:2, messaging:3 };
+      const map = { scheduler:0, patient:1, list:2, messaging:3, reports:4, alerts:5, caregiver:6 };
+      if (map[id] !== undefined && rails[map[id]]) rails[map[id]].classList.add('active');
       btns[map[id]].classList.add('active');
-      rails[map[id]].classList.add('active');
     }
   </script>
 </section>
