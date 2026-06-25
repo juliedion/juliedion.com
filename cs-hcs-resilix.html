@@ -251,7 +251,7 @@
   </div>
   <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; text-align:left;">
 
-    <div class="lb-card" onclick="openHcsLb('platform')">
+    <div class="lb-card" onclick="openRxPlatformLb()">
       <div class="lb-card-img"><img src="images/Human Care Systems/JulieDionPortfolio_20212.jpg" alt="Resilix Platform" /></div>
       <div class="lb-card-body">
         <div class="lb-card-tag">UX/UI Design</div>
@@ -331,6 +331,392 @@
     </div>
   </div>
 </div>
+
+<!-- ── Resilix Platform Lightbox ── -->
+<div id="rx-lb-overlay" onclick="if(event.target===this)closeRxLb()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:9999;padding:24px;box-sizing:border-box;backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:14px;width:100%;max-width:1440px;height:94vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.6);">
+
+    <!-- Header -->
+    <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid #e5e7eb;flex-shrink:0;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#0077b6;margin-bottom:2px;">UX/UI Design</div>
+        <h2 style="font-size:17px;font-weight:700;color:#1a1a2e;margin:0;line-height:1.2;">Resilix Platform — Nurse-Facing Dashboard</h2>
+      </div>
+      <div style="display:flex;gap:6px;margin-left:auto;align-items:center;flex-wrap:wrap;">
+        <button class="lb-tab lb-tab-active" id="rx-tab-axure" onclick="switchRxTab('axure',this)">📐 Axure RP</button>
+        <button class="lb-tab" id="rx-tab-code" onclick="switchRxTab('code',this)">&lt;/&gt; Code</button>
+        <button onclick="switchRxTab('proto',document.getElementById('rx-tab-proto'))" id="rx-tab-proto" class="lb-tab lb-tab-live">Application Prototype ↗</button>
+        <button onclick="closeRxLb()" style="width:30px;height:30px;border-radius:50%;border:none;background:#f3f4f6;cursor:pointer;font-size:15px;color:#666;display:flex;align-items:center;justify-content:center;margin-left:4px;">✕</button>
+      </div>
+    </div>
+
+    <!-- Panels -->
+    <div style="flex:1;overflow:hidden;position:relative;">
+
+      <!-- ══ AXURE RP PANEL ══ -->
+      <div id="rx-panel-axure" style="height:100%;display:flex;overflow:hidden;background:#e8e8e8;font-family:-apple-system,'Segoe UI',sans-serif;font-size:11px;">
+
+        <!-- Axure menu bar -->
+        <div style="position:absolute;top:0;left:0;right:0;height:28px;background:#c8c8c8;display:flex;align-items:center;padding:0 10px;gap:0;border-bottom:1px solid #aaa;z-index:5;flex-shrink:0;">
+          <span style="font-size:11px;font-weight:700;color:#333;margin-right:14px;">Axure RP 9</span>
+          <div style="display:flex;gap:0;">
+            <span style="color:#444;padding:0 8px;cursor:default;font-size:11px;" onmouseover="this.style.background='#bbb'" onmouseout="this.style.background=''">File</span>
+            <span style="color:#444;padding:0 8px;cursor:default;font-size:11px;" onmouseover="this.style.background='#bbb'" onmouseout="this.style.background=''">Edit</span>
+            <span style="color:#444;padding:0 8px;cursor:default;font-size:11px;" onmouseover="this.style.background='#bbb'" onmouseout="this.style.background=''">View</span>
+            <span style="color:#444;padding:0 8px;cursor:default;font-size:11px;" onmouseover="this.style.background='#bbb'" onmouseout="this.style.background=''">Project</span>
+            <span style="color:#444;padding:0 8px;cursor:default;font-size:11px;" onmouseover="this.style.background='#bbb'" onmouseout="this.style.background=''">Arrange</span>
+            <span style="color:#444;padding:0 8px;cursor:default;font-size:11px;" onmouseover="this.style.background='#bbb'" onmouseout="this.style.background=''">Publish</span>
+          </div>
+          <div style="margin:0 auto;font-size:11px;color:#555;">Resilix_Platform_v11_FINAL.rp</div>
+          <div style="display:flex;gap:6px;margin-left:auto;">
+            <span style="background:#1a3a6b;color:#fff;font-size:10px;font-weight:600;padding:2px 10px;border-radius:3px;cursor:default;">▶ Preview</span>
+            <span style="background:#c8c8c8;border:1px solid #aaa;color:#444;font-size:10px;padding:2px 8px;border-radius:3px;cursor:default;">Publish</span>
+          </div>
+        </div>
+
+        <!-- Axure toolbar -->
+        <div style="position:absolute;top:28px;left:0;right:0;height:34px;background:#d4d4d4;border-bottom:1px solid #aaa;display:flex;align-items:center;padding:0 8px;gap:6px;z-index:4;">
+          <div style="display:flex;gap:2px;background:#c0c0c0;border-radius:3px;padding:2px;">
+            <span style="width:24px;height:22px;display:flex;align-items:center;justify-content:center;cursor:default;background:#1a3a6b;border-radius:2px;" title="Select"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 3l14 9-7 2-3 7L5 3z" fill="#fff"/></svg></span>
+            <span style="width:24px;height:22px;display:flex;align-items:center;justify-content:center;cursor:default;" title="Text"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M12 6v14M8 20h8" stroke="#555" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <span style="width:24px;height:22px;display:flex;align-items:center;justify-content:center;cursor:default;" title="Rectangle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="1" stroke="#555" stroke-width="2"/></svg></span>
+            <span style="width:24px;height:22px;display:flex;align-items:center;justify-content:center;cursor:default;" title="Placeholder"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="1" stroke="#555" stroke-width="2"/><path d="M3 3l18 18M21 3L3 21" stroke="#555" stroke-width="1.5"/></svg></span>
+          </div>
+          <div style="width:1px;height:20px;background:#aaa;"></div>
+          <div style="display:flex;gap:2px;background:#c0c0c0;border-radius:3px;padding:2px;">
+            <span style="padding:2px 8px;font-size:10px;color:#444;background:#d4d4d4;border-radius:2px;cursor:default;">100%</span>
+            <span style="width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:default;font-size:12px;color:#555;">−</span>
+            <span style="width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:default;font-size:12px;color:#555;">+</span>
+          </div>
+          <span style="font-size:10px;color:#666;margin-left:4px;">Adaptive Views: Desktop (1440) · Tablet (768) · Mobile (390)</span>
+        </div>
+
+        <!-- Three-column layout -->
+        <div style="display:flex;height:100%;padding-top:62px;">
+
+          <!-- Left: Pages + Outline -->
+          <div style="width:180px;flex-shrink:0;background:#f0f0f0;border-right:1px solid #bbb;display:flex;flex-direction:column;overflow:hidden;">
+            <!-- Pages panel -->
+            <div style="background:#e0e0e0;border-bottom:1px solid #bbb;padding:5px 8px;font-size:10px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.06em;">Pages</div>
+            <div style="flex:0 0 auto;overflow-y:auto;border-bottom:1px solid #bbb;">
+              <div id="rx-axure-active-page" style="background:#1a3a6b;color:#fff;padding:4px 10px;font-size:11px;display:flex;align-items:center;gap:6px;cursor:pointer;"><span>📄</span><span id="rx-axure-page-label">Scheduler</span></div>
+              <div class="rx-axure-page" onclick="selectAxurePage(this,'Patient Record',0)" style="padding:4px 10px;font-size:11px;color:#333;cursor:pointer;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#ddd'" onmouseout="this.style.background=''"><span>📄</span> Patient Record</div>
+              <div class="rx-axure-page" onclick="selectAxurePage(this,'Patient List',1)" style="padding:4px 10px;font-size:11px;color:#333;cursor:pointer;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#ddd'" onmouseout="this.style.background=''"><span>📄</span> Patient List</div>
+              <div class="rx-axure-page" onclick="selectAxurePage(this,'Free Text Messaging',2)" style="padding:4px 10px;font-size:11px;color:#333;cursor:pointer;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#ddd'" onmouseout="this.style.background=''"><span>📄</span> Free Text Messaging</div>
+              <div class="rx-axure-page" onclick="selectAxurePage(this,'Reports',3)" style="padding:4px 10px;font-size:11px;color:#333;cursor:pointer;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#ddd'" onmouseout="this.style.background=''"><span>📄</span> Reports</div>
+              <div class="rx-axure-page" onclick="selectAxurePage(this,'Alerts',4)" style="padding:4px 10px;font-size:11px;color:#333;cursor:pointer;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#ddd'" onmouseout="this.style.background=''"><span>📄</span> Alerts</div>
+              <div class="rx-axure-page" onclick="selectAxurePage(this,'Caregiver',5)" style="padding:4px 10px;font-size:11px;color:#333;cursor:pointer;display:flex;align-items:center;gap:6px;" onmouseover="this.style.background='#ddd'" onmouseout="this.style.background=''"><span>📄</span> Caregiver</div>
+            </div>
+            <!-- Outline panel -->
+            <div style="background:#e0e0e0;border-bottom:1px solid #bbb;padding:5px 8px;font-size:10px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.06em;">Outline</div>
+            <div style="flex:1;overflow-y:auto;padding:4px 0;font-size:10px;color:#444;line-height:1.8;">
+              <div style="padding:0 6px;">▾ 🗂 Page</div>
+              <div style="padding:0 6px 0 16px;">▾ 🔲 App Shell</div>
+              <div style="padding:0 6px 0 24px;">▾ 🔲 Icon Rail</div>
+              <div style="padding:0 6px 0 32px;color:#1a3a6b;font-weight:600;">📌 Nav Icons ×4</div>
+              <div style="padding:0 6px 0 24px;">▾ 🔲 Main Content</div>
+              <div style="padding:0 6px 0 32px;">▾ 🔲 Top Nav Bar</div>
+              <div style="padding:0 6px 0 40px;">📝 Tab Labels</div>
+              <div style="padding:0 6px 0 32px;color:#1a3a6b;font-weight:600;">▾ 📅 Calendar Grid</div>
+              <div style="padding:0 6px 0 40px;">🟦 Day Columns ×5</div>
+              <div style="padding:0 6px 0 40px;">📌 Appt Blocks</div>
+              <div style="padding:0 6px 0 32px;">▾ 🔲 Priority Panel</div>
+              <div style="padding:0 6px 0 40px;">📋 Priority Cards</div>
+            </div>
+          </div>
+
+          <!-- Center: Canvas -->
+          <div style="flex:1;overflow:auto;background:#c8c8c8;display:flex;align-items:flex-start;justify-content:center;padding:24px;">
+            <div style="background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.25);position:relative;">
+              <!-- Axure rulers -->
+              <div style="position:sticky;top:0;height:16px;background:#d0d0d0;border-bottom:1px solid #aaa;display:flex;align-items:center;padding:0 4px;font-size:8px;color:#888;z-index:2;gap:20px;">
+                <span>0</span><span>200</span><span>400</span><span>600</span><span>800</span><span>1000</span><span>1200</span><span>1400</span>
+              </div>
+              <img id="rx-axure-canvas" src="images/untitled folder/resilix-screen-01-scheduler.jpg" alt="Axure Canvas" style="display:block;width:800px;max-width:none;" />
+            </div>
+          </div>
+
+          <!-- Right: Inspector -->
+          <div style="width:200px;flex-shrink:0;background:#f0f0f0;border-left:1px solid #bbb;overflow-y:auto;">
+            <div style="background:#e0e0e0;border-bottom:1px solid #bbb;padding:5px 8px;font-size:10px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.06em;">Style</div>
+            <div style="padding:8px 10px;border-bottom:1px solid #ddd;">
+              <div style="font-size:9px;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;">Location</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+                <div style="background:#e8e8e8;border:1px solid #ccc;border-radius:2px;padding:3px 6px;font-size:10px;color:#333;">X: 0</div>
+                <div style="background:#e8e8e8;border:1px solid #ccc;border-radius:2px;padding:3px 6px;font-size:10px;color:#333;">Y: 0</div>
+              </div>
+            </div>
+            <div style="padding:8px 10px;border-bottom:1px solid #ddd;">
+              <div style="font-size:9px;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;">Size</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+                <div style="background:#e8e8e8;border:1px solid #ccc;border-radius:2px;padding:3px 6px;font-size:10px;color:#333;">W: 1440</div>
+                <div style="background:#e8e8e8;border:1px solid #ccc;border-radius:2px;padding:3px 6px;font-size:10px;color:#333;">H: 665</div>
+              </div>
+            </div>
+            <div style="padding:8px 10px;border-bottom:1px solid #ddd;">
+              <div style="font-size:9px;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;">Fill</div>
+              <div style="display:flex;align-items:center;gap:6px;background:#e8e8e8;border:1px solid #ccc;border-radius:2px;padding:3px 6px;">
+                <div style="width:12px;height:12px;border-radius:2px;background:#f7f8fa;border:1px solid #ccc;flex-shrink:0;"></div>
+                <span style="font-size:10px;color:#333;">#f7f8fa</span>
+              </div>
+            </div>
+            <div style="padding:8px 10px;border-bottom:1px solid #ddd;">
+              <div style="font-size:9px;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;">Font</div>
+              <div style="background:#e8e8e8;border:1px solid #ccc;border-radius:2px;padding:3px 6px;font-size:10px;color:#333;">Inter · 11px</div>
+            </div>
+            <div style="background:#e0e0e0;border-bottom:1px solid #bbb;border-top:1px solid #bbb;padding:5px 8px;font-size:10px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-top:4px;">Interactions</div>
+            <div style="padding:8px 10px;font-size:10px;color:#555;line-height:1.6;">
+              <div style="margin-bottom:4px;"><span style="color:#1a3a6b;font-weight:600;">On Click</span><br/>Show / Hide panels</div>
+              <div style="margin-bottom:4px;"><span style="color:#1a3a6b;font-weight:600;">On Load</span><br/>Set active state</div>
+            </div>
+            <div style="background:#e0e0e0;border-bottom:1px solid #bbb;border-top:1px solid #bbb;padding:5px 8px;font-size:10px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.06em;">Notes</div>
+            <div style="padding:8px 10px;font-size:10px;color:#666;line-height:1.5;">Version 11 · Final<br/>Reviewed by clinical + account teams<br/>Adaptive: 1440 / 768 / 390</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══ CODE PANEL ══ -->
+      <div id="rx-panel-code" style="height:100%;display:none;flex-direction:column;overflow:hidden;background:#1e1e1e;font-family:'Consolas','Courier New',monospace;font-size:12px;">
+
+        <!-- VS Code title bar -->
+        <div style="height:30px;background:#323233;display:flex;align-items:center;padding:0 12px;gap:0;flex-shrink:0;border-bottom:1px solid #1a1a1a;">
+          <div style="display:flex;gap:0;font-size:11px;">
+            <span style="color:#ccc;padding:0 10px;height:30px;display:flex;align-items:center;" onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background=''">File</span>
+            <span style="color:#ccc;padding:0 10px;height:30px;display:flex;align-items:center;" onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background=''">Edit</span>
+            <span style="color:#ccc;padding:0 10px;height:30px;display:flex;align-items:center;" onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background=''">View</span>
+            <span style="color:#ccc;padding:0 10px;height:30px;display:flex;align-items:center;" onmouseover="this.style.background='#3a3a3a'" onmouseout="this.style.background=''">Terminal</span>
+          </div>
+          <div style="margin:0 auto;font-size:11px;color:#aaa;">resilix-platform — VS Code</div>
+        </div>
+
+        <!-- Tab bar -->
+        <div style="height:34px;background:#252526;display:flex;align-items:flex-end;padding:0 0 0 0;flex-shrink:0;border-bottom:1px solid #1a1a1a;overflow-x:auto;">
+          <div style="padding:0 14px;height:34px;display:flex;align-items:center;gap:8px;background:#1e1e1e;border-right:1px solid #1a1a1a;font-size:11px;color:#ccc;white-space:nowrap;flex-shrink:0;">
+            <span style="color:#e7c547;">🟡</span> scheduler.html
+            <span style="font-size:10px;color:#666;cursor:pointer;">✕</span>
+          </div>
+          <div style="padding:0 14px;height:34px;display:flex;align-items:center;gap:8px;background:#252526;border-right:1px solid #1a1a1a;font-size:11px;color:#888;white-space:nowrap;flex-shrink:0;">
+            <span>📄</span> patient-record.html
+          </div>
+          <div style="padding:0 14px;height:34px;display:flex;align-items:center;gap:8px;background:#252526;border-right:1px solid #1a1a1a;font-size:11px;color:#888;white-space:nowrap;flex-shrink:0;">
+            <span>🎨</span> platform.css
+          </div>
+          <div style="padding:0 14px;height:34px;display:flex;align-items:center;gap:8px;background:#252526;border-right:1px solid #1a1a1a;font-size:11px;color:#888;white-space:nowrap;flex-shrink:0;">
+            <span>⚡</span> rx-interactions.js
+          </div>
+        </div>
+
+        <div style="flex:1;overflow:hidden;display:flex;">
+
+          <!-- File tree -->
+          <div style="width:200px;flex-shrink:0;background:#252526;border-right:1px solid #1a1a1a;overflow-y:auto;padding:8px 0;">
+            <div style="padding:4px 10px;font-size:10px;font-weight:700;color:#bbb;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;">RESILIX PLATFORM</div>
+            <div style="padding:2px 10px;font-size:11px;color:#ccc;cursor:default;">▾ 📁 src</div>
+            <div style="padding:2px 10px 2px 22px;font-size:11px;color:#ccc;cursor:default;">▾ 📁 screens</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;background:#37373d;color:#fff;cursor:default;">📄 scheduler.html</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#9cdcfe;cursor:default;">📄 patient-record.html</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#9cdcfe;cursor:default;">📄 patient-list.html</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#9cdcfe;cursor:default;">📄 messaging.html</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#9cdcfe;cursor:default;">📄 reports.html</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#9cdcfe;cursor:default;">📄 alerts.html</div>
+            <div style="padding:2px 10px 2px 22px;font-size:11px;color:#ccc;cursor:default;">▾ 📁 styles</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#e7c547;cursor:default;">🎨 platform.css</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#e7c547;cursor:default;">🎨 variables.css</div>
+            <div style="padding:2px 10px 2px 22px;font-size:11px;color:#ccc;cursor:default;">▾ 📁 js</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#f1c40f;cursor:default;">⚡ rx-interactions.js</div>
+            <div style="padding:2px 10px 2px 34px;font-size:11px;color:#f1c40f;cursor:default;">⚡ rx-data.js</div>
+          </div>
+
+          <!-- Code area -->
+          <div style="flex:1;overflow:auto;padding:16px 20px;line-height:1.7;color:#d4d4d4;">
+            <div style="display:flex;gap:16px;">
+              <!-- Line numbers -->
+              <div style="color:#555;text-align:right;user-select:none;flex-shrink:0;min-width:28px;">
+                1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38
+              </div>
+              <!-- Code -->
+              <div style="white-space:pre;overflow-x:visible;"><span style="color:#608b4e">/* ── Resilix Platform — Scheduler Component ── */</span>
+<span style="color:#608b4e">/* Version 11 · Nurse-facing HCS dashboard     */</span>
+
+<span style="color:#4ec9b0">.rx-app</span> {
+  <span style="color:#9cdcfe">border-radius</span>: <span style="color:#b5cea8">14px</span>;
+  <span style="color:#9cdcfe">overflow</span>: <span style="color:#ce9178">hidden</span>;
+  <span style="color:#9cdcfe">box-shadow</span>: <span style="color:#b5cea8">0 24px 72px</span> <span style="color:#ce9178">rgba(0,0,0,.3)</span>;
+  <span style="color:#9cdcfe">font-family</span>: <span style="color:#ce9178">'Inter', sans-serif</span>;
+}
+
+<span style="color:#4ec9b0">.rx-shell</span> {
+  <span style="color:#9cdcfe">display</span>: <span style="color:#ce9178">flex</span>;
+  <span style="color:#9cdcfe">height</span>: <span style="color:#b5cea8">620px</span>;
+}
+
+<span style="color:#4ec9b0">.rx-rail</span> {
+  <span style="color:#9cdcfe">width</span>: <span style="color:#b5cea8">48px</span>;
+  <span style="color:#9cdcfe">background</span>: <span style="color:#ce9178">#0f1e3d</span>;
+  <span style="color:#9cdcfe">display</span>: <span style="color:#ce9178">flex</span>;
+  <span style="color:#9cdcfe">flex-direction</span>: <span style="color:#ce9178">column</span>;
+  <span style="color:#9cdcfe">align-items</span>: <span style="color:#ce9178">center</span>;
+  <span style="color:#9cdcfe">padding</span>: <span style="color:#b5cea8">10px 0</span>;
+}
+
+<span style="color:#4ec9b0">.rx-topnav</span> {
+  <span style="color:#9cdcfe">background</span>: <span style="color:#ce9178">#1a3a6b</span>;
+  <span style="color:#9cdcfe">height</span>: <span style="color:#b5cea8">38px</span>;
+  <span style="color:#9cdcfe">display</span>: <span style="color:#ce9178">flex</span>;
+  <span style="color:#9cdcfe">align-items</span>: <span style="color:#ce9178">center</span>;
+  <span style="color:#9cdcfe">border-bottom</span>: <span style="color:#b5cea8">1px</span> <span style="color:#ce9178">solid rgba(255,255,255,.08)</span>;
+}
+
+<span style="color:#4ec9b0">.rx-cal-grid</span> {
+  <span style="color:#9cdcfe">display</span>: <span style="color:#ce9178">grid</span>;
+  <span style="color:#9cdcfe">grid-template-columns</span>: <span style="color:#ce9178">repeat(5, 1fr)</span>;
+  <span style="color:#9cdcfe">flex</span>: <span style="color:#b5cea8">1</span>;
+}</div>
+            </div>
+          </div>
+
+          <!-- Right: properties -->
+          <div style="width:200px;flex-shrink:0;background:#252526;border-left:1px solid #1a1a1a;overflow-y:auto;padding:10px 0;">
+            <div style="padding:4px 10px;font-size:10px;font-weight:700;color:#bbb;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">OUTLINE</div>
+            <div style="padding:2px 10px;font-size:10px;color:#9cdcfe;">.rx-app</div>
+            <div style="padding:2px 10px 2px 18px;font-size:10px;color:#9cdcfe;">.rx-browser</div>
+            <div style="padding:2px 10px 2px 18px;font-size:10px;color:#9cdcfe;">.rx-shell</div>
+            <div style="padding:2px 10px 2px 28px;font-size:10px;color:#9cdcfe;">.rx-rail</div>
+            <div style="padding:2px 10px 2px 28px;font-size:10px;background:#37373d;color:#fff;">.rx-cal-grid ←</div>
+            <div style="padding:2px 10px 2px 38px;font-size:10px;color:#9cdcfe;">.rx-day-col ×5</div>
+            <div style="padding:2px 10px 2px 28px;font-size:10px;color:#9cdcfe;">.rx-sched-priority</div>
+            <div style="padding:10px 10px 4px;font-size:10px;font-weight:700;color:#bbb;letter-spacing:.06em;text-transform:uppercase;">PROBLEMS</div>
+            <div style="padding:4px 10px;font-size:10px;color:#888;">⓪ 0 errors · 0 warnings</div>
+            <div style="padding:10px 10px 4px;font-size:10px;font-weight:700;color:#bbb;letter-spacing:.06em;text-transform:uppercase;">GIT</div>
+            <div style="padding:4px 10px;font-size:10px;color:#888;">Branch: main<br/>3 changed files</div>
+          </div>
+        </div>
+
+        <!-- Status bar -->
+        <div style="height:22px;background:#0077b6;display:flex;align-items:center;padding:0 12px;gap:16px;flex-shrink:0;">
+          <span style="font-size:10px;color:#fff;opacity:.9;">⎇ main</span>
+          <span style="font-size:10px;color:#fff;opacity:.9;">⓪ 0 · ⚠ 0</span>
+          <span style="font-size:10px;color:#fff;opacity:.9;margin-left:auto;">CSS · UTF-8 · Ln 34, Col 1</span>
+        </div>
+      </div>
+
+      <!-- ══ APPLICATION PROTOTYPE PANEL ══ -->
+      <div id="rx-panel-proto" style="height:100%;display:none;flex-direction:column;overflow:hidden;background:#111827;">
+
+        <!-- Proto header -->
+        <div style="background:#1a3a6b;padding:10px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1);">
+          <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.05em;">RESIL<span style="color:#00C8E8;">IX</span></span>
+          <span style="font-size:10px;color:rgba(255,255,255,.5);">Application Prototype — 7 Screens</span>
+          <div style="display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;" id="rx-proto-pills">
+            <button class="rx-proto-pill rx-proto-pill-active" onclick="setProtoScreen(0,this)">Scheduler</button>
+            <button class="rx-proto-pill" onclick="setProtoScreen(1,this)">Patient Record</button>
+            <button class="rx-proto-pill" onclick="setProtoScreen(2,this)">Patient List</button>
+            <button class="rx-proto-pill" onclick="setProtoScreen(3,this)">Messaging</button>
+            <button class="rx-proto-pill" onclick="setProtoScreen(4,this)">Reports</button>
+            <button class="rx-proto-pill" onclick="setProtoScreen(5,this)">Alerts</button>
+            <button class="rx-proto-pill" onclick="setProtoScreen(6,this)">Caregiver</button>
+          </div>
+        </div>
+
+        <!-- Viewport toggle -->
+        <div style="background:#0f172a;padding:8px 20px;display:flex;align-items:center;gap:10px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.06);">
+          <span style="font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;">Viewport:</span>
+          <button class="rx-vp-btn rx-vp-active" onclick="setProtoVp('desktop',this)"><i class="fas fa-desktop" style="margin-right:4px;"></i>Desktop</button>
+          <button class="rx-vp-btn" onclick="setProtoVp('tablet',this)"><i class="fas fa-tablet-alt" style="margin-right:4px;"></i>Tablet</button>
+          <button class="rx-vp-btn" onclick="setProtoVp('mobile',this)"><i class="fas fa-mobile-alt" style="margin-right:4px;"></i>Mobile</button>
+        </div>
+
+        <!-- Screen display -->
+        <div style="flex:1;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:32px;background:#111827;">
+          <div id="rx-proto-device-wrap" style="transition:all .3s;">
+            <img id="rx-proto-img" src="images/untitled folder/resilix-screen-01-scheduler.jpg" alt="Resilix Prototype" style="display:block;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);max-width:100%;transition:all .3s;" />
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end panels -->
+  </div>
+</div>
+
+<style>
+.rx-proto-pill { background:rgba(255,255,255,.1); border:none; color:rgba(255,255,255,.6); font-size:10px; font-weight:600; padding:4px 12px; border-radius:12px; cursor:pointer; transition:.2s; white-space:nowrap; }
+.rx-proto-pill:hover { background:rgba(255,255,255,.2); color:#fff; }
+.rx-proto-pill-active { background:#00C8E8; color:#fff; }
+.rx-vp-btn { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); color:rgba(255,255,255,.5); font-size:10px; font-weight:600; padding:4px 12px; border-radius:6px; cursor:pointer; transition:.2s; }
+.rx-vp-btn:hover { background:rgba(255,255,255,.15); color:#fff; }
+.rx-vp-active { background:rgba(255,255,255,.2); color:#fff; border-color:rgba(255,255,255,.3); }
+</style>
+
+<script>
+const rxAxureScreens = [
+  'images/untitled folder/resilix-screen-01-scheduler.jpg',
+  'images/untitled folder/resilix-screen-02-patient-record.jpg',
+  'images/untitled folder/resilix-screen-03-patient-list.jpg',
+  'images/untitled folder/resilix-screen-04-messaging.jpg',
+  'images/untitled folder/resilix-screen-05-reports.jpg',
+  'images/untitled folder/resilix-screen-06-alerts.jpg',
+  'images/untitled folder/resilix-screen-07-caregiver.jpg',
+];
+const rxProtoScreens = {
+  desktop: rxAxureScreens,
+  tablet: rxAxureScreens.map(s => s.replace('.jpg','-tablet.jpg')),
+  mobile: rxAxureScreens.map(s => s.replace('.jpg','-mobile.jpg')),
+};
+let rxProtoVp = 'desktop', rxProtoIdx = 0;
+
+function openRxPlatformLb() {
+  document.getElementById('rx-lb-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  switchRxTab('axure', document.getElementById('rx-tab-axure'));
+}
+function closeRxLb() {
+  document.getElementById('rx-lb-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function switchRxTab(tab, btn) {
+  document.getElementById('rx-panel-axure').style.display = 'none';
+  document.getElementById('rx-panel-code').style.display = 'none';
+  document.getElementById('rx-panel-proto').style.display = 'none';
+  document.getElementById('rx-panel-' + tab).style.display = 'flex';
+  ['rx-tab-axure','rx-tab-code','rx-tab-proto'].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('lb-tab-active','lb-tab-live');
+    el.style.background = '';
+    el.style.color = '';
+  });
+  if (tab === 'proto') {
+    btn.classList.add('lb-tab-live');
+  } else {
+    btn.classList.add('lb-tab-active');
+  }
+}
+function selectAxurePage(el, label, idx) {
+  document.getElementById('rx-axure-page-label').textContent = label;
+  document.getElementById('rx-axure-canvas').src = rxAxureScreens[idx] || rxAxureScreens[0];
+}
+function setProtoScreen(idx, btn) {
+  rxProtoIdx = idx;
+  document.querySelectorAll('.rx-proto-pill').forEach(b => b.classList.remove('rx-proto-pill-active'));
+  btn.classList.add('rx-proto-pill-active');
+  updateProtoImg();
+}
+function setProtoVp(vp, btn) {
+  rxProtoVp = vp;
+  document.querySelectorAll('.rx-vp-btn').forEach(b => b.classList.remove('rx-vp-active'));
+  btn.classList.add('rx-vp-active');
+  const wrap = document.getElementById('rx-proto-device-wrap');
+  if (vp === 'mobile') wrap.style.width = '390px';
+  else if (vp === 'tablet') wrap.style.width = '680px';
+  else wrap.style.width = '';
+  updateProtoImg();
+}
+function updateProtoImg() {
+  document.getElementById('rx-proto-img').src = rxProtoScreens[rxProtoVp][rxProtoIdx];
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeRxLb(); });
+</script>
+
 
 <script>
 const hcsLbData = {
