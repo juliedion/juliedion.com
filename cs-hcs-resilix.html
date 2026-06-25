@@ -252,11 +252,21 @@
   <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; text-align:left;">
 
     <div class="lb-card" onclick="openRxPlatformLb()">
-      <div class="lb-card-img"><img src="images/Human Care Systems/JulieDionPortfolio_20212.jpg" alt="Resilix Platform" /></div>
+      <div class="lb-card-img"><img src="images/untitled folder/resilix-screen-02-patient-record-tablet.jpg" alt="Resilix Platform" /></div>
       <div class="lb-card-body">
         <div class="lb-card-tag">UX/UI Design</div>
         <h3 class="lb-card-title">Resilix Platform</h3>
         <p class="lb-card-desc">Nurse-facing dashboard, scheduler, patient records, free text messaging — designed in Axure across 10+ iterations.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openHcsLb('campaigns')">
+      <div class="lb-card-img"><img src="images/Human Care Systems/JulieDionPortfolio_20216.jpg" alt="Omnichannel Campaigns" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Campaign Design</div>
+        <h3 class="lb-card-title">Omnichannel Campaigns</h3>
+        <p class="lb-card-desc">Digital ads, infographics, patient surveys, and recruitment materials spanning print, digital, and video touchpoints.</p>
         <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
       </div>
     </div>
@@ -301,15 +311,6 @@
       </div>
     </div>
 
-    <div class="lb-card" onclick="openHcsLb('campaigns')">
-      <div class="lb-card-img"><img src="images/Human Care Systems/Omnichannel_Adherence_ad_v3b.png" alt="Omnichannel Campaigns" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Campaign Design</div>
-        <h3 class="lb-card-title">Omnichannel Campaigns</h3>
-        <p class="lb-card-desc">Digital ads, infographics, patient surveys, and recruitment materials spanning print, digital, and video touchpoints.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
-      </div>
-    </div>
 
   </div>
   </div>
@@ -774,12 +775,10 @@ const hcsLbData = {
   campaigns: {
     tag: 'Campaign Design', title: 'Omnichannel Campaigns',
     imgs: [
-      ['images/Human Care Systems/Omnichannel_Adherence_ad_v3b.png','Omnichannel Adherence Ad'],
-      ['images/Human Care Systems/Patient_Experience_Survey-01.png','Patient Experience Survey'],
-      ['images/Human Care Systems/HCS_Recruitment_AdS_v1-01.png','Recruitment Ad 1'],
-      ['images/Human Care Systems/HCS_Recruitment_AdS_v1-02.png','Recruitment Ad 2'],
-      ['images/Human Care Systems/Genentech_Survey_Quote_v1.png','Genentech Survey Quote'],
-      ['images/Human Care Systems/Cerus_postcard.png','Cerus Postcard'],
+      ['images/Human Care Systems/JulieDionPortfolio_20216.jpg','HCS Campaign Portfolio'],
+      ['images/Human Care Systems/Resilix-01.jpg','Capability Presentation'],
+      ['images/Human Care Systems/roadmap6-01.png','2020 Product Roadmap'],
+      ['images/Human Care Systems/HCS_Introduction_Capabilities.pptx','HCS Introduction & Capabilities','pptx'],
     ]
   }
 };
@@ -788,12 +787,21 @@ function openHcsLb(key) {
   document.getElementById('hcs-lb-tag').textContent = d.tag;
   document.getElementById('hcs-lb-title').textContent = d.title;
   const gallery = document.getElementById('hcs-lb-gallery');
-  gallery.innerHTML = d.imgs.map(([src,alt]) =>
-    `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;">
+  gallery.innerHTML = d.imgs.map(([src,alt,type]) => {
+    if (type === 'pptx') {
+      return `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;display:flex;flex-direction:column;">
+        <a href="${src}" download style="flex:1;display:flex;align-items:center;justify-content:center;min-height:160px;background:#e0e8f0;text-decoration:none;flex-direction:column;gap:10px;padding:20px;">
+          <i class="fas fa-file-powerpoint" style="font-size:48px;color:#c43e1c;"></i>
+          <span style="font-size:11px;font-weight:700;color:#374151;">Download PPTX</span>
+        </a>
+        <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">${alt}</div>
+      </div>`;
+    }
+    return `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;cursor:pointer;" onclick="openFullImg('${src}','${alt}')">
       <img src="${src}" alt="${alt}" style="width:100%;display:block;object-fit:cover;" loading="lazy" />
       <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">${alt}</div>
-    </div>`
-  ).join('');
+    </div>`;
+  }).join('');
   const modal = document.getElementById('hcs-lb-modal');
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -802,7 +810,15 @@ function closeHcsLb() {
   document.getElementById('hcs-lb-modal').style.display = 'none';
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if(e.key==='Escape') { closeHcsLb(); closeBrandLb(); } });
+function openFullImg(src, alt) {
+  document.getElementById('full-img-el').src = src;
+  document.getElementById('full-img-el').alt = alt;
+  document.getElementById('full-img-overlay').style.display = 'flex';
+}
+function closeFullImg() {
+  document.getElementById('full-img-overlay').style.display = 'none';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') { closeHcsLb(); closeBrandLb(); closeFullImg(); } });
 
 function openBrandLb() {
   document.getElementById('brand-lb-overlay').style.display = 'flex';
@@ -813,6 +829,12 @@ function closeBrandLb() {
   document.body.style.overflow = '';
 }
 </script>
+
+<!-- Full image viewer (gallery click-through) -->
+<div id="full-img-overlay" onclick="if(event.target===this)closeFullImg()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:10000;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;">
+  <button onclick="closeFullImg()" style="position:absolute;top:20px;right:24px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.15);cursor:pointer;font-size:18px;color:#fff;display:flex;align-items:center;justify-content:center;z-index:2;">✕</button>
+  <img id="full-img-el" src="" alt="" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;box-shadow:0 32px 80px rgba(0,0,0,.7);" />
+</div>
 
 <!-- Brand full-image lightbox -->
 <div id="brand-lb-overlay" onclick="if(event.target===this)closeBrandLb()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;">
