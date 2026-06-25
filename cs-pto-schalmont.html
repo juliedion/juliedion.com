@@ -273,23 +273,13 @@
       </div>
     </div>
 
-    <div class="lb-card" onclick="openFullImg('images/PTO/pto-sports.png','PTO Website — Sports Directory')">
-      <div class="lb-card-img"><img src="images/PTO/pto-sports.png" alt="PTO Sports Page" style="object-fit:contain;background:#fff;object-position:top;" /></div>
+    <div class="lb-card" onclick="openBookFairLb()">
+      <div class="lb-card-img"><img src="images/PTO/BookFair/spring-bookfair-teal.png" alt="Book Fairs" style="object-fit:cover;object-position:top;" /></div>
       <div class="lb-card-body">
-        <div class="lb-card-tag">Web Design · Sports</div>
-        <h3 class="lb-card-title">PTO Website — Sports Directory</h3>
-        <p class="lb-card-desc">Centralized sports directory listing every youth athletic program in the Schalmont and Rotterdam communities — the most-visited page on the PTO site.</p>
-        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
-      </div>
-    </div>
-
-    <div class="lb-card" onclick="openFullImg('images/PTO/ptolayout.jpg','PTO Website — Layout Overview')">
-      <div class="lb-card-img"><img src="images/PTO/ptolayout.jpg" alt="PTO Layout" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Web Design · Layout</div>
-        <h3 class="lb-card-title">PTO Website — Layout Overview</h3>
-        <p class="lb-card-desc">Full site layout overview — showing the visual hierarchy and navigation system designed to serve two school communities from a single platform.</p>
-        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+        <div class="lb-card-tag">Events · Print Design</div>
+        <h3 class="lb-card-title">Book Fairs — Schalmont &amp; Jefferson</h3>
+        <p class="lb-card-desc">Seasonal Book Fair flyers and promotional materials for Scholastic events at both Schalmont and Jefferson Elementary — Spring and Fall campaigns across multiple years.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
       </div>
     </div>
 
@@ -412,6 +402,43 @@
   <p>Continue Exploring</p>
   <h3>More Portfolio Work</h3>
   <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
+
+<!-- ── Book Fair Gallery Lightbox ── -->
+<div class="blb-overlay" id="bookfair-lb-overlay" onclick="if(event.target===this)closeBookFairLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Book Fairs — Schalmont &amp; Jefferson Elementary</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Scholastic Book Fair · Spring &amp; Fall · Event Design</div>
+      </div>
+      <button class="blb-close" onclick="closeBookFairLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/BookFair/spring-bookfair-teal.png','Book Fair — Spring (Teal)')">
+          <img src="images/PTO/BookFair/spring-bookfair-teal.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Spring Book Fair — Teal</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/BookFair/fall-bookfair-2023.png','Fall Book Fair 2023')">
+          <img src="images/PTO/BookFair/fall-bookfair-2023.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Fall Book Fair 2023</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/BookFair/spring-bookfair-2024.png','Spring Book Fair 2024')">
+          <img src="images/PTO/BookFair/spring-bookfair-2024.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Spring Book Fair 2024</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/BookFair/bookfair-screenshot.png','Book Fair — Event')">
+          <img src="images/PTO/BookFair/bookfair-screenshot.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Book Fair — Event</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/BookFair/fall-bookfair-2024.png','Fall Book Fair 2024 — Jefferson Elementary')">
+          <img src="images/PTO/BookFair/fall-bookfair-2024.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Fall Book Fair 2024 — Jefferson</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ── PTO Website Lightbox (Charter-style) ── -->
@@ -850,6 +877,8 @@
 </div>
 
 <script>
+  function openBookFairLb() { document.getElementById('bookfair-lb-overlay').style.display = 'flex'; }
+  function closeBookFairLb() { document.getElementById('bookfair-lb-overlay').style.display = 'none'; }
   function openPtoWebsiteLb() {
     document.getElementById('pto-lb-overlay').style.display = 'flex';
   }
@@ -876,7 +905,7 @@
     document.getElementById('full-img-overlay').style.display = 'none';
   }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closePtoWebsiteLb(); closeFullImg(); }
+    if (e.key === 'Escape') { closeBookFairLb(); closePtoWebsiteLb(); closeFullImg(); }
   });
 </script>
 </body>
