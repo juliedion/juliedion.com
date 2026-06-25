@@ -239,40 +239,62 @@
 
     <!-- Card 1: Online Bag Builder -->
     <div class="lb-card" onclick="openBuilderLb()">
-      <div class="lb-card-img" style="background:#ede5da; display:flex; align-items:center; justify-content:center; height:200px;">
-        <!-- mini preview of builder UI -->
-        <div style="width:90%; background:#f5f0eb; border-radius:6px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.15);">
-          <div style="background:#2d2d2d; padding:5px 10px; display:flex; gap:4px; align-items:center;">
+      <div class="lb-card-img" style="background:#ede5da; position:relative; overflow:hidden; height:200px;">
+        <!-- browser chrome mini-mockup with real bag -->
+        <div style="position:absolute;inset:12px;background:#f5f0eb;border-radius:6px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.18);">
+          <div style="background:#2d2d2d;padding:5px 10px;display:flex;gap:4px;align-items:center;">
             <span style="width:6px;height:6px;border-radius:50%;background:#FF5F57;display:inline-block;"></span>
             <span style="width:6px;height:6px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span>
             <span style="width:6px;height:6px;border-radius:50%;background:#28C840;display:inline-block;"></span>
-            <span style="flex:1;background:#3d3d3d;border-radius:3px;height:8px;margin-left:6px;font-size:7px;color:rgba(255,255,255,.4);padding:1px 6px;display:flex;align-items:center;">monethandbags.com/builder</span>
+            <span style="flex:1;background:#3d3d3d;border-radius:3px;height:8px;margin-left:6px;font-size:7px;color:rgba(255,255,255,.35);padding:1px 6px;display:flex;align-items:center;">monethandbags.com/build</span>
           </div>
-          <div style="background:#f5f0eb; padding:8px 10px;">
-            <div style="text-align:center; font-size:6px; letter-spacing:.3em; text-transform:uppercase; color:#5a4a3a; margin-bottom:6px; padding-bottom:5px; border-bottom:1px solid #d8cfc4;">Style All Your Own</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;">
-              <div style="background:#ede5da;border-radius:3px;aspect-ratio:1;"></div>
-              <div style="background:#e8e0d5;border-radius:3px;aspect-ratio:1;border:1px solid #c8b8a4;"></div>
-              <div style="background:#ede5da;border-radius:3px;aspect-ratio:1;"></div>
+          <div style="display:flex;height:calc(100% - 22px);">
+            <!-- sidebar -->
+            <div style="width:60px;background:#ede5da;border-right:1px solid #d8cfc4;padding:6px;">
+              <div style="font-size:5px;letter-spacing:.2em;text-transform:uppercase;color:#5a4a3a;margin-bottom:5px;border-bottom:1px solid #c8b8a4;padding-bottom:3px;">Customize</div>
+              <div style="font-size:5px;color:#a08060;margin-bottom:3px;">Style</div>
+              <div style="font-size:5px;padding:2px 4px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;margin-bottom:2px;">Tote</div>
+              <div style="font-size:5px;padding:2px 4px;background:#fff;border:1px solid #d8cfc4;border-radius:1px;margin-bottom:5px;">Crossbody</div>
+              <div style="font-size:5px;color:#a08060;margin-bottom:3px;">Color</div>
+              <div style="display:flex;gap:2px;flex-wrap:wrap;margin-bottom:5px;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#c8a882;border:1.5px solid #5a4a3a;"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#8b7355;"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#d4c4b0;"></div>
+                <div style="width:8px;height:8px;border-radius:50%;background:#2d2420;"></div>
+              </div>
             </div>
-            <div style="margin-top:5px; display:flex; gap:3px; justify-content:center;">
-              <div style="width:8px;height:8px;border-radius:50%;background:#c8a882;"></div>
-              <div style="width:8px;height:8px;border-radius:50%;background:#8b7355;border:1.5px solid #5a4a3a;"></div>
-              <div style="width:8px;height:8px;border-radius:50%;background:#d4c4b0;"></div>
-              <div style="width:8px;height:8px;border-radius:50%;background:#e8d5c0;"></div>
+            <!-- preview -->
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;gap:4px;">
+              <div style="font-size:5px;letter-spacing:.15em;text-transform:uppercase;color:#a08060;">Preview</div>
+              <div style="width:56px;height:48px;background:#e8e0d5;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);">
+                <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+              </div>
+              <div style="font-size:4px;color:#5a4a3a;letter-spacing:.05em;">Tote · Camel · Silver</div>
+              <div style="font-size:5px;padding:3px 8px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;">Add to Cart — $148</div>
             </div>
           </div>
         </div>
       </div>
       <div class="lb-card-body">
-        <div class="lb-card-tag">E-Commerce · UX Design</div>
+        <div class="lb-card-tag">E-Commerce · UX Design · Adobe XD</div>
         <h3 class="lb-card-title">Online Bag Builder — "Style All Your Own"</h3>
-        <p class="lb-card-desc">Custom handbag configurator letting customers select style, color, hardware, and lining to build a personalized bag — a first in the brand's history.</p>
-        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Screens</div>
+        <p class="lb-card-desc">Custom handbag configurator — from Adobe XD wireframes through HTML/CSS build to a live configurator letting customers design their own Monet bag.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Process</div>
       </div>
     </div>
 
-    <!-- Card 2: Spring Catalog -->
+    <!-- Card 2: Monet Brand Identity System -->
+    <div class="lb-card" onclick="openBrandLb()">
+      <div class="lb-card-img"><img src="images/Madison Handbags/fancymonetlogo_frame_gray_large_whiteback_facebook.jpg" alt="Monet Brand Identity" style="object-fit:contain; background:#f9f9f9;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Brand Identity · Design System</div>
+        <h3 class="lb-card-title">Monet Brand Identity System</h3>
+        <p class="lb-card-desc">Full brand system — logo, color palette, typography, and brand standards built from the ground up to position Monet as accessible luxury.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View System</div>
+      </div>
+    </div>
+
+    <!-- Card 3: Spring Catalog -->
     <div class="lb-card" onclick="openFullImg('images/Madison Handbags/MHBSpringCatalog.png','Spring Collection Catalog')">
       <div class="lb-card-img"><img src="images/Madison Handbags/MHBSpringCatalog.png" alt="Spring Catalog" /></div>
       <div class="lb-card-body">
@@ -283,25 +305,14 @@
       </div>
     </div>
 
-    <!-- Card 3: Fall Catalog -->
-    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/MHBFallCatalog.png','Fall Collection Catalog')">
-      <div class="lb-card-img"><img src="images/Madison Handbags/MHBFallCatalog.png" alt="Fall Catalog" /></div>
+    <!-- Card 4: Fall Catalog -->
+    <div class="lb-card" onclick="openFallCatalogLb()">
+      <div class="lb-card-img"><img src="images/Madison Handbags/MHBFallCatalog.png" alt="Fall Catalog" style="object-fit:cover;object-position:top;" /></div>
       <div class="lb-card-body">
-        <div class="lb-card-tag">Print · Catalog</div>
-        <h3 class="lb-card-title">Fall / Winter Catalog</h3>
-        <p class="lb-card-desc">Fall/Winter seasonal catalog — rich photography curation, editorial layout, and dual-channel print and digital deployment.</p>
-        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
-      </div>
-    </div>
-
-    <!-- Card 4: Brand & Logo -->
-    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/fancymonetlogo_frame_gray_large_whiteback_facebook.jpg','Monet Brand Identity')">
-      <div class="lb-card-img"><img src="images/Madison Handbags/fancymonetlogo_frame_gray_large_whiteback_facebook.jpg" alt="Monet Brand Identity" style="object-fit:contain; background:#f9f9f9;" /></div>
-      <div class="lb-card-body">
-        <div class="lb-card-tag">Brand Identity</div>
-        <h3 class="lb-card-title">Monet Brand Identity System</h3>
-        <p class="lb-card-desc">Full brand system including logo, typography, color palette, and brand standards — built from the ground up to position Monet as accessible luxury.</p>
-        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+        <div class="lb-card-tag">Print · Catalog · 17 Pages</div>
+        <h3 class="lb-card-title">Fall / Winter 2013 Catalog</h3>
+        <p class="lb-card-desc">Full 17-page Fall/Winter catalog — rich lifestyle photography, editorial layout, and dual-channel print and digital deployment for the Monet seasonal campaign.</p>
+        <div class="lb-card-cta"><i class="fas fa-book-open"></i> Browse Catalog</div>
       </div>
     </div>
 
@@ -384,15 +395,205 @@
     <div class="blb-header">
       <div>
         <div style="font-size:13px;font-weight:700;color:#111827;">Online Bag Builder — "Style All Your Own"</div>
-        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Monet Handbags · E-Commerce Configurator</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Monet Handbags · E-Commerce Configurator · Adobe XD → HTML/CSS → Live Product</div>
       </div>
       <button class="blb-close" onclick="closeBuilderLb()">×</button>
     </div>
     <div class="blb-screens">
 
-      <!-- Screen 1: Collections / Shop page -->
+      <!-- Phase 1: Adobe XD Design -->
       <div>
-        <div class="screen-label">Screen 1 — Collections / Shop</div>
+        <div class="screen-label">Phase 1 — Adobe XD Design &amp; Wireframes</div>
+        <!-- XD App chrome -->
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.2);">
+          <div style="background:#1e1e2e;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="display:flex;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+              <span style="font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.05em;">Monet_BagBuilder_v3.xd — Adobe XD</span>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <div style="font-size:9px;padding:3px 10px;background:#FF61F6;color:#fff;border-radius:4px;font-weight:600;">Share</div>
+              <div style="font-size:9px;padding:3px 10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);border-radius:4px;">Preview</div>
+            </div>
+          </div>
+          <div style="display:flex;background:#2d2d3d;min-height:360px;">
+            <!-- XD left toolbar -->
+            <div style="width:44px;background:#1e1e2e;display:flex;flex-direction:column;align-items:center;padding:12px 0;gap:10px;border-right:1px solid rgba(255,255,255,.06);">
+              <div style="font-size:14px;color:rgba(255,255,255,.4);">▶</div>
+              <div style="font-size:14px;color:rgba(255,255,255,.4);">⬡</div>
+              <div style="font-size:14px;color:rgba(255,255,255,.4);">T</div>
+              <div style="font-size:14px;color:rgba(255,255,255,.4);">✎</div>
+              <div style="font-size:14px;color:#FF61F6;">⬜</div>
+            </div>
+            <!-- XD layers panel -->
+            <div style="width:160px;background:#252535;border-right:1px solid rgba(255,255,255,.06);padding:10px 0;flex-shrink:0;">
+              <div style="font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.15em;text-transform:uppercase;padding:0 12px;margin-bottom:8px;">Layers</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.7);padding:4px 12px;background:rgba(255,97,246,.15);">📄 Builder Screen</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px 4px 24px;">🔷 Sidebar Panel</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px 4px 24px;">🔷 Preview Center</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px 4px 24px;">🔷 Specs Panel</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px 4px 24px;">📝 Color Swatches</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px 4px 24px;">📝 CTA Button</div>
+              <div style="height:1px;background:rgba(255,255,255,.06);margin:6px 0;"></div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px;">📄 Shop Grid</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px;">📄 Homepage Hero</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.45);padding:4px 12px;">📄 Cart / Checkout</div>
+            </div>
+            <!-- XD canvas / artboard -->
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:20px;gap:16px;overflow:hidden;">
+              <!-- Wireframe artboard -->
+              <div style="background:#f5f0eb;border-radius:4px;width:220px;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.4);overflow:hidden;border:1px solid rgba(255,255,255,.1);">
+                <div style="background:#ede5da;padding:6px 10px;border-bottom:1px solid #d8cfc4;display:flex;align-items:center;justify-content:space-between;">
+                  <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#5a4a3a;">Monet · Builder</div>
+                  <div style="display:flex;gap:8px;font-size:7px;color:#7a6a5a;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+                </div>
+                <div style="padding:8px;text-align:center;border-bottom:1px solid #d8cfc4;">
+                  <div style="font-size:7px;letter-spacing:.3em;text-transform:uppercase;color:#5a4a3a;margin-bottom:2px;">Style All Your Own</div>
+                  <div style="font-size:6px;color:#a08060;">Choose style · color · hardware · lining</div>
+                </div>
+                <div style="display:flex;min-height:130px;">
+                  <div style="width:60px;background:#ede5da;border-right:1px solid #d8cfc4;padding:6px;">
+                    <div style="font-size:5px;color:#5a4a3a;text-transform:uppercase;letter-spacing:.2em;margin-bottom:4px;border-bottom:1px solid #c8b8a4;padding-bottom:2px;">Style</div>
+                    <div style="font-size:5px;padding:2px 4px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;margin-bottom:2px;">Tote</div>
+                    <div style="font-size:5px;padding:2px 4px;background:#fff;border:1px solid #d8cfc4;border-radius:1px;margin-bottom:6px;">Crossbody</div>
+                    <div style="font-size:5px;color:#5a4a3a;text-transform:uppercase;letter-spacing:.2em;margin-bottom:4px;">Color</div>
+                    <div style="display:flex;gap:2px;flex-wrap:wrap;">
+                      <div style="width:7px;height:7px;border-radius:50%;background:#c8a882;border:1.5px solid #5a4a3a;"></div>
+                      <div style="width:7px;height:7px;border-radius:50%;background:#8b7355;"></div>
+                      <div style="width:7px;height:7px;border-radius:50%;background:#d4c4b0;"></div>
+                      <div style="width:7px;height:7px;border-radius:50%;background:#2d2420;"></div>
+                    </div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;gap:4px;">
+                    <div style="font-size:5px;color:#a08060;letter-spacing:.15em;text-transform:uppercase;">Preview</div>
+                    <div style="width:54px;height:46px;overflow:hidden;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.12);">
+                      <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+                    </div>
+                    <div style="font-size:4px;color:#5a4a3a;">Tote · Camel · Silver</div>
+                    <div style="font-size:5px;padding:2px 6px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;">Add to Cart — $148</div>
+                  </div>
+                </div>
+              </div>
+              <!-- XD annotation overlay -->
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="background:rgba(255,97,246,.12);border:1px solid rgba(255,97,246,.3);border-radius:4px;padding:6px 10px;max-width:140px;">
+                  <div style="font-size:8px;color:#FF61F6;font-weight:700;margin-bottom:2px;">Interaction Note</div>
+                  <div style="font-size:7px;color:rgba(255,255,255,.6);">Swatch click → updates preview bag color. Color var passed to CSS filter.</div>
+                </div>
+                <div style="background:rgba(0,200,232,.1);border:1px solid rgba(0,200,232,.25);border-radius:4px;padding:6px 10px;max-width:140px;">
+                  <div style="font-size:8px;color:#00C8E8;font-weight:700;margin-bottom:2px;">Component</div>
+                  <div style="font-size:7px;color:rgba(255,255,255,.6);">Sidebar = reusable component. Appears on all builder pages.</div>
+                </div>
+                <div style="background:rgba(255,193,46,.1);border:1px solid rgba(255,193,46,.25);border-radius:4px;padding:6px 10px;max-width:140px;">
+                  <div style="font-size:8px;color:#FFC12E;font-weight:700;margin-bottom:2px;">Specs</div>
+                  <div style="font-size:7px;color:rgba(255,255,255,.6);">Right panel auto-populates from selection state. Dynamic data binding.</div>
+                </div>
+              </div>
+            </div>
+            <!-- XD right properties panel -->
+            <div style="width:160px;background:#252535;border-left:1px solid rgba(255,255,255,.06);padding:10px 12px;flex-shrink:0;">
+              <div style="font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;">Properties</div>
+              <div style="font-size:8px;color:rgba(255,255,255,.5);margin-bottom:4px;">Fill</div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;"><div style="width:14px;height:14px;border-radius:3px;background:#f5f0eb;border:1px solid rgba(255,255,255,.1);"></div><span style="font-size:8px;color:rgba(255,255,255,.6);">#F5F0EB</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,.5);margin-bottom:4px;">Typography</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.45);margin-bottom:2px;">Georgia · 7px</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.45);margin-bottom:10px;">Letter-spacing: 0.2em</div>
+              <div style="font-size:8px;color:rgba(255,255,255,.5);margin-bottom:4px;">Interactions</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.45);margin-bottom:2px;">Tap → Navigate</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.45);margin-bottom:2px;">Hover → State</div>
+              <div style="height:1px;background:rgba(255,255,255,.06);margin:8px 0;"></div>
+              <div style="font-size:8px;color:rgba(255,255,255,.5);margin-bottom:4px;">Artboard</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.45);">1440 × 900 · Desktop</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.45);">375 × 812 · Mobile</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">Adobe XD design file — 3 artboards covering the builder, product grid, and cart. Component system defined for sidebar, swatches, and preview panel. Interaction flows prototyped before any code was written.</div>
+      </div>
+
+      <!-- Phase 2: HTML/CSS Build -->
+      <div>
+        <div class="screen-label">Phase 2 — HTML / CSS Development</div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.2);display:grid;grid-template-columns:1fr 1fr;gap:0;">
+          <!-- Code editor pane -->
+          <div style="background:#1e1e1e;padding:0;">
+            <div style="background:#2d2d2d;padding:6px 12px;display:flex;gap:8px;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);">
+              <span style="font-size:9px;color:rgba(255,255,255,.4);">builder.css</span>
+              <span style="font-size:9px;color:rgba(255,255,255,.25);">builder.js</span>
+              <span style="font-size:9px;color:rgba(255,255,255,.25);">index.html</span>
+            </div>
+            <div style="padding:16px;font-family:monospace;font-size:9px;line-height:1.7;color:#cdd6f4;">
+              <div><span style="color:#89b4fa;">.builder-wrap</span> <span style="color:#cdd6f4;">{</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">display</span><span style="color:#cdd6f4;">: flex;</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">min-height</span><span style="color:#cdd6f4;">: 480px;</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">background</span><span style="color:#cdd6f4;">: </span><span style="color:#f38ba8;">#f5f0eb</span><span style="color:#cdd6f4;">;</span></div>
+              <div><span style="color:#cdd6f4;">}</span></div>
+              <div style="margin-top:6px;"><span style="color:#89b4fa;">.sidebar</span> <span style="color:#cdd6f4;">{</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">width</span><span style="color:#cdd6f4;">: 220px;</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">background</span><span style="color:#cdd6f4;">: </span><span style="color:#f38ba8;">#ede5da</span><span style="color:#cdd6f4;">;</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">border-right</span><span style="color:#cdd6f4;">: 1px solid </span><span style="color:#f38ba8;">#d8cfc4</span><span style="color:#cdd6f4;">;</span></div>
+              <div><span style="color:#cdd6f4;">}</span></div>
+              <div style="margin-top:6px;"><span style="color:#89b4fa;">.swatch</span> <span style="color:#cdd6f4;">{</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">width</span><span style="color:#cdd6f4;">: 18px;</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">height</span><span style="color:#cdd6f4;">: 18px;</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">border-radius</span><span style="color:#cdd6f4;">: 50%;</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">cursor</span><span style="color:#cdd6f4;">: pointer;</span></div>
+              <div><span style="color:#cdd6f4;">}</span></div>
+              <div style="margin-top:6px;color:#6c7086;font-style:italic;">/* JS updates preview on click */</div>
+              <div style="margin-top:2px;"><span style="color:#89b4fa;">.swatch</span><span style="color:#cdd6f4;">:</span><span style="color:#f38ba8;">active</span><span style="color:#cdd6f4;">,</span></div>
+              <div><span style="color:#89b4fa;">.swatch.selected</span> <span style="color:#cdd6f4;">{</span></div>
+              <div style="padding-left:12px;"><span style="color:#a6e3a1;">border</span><span style="color:#cdd6f4;">: 2px solid </span><span style="color:#f38ba8;">#5a4a3a</span><span style="color:#cdd6f4;">;</span></div>
+              <div><span style="color:#cdd6f4;">}</span></div>
+            </div>
+          </div>
+          <!-- Browser preview pane -->
+          <div style="background:#f5f0eb;">
+            <div style="background:#2d2d2d;padding:6px 12px;display:flex;align-items:center;gap:6px;">
+              <div style="display:flex;gap:4px;"><span style="width:8px;height:8px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:8px;height:8px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:8px;height:8px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+              <div style="flex:1;background:#3d3d3d;border-radius:3px;padding:2px 8px;font-size:8px;color:rgba(255,255,255,.35);">localhost:3000/build</div>
+            </div>
+            <div>
+              <div style="background:#ede5da;padding:8px 12px;border-bottom:1px solid #d8cfc4;display:flex;justify-content:space-between;align-items:center;">
+                <div style="font-size:8px;letter-spacing:.2em;color:#5a4a3a;">Monet · by Madison Handbags</div>
+                <div style="display:flex;gap:10px;font-size:7px;color:#7a6a5a;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid;">Build Yours</span><span>Shop</span><span>About</span></div>
+              </div>
+              <div style="padding:8px;text-align:center;border-bottom:1px solid #d8cfc4;">
+                <div style="font-size:7px;letter-spacing:.3em;text-transform:uppercase;color:#5a4a3a;">Style All Your Own</div>
+                <div style="font-size:6px;color:#a08060;margin-top:2px;">Choose style · color · hardware · lining</div>
+              </div>
+              <div style="display:flex;min-height:160px;">
+                <div style="width:72px;background:#ede5da;border-right:1px solid #d8cfc4;padding:8px;">
+                  <div style="font-size:5px;letter-spacing:.2em;text-transform:uppercase;color:#5a4a3a;margin-bottom:4px;border-bottom:1px solid #c8b8a4;padding-bottom:2px;">Customize</div>
+                  <div style="font-size:5px;color:#a08060;margin-bottom:3px;">Bag Style</div>
+                  <div style="font-size:5px;padding:2px 4px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;margin-bottom:2px;">Tote</div>
+                  <div style="font-size:5px;padding:2px 4px;background:#fff;border:1px solid #d8cfc4;border-radius:1px;margin-bottom:6px;">Crossbody</div>
+                  <div style="font-size:5px;color:#a08060;margin-bottom:3px;">Color</div>
+                  <div style="display:flex;gap:3px;flex-wrap:wrap;">
+                    <div style="width:9px;height:9px;border-radius:50%;background:#c8a882;border:1.5px solid #5a4a3a;"></div>
+                    <div style="width:9px;height:9px;border-radius:50%;background:#8b7355;"></div>
+                    <div style="width:9px;height:9px;border-radius:50%;background:#d4c4b0;"></div>
+                    <div style="width:9px;height:9px;border-radius:50%;background:#2d2420;"></div>
+                    <div style="width:9px;height:9px;border-radius:50%;background:#7a3030;"></div>
+                  </div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;gap:5px;">
+                  <div style="font-size:5px;color:#a08060;letter-spacing:.2em;text-transform:uppercase;">Preview</div>
+                  <div style="width:60px;height:52px;overflow:hidden;border-radius:4px;box-shadow:0 3px 10px rgba(0,0,0,.15);">
+                    <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+                  </div>
+                  <div style="font-size:5px;color:#5a4a3a;">Tote · Camel · Silver</div>
+                  <div style="font-size:6px;padding:3px 8px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;">Add to Cart — $148</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">Split-panel development view — CSS flexbox layout matching the XD spec, with JavaScript swatch selection updating the live preview. Tested across desktop and mobile breakpoints before handoff.</div>
+      </div>
+
+      <!-- Phase 3: Final Product — Shop Grid -->
+      <div>
+        <div class="screen-label">Phase 3 — Final Product · Collections / Shop</div>
         <div class="mhb-screen">
           <div class="mhb-bar">
             <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
@@ -402,7 +603,7 @@
             <nav class="mhb-nav">
               <div class="mhb-logo">Monet<em>by Madison Handbags</em></div>
               <ul class="mhb-nav-links">
-                <li>Home</li><li>Collections</li><li>Build Yours</li><li>About</li><li>Sale</li><li>Contact</li>
+                <li>Home</li><li style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;padding-bottom:2px;">Collections</li><li>Build Yours</li><li>About</li><li>Sale</li><li>Contact</li>
               </ul>
               <div class="mhb-nav-icons">
                 <i class="fas fa-search"></i>
@@ -415,54 +616,54 @@
             </div>
             <div class="mhb-grid">
               <div class="mhb-product">
-                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Nova" style="object-fit:contain;width:80%;height:80%;" /></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Nova" style="object-fit:cover;width:100%;height:100%;object-position:center;" /></div>
                 <div class="mhb-product-name">Nova</div>
                 <div class="mhb-product-price">$148</div>
               </div>
               <div class="mhb-product">
-                <div class="mhb-product-img" style="background:#ddd0c2;"></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Agatha" style="object-fit:cover;width:100%;height:100%;object-position:left top;filter:sepia(.3) hue-rotate(10deg);" /></div>
                 <div class="mhb-product-name">Agatha</div>
                 <div class="mhb-product-price">$162</div>
               </div>
               <div class="mhb-product">
-                <div class="mhb-product-img" style="background:#d8cfc4;"></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Bandwagon" style="object-fit:cover;width:100%;height:100%;object-position:right top;filter:saturate(.6) brightness(1.1);" /></div>
                 <div class="mhb-product-name">Bandwagon</div>
                 <div class="mhb-product-price">$134</div>
               </div>
               <div class="mhb-product">
-                <div class="mhb-product-img" style="background:#e0d8cf;"></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Balione" style="object-fit:cover;width:100%;height:100%;filter:sepia(.5) saturate(.8);" /></div>
                 <div class="mhb-product-name">Balione</div>
                 <div class="mhb-product-price">$179</div>
               </div>
               <div class="mhb-product">
-                <div class="mhb-product-img" style="background:#c8b8a4;"></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Elara" style="object-fit:cover;width:100%;height:100%;filter:brightness(.85) contrast(1.1);" /></div>
                 <div class="mhb-product-name">Elara</div>
                 <div class="mhb-product-price">$155</div>
               </div>
               <div class="mhb-product">
-                <div class="mhb-product-img" style="background:#d4c4b0;"></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Cleo" style="object-fit:cover;width:100%;height:100%;object-position:center bottom;filter:saturate(1.2);" /></div>
                 <div class="mhb-product-name">Cleo</div>
                 <div class="mhb-product-price">$142</div>
               </div>
               <div class="mhb-product">
-                <div class="mhb-product-img" style="background:#c0b09a;"></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Soleil" style="object-fit:cover;width:100%;height:100%;filter:sepia(.2) hue-rotate(-15deg);" /></div>
                 <div class="mhb-product-name">Soleil</div>
                 <div class="mhb-product-price">$168</div>
               </div>
               <div class="mhb-product">
-                <div class="mhb-product-img" style="background:#e8e0d5;"></div>
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Isla" style="object-fit:cover;width:100%;height:100%;filter:brightness(1.05) saturate(.7);" /></div>
                 <div class="mhb-product-name">Isla</div>
                 <div class="mhb-product-price">$138</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="screen-caption">Product grid displaying the full Monet Handbags collection — minimal cream aesthetic with product name and price labels. Four-column layout mirrors the original site's handbag browsing experience.</div>
+        <div class="screen-caption">Live shop page — eight Monet styles displayed in the four-column product grid. Each card shows product photography, bag name, and price. Matches the XD design spec exactly.</div>
       </div>
 
-      <!-- Screen 2: Bag Builder / Configurator -->
+      <!-- Phase 3b: Final Product — Bag Builder -->
       <div>
-        <div class="screen-label">Screen 2 — Bag Builder / Configurator</div>
+        <div class="screen-label">Phase 3 — Final Product · Bag Builder / Configurator</div>
         <div class="mhb-screen">
           <div class="mhb-bar">
             <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
@@ -485,7 +686,6 @@
               <div style="font-size:9px;color:#a08060;margin-top:8px;letter-spacing:.1em;">Choose your style, color, hardware &amp; lining to create your perfect bag.</div>
             </div>
             <div class="mhb-builder-body">
-              <!-- Options sidebar -->
               <div class="mhb-builder-sidebar">
                 <h4>Customize</h4>
                 <div class="mhb-option-group">
@@ -525,11 +725,10 @@
                   </div>
                 </div>
               </div>
-              <!-- Preview center -->
               <div class="mhb-builder-preview">
                 <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:4px;">Preview</div>
                 <div class="mhb-preview-bag">
-                  <img src="images/Madison Handbags/MHB-Feature.jpg" alt="Bag preview" />
+                  <img src="images/Madison Handbags/MHB-Feature.jpg" alt="Bag preview" style="width:100%;height:100%;object-fit:cover;" />
                 </div>
                 <div style="font-size:8px;color:#5a4a3a;letter-spacing:.1em;">Tote · Camel · Silver · Champagne Satin</div>
                 <div class="mhb-preview-actions">
@@ -537,7 +736,6 @@
                   <div class="mhb-preview-btn primary">Add to Cart — $148</div>
                 </div>
               </div>
-              <!-- Specs panel -->
               <div class="mhb-builder-specs">
                 <h4>Details</h4>
                 <div class="mhb-spec-row"><span class="mhb-spec-key">Style</span><span class="mhb-spec-val">Tote</span></div>
@@ -554,12 +752,222 @@
             </div>
           </div>
         </div>
-        <div class="screen-caption">The "Style All Your Own" bag configurator — customers select bag style, color, hardware finish, and lining to build a personalized Monet bag. Live preview updates with each selection. The first digital innovation in Madison Handbags' history.</div>
+        <div class="screen-caption">Live bag builder — the "Style All Your Own" configurator fully realized. Customers choose style, color, hardware, and lining from the sidebar; the preview updates live. The first digital innovation in Madison Handbags' 30-year history.</div>
       </div>
 
     </div><!-- /blb-screens -->
   </div><!-- /blb-modal -->
 </div><!-- /blb-overlay -->
+
+<!-- ═══ Monet Brand Identity Lightbox ═══ -->
+<div class="blb-overlay" id="brand-lb-overlay" onclick="if(event.target===this)closeBrandLb()">
+  <div class="blb-modal">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Monet Brand Identity System</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Madison Handbags · Brand Strategy · Visual Identity · Design Standards</div>
+      </div>
+      <button class="blb-close" onclick="closeBrandLb()">×</button>
+    </div>
+    <div class="blb-screens">
+
+      <!-- Screen 1: Logo & Identity -->
+      <div>
+        <div class="screen-label">Screen 1 — Logo &amp; Brand Identity</div>
+        <div class="mhb-screen">
+          <div class="mhb-bar">
+            <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+            <div class="mhb-url">Monet_BrandGuide_v2.pdf — Page 1</div>
+          </div>
+          <div style="background:#fff;padding:0;">
+            <!-- Brand guide page mockup -->
+            <div style="background:#f9f7f4;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;gap:20px;">
+              <div style="font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#a08060;margin-bottom:4px;">Brand Identity</div>
+              <!-- Logo display -->
+              <div style="background:#fff;border-radius:8px;padding:32px 48px;box-shadow:0 4px 20px rgba(0,0,0,.08);text-align:center;">
+                <img src="images/Madison Handbags/fancymonetlogo_frame_gray_large_whiteback_facebook.jpg" alt="Monet Logo" style="max-width:280px;height:auto;display:block;margin:0 auto;" />
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;width:100%;max-width:500px;margin-top:8px;">
+                <div style="background:#fff;border-radius:6px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+                  <div style="font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:#a08060;margin-bottom:8px;">Primary Mark</div>
+                  <div style="font-size:10px;letter-spacing:.18em;font-family:Georgia,serif;color:#5a4a3a;">MONET</div>
+                  <div style="font-size:7px;letter-spacing:.3em;color:#a08060;font-family:Georgia,serif;font-style:italic;">by Madison Handbags</div>
+                </div>
+                <div style="background:#fff;border-radius:6px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+                  <div style="font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:#a08060;margin-bottom:8px;">Brand Tagline</div>
+                  <div style="font-size:9px;letter-spacing:.12em;font-family:Georgia,serif;color:#5a4a3a;font-style:italic;">"Classy &amp; Fabulous"</div>
+                  <div style="font-size:7px;color:#a08060;margin-top:4px;">Accessible Luxury Positioning</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">Primary brand identity — the Monet logo wordmark and lockup. Positioned as accessible luxury: elevated enough to feel aspirational, approachable enough for everyday wear. Built to work across print, digital, and packaging.</div>
+      </div>
+
+      <!-- Screen 2: Color & Typography -->
+      <div>
+        <div class="screen-label">Screen 2 — Color Palette &amp; Typography</div>
+        <div class="mhb-screen">
+          <div class="mhb-bar">
+            <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+            <div class="mhb-url">Monet_BrandGuide_v2.pdf — Page 3</div>
+          </div>
+          <div style="background:#f9f7f4;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px;min-height:300px;">
+            <!-- Color palette -->
+            <div style="background:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.06);">
+              <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#a08060;margin-bottom:16px;border-bottom:1px solid #e8e0d5;padding-bottom:8px;">Brand Palette</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:4px;background:#5a4a3a;flex-shrink:0;"></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#3a2e22;">Espresso</div><div style="font-size:7px;color:#a08060;">#5A4A3A · Primary</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:4px;background:#c8a882;flex-shrink:0;"></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#3a2e22;">Camel</div><div style="font-size:7px;color:#a08060;">#C8A882 · Accent</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:4px;background:#a08060;flex-shrink:0;"></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#3a2e22;">Warm Taupe</div><div style="font-size:7px;color:#a08060;">#A08060 · Secondary</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:4px;background:#f5f0eb;border:1px solid #e0d8cf;flex-shrink:0;"></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#3a2e22;">Cream</div><div style="font-size:7px;color:#a08060;">#F5F0EB · Background</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:4px;background:#ede5da;border:1px solid #e0d8cf;flex-shrink:0;"></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#3a2e22;">Linen</div><div style="font-size:7px;color:#a08060;">#EDE5DA · Surface</div></div>
+                </div>
+              </div>
+            </div>
+            <!-- Typography -->
+            <div style="background:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.06);">
+              <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#a08060;margin-bottom:16px;border-bottom:1px solid #e8e0d5;padding-bottom:8px;">Typography</div>
+              <div style="margin-bottom:14px;">
+                <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:4px;">Display / Logo</div>
+                <div style="font-family:Georgia,serif;font-size:18px;color:#5a4a3a;letter-spacing:.1em;">Monet</div>
+                <div style="font-size:7px;color:#a08060;">Georgia Serif · Tracking +100</div>
+              </div>
+              <div style="margin-bottom:14px;">
+                <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:4px;">Headlines</div>
+                <div style="font-family:Georgia,serif;font-size:13px;color:#5a4a3a;letter-spacing:.06em;">Fall Collection 2013</div>
+                <div style="font-size:7px;color:#a08060;">Georgia Serif · Regular</div>
+              </div>
+              <div style="margin-bottom:14px;">
+                <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:4px;">Body / Labels</div>
+                <div style="font-size:9px;color:#5a4a3a;letter-spacing:.15em;text-transform:uppercase;">Shop · Collections · Build</div>
+                <div style="font-size:7px;color:#a08060;">Helvetica Neue · 600 · Tracked</div>
+              </div>
+              <div>
+                <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:4px;">Subtext</div>
+                <div style="font-size:9px;color:#a08060;font-style:italic;font-family:Georgia,serif;">by Madison Handbags</div>
+                <div style="font-size:7px;color:#a08060;">Georgia · Italic · Muted</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">Brand color palette and typography system — five tones built around warm neutrals: Espresso (primary), Camel (accent), Warm Taupe (secondary), Cream (background), and Linen (surfaces). Georgia serif pairs with tracked uppercase sans for all label and navigation type.</div>
+      </div>
+
+      <!-- Screen 3: Applied Brand -->
+      <div>
+        <div class="screen-label">Screen 3 — Applied Brand · Campaign &amp; Digital</div>
+        <div class="mhb-screen">
+          <div class="mhb-bar">
+            <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+            <div class="mhb-url">Monet_BrandGuide_v2.pdf — Page 6</div>
+          </div>
+          <div style="background:#f9f7f4;padding:24px;min-height:300px;">
+            <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#a08060;margin-bottom:16px;text-align:center;border-bottom:1px solid #e0d8cf;padding-bottom:10px;">Brand In Use</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+              <!-- Catalog thumbnail -->
+              <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+                <div style="height:120px;overflow:hidden;">
+                  <img src="images/Madison Handbags/MHBFallCatalog.png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+                </div>
+                <div style="padding:8px;border-top:1px solid #e8e0d5;">
+                  <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;">Print</div>
+                  <div style="font-size:8px;color:#5a4a3a;font-family:Georgia,serif;">Fall Catalog</div>
+                </div>
+              </div>
+              <!-- Website thumbnail -->
+              <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+                <div style="height:120px;background:#ede5da;display:flex;flex-direction:column;overflow:hidden;">
+                  <div style="background:#5a4a3a;padding:4px 8px;display:flex;justify-content:space-between;align-items:center;">
+                    <div style="font-size:6px;letter-spacing:.15em;color:#f5f0eb;">MONET</div>
+                    <div style="display:flex;gap:5px;font-size:5px;color:rgba(255,255,255,.5);"><span>Shop</span><span>Build</span><span>About</span></div>
+                  </div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:8px;">
+                    <img src="images/Madison Handbags/MHB-Feature.jpg" style="height:64px;width:auto;object-fit:contain;display:block;" />
+                  </div>
+                </div>
+                <div style="padding:8px;border-top:1px solid #e8e0d5;">
+                  <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;">Digital</div>
+                  <div style="font-size:8px;color:#5a4a3a;font-family:Georgia,serif;">E-Commerce</div>
+                </div>
+              </div>
+              <!-- Campaign layout thumbnail -->
+              <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+                <div style="height:120px;overflow:hidden;">
+                  <img src="images/Madison Handbags/Mhb.Monet-layout.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+                </div>
+                <div style="padding:8px;border-top:1px solid #e8e0d5;">
+                  <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;">Campaign</div>
+                  <div style="font-size:8px;color:#5a4a3a;font-family:Georgia,serif;">Brand Materials</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:16px;background:#fff;border-radius:6px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+              <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:6px;">Brand Standards Summary</div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;">
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Catalog</div><div style="font-size:7px;color:#a08060;">Print · Digital PDF</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">E-Commerce</div><div style="font-size:7px;color:#a08060;">Web · Mobile</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Social</div><div style="font-size:7px;color:#a08060;">Facebook · Instagram</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Email</div><div style="font-size:7px;color:#a08060;">Newsletter · VIP</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">Brand applied across every channel — print catalog, e-commerce site, campaign materials, email, and social. The same Espresso/Camel/Cream palette and Georgia serif typography carries through every touchpoint for a consistent, elevated brand experience.</div>
+      </div>
+
+    </div><!-- /blb-screens -->
+  </div><!-- /blb-modal -->
+</div><!-- /brand-lb-overlay -->
+
+<!-- ═══ Fall Catalog Lightbox ═══ -->
+<div class="blb-overlay" id="fall-catalog-overlay" onclick="if(event.target===this)closeFallCatalogLb()">
+  <div class="blb-modal" style="max-width:860px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Fall / Winter 2013 Catalog</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Monet Handbags · 17-Page Catalog · Print + Digital</div>
+      </div>
+      <button class="blb-close" onclick="closeFallCatalogLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_01.jpg','Fall 2013 Catalog — Page 1')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_01.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_02.jpg','Fall 2013 Catalog — Page 2')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_02.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_03.jpg','Fall 2013 Catalog — Page 3')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_03.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_04.jpg','Fall 2013 Catalog — Page 4')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_04.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_05.jpg','Fall 2013 Catalog — Page 5')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_05.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_06.jpg','Fall 2013 Catalog — Page 6')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_06.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_07.jpg','Fall 2013 Catalog — Page 7')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_07.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_08.jpg','Fall 2013 Catalog — Page 8')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_08.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_09.jpg','Fall 2013 Catalog — Page 9')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_09.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_10.jpg','Fall 2013 Catalog — Page 10')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_10.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_11.jpg','Fall 2013 Catalog — Page 11')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_11.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_12.jpg','Fall 2013 Catalog — Page 12')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_12.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_13.jpg','Fall 2013 Catalog — Page 13')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_13.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_14.jpg','Fall 2013 Catalog — Page 14')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_14.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_15.jpg','Fall 2013 Catalog — Page 15')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_15.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_16.jpg','Fall 2013 Catalog — Page 16')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_16.jpg" style="width:100%;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_17.jpg','Fall 2013 Catalog — Page 17')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_17.jpg" style="width:100%;display:block;" /></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Full-image overlay -->
 <div class="full-img-overlay" id="full-img-overlay" onclick="closeFullImg()">
@@ -567,24 +975,21 @@
 </div>
 
 <script>
-  function openBuilderLb() {
-    const o = document.getElementById('blb-overlay');
-    o.style.display = 'flex';
-  }
-  function closeBuilderLb() {
-    document.getElementById('blb-overlay').style.display = 'none';
-  }
+  function openBuilderLb() { document.getElementById('blb-overlay').style.display = 'flex'; }
+  function closeBuilderLb() { document.getElementById('blb-overlay').style.display = 'none'; }
+  function openBrandLb() { document.getElementById('brand-lb-overlay').style.display = 'flex'; }
+  function closeBrandLb() { document.getElementById('brand-lb-overlay').style.display = 'none'; }
+  function openFallCatalogLb() { document.getElementById('fall-catalog-overlay').style.display = 'flex'; }
+  function closeFallCatalogLb() { document.getElementById('fall-catalog-overlay').style.display = 'none'; }
   function openFullImg(src, alt) {
     const o = document.getElementById('full-img-overlay');
     document.getElementById('full-img-el').src = src;
     document.getElementById('full-img-el').alt = alt || '';
     o.style.display = 'flex';
   }
-  function closeFullImg() {
-    document.getElementById('full-img-overlay').style.display = 'none';
-  }
+  function closeFullImg() { document.getElementById('full-img-overlay').style.display = 'none'; }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeBuilderLb(); closeFullImg(); }
+    if (e.key === 'Escape') { closeBuilderLb(); closeBrandLb(); closeFallCatalogLb(); closeFullImg(); }
   });
 </script>
 </body>
