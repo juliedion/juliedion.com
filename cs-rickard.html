@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rickard Heating & Cooling — Website Redesign | Julie Dion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #0a0a14;
+      --accent: #00C8E8;
+      --accent2: #0077B6;
+      --radius: 14px;
+      --rickard-blue: #1a3a6e;
+      --rickard-red: #c0392b;
+      --rickard-light: #f4f7fb;
+    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #1a1a2e; }
+
+    /* ── Topbar ── */
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,20,.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.07); padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar-logo { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: .05em; text-decoration: none; }
+    .topbar-back { font-size: 12px; color: rgba(255,255,255,.55); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .topbar-back:hover { color: var(--accent); }
+
+    /* ── Hero ── */
+    .cs-hero { background: var(--dark); padding: 80px 48px 64px; overflow: hidden; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
+    .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(28px,4vw,52px); font-weight: 700; color: #fff; line-height: 1.1; margin: 8px 0 20px; }
+    .cs-title span { color: var(--accent); }
+    .cs-subtitle { font-size: 15px; color: rgba(255,255,255,.6); max-width: 560px; line-height: 1.75; margin-bottom: 32px; }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 24px; }
+    .cs-meta-item label { display: block; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 4px; }
+    .cs-meta-item span { font-size: 13px; color: rgba(255,255,255,.8); }
+
+    /* ── Section ── */
+    .cs-section { padding: 80px 48px; }
+    .cs-section-dark { background: var(--dark); padding: 80px 48px; }
+    .section-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px,3vw,38px); font-weight: 700; color: #1a1a2e; margin-bottom: 16px; }
+    .section-title-light { color: #fff; }
+
+    /* ── lb-card grid ── */
+    .lb-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+    .lb-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.08); cursor: pointer; transition: transform .3s, box-shadow .3s; border: 1px solid #e5e7eb; }
+    .lb-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.14); }
+    .lb-card-img { height: 200px; overflow: hidden; background: #f0f4f8; }
+    .lb-card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .4s ease; }
+    .lb-card:hover .lb-card-img img { transform: scale(1.04); }
+    .lb-card-body { padding: 20px; }
+    .lb-card-tag { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--accent2); margin-bottom: 6px; }
+    .lb-card-title { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 8px; }
+    .lb-card-desc { font-size: 13px; color: #6b7280; line-height: 1.6; margin-bottom: 14px; }
+    .lb-card-cta { font-size: 12px; font-weight: 700; color: var(--accent2); display: flex; align-items: center; gap: 6px; }
+
+    /* ── Stats bar ── */
+    .stats-bar { background: var(--rickard-blue); padding: 48px; display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: clamp(32px,4vw,48px); font-weight: 800; color: #fff; line-height: 1; }
+    .stat-label { font-size: 11px; color: rgba(255,255,255,.55); margin-top: 6px; letter-spacing: .1em; text-transform: uppercase; }
+
+    /* ── Charter-style overlay ── */
+    .pto-lb-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.78); z-index: 9999; padding: 24px; box-sizing: border-box; backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+    .pto-lb-modal { background: #fff; border-radius: 14px; width: 100%; max-width: 1440px; height: 94vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,.6); }
+    .pto-lb-tab { background: #f3f4f6; border: none; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; color: #555; cursor: pointer; transition: all .2s; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; }
+    .pto-lb-tab:hover { background: #e5e7eb; color: #333; }
+    .pto-lb-tab.active { background: #1a1a2e; color: #fff; }
+    .pto-lb-tab.live { background: linear-gradient(135deg, #1a3a6e, #2460a8); color: #fff; }
+    .pto-lb-tab.live:hover { opacity: .9; color: #fff; }
+    .pto-lb-panel { display: flex; height: 100%; overflow: hidden; }
+
+    /* ── Gallery lightbox ── */
+    .blb-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.78); z-index: 9999; padding: 24px; box-sizing: border-box; backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+    .blb-modal { background: #fff; border-radius: 14px; width: 100%; max-width: 900px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,.6); }
+    .blb-header { padding: 16px 20px; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+    .blb-close { background: none; border: none; font-size: 22px; color: #6b7280; cursor: pointer; line-height: 1; padding: 4px 8px; border-radius: 6px; }
+    .blb-close:hover { background: #f3f4f6; }
+    .blb-screens { padding: 24px; background: #f9fafb; overflow-y: auto; }
+
+    /* ── Full image overlay ── */
+    #full-img-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 10000; align-items: center; justify-content: center; cursor: zoom-out; padding: 24px; }
+    #full-img-overlay img { max-width: 100%; max-height: 100%; border-radius: 8px; object-fit: contain; }
+
+    /* ── Next project ── */
+    .next-project { background: var(--dark); padding: 80px 48px; text-align: center; }
+
+    @media (max-width: 768px) {
+      .topbar { padding: 14px 20px; }
+      .cs-hero { padding: 80px 20px 48px; }
+      .cs-section, .cs-section-dark { padding: 56px 20px; }
+      .stats-bar { gap: 32px; padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="topbar-logo">Julie Dion</a>
+  <a href="index.html#portfolio" class="topbar-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
+
+<!-- ── Hero ── -->
+<section class="cs-hero" style="position:relative;overflow:hidden;padding-right:0;padding-top:100px;">
+  <div style="max-width:1400px;padding-right:520px;">
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,38px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:4px;">Rickard Heating &amp; Cooling</div>
+    <h1 class="cs-title">Website Redesign &amp;<br /><span>Local Brand Presence</span></h1>
+    <p class="cs-subtitle">Full website redesign for a family-owned HVAC company — trust-forward layout with service highlights, seasonal promotions, clear contact hierarchy, and mobile-responsive structure built on WordPress.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item"><label>My Role</label><span>Web Designer / Developer</span></div>
+      <div class="cs-meta-item"><label>Client</label><span>Rickard Heating &amp; Cooling</span></div>
+      <div class="cs-meta-item"><label>Deliverables</label><span>Website · Brand · Content</span></div>
+      <div class="cs-meta-item"><label>Tools</label><span>Figma · WordPress · HTML/CSS</span></div>
+      <div class="cs-meta-item"><label>Industry</label><span>Home Services · HVAC</span></div>
+    </div>
+  </div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:500px;">
+    <img src="images/Rickard/rickard-website-design.png" alt="Rickard Heating and Cooling Website" style="width:100%;height:100%;object-fit:cover;object-position:left top;display:block;" />
+  </div>
+</section>
+
+<!-- ── Stats ── -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Mobile Responsive</div></div>
+  <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Family-Owned Business</div></div>
+  <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Service Areas</div></div>
+  <div class="stat-item"><div class="stat-num">Live</div><div class="stat-label">rickardhvac.com</div></div>
+</div>
+
+<!-- ── Collection of Work ── -->
+<section class="cs-section">
+  <div class="section-eyebrow">Collection of Work</div>
+  <div class="section-title" style="font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,38px);font-weight:700;">Rickard HVAC — Design Work</div>
+
+  <div class="lb-card-grid">
+
+    <!-- Website card (first) -->
+    <div class="lb-card" onclick="openWebsiteLb()">
+      <div class="lb-card-img"><img src="images/Rickard/rickard-website-design.png" alt="Rickard Website Design" style="object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Web Design · Figma · WordPress · HTML/CSS</div>
+        <h3 class="lb-card-title">Rickard Heating &amp; Cooling — Website</h3>
+        <p class="lb-card-desc">Full website design — trust-forward layout with service highlights, seasonal promotions, clear contact hierarchy, and mobile-responsive structure. Designed in Figma, built on WordPress.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Process</div>
+      </div>
+    </div>
+
+    <!-- Family / About imagery -->
+    <div class="lb-card" onclick="openFullImg('images/Rickard/rickard-family.jpg','Rickard Family')">
+      <div class="lb-card-img"><img src="images/Rickard/rickard-family.jpg" alt="Rickard Family" style="object-position:center;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Brand Photography · About Page</div>
+        <h3 class="lb-card-title">Family-Owned Trust — About Section</h3>
+        <p class="lb-card-desc">Humanizing the brand with family photography — building trust and local authenticity in the About section of the redesigned website.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View Image</div>
+      </div>
+    </div>
+
+    <!-- Van / Field work -->
+    <div class="lb-card" onclick="openFullImg('images/Rickard/rickard-van.jpg','Rickard Van')">
+      <div class="lb-card-img"><img src="images/Rickard/rickard-van.jpg" alt="Rickard Van" style="object-position:center;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Brand · Field Photography</div>
+        <h3 class="lb-card-title">Fleet &amp; Field — Van Photography</h3>
+        <p class="lb-card-desc">Branded van photography used across the website hero, service pages, and local SEO content to reinforce professional service credibility.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View Image</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Website Lightbox (Charter-style) ── -->
+<div class="pto-lb-overlay" id="rickard-lb-overlay" onclick="if(event.target===this)closeWebsiteLb()">
+  <div class="pto-lb-modal">
+    <!-- Header -->
+    <div style="padding:14px 20px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:12px;">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Rickard Heating &amp; Cooling — Website Redesign</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Figma Design · WordPress Build · Live at rickardhvac.com</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <button class="pto-lb-tab active" onclick="switchRickardTab('figma',this)">🎨 Figma</button>
+        <button class="pto-lb-tab" onclick="switchRickardTab('code',this)">&lt;/&gt; HTML/CSS</button>
+        <a href="https://rickardhvac.com" target="_blank" rel="noopener" class="pto-lb-tab live">Live Site ↗</a>
+        <button class="blb-close" onclick="closeWebsiteLb()" style="margin-left:8px;">×</button>
+      </div>
+    </div>
+    <!-- Panels -->
+    <div style="flex:1;overflow:hidden;position:relative;">
+
+      <!-- ── Figma Panel ── -->
+      <div id="rickard-figma" class="pto-lb-panel" style="flex-direction:column;background:#1e1e1e;font-family:-apple-system,'Segoe UI',sans-serif;font-size:11px;">
+        <!-- Figma title bar -->
+        <div style="background:#2c2c2c;padding:7px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="display:flex;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+            <!-- Figma logo -->
+            <svg width="14" height="20" viewBox="0 0 38 57" style="flex-shrink:0;"><path fill="#f24e1e" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#ff7262" d="M0 47.5a9.5 9.5 0 0 1 9.5-9.5H19v9.5a9.5 9.5 0 0 1-19 0z"/><path fill="#1abcfe" d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z"/><path fill="#0acf83" d="M0 9.5a9.5 9.5 0 0 0 9.5 9.5H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#a259ff" d="M0 28.5a9.5 9.5 0 0 0 9.5 9.5H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg>
+            <span style="font-size:10px;color:rgba(255,255,255,.5);">Rickard_HVAC_Website_v2.fig</span>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <div style="font-size:9px;padding:3px 12px;background:#1a73e8;color:#fff;border-radius:4px;font-weight:600;">Share</div>
+            <div style="font-size:9px;padding:3px 12px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.55);border-radius:4px;">Present ▶</div>
+          </div>
+        </div>
+        <!-- Figma menu bar -->
+        <div style="background:#2c2c2c;padding:4px 16px;display:flex;gap:16px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;">
+          <span style="font-size:9px;color:rgba(255,255,255,.45);">File</span>
+          <span style="font-size:9px;color:rgba(255,255,255,.45);">Edit</span>
+          <span style="font-size:9px;color:rgba(255,255,255,.45);">View</span>
+          <span style="font-size:9px;color:rgba(255,255,255,.45);">Object</span>
+          <span style="font-size:9px;color:rgba(255,255,255,.45);">Text</span>
+        </div>
+        <!-- Figma toolbar -->
+        <div style="background:#2c2c2c;padding:5px 16px;display:flex;align-items:center;gap:16px;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;">
+          <span style="font-size:10px;color:rgba(255,255,255,.35);">↖</span>
+          <span style="font-size:10px;color:rgba(255,255,255,.35);">⬡</span>
+          <span style="font-size:10px;color:rgba(255,255,255,.35);">T</span>
+          <span style="font-size:10px;color:rgba(255,255,255,.35);">✎</span>
+          <div style="flex:1;display:flex;justify-content:center;gap:12px;">
+            <div style="font-size:9px;color:rgba(255,255,255,.5);padding:3px 10px;border-radius:4px;background:rgba(255,255,255,.08);">Design</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:3px 10px;">Prototype</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:3px 10px;">Inspect</div>
+          </div>
+        </div>
+        <!-- Figma body -->
+        <div style="display:flex;flex:1;overflow:hidden;">
+          <!-- Layers panel -->
+          <div style="width:200px;background:#252525;border-right:1px solid rgba(255,255,255,.06);padding:10px 0;flex-shrink:0;overflow:hidden;">
+            <div style="display:flex;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px;">
+              <div style="font-size:9px;color:#1a73e8;padding:4px 12px;border-bottom:2px solid #1a73e8;font-weight:600;">Layers</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px;">Assets</div>
+            </div>
+            <div style="font-size:9px;color:rgba(255,255,255,.7);padding:4px 12px;background:rgba(26,115,232,.15);border-left:2px solid #1a73e8;">📄 Homepage — Desktop</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px 4px 24px;">🔷 Navigation</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px 4px 24px;">🔷 Hero Banner</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.7);padding:4px 12px 4px 28px;background:rgba(26,115,232,.08);">  Call-to-Action Strip</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px 4px 24px;">🔷 Services Grid</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px 4px 24px;">🔷 Trust Indicators</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px 4px 24px;">🔷 About Family</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px 4px 24px;">🔷 Contact Footer</div>
+            <div style="height:1px;background:rgba(255,255,255,.06);margin:6px 0;"></div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px;">📄 Services — Heating</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px;">📄 Services — Cooling</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px;">📄 Contact / Quote</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);padding:4px 12px;">📄 Mobile — Homepage</div>
+          </div>
+          <!-- Canvas -->
+          <div style="flex:1;background:#1e1e1e;display:flex;align-items:center;justify-content:center;gap:28px;padding:28px;overflow:hidden;">
+            <!-- Desktop artboard -->
+            <div style="flex-shrink:0;">
+              <div style="font-size:9px;color:rgba(255,255,255,.3);text-align:center;margin-bottom:6px;letter-spacing:.1em;">Homepage — Desktop  1440×900</div>
+              <div style="background:#fff;border-radius:4px;width:360px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.6);">
+                <!-- nav -->
+                <div style="background:#1a3a6e;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;">
+                  <img src="images/Rickard/rickard-logo.webp" style="height:28px;object-fit:contain;" onerror="this.style.display='none'" />
+                  <div style="display:flex;gap:10px;font-size:7px;color:rgba(255,255,255,.8);"><span>Services</span><span>About</span><span>Contact</span></div>
+                  <div style="font-size:6px;padding:4px 8px;background:#c0392b;color:#fff;border-radius:2px;font-weight:700;">Request Quote</div>
+                </div>
+                <!-- hero -->
+                <div style="position:relative;overflow:hidden;height:100px;">
+                  <img src="images/Rickard/rickard-hero.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+                  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,58,110,.8),rgba(26,58,110,.2));display:flex;flex-direction:column;justify-content:center;padding:10px 14px;">
+                    <div style="font-size:9px;color:#fff;font-weight:700;margin-bottom:3px;">Trusted Family HVAC</div>
+                    <div style="font-size:6px;color:rgba(255,255,255,.75);margin-bottom:6px;">Heating · Cooling · Duct Cleaning</div>
+                    <div style="font-size:6px;padding:3px 8px;background:#c0392b;color:#fff;border-radius:2px;display:inline-block;font-weight:600;">Get a Free Quote</div>
+                  </div>
+                </div>
+                <!-- services strip -->
+                <div style="background:#f4f7fb;padding:8px 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-top:3px solid #c0392b;">
+                  <div style="text-align:center;padding:4px;"><div style="font-size:8px;color:#1a3a6e;">🔥</div><div style="font-size:5px;font-weight:600;color:#1a3a6e;margin-top:2px;">Heating</div></div>
+                  <div style="text-align:center;padding:4px;"><div style="font-size:8px;color:#1a3a6e;">❄️</div><div style="font-size:5px;font-weight:600;color:#1a3a6e;margin-top:2px;">Cooling</div></div>
+                  <div style="text-align:center;padding:4px;"><div style="font-size:8px;color:#1a3a6e;">🏠</div><div style="font-size:5px;font-weight:600;color:#1a3a6e;margin-top:2px;">Duct Cleaning</div></div>
+                </div>
+                <!-- trust bar -->
+                <div style="background:#1a3a6e;padding:6px 10px;display:flex;justify-content:space-around;">
+                  <div style="text-align:center;"><div style="font-size:8px;color:#fff;font-weight:700;">25+</div><div style="font-size:5px;color:rgba(255,255,255,.55);">Yrs Experience</div></div>
+                  <div style="text-align:center;"><div style="font-size:8px;color:#fff;font-weight:700;">5★</div><div style="font-size:5px;color:rgba(255,255,255,.55);">Google Reviews</div></div>
+                  <div style="text-align:center;"><div style="font-size:8px;color:#fff;font-weight:700;">24/7</div><div style="font-size:5px;color:rgba(255,255,255,.55);">Emergency</div></div>
+                </div>
+              </div>
+            </div>
+            <!-- Mobile artboard -->
+            <div style="flex-shrink:0;">
+              <div style="font-size:9px;color:rgba(255,255,255,.3);text-align:center;margin-bottom:6px;letter-spacing:.1em;">Mobile  390×844</div>
+              <div style="background:#2a2a2a;border-radius:20px;padding:10px 5px;box-shadow:0 8px 30px rgba(0,0,0,.5);width:100px;">
+                <div style="background:#fff;border-radius:12px;overflow:hidden;">
+                  <div style="background:#1a3a6e;padding:5px 7px;display:flex;align-items:center;justify-content:space-between;">
+                    <div style="font-size:5px;color:#fff;font-weight:700;letter-spacing:.05em;">RICKARD</div>
+                    <div style="font-size:7px;color:rgba(255,255,255,.6);">☰</div>
+                  </div>
+                  <div style="position:relative;height:50px;overflow:hidden;">
+                    <img src="images/Rickard/rickard-tech.jpg" style="width:100%;height:100%;object-fit:cover;" />
+                    <div style="position:absolute;inset:0;background:rgba(26,58,110,.65);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;">
+                      <div style="font-size:5px;color:#fff;font-weight:700;">Trusted HVAC</div>
+                      <div style="font-size:4px;padding:2px 5px;background:#c0392b;color:#fff;border-radius:1px;">Free Quote</div>
+                    </div>
+                  </div>
+                  <div style="padding:5px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;">
+                    <div style="text-align:center;background:#f4f7fb;padding:3px;border-radius:2px;"><div style="font-size:6px;">🔥</div><div style="font-size:4px;color:#1a3a6e;font-weight:600;">Heat</div></div>
+                    <div style="text-align:center;background:#f4f7fb;padding:3px;border-radius:2px;"><div style="font-size:6px;">❄️</div><div style="font-size:4px;color:#1a3a6e;font-weight:600;">Cool</div></div>
+                    <div style="text-align:center;background:#f4f7fb;padding:3px;border-radius:2px;"><div style="font-size:6px;">🏠</div><div style="font-size:4px;color:#1a3a6e;font-weight:600;">Duct</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Annotations -->
+            <div style="display:flex;flex-direction:column;gap:8px;max-width:140px;">
+              <div style="background:rgba(26,115,232,.15);border:1px solid rgba(26,115,232,.35);border-radius:6px;padding:8px 10px;">
+                <div style="font-size:8px;color:#4d9cf7;font-weight:700;margin-bottom:3px;">Trust Signal</div>
+                <div style="font-size:7px;color:rgba(255,255,255,.6);line-height:1.4;">5-star reviews + 25yr badge visible above the fold. Reduces bounce on first visit.</div>
+              </div>
+              <div style="background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.3);border-radius:6px;padding:8px 10px;">
+                <div style="font-size:8px;color:#e74c3c;font-weight:700;margin-bottom:3px;">CTA</div>
+                <div style="font-size:7px;color:rgba(255,255,255,.6);line-height:1.4;">"Free Quote" button in red — high contrast against navy nav. Primary conversion goal.</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:8px 10px;">
+                <div style="font-size:8px;color:rgba(255,255,255,.7);font-weight:700;margin-bottom:3px;">Responsive</div>
+                <div style="font-size:7px;color:rgba(255,255,255,.6);line-height:1.4;">Mobile layout reflows to single column with sticky phone CTA in bottom bar.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Right design panel -->
+          <div style="width:180px;background:#252525;border-left:1px solid rgba(255,255,255,.06);padding:10px;flex-shrink:0;overflow:hidden;">
+            <div style="font-size:9px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">Design</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.7);margin-bottom:6px;font-weight:600;">Navigation Bar</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px;">
+              <div style="background:rgba(255,255,255,.07);border-radius:3px;padding:3px 6px;"><div style="font-size:7px;color:rgba(255,255,255,.35);">W</div><div style="font-size:8px;color:rgba(255,255,255,.7);">1440</div></div>
+              <div style="background:rgba(255,255,255,.07);border-radius:3px;padding:3px 6px;"><div style="font-size:7px;color:rgba(255,255,255,.35);">H</div><div style="font-size:8px;color:rgba(255,255,255,.7);">64</div></div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,.07);margin:8px 0;"></div>
+            <div style="font-size:8px;color:rgba(255,255,255,.7);margin-bottom:4px;font-weight:600;">Fill</div>
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+              <div style="width:14px;height:14px;border-radius:2px;background:#1a3a6e;border:1px solid rgba(255,255,255,.2);"></div>
+              <span style="font-size:8px;color:rgba(255,255,255,.55);">#1A3A6E</span>
+            </div>
+            <div style="font-size:8px;color:rgba(255,255,255,.7);margin-bottom:4px;font-weight:600;">Accent</div>
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+              <div style="width:14px;height:14px;border-radius:2px;background:#c0392b;border:1px solid rgba(255,255,255,.2);"></div>
+              <span style="font-size:8px;color:rgba(255,255,255,.55);">#C0392B</span>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,.07);margin:8px 0;"></div>
+            <div style="font-size:8px;color:rgba(255,255,255,.7);margin-bottom:4px;font-weight:600;">Text Style</div>
+            <div style="font-size:7px;color:rgba(255,255,255,.4);">Body / 15px / Inter</div>
+            <div style="font-size:7px;color:rgba(255,255,255,.4);">H1 / 42px / 700</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── HTML/CSS Panel ── -->
+      <div id="rickard-code" class="pto-lb-panel" style="display:none;flex-direction:column;background:#1e1e1e;font-family:'Consolas','Monaco',monospace;font-size:11px;">
+        <!-- VS Code title bar -->
+        <div style="background:#3c3c3c;padding:6px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;">
+          <div style="display:flex;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+          <span style="font-size:10px;color:rgba(255,255,255,.4);">rickard-hvac — Visual Studio Code</span>
+        </div>
+        <div style="background:#252526;padding:3px 16px;display:flex;gap:14px;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;">
+          <span style="font-size:9px;color:rgba(255,255,255,.45);">File</span><span style="font-size:9px;color:rgba(255,255,255,.45);">Edit</span><span style="font-size:9px;color:rgba(255,255,255,.45);">View</span><span style="font-size:9px;color:rgba(255,255,255,.45);">Terminal</span>
+        </div>
+        <div style="display:flex;flex:1;overflow:hidden;">
+          <!-- Activity bar -->
+          <div style="width:40px;background:#333333;display:flex;flex-direction:column;align-items:center;padding:10px 0;gap:14px;border-right:1px solid rgba(255,255,255,.06);flex-shrink:0;">
+            <div style="font-size:15px;color:rgba(255,255,255,.8);">⎋</div>
+            <div style="font-size:15px;color:rgba(255,255,255,.3);">🔍</div>
+            <div style="font-size:15px;color:rgba(255,255,255,.3);">⑂</div>
+          </div>
+          <!-- Explorer -->
+          <div style="width:180px;background:#252526;padding:8px 0;border-right:1px solid rgba(255,255,255,.06);flex-shrink:0;overflow:hidden;">
+            <div style="font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;padding:0 12px;margin-bottom:6px;">Explorer</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.5);padding:2px 12px;">▾ rickard-hvac (WordPress)</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 24px;">▾ wp-content/themes</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 36px;">▾ rickard-hvac-theme</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.7);padding:2px 48px;background:rgba(255,255,255,.07);">style.css</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 48px;">functions.php</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 48px;">header.php</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 48px;">front-page.php</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 48px;">page-services.php</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 36px;">▾ images/</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 48px;">rickard-logo.webp</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.4);padding:2px 48px;">hero-slider/</div>
+          </div>
+          <!-- Editor -->
+          <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+            <div style="background:#2d2d2d;display:flex;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;">
+              <div style="padding:6px 14px;font-size:10px;color:#fff;background:#1e1e1e;border-right:1px solid rgba(255,255,255,.08);border-top:2px solid #1a73e8;">style.css</div>
+              <div style="padding:6px 14px;font-size:10px;color:rgba(255,255,255,.4);background:#2d2d2d;border-right:1px solid rgba(255,255,255,.08);">front-page.php</div>
+              <div style="padding:6px 14px;font-size:10px;color:rgba(255,255,255,.4);">header.php</div>
+            </div>
+            <div style="flex:1;overflow-y:auto;padding:12px 16px;line-height:1.7;">
+              <div><span style="color:#6a9955;">/* ── Rickard HVAC Theme — Custom CSS ── */</span></div>
+              <div style="margin-top:8px;"><span style="color:#9cdcfe;">:root</span> <span style="color:#d4d4d4;">{</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">--rickard-navy</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">#1A3A6E</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">--rickard-red</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">#C0392B</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">--body-font</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">'Inter', sans-serif</span><span style="color:#d4d4d4;">;</span></div>
+              <div><span style="color:#d4d4d4;">}</span></div>
+              <div style="margin-top:10px;"><span style="color:#9cdcfe;">.site-header</span> <span style="color:#d4d4d4;">{</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">background</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">var(--rickard-navy)</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">position</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">sticky</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">top</span><span style="color:#d4d4d4;">:</span> <span style="color:#b5cea8;">0</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">z-index</span><span style="color:#d4d4d4;">:</span> <span style="color:#b5cea8;">100</span><span style="color:#d4d4d4;">;</span></div>
+              <div><span style="color:#d4d4d4;">}</span></div>
+              <div style="margin-top:10px;"><span style="color:#9cdcfe;">.hero-section</span> <span style="color:#d4d4d4;">{</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">position</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">relative</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">min-height</span><span style="color:#d4d4d4;">:</span> <span style="color:#b5cea8;">520px</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">background-size</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">cover</span><span style="color:#d4d4d4;">;</span></div>
+              <div><span style="color:#d4d4d4;">}</span></div>
+              <div style="margin-top:10px;"><span style="color:#9cdcfe;">.services-grid</span> <span style="color:#d4d4d4;">{</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">display</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">grid</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">grid-template-columns</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">repeat(3, 1fr)</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">gap</span><span style="color:#d4d4d4;">:</span> <span style="color:#b5cea8;">32px</span><span style="color:#d4d4d4;">;</span></div>
+              <div><span style="color:#d4d4d4;">}</span></div>
+              <div style="margin-top:10px;"><span style="color:#9cdcfe;">.btn-quote</span> <span style="color:#d4d4d4;">{</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">background</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">var(--rickard-red)</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">color</span><span style="color:#d4d4d4;">:</span> <span style="color:#ce9178;">#fff</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">padding</span><span style="color:#d4d4d4;">:</span> <span style="color:#b5cea8;">14px 28px</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">border-radius</span><span style="color:#d4d4d4;">:</span> <span style="color:#b5cea8;">6px</span><span style="color:#d4d4d4;">;</span></div>
+              <div style="padding-left:16px;"><span style="color:#9cdcfe;">font-weight</span><span style="color:#d4d4d4;">:</span> <span style="color:#b5cea8;">700</span><span style="color:#d4d4d4;">;</span></div>
+              <div><span style="color:#d4d4d4;">}</span></div>
+            </div>
+            <!-- Terminal -->
+            <div style="height:80px;background:#1a1a1a;border-top:1px solid rgba(255,255,255,.08);padding:8px 14px;flex-shrink:0;overflow:hidden;">
+              <div style="font-size:9px;color:rgba(255,255,255,.35);margin-bottom:4px;">TERMINAL</div>
+              <div style="font-size:9px;color:#4ec9b0;">juliedion@MacBook rickard-hvac %</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.6);">wp theme activate rickard-hvac-theme</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.4);">Success: Switched to 'Rickard HVAC Theme'. ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /panels -->
+  </div>
+</div>
+
+<!-- Full image overlay -->
+<div id="full-img-overlay" onclick="closeFullImg()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:10000;align-items:center;justify-content:center;cursor:zoom-out;padding:24px;box-sizing:border-box;">
+  <img id="full-img-el" src="" alt="" style="max-width:100%;max-height:100%;border-radius:8px;object-fit:contain;" />
+</div>
+
+<!-- ── Next Project ── -->
+<div class="next-project">
+  <div style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;">Next Project</div>
+  <a href="cs-pto-schalmont.html" style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,32px);font-weight:700;color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:12px;transition:color .2s;" onmouseover="this.style.color='#00C8E8'" onmouseout="this.style.color='#fff'">Schalmont PTO — Community Platform <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<script>
+  function openWebsiteLb() {
+    document.getElementById('rickard-lb-overlay').style.display = 'flex';
+  }
+  function closeWebsiteLb() {
+    document.getElementById('rickard-lb-overlay').style.display = 'none';
+  }
+  function switchRickardTab(panel, btn) {
+    ['figma','code'].forEach(id => {
+      const el = document.getElementById('rickard-' + id);
+      if (el) el.style.display = 'none';
+    });
+    document.querySelectorAll('.pto-lb-tab').forEach(b => b.classList.remove('active'));
+    const target = document.getElementById('rickard-' + panel);
+    if (target) target.style.display = 'flex';
+    if (btn) btn.classList.add('active');
+  }
+  function openFullImg(src, alt) {
+    const o = document.getElementById('full-img-overlay');
+    document.getElementById('full-img-el').src = src;
+    document.getElementById('full-img-el').alt = alt || '';
+    o.style.display = 'flex';
+  }
+  function closeFullImg() {
+    document.getElementById('full-img-overlay').style.display = 'none';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeWebsiteLb(); closeFullImg(); }
+  });
+</script>
+</body>
+</html>
