@@ -77,11 +77,11 @@
 
     /* gallery lightbox */
     .glb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.8); z-index:9999; align-items:flex-start; justify-content:center; padding:24px; overflow-y:auto; }
-    .glb-modal { background:#fff; border-radius:14px; width:100%; max-width:1100px; display:flex; flex-direction:column; box-shadow:0 32px 80px rgba(0,0,0,.5); margin:auto; }
+    .glb-modal { background:#fff; border-radius:14px; width:100%; max-width:760px; display:flex; flex-direction:column; box-shadow:0 32px 80px rgba(0,0,0,.5); margin:auto; }
     .glb-header { padding:16px 24px; border-bottom:1px solid #e5e7eb; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; position:sticky; top:0; background:#fff; z-index:2; border-radius:14px 14px 0 0; }
     .glb-close { background:none; border:none; font-size:22px; color:#6b7280; cursor:pointer; padding:4px 8px; border-radius:6px; }
     .glb-close:hover { background:#f3f4f6; }
-    .glb-body { padding:24px; background:#f9fafb; border-radius:0 0 14px 14px; display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
+    .glb-body { padding:24px; background:#f9fafb; border-radius:0 0 14px 14px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
     .glb-item { border-radius:10px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.1); cursor:pointer; position:relative; background:#f3f4f6; }
     .glb-item img { width:100%; display:block; object-fit:contain; background:#f3f4f6; }
     .glb-item .zoom-badge { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.55); color:#fff; font-size:10px; font-weight:600; padding:4px 8px; border-radius:5px; display:flex; align-items:center; gap:4px; backdrop-filter:blur(4px); }
@@ -293,7 +293,7 @@
 
 <!-- Results -->
 <section class="cs-section-dark" style="padding:72px 48px;">
-  <div style="max-width:900px; margin:0 auto;">
+  <div style="max-width:900px; margin:0 auto; text-align:center;">
     <span class="section-label section-label-light">Results</span>
     <h2 class="cs-h2 cs-h2-light">Recognized Work Across <em style="color:var(--cyan);">Multiple Industries</em></h2>
     <div class="results-grid">
