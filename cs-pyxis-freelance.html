@@ -27,12 +27,6 @@
     .topbar-tags { display: flex; gap: 8px; }
     .topbar-tag { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.08); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
     .cs-hero { background: var(--dark); padding: 80px 48px 64px; overflow: hidden; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
-    .cs-hero-inner { max-width: 1400px; display: flex; gap: 56px; align-items: center; }
-    .hero-text { flex: 1; min-width: 0; }
-    .hero-visual { flex: 0 0 480px; overflow: hidden; display: flex; align-items: center; justify-content: center; align-self: stretch; margin-top: -36px; margin-bottom: -64px; }
-    .hero-visual img { width: 110%; max-width: none; filter: drop-shadow(0 24px 56px rgba(0,10,40,.92)) drop-shadow(0 6px 16px rgba(0,15,50,.85)); border-radius: 12px; }
-    @media(max-width:900px) { .cs-hero-inner { flex-direction: column; } .hero-visual { flex: none; width: 100%; margin: 0; } }
-    .cs-client { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 24px; }
     .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
     .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
@@ -51,37 +45,15 @@
     .cs-h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
     .cs-h2-light { color: var(--white); }
     .cs-p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; max-width: 760px; }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .two-col-reverse { direction: rtl; }
-    .two-col-reverse > * { direction: ltr; }
-    @media(max-width:768px) { .two-col { grid-template-columns: 1fr; } .two-col-reverse { direction: ltr; } }
-    .img-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.18); }
-    .img-frame img { width: 100%; display: block; }
-    .browser-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.2); background: #1a1a1a; }
-    .browser-bar { background: #2d2d2d; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
-    .browser-dots { display: flex; gap: 6px; }
-    .browser-dots span { width: 10px; height: 10px; border-radius: 50%; background: #555; }
-    .browser-url { flex: 1; background: #3d3d3d; border-radius: 4px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,.5); }
-    .browser-frame img { width: 100%; display: block; }
-    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
-    .process-step { background: var(--white); border-radius: var(--radius); padding: 28px 24px; border: 1.5px solid var(--border); }
-    .process-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 12px; }
-    .process-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
-    .process-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
     .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
     .role-tag { padding: 7px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; background: rgba(0,119,182,.07); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
-    .img-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
-    .img-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
-    @media(max-width:600px) { .img-grid-3 { grid-template-columns: 1fr; } .img-grid-2 { grid-template-columns: 1fr; } }
-    .team-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .team-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
-    .award-badge { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,215,0,.08); border: 1px solid rgba(255,215,0,.2); border-radius: 50px; padding: 10px 20px; margin-top: 20px; }
-    .award-badge i { color: gold; font-size: 18px; }
-    .award-badge span { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); }
     .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 40px; }
     .result-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px 20px; text-align: center; }
     .result-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .result-label { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 8px; line-height: 1.5; }
+    .award-badge { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,215,0,.08); border: 1px solid rgba(255,215,0,.2); border-radius: 50px; padding: 10px 20px; margin-top: 20px; }
+    .award-badge i { color: gold; font-size: 18px; }
+    .award-badge span { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.8); }
     .next-project { background: var(--dark); padding: 64px 48px; text-align: center; }
     .next-project p { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
     .next-project h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin-bottom: 28px; }
@@ -90,70 +62,36 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,119,182,.5); }
     .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.25); margin-left: 12px; }
     .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
-    @media(max-width:768px) { .topbar { padding: 14px 20px; } .cs-hero { padding: 60px 20px 48px; } .cs-section { padding: 56px 20px; } .stats-bar { padding: 36px 20px; } .next-project { padding: 56px 20px; } }
 
-    /* ── Process Journey Illustrations ── */
-    .pj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; }
-    @media(max-width:700px) { .pj-grid { grid-template-columns: 1fr; } }
-    .pj-card { border-radius: 14px; overflow: hidden; position: relative; min-height: 270px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,.2); }
-    .pj-lbl { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 22px; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 100%); }
-    .pj-stg { display: block; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 3px; }
-    .pj-nm { font-size: 14px; font-weight: 700; color: white; }
-    /* Brainstorm */
-    .bs-ill { background: #0d1b2a; }
-    .bs-wrap { position: relative; width: 200px; height: 148px; }
-    .bs-tbl { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 140px; height: 70px; background: #1a2744; border-radius: 35px; border: 2px solid #243a6a; }
-    .bs-lp { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 42px; height: 28px; background: #243a6a; border-radius: 3px 3px 0 0; border: 1.5px solid #3a5090; }
-    .bs-lp::after { content: ''; position: absolute; bottom: -4px; left: -5px; right: -5px; height: 4px; background: #1a2744; border-radius: 0 0 3px 3px; }
-    .bs-p { position: absolute; display: flex; flex-direction: column; align-items: center; }
-    .bs-p .h { width: 18px; height: 18px; border-radius: 50%; }
-    .bs-p .b { width: 28px; height: 11px; border-radius: 6px 6px 0 0; margin-top: 2px; opacity: .85; }
-    .bs-p.tp { top: -8px; left: 50%; transform: translateX(-50%); }
-    .bs-p.bl { bottom: -8px; left: 10px; }
-    .bs-p.br { bottom: -8px; right: 10px; }
-    .bs-p.lt { top: 50%; left: -6px; transform: translateY(-50%) rotate(-90deg); }
-    .bs-p.rt { top: 50%; right: -6px; transform: translateY(-50%) rotate(90deg); }
-    .bs-sk { position: absolute; width: 22px; height: 22px; border-radius: 2px; }
-    /* Whiteboard */
-    .wb-ill { background: #eef0f2; }
-    .wb-bd { background: white; border-radius: 8px; border: 3px solid #c5cad0; box-shadow: 3px 3px 0 #c5cad0; padding: 14px; width: 240px; }
-    .wb-tr { height: 6px; background: #c5cad0; border-radius: 3px; margin-bottom: 12px; }
-    .wb-rw { display: flex; align-items: center; gap: 5px; margin-bottom: 6px; }
-    .wb-nd { border: 2px solid; border-radius: 5px; padding: 4px 8px; font-size: 9px; font-weight: 700; white-space: nowrap; }
-    .wb-bl { border-color: #0077B6; color: #0077B6; background: white; }
-    .wb-fl { border-color: #0077B6; background: #0077B6; color: white; }
-    .wb-ar { font-size: 11px; color: #adb5bd; }
-    .wb-ps { display: flex; gap: 5px; margin-top: 10px; }
-    .wb-pt { width: 42px; height: 42px; border-radius: 2px; font-size: 7px; font-weight: 600; padding: 4px; line-height: 1.4; color: rgba(0,0,0,.7); }
-    /* Device Showcase */
-    .dv-ill { background: #0d1117; flex-direction: row; padding: 22px; gap: 16px; }
-    .dv-mon { flex-shrink: 0; }
-    .dv-sc { width: 190px; height: 118px; background: #161b22; border-radius: 5px 5px 0 0; border: 5px solid #30363d; overflow: hidden; }
-    .dv-sc img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-    .dv-nk { width: 28px; height: 10px; background: #30363d; margin: 0 auto; }
-    .dv-st { width: 64px; height: 6px; background: #30363d; border-radius: 3px; margin: 0 auto; }
-    .dv-ph { flex-shrink: 0; margin-top: 18px; }
-    .dv-ps { width: 56px; height: 104px; background: #161b22; border-radius: 11px; border: 4px solid #30363d; overflow: hidden; position: relative; }
-    .dv-ps::before { content: ''; position: absolute; top: 5px; left: 50%; transform: translateX(-50%); width: 14px; height: 3px; background: #30363d; border-radius: 2px; z-index: 2; }
-    .dv-ps img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    /* Wireframe */
-    .wf-ill { background: #0d1117; padding: 22px; }
-    .wf-win { width: 100%; max-width: 240px; background: #161b22; border-radius: 8px; border: 1.5px solid #30363d; overflow: hidden; }
-    .wf-tb { background: #21262d; padding: 7px 10px; display: flex; align-items: center; gap: 4px; }
-    .wf-d { width: 7px; height: 7px; border-radius: 50%; }
-    .wf-u { flex: 1; background: #30363d; border-radius: 3px; height: 12px; margin: 0 5px; }
-    .wf-hr { padding: 12px; background: #0d1117; }
-    .wf-ln { height: 7px; border-radius: 4px; margin-bottom: 5px; }
-    .wf-la { background: linear-gradient(90deg, #0077B6, #00C8E8); width: 72%; }
-    .wf-lb { background: #21262d; width: 58%; }
-    .wf-lc { background: #21262d; width: 42%; }
-    .wf-bt { width: 64px; height: 18px; background: linear-gradient(135deg, #0077B6, #00C8E8); border-radius: 4px; margin-top: 8px; }
-    .wf-gr { padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
-    .wf-tl { background: #21262d; border-radius: 4px; overflow: hidden; }
-    .wf-ti { height: 34px; background: linear-gradient(135deg, #0d1117, #21262d); }
-    .wf-bd2 { padding: 5px; }
-    .wf-tln { height: 4px; background: #30363d; border-radius: 2px; margin-bottom: 3px; }
-    .wf-tls { width: 55%; }
+    /* lb-card */
+    .lb-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1.5px solid var(--border); cursor:pointer; transition:box-shadow .25s ease, transform .25s ease; }
+    .lb-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.14); }
+    .lb-card-img { height:200px; overflow:hidden; }
+    .lb-card-img img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .4s ease; }
+    .lb-card:hover .lb-card-img img { transform:scale(1.04); }
+    .lb-card-body { padding:16px 18px; }
+    .lb-card-tag { font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--blue); margin-bottom:5px; }
+    .lb-card-title { font-size:14px; font-weight:700; color:var(--dark); margin:0 0 5px; }
+    .lb-card-desc { font-size:12px; color:var(--muted); line-height:1.6; }
+    .lb-card-cta { display:inline-flex; align-items:center; gap:6px; margin-top:12px; background:var(--grad); color:#fff; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:7px 14px; border-radius:6px; }
+
+    /* gallery lightbox */
+    .glb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.8); z-index:9999; align-items:flex-start; justify-content:center; padding:24px; overflow-y:auto; }
+    .glb-modal { background:#fff; border-radius:14px; width:100%; max-width:1100px; display:flex; flex-direction:column; box-shadow:0 32px 80px rgba(0,0,0,.5); margin:auto; }
+    .glb-header { padding:16px 24px; border-bottom:1px solid #e5e7eb; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; position:sticky; top:0; background:#fff; z-index:2; border-radius:14px 14px 0 0; }
+    .glb-close { background:none; border:none; font-size:22px; color:#6b7280; cursor:pointer; padding:4px 8px; border-radius:6px; }
+    .glb-close:hover { background:#f3f4f6; }
+    .glb-body { padding:24px; background:#f9fafb; border-radius:0 0 14px 14px; display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
+    .glb-item { border-radius:10px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.1); cursor:pointer; position:relative; background:#f3f4f6; }
+    .glb-item img { width:100%; display:block; object-fit:contain; background:#f3f4f6; }
+    .glb-item .zoom-badge { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.55); color:#fff; font-size:10px; font-weight:600; padding:4px 8px; border-radius:5px; display:flex; align-items:center; gap:4px; backdrop-filter:blur(4px); }
+    .glb-pdf-btn { display:inline-flex; align-items:center; gap:8px; margin:16px 24px; background:var(--grad); color:#fff; font-size:13px; font-weight:600; padding:10px 22px; border-radius:8px; text-decoration:none; }
+
+    /* full-img overlay */
+    .full-img-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:99999; align-items:center; justify-content:center; cursor:zoom-out; }
+    .full-img-overlay img { max-width:95vw; max-height:92vh; border-radius:8px; object-fit:contain; display:block; box-shadow:0 24px 80px rgba(0,0,0,.7); }
+
+    @media(max-width:768px) { .topbar { padding:14px 20px; } .cs-hero { padding:60px 20px 48px; } .cs-section { padding:56px 20px; } .stats-bar { padding:36px 20px; } .next-project { padding:56px 20px; } }
   </style>
 </head>
 <body>
@@ -169,112 +107,354 @@
 </div>
 
 <section class="cs-hero" style="position:relative;overflow:hidden;padding-right:0;">
-  <div class="cs-hero-inner" style="padding-right:520px;">
-    <div class="hero-text">
-      <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,42px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Pyxis Communications</div>
+  <div style="max-width:1400px;padding-right:520px;">
+    <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,42px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Pyxis Communications</div>
     <h1 class="cs-title">Science Storytelling &amp;<br /><span>Award-Winning Digital Campaigns</span></h1>
     <p class="cs-subtitle">Freelance Art Director for Pyxis Communications and their science-focused clients — producing full-page magazine ads, multi-client display ad campaigns, Thermo Fisher Scientific tradeshow materials, and the MarCom 2022 Gold Award-winning Halo Labs butterfly campaign.</p>
     <div class="cs-meta">
       <div class="cs-meta-item"><label>My Role</label><span>Freelance Art Director</span></div>
       <div class="cs-meta-item"><label>Agency</label><span>Pyxis Communications</span></div>
       <div class="cs-meta-item"><label>Timeline</label><span>2018 – 2022</span></div>
-      <div class="cs-meta-item"><label>Deliverables</label><span>Print · Web · Digital Ads · Tradeshow</span></div>
-              <div class="cs-meta-item"><label>Design</label><span>Campaign Art Direction · Print Design · Display Ad Design</span></div>
-        <div class="cs-meta-item"><label>Deliverables</label><span>Magazine Ads · Web Design · Tradeshow Materials</span></div>
-        <div class="cs-meta-item"><label>Recognition</label><span>2022 MarCom Gold Award · Fortune 500 Clients</span></div>
-        <div class="cs-meta-item"><label>Industry</label><span>Healthcare · Financial Services · Technology</span></div>
-    </div>
+      <div class="cs-meta-item"><label>Deliverables</label><span>Print · Digital Ads · Ebooks · Tradeshow</span></div>
+      <div class="cs-meta-item"><label>Design</label><span>Campaign Art Direction · Print Design · Display Ad Design</span></div>
+      <div class="cs-meta-item"><label>Recognition</label><span>2022 MarCom Gold Award · Fortune 500 Clients</span></div>
+      <div class="cs-meta-item"><label>Clients</label><span>Halo Labs · Beckman Coulter · Thermo Fisher · MaxCyte · Metabolon</span></div>
+      <div class="cs-meta-item"><label>Industry</label><span>Biotech · Life Science · Pharma · Financial</span></div>
     </div>
   </div>
-  <div style="position:absolute;right:0;top:0;bottom:0;width:500px;display:flex;align-items:center;justify-content:center;">
-    <img src="images/Pyxis/HL_Marcom_Facebook_Ad copy.png" alt="Pyxis Communications" style="width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0;max-width:none;" />
+  <div style="position:absolute;right:0;top:0;bottom:0;width:500px;overflow:hidden;">
+    <img src="images/Pyxis/HL_Marcom_Facebook_Ad copy.png" alt="Pyxis Communications" style="width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0;max-width:none;filter:drop-shadow(-24px 0 40px rgba(0,0,0,.75)) drop-shadow(0 24px 48px rgba(0,10,40,.8));" />
   </div>
 </section>
 
 <div class="stats-bar" style="flex-direction:column; align-items:center; gap:0; padding:28px 48px 40px;">
   <p style="font-size:14px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:32px;">Results &amp; Measurable Impact</p>
   <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:24px; width:100%; padding-bottom:16px;">
-  <div class="stat-item"><div class="stat-num">Gold</div><div class="stat-label">2022 MarCom Award Winner</div></div>
-  <div class="stat-item"><div class="stat-num">F500</div><div class="stat-label">Fortune 500 Client Work</div></div>
-  <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">Industries Served</div></div>
-  <div class="stat-item"><div class="stat-num">Multi</div><div class="stat-label">Channel Campaign Delivery</div></div>
-</div>
+    <div class="stat-item"><div class="stat-num">Gold</div><div class="stat-label">2022 MarCom Award Winner</div></div>
+    <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label">Life Science Clients</div></div>
+    <div class="stat-item"><div class="stat-num">F500</div><div class="stat-label">Fortune 500 Client Work</div></div>
+    <div class="stat-item"><div class="stat-num">Multi</div><div class="stat-label">Channel Campaign Delivery</div></div>
+  </div>
 </div>
 
-<section class="cs-section cs-section-alt">
-  <div class="two-col">
-    <div>
-      <span class="section-label">Agency Overview</span>
-      <h2 class="cs-h2">Where Science <em>Meets Storytelling</em></h2>
-      <p class="cs-p">Pyxis Communications specializes in marketing content for Fortune 500s and emerging biotech startups — clients whose products require both scientific accuracy and compelling design. As their Freelance Art Director, I led visual creative on a wide range of accounts, from financial services to pharmaceutical instrumentation.</p>
-      <p class="cs-p">The work demanded fluency in both B2B scientific communication and consumer-facing digital advertising — a combination that pushed me to develop a versatile, high-precision creative approach across every channel.</p>
-      <div class="role-tags">
-        <span class="role-tag"><i class="fas fa-ad"></i> Campaign Art Direction</span>
-        <span class="role-tag"><i class="fas fa-desktop"></i> Web Design</span>
-        <span class="role-tag"><i class="fas fa-mobile-alt"></i> Display Ad Design</span>
-        <span class="role-tag"><i class="fas fa-print"></i> Print Design</span>
-        <span class="role-tag"><i class="fas fa-industry"></i> Tradeshow Materials</span>
+<!-- Collection of Work -->
+<section class="cs-section cs-section-alt" style="text-align:center;">
+  <div style="max-width:800px; margin:0 auto;">
+    <span class="section-label">Collection of Work</span>
+    <h2 class="cs-h2">Science Storytelling<br /><em>Across 10+ Life Science Clients</em></h2>
+    <p class="cs-p" style="margin:0 auto 28px;">As Freelance Art Director for Pyxis Communications, I delivered campaign creative across a wide spectrum of life science and biotech clients — from full-page magazine ads and tradeshow materials to digital display campaigns, ebooks, social media graphics, and award-winning print campaigns.</p>
+    <div class="role-tags" style="justify-content:center;">
+      <span class="role-tag"><i class="fas fa-paint-brush"></i> Campaign Art Direction</span>
+      <span class="role-tag"><i class="fas fa-print"></i> Print Design</span>
+      <span class="role-tag"><i class="fas fa-desktop"></i> Display Ad Design</span>
+      <span class="role-tag"><i class="fas fa-book-open"></i> Ebook Design</span>
+      <span class="role-tag"><i class="fas fa-industry"></i> Tradeshow Creative</span>
+      <span class="role-tag"><i class="fas fa-share-alt"></i> Social Media</span>
+      <span class="role-tag"><i class="fas fa-trophy"></i> MarCom Gold Award</span>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; margin-top:48px; text-align:left;">
+
+    <!-- 1. Halo Labs Storytelling Campaign -->
+    <div class="lb-card" onclick="openFullImg('images/Pyxis/Pyxis_Ad_8.4x10.6_FNL.jpg','Halo Labs — Science Storytelling Campaign')">
+      <div class="lb-card-img"><img src="images/Pyxis/Pyxis_Ad_8.4x10.6_FNL.jpg" alt="Halo Labs Storytelling" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Print · Campaign</div>
+        <h3 class="lb-card-title">Halo Labs — Science Storytelling Campaign</h3>
+        <p class="lb-card-desc">Full-page print ad for Halo Labs — science storytelling through bold visual narrative for pharmaceutical instrumentation.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
       </div>
     </div>
-    <div class="img-frame">
-      <img src="images/Pyxis/Pyxis_Ad_8.4x10.6_FNL.jpg" alt="Pyxis Communications — Where Science Meets Storytelling Full Page Ad" />
+
+    <!-- 2. Halo Labs MarCom Campaign -->
+    <div class="lb-card" onclick="openLb('halo-marcom')">
+      <div class="lb-card-img"><img src="images/Pyxis/HL_Butterfly_Ad_Color-01.png" alt="Halo Labs MarCom" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Digital · Print · 2022 MarCom Gold</div>
+        <h3 class="lb-card-title">Halo Labs — 2022 MarCom Gold Campaign</h3>
+        <p class="lb-card-desc">"Embrace change for better product stability" butterfly campaign — 2022 MarCom Gold Award winner across digital, social, and print.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Campaign</div>
+      </div>
     </div>
+
+    <!-- 3. Thermo Fisher Campaign -->
+    <div class="lb-card" onclick="openFullImg('images/Pyxis/Pyxis_Thermo_Campaign.png','Thermo Fisher Scientific — Ultra-Pure Campaign')">
+      <div class="lb-card-img"><img src="images/Pyxis/Pyxis_Thermo_Campaign.png" alt="Thermo Fisher Campaign" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Tradeshow · Print</div>
+        <h3 class="lb-card-title">Thermo Fisher Scientific — Ultra-Pure Campaign</h3>
+        <p class="lb-card-desc">"Ultra-pure. Ultra-powerful." tradeshow campaign for APIX 5Q and APIX Quattro — banner system, brochure, and mobile display for major scientific conferences.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+      </div>
+    </div>
+
+    <!-- 4. Beckman Coulter -->
+    <div class="lb-card" onclick="openLb('beckman')">
+      <div class="lb-card-img"><img src="images/Pyxis/BC_WorkSmarter.png" alt="Beckman Coulter" style="object-fit:contain;background:#f0f4f8;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Digital Advertising</div>
+        <h3 class="lb-card-title">Beckman Coulter — nGeniuS Digital Ad Campaign</h3>
+        <p class="lb-card-desc">Four-message digital ad campaign for Beckman Coulter's nGeniuS platform — Work Smarter, With Automation, A Better Way, and The Future.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Ads</div>
+      </div>
+    </div>
+
+    <!-- 5. Capital Vial Brochure -->
+    <div class="lb-card" onclick="openLb('capital-vial')">
+      <div class="lb-card-img"><img src="images/Pyxis/CapitalVial_cover.jpg" alt="Capital Vial Brochure" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Print · Brochure</div>
+        <h3 class="lb-card-title">Capital Vial — Product Brochure</h3>
+        <p class="lb-card-desc">Product brochure for Capital Vial — precision print design for pharmaceutical packaging and laboratory supply market.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View &amp; Download</div>
+      </div>
+    </div>
+
+    <!-- 6. Fortis Bethyl Ebook -->
+    <div class="lb-card" onclick="openLb('fortis')">
+      <div class="lb-card-img"><img src="images/Pyxis/Fortis_Bethyl_cover.jpg" alt="Fortis Bethyl Ebook" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Digital · Ebook</div>
+        <h3 class="lb-card-title">Fortis Life Science — Bethyl Ebook</h3>
+        <p class="lb-card-desc">Multi-page ebook for Fortis Life Science / Bethyl — scientific content design for immunology research audience.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View &amp; Download</div>
+      </div>
+    </div>
+
+    <!-- 7. GLP Mini Brochure -->
+    <div class="lb-card" onclick="openLb('glp')">
+      <div class="lb-card-img"><img src="images/Pyxis/GLP_Mini_cover.jpg" alt="GLP Mini Brochure" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Print · Brochure</div>
+        <h3 class="lb-card-title">GLP — Mini Brochure</h3>
+        <p class="lb-card-desc">Compact print brochure for GLP — clean, precision layout designed for life science product marketing.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View &amp; Download</div>
+      </div>
+    </div>
+
+    <!-- 8. Halo Labs Step Into The Future -->
+    <div class="lb-card" onclick="openLb('step-future')">
+      <div class="lb-card-img"><img src="images/Pyxis/HL_StepFuture_LI.png" alt="Step Into The Future" style="object-fit:contain;background:#0a1628;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Digital · Print · Tradeshow</div>
+        <h3 class="lb-card-title">Halo Labs — Step Into The Future Campaign</h3>
+        <p class="lb-card-desc">Integrated campaign for Halo Labs Aura PTx — LinkedIn ad, print ad, AIO banner pop-up, and festival booth creative.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Campaign</div>
+      </div>
+    </div>
+
+    <!-- 9. LGC Media Social Banners -->
+    <div class="lb-card" onclick="openLb('lgc')">
+      <div class="lb-card-img"><img src="images/Pyxis/LGC_Banner_03.png" alt="LGC Media Banners" style="object-fit:contain;background:#f9fafb;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Social Media · Digital</div>
+        <h3 class="lb-card-title">LGC Media — Social Banners</h3>
+        <p class="lb-card-desc">Social media banner set for LGC — consistent visual language across multiple formats for life science audience.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Banners</div>
+      </div>
+    </div>
+
+    <!-- 10. MaxCyte Social Media -->
+    <div class="lb-card" onclick="openLb('maxcyte')">
+      <div class="lb-card-img"><img src="images/Pyxis/MaxCyte_CellGene.png" alt="MaxCyte Social Media" style="object-fit:contain;background:#001a33;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Social Media · Digital</div>
+        <h3 class="lb-card-title">MaxCyte — Social Media Campaign</h3>
+        <p class="lb-card-desc">Multi-post social media campaign for MaxCyte — Cell &amp; Gene, ESGCT conference, Awards recognition, and ECI creative.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Posts</div>
+      </div>
+    </div>
+
+    <!-- 11. Metabolon Infographic -->
+    <div class="lb-card" onclick="openFullImg('images/Pyxis/Metabolon_Infographic.jpg','Metabolon — The Rise of Metabolomics Infographic')">
+      <div class="lb-card-img"><img src="images/Pyxis/Metabolon_Infographic.jpg" alt="Metabolon Infographic" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Infographic · Digital</div>
+        <h3 class="lb-card-title">Metabolon — Rise of Metabolomics Infographic</h3>
+        <p class="lb-card-desc">Data-driven infographic visualizing the rise of metabolomics — complex scientific content distilled into clear, compelling visual narrative.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+      </div>
+    </div>
+
+    <!-- 12. Pyxis Flyer -->
+    <div class="lb-card" onclick="openLb('pyxis-flyer')">
+      <div class="lb-card-img"><img src="images/Pyxis/Pyxis_Flyer_cover.jpg" alt="Pyxis Flyer" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Print · Agency Brochure</div>
+        <h3 class="lb-card-title">Pyxis Communications — Agency Flyer</h3>
+        <p class="lb-card-desc">Agency marketing flyer for Pyxis Communications — positioning their science storytelling capabilities for prospective clients.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View &amp; Download</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="cs-section">
-  <span class="section-label">Campaign Spotlight</span>
-  <h2 class="cs-h2">Halo Labs — 2022 MarCom <em>Gold Award Winner</em></h2>
-  <p class="cs-p">The Halo Labs "Embrace change for better product stability" butterfly campaign earned a 2022 MarCom Awards Gold recognition. The campaign visualized the concept of protein aggregation prevention through the metaphor of a butterfly emerging — change leading to greater stability — across digital and print advertising.</p>
-  <div class="img-grid-2">
-    <div class="img-frame">
-      <img src="images/Pyxis/HL_Butterfly_Ad_Color-01.png" alt="Halo Labs Butterfly Campaign — 2022 MarCom Gold Winner" />
-    </div>
-    <div class="img-frame">
-      <img src="images/Pyxis/pyxislayout-03.jpg" alt="Pyxis Campaign Portfolio — Multiple Clients" />
-    </div>
-  </div>
-</section>
-
-
-<section class="cs-section">
-  <span class="section-label">Tradeshow & Print</span>
-  <h2 class="cs-h2">Thermo Fisher Scientific — <em>Ultra-Pure Campaign</em></h2>
-  <p class="cs-p">For Thermo Fisher Scientific, I art directed the "Ultra-pure. Ultra-powerful." tradeshow campaign for the APIX 5Q and APIX Quattro product line — a banner system, product brochure, and mobile display designed for major scientific conferences. The campaign emphasized precision and power through a striking geometric molecular graphic system.</p>
-  <div class="img-frame" style="max-width:600px;">
-    <img src="images/Pyxis/Pyxis_Thermo_Campaign.png" alt="Thermo Fisher Scientific Ultra-Pure Campaign" />
-  </div>
-</section>
-
-<section class="cs-section cs-section-dark">
+<!-- Results -->
+<section class="cs-section-dark" style="padding:72px 48px;">
   <div style="max-width:900px; margin:0 auto;">
     <span class="section-label section-label-light">Results</span>
     <h2 class="cs-h2 cs-h2-light">Recognized Work Across <em style="color:var(--cyan);">Multiple Industries</em></h2>
     <div class="results-grid">
       <div class="result-card"><div class="result-num">Gold</div><div class="result-label">2022 MarCom Awards — Halo Labs Butterfly Campaign</div></div>
-      <div class="result-card"><div class="result-num">F500</div><div class="result-label">Creative delivered for Fortune 500 pharma and biotech companies</div></div>
+      <div class="result-card"><div class="result-num">10+</div><div class="result-label">Life science and biotech clients served</div></div>
       <div class="result-card"><div class="result-num">Multi</div><div class="result-label">Simultaneous campaigns across print, web, digital ads, and tradeshow</div></div>
-      <div class="result-card"><div class="result-num">4+</div><div class="result-label">Industries: biotech, financial, instrumentation, medical device</div></div>
+      <div class="result-card"><div class="result-num">F500</div><div class="result-label">Creative delivered for Fortune 500 pharma and biotech companies</div></div>
     </div>
-    <div class="award-badge"><i class="fas fa-trophy"></i><span>2022 MarCom Awards Gold — Halo Labs Butterfly Campaign</span></div>
+    <div class="award-badge" style="margin-top:32px;"><i class="fas fa-trophy"></i><span>2022 MarCom Awards Gold — Halo Labs Butterfly Campaign</span></div>
   </div>
 </section>
 
+<div class="next-project">
+  <p>Continue Exploring</p>
+  <h3>More Portfolio Work</h3>
+  <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
 
-<!-- Work Samples Gallery -->
-<section class="cs-section cs-section-alt">
-  <span class="section-label">Work Samples</span>
-  <h2 class="cs-h2">Campaign & Brand Work</h2>
-  <div class="gs-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:32px;">
-      <div class="gs-item"><img src="images/Pyxis/Pyxis-Feature.jpg" alt="Pyxis feature" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Pyxis/pyxislayout-01.jpg" alt="Pyxis layout 1" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Pyxis/pyxislayout-04.jpg" alt="Pyxis layout 4" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Pyxis/AIO-BannerPop-up_FNL.png" alt="AIO banner pop-up" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Pyxis/HL_Marcom_Facebook_Ad copy.png" alt="Halo Labs Facebook ad" loading="lazy" /></div>
+<!-- Gallery Lightbox -->
+<div class="glb-overlay" id="glb-overlay" onclick="if(event.target===this)closeLb()">
+  <div class="glb-modal">
+    <div class="glb-header">
+      <div>
+        <div id="glb-title" style="font-size:13px;font-weight:700;color:#111827;"></div>
+        <div id="glb-tag" style="font-size:11px;color:#6b7280;margin-top:2px;"></div>
+      </div>
+      <button class="glb-close" onclick="closeLb()">×</button>
+    </div>
+    <div id="glb-pdf-wrap"></div>
+    <div id="glb-body" class="glb-body"></div>
   </div>
-</section>
-<style>
-  .gs-item { border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6; }
-  .gs-item img { width:100%;height:220px;object-fit:cover;display:block; }
-</style></body>
+</div>
+
+<!-- Full-image overlay -->
+<div class="full-img-overlay" id="full-img-overlay" onclick="closeFullImg()">
+  <img id="full-img-el" src="" alt="" />
+</div>
+
+<script>
+  const lbData = {
+    'halo-marcom': {
+      title: 'Halo Labs — 2022 MarCom Gold Campaign',
+      tag: 'Digital · Print · MarCom Gold Award 2022',
+      imgs: [
+        ['images/Pyxis/HL_Butterfly_Ad_Color-01.png', 'Butterfly Campaign Ad'],
+        ['images/Pyxis/HL_Marcom_Facebook_Ad copy.png', 'Facebook Ad'],
+        ['images/Pyxis/HL_Aura_PTx_p4.jpg', 'Aura PTx Campaign Concept 4'],
+        ['images/Pyxis/HL_Aura_PTx_p8.jpg', 'Aura PTx Campaign Concept 8'],
+        ['images/Pyxis/Halo_GEN_300x250.png', 'GEN Banner 300×250'],
+        ['images/Pyxis/Halo_GEN_250x150.png', 'GEN Banner 250×150'],
+      ]
+    },
+    'beckman': {
+      title: 'Beckman Coulter — nGeniuS Digital Ad Campaign',
+      tag: 'Digital Advertising · Display Ads',
+      imgs: [
+        ['images/Pyxis/BC_WorkSmarter.png', 'Work Smarter'],
+        ['images/Pyxis/BC_WithAutomation.png', 'With Automation'],
+        ['images/Pyxis/BC_BetterWay.png', 'A Better Way'],
+        ['images/Pyxis/BC_Future.png', 'The Future'],
+      ]
+    },
+    'capital-vial': {
+      title: 'Capital Vial — Product Brochure',
+      tag: 'Print · Brochure',
+      imgs: [['images/Pyxis/CapitalVial_cover.jpg', 'Capital Vial Brochure Cover']],
+      pdf: 'images/Pyxis/CapitalVial_brochure.pdf',
+      pdfLabel: 'Download Brochure PDF'
+    },
+    'fortis': {
+      title: 'Fortis Life Science — Bethyl Ebook',
+      tag: 'Digital · Ebook',
+      imgs: [['images/Pyxis/Fortis_Bethyl_cover.jpg', 'Fortis Bethyl Ebook Cover']],
+      pdf: 'images/Pyxis/Fortis_Bethyl_ebook.pdf',
+      pdfLabel: 'Download Ebook PDF'
+    },
+    'glp': {
+      title: 'GLP — Mini Brochure',
+      tag: 'Print · Brochure',
+      imgs: [['images/Pyxis/GLP_Mini_cover.jpg', 'GLP Mini Brochure Cover']],
+      pdf: 'images/Pyxis/GLP_Mini_brochure.pdf',
+      pdfLabel: 'Download Brochure PDF'
+    },
+    'step-future': {
+      title: 'Halo Labs — Step Into The Future Campaign',
+      tag: 'Digital · Print · Tradeshow',
+      imgs: [
+        ['images/Pyxis/HL_StepFuture_LI.png', 'LinkedIn Ad'],
+        ['images/Pyxis/HL_StepFuture_Print.jpg', 'Print Ad'],
+        ['images/Pyxis/HL_AIO_Banner.png', 'AIO Banner Pop-up'],
+        ['images/Pyxis/HL_Festival_Booth.jpg', 'Festival Booth Mockup'],
+      ]
+    },
+    'lgc': {
+      title: 'LGC Media — Social Banners',
+      tag: 'Social Media · Digital Advertising',
+      imgs: [
+        ['images/Pyxis/LGC_Banner_03.png', 'LGC Media Banner 03'],
+        ['images/Pyxis/LGC_Banner_04.png', 'LGC Media Banner 04'],
+        ['images/Pyxis/LGC_Banner_07.png', 'LGC Media Banner 07'],
+      ]
+    },
+    'maxcyte': {
+      title: 'MaxCyte — Social Media Campaign',
+      tag: 'Social Media · Digital',
+      imgs: [
+        ['images/Pyxis/MaxCyte_CellGene.png', 'Cell &amp; Gene Therapy'],
+        ['images/Pyxis/MaxCyte_ESGCT.png', 'ESGCT 2022 Conference'],
+        ['images/Pyxis/MaxCyte_Awards.png', 'Awards Recognition'],
+        ['images/Pyxis/MaxCyte_ECI.png', 'ECI Campaign'],
+      ]
+    },
+    'pyxis-flyer': {
+      title: 'Pyxis Communications — Agency Flyer',
+      tag: 'Print · Agency Marketing',
+      imgs: [['images/Pyxis/Pyxis_Flyer_cover.jpg', 'Pyxis Flyer Cover']],
+      pdf: 'images/Pyxis/Pyxis_Flyer.pdf',
+      pdfLabel: 'Download Flyer PDF'
+    },
+  };
+
+  function openLb(key) {
+    const d = lbData[key];
+    if (!d) return;
+    document.getElementById('glb-title').textContent = d.title;
+    document.getElementById('glb-tag').textContent = d.tag;
+
+    const pdfWrap = document.getElementById('glb-pdf-wrap');
+    pdfWrap.innerHTML = d.pdf
+      ? `<a href="${d.pdf}" download class="glb-pdf-btn"><i class="fas fa-download"></i> ${d.pdfLabel}</a>`
+      : '';
+
+    const body = document.getElementById('glb-body');
+    body.innerHTML = d.imgs.map(([src, alt]) => `
+      <div class="glb-item" onclick="openFullImg('${src}','${alt}')">
+        <img src="${src}" alt="${alt}" loading="lazy" />
+        <div class="zoom-badge"><i class="fas fa-expand-alt"></i> View</div>
+      </div>`).join('');
+
+    const o = document.getElementById('glb-overlay');
+    o.style.display = 'flex';
+  }
+
+  function closeLb() {
+    document.getElementById('glb-overlay').style.display = 'none';
+  }
+
+  function openFullImg(src, alt) {
+    const o = document.getElementById('full-img-overlay');
+    document.getElementById('full-img-el').src = src;
+    document.getElementById('full-img-el').alt = alt || '';
+    o.style.display = 'flex';
+  }
+
+  function closeFullImg() {
+    document.getElementById('full-img-overlay').style.display = 'none';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeLb(); closeFullImg(); }
+  });
+</script>
+</body>
 </html>
