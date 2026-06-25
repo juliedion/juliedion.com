@@ -158,6 +158,23 @@
     .wf-bd2 { padding: 5px; }
     .wf-tln { height: 4px; background: #30363d; border-radius: 2px; margin-bottom: 3px; }
     .wf-tls { width: 55%; }
+
+    .lb-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1.5px solid var(--border); cursor:pointer; transition:box-shadow .25s ease, transform .25s ease; }
+    .lb-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.14); }
+    .lb-card-img { height:200px; overflow:hidden; }
+    .lb-card-img img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .4s ease; }
+    .lb-card:hover .lb-card-img img { transform:scale(1.04); }
+    .lb-card-body { padding:16px 18px; }
+    .lb-card-tag { font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--blue); margin-bottom:5px; }
+    .lb-card-title { font-size:14px; font-weight:700; color:var(--dark); margin:0 0 5px; }
+    .lb-card-desc { font-size:12px; color:var(--muted); line-height:1.6; }
+    .lb-card-cta { display:inline-flex; align-items:center; gap:6px; margin-top:12px; background:var(--grad); color:#fff; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:7px 14px; border-radius:6px; }
+    .process-step { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--border); }
+    .process-step-img { height: 160px; overflow: hidden; }
+    .process-step-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .process-step-body { padding: 24px 24px 28px; }
+    .full-img-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:99999; align-items:center; justify-content:center; cursor:zoom-out; }
+    .full-img-overlay img { max-width:95vw; max-height:92vh; border-radius:8px; object-fit:contain; display:block; box-shadow:0 24px 80px rgba(0,0,0,.7); }
   </style>
 </head>
 <body>
@@ -206,110 +223,148 @@
 </div>
 
 <section class="cs-section cs-section-alt">
-  <div class="two-col">
-    <div>
-      <span class="section-label">The Work</span>
-      <h2 class="cs-h2">Campaign Art Direction<br /><em>at a Global Scale</em></h2>
-      <p class="cs-p">Merck Millipore required a partner who could translate complex life science products into compelling, award-worthy visual campaigns. I led art direction for their most high-profile initiatives — full-page ads in Science, Nature, and Boston Business Journal, and the Muse Cell Analyzer launch campaign.</p>
-      <p class="cs-p">The work spanned 5 years of consistent creative leadership, producing campaigns recognized annually by GD USA. The Muse Cell Analyzer "Have you seen it? Heard it? Touched it?" owl campaign drove exceptional product launch awareness at ASCB 2011 in Denver, including a dramatic building-facade billboard installation.</p>
-      <div class="role-tags">
-        <span class="role-tag"><i class="fas fa-paint-brush"></i> Campaign Art Direction</span>
-        <span class="role-tag"><i class="fas fa-newspaper"></i> Print Advertising</span>
-        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> OOH / Billboard</span>
-        <span class="role-tag"><i class="fas fa-bus"></i> Experiential Design</span>
-        <span class="role-tag"><i class="fas fa-layer-group"></i> Tradeshow Creative</span>
+  <div style="max-width:1200px;margin:0 auto;text-align:center;">
+    <span class="section-label">The Work</span>
+    <h2 class="cs-h2">Campaign Art Direction <em>at a Global Scale</em></h2>
+    <p class="cs-p" style="max-width:720px;margin-left:auto;margin-right:auto;">Five years of award-winning creative leadership for Merck KGaA / MilliporeSigma — full-page ads in Science, Nature, and Boston Business Journal, tradeshow campaigns, OOH billboards, and a branded experiential mobile lab tour.</p>
+    <div class="role-tags" style="justify-content:center;margin-top:20px;margin-bottom:40px;flex-wrap:wrap;">
+      <span class="role-tag"><i class="fas fa-paint-brush"></i> Campaign Art Direction</span>
+      <span class="role-tag"><i class="fas fa-newspaper"></i> Print Advertising</span>
+      <span class="role-tag"><i class="fas fa-map-marker-alt"></i> OOH / Billboard</span>
+      <span class="role-tag"><i class="fas fa-bus"></i> Experiential Design</span>
+      <span class="role-tag"><i class="fas fa-layer-group"></i> Tradeshow Creative</span>
+      <span class="role-tag"><i class="fas fa-trophy"></i> GD USA Award Winner</span>
+      <span class="role-tag"><i class="fas fa-microscope"></i> Science Storytelling</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;text-align:left;">
+
+      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/MM-Feature.jpg','Merck Millipore — Portfolio Overview')">
+        <div class="lb-card-img"><img src="images/Merck Millipore/MM-Feature.jpg" alt="Merck Millipore Portfolio Overview" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Campaign Portfolio</div>
+          <h3 class="lb-card-title">Merck Millipore — Portfolio Overview</h3>
+          <p class="lb-card-desc">Five years of award-winning campaign creative across print, OOH, tradeshow, and experiential channels.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
+        </div>
+      </div>
+
+      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/MM-layout-1.jpg','Muse Cell Analyzer — Have You Seen It?')">
+        <div class="lb-card-img"><img src="images/Merck Millipore/MM-layout-1.jpg" alt="Muse Campaign" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Product Launch</div>
+          <h3 class="lb-card-title">Muse Cell Analyzer — "Have You Seen It?"</h3>
+          <p class="lb-card-desc">Curiosity-driven owl campaign across magazines, ASCB conference, and building-facade billboard. GD USA 2012 winner.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
+        </div>
+      </div>
+
+      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/JulieDionPortfolio_202112.jpg','Mobius — Curiosity Killed Our Competition')">
+        <div class="lb-card-img"><img src="images/Merck Millipore/JulieDionPortfolio_202112.jpg" alt="Mobius Campaign" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Print Campaign</div>
+          <h3 class="lb-card-title">Mobius — "Curiosity Killed Our Competition"</h3>
+          <p class="lb-card-desc">High-contrast gymnast silhouette campaign for Science and Nature full-page placements — positioning Mobius as the bold disruptor in bioprocessing.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
+        </div>
+      </div>
+
+      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/MUSE_Billboard_Page_1.jpg','ASCB Denver Billboard — Muse Campaign')">
+        <div class="lb-card-img"><img src="images/Merck Millipore/MUSE_Billboard_Page_1.jpg" alt="ASCB Denver Billboard" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">OOH / Billboard</div>
+          <h3 class="lb-card-title">ASCB Denver — Building-Facade Billboard</h3>
+          <p class="lb-card-desc">Dramatic conference landmark billboard installation at ASCB 2011. A four-panel building takeover that became the talk of the conference.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
+        </div>
+      </div>
+
+      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/bus/JulieDionPortfolio_20218-cover.jpg','Life:Expressed Mobile Lab Tour')">
+        <div class="lb-card-img"><img src="images/Merck Millipore/bus/JulieDionPortfolio_20218-cover.jpg" alt="Life:Expressed Bus" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Experiential Design</div>
+          <h3 class="lb-card-title">Life:Expressed Mobile Laboratory</h3>
+          <p class="lb-card-desc">Full branding for the Life:Expressed mobile lab bus — a traveling experiential vehicle showcasing Merck's bioprocessing capabilities to research institutions nationwide.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
+        </div>
+      </div>
+
+      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/GSM.jpg','Global Sales Meeting — Engage the Future')">
+        <div class="lb-card-img"><img src="images/Merck Millipore/GSM.jpg" alt="Global Sales Meeting" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Internal Branding</div>
+          <h3 class="lb-card-title">Global Sales Meeting Branding</h3>
+          <p class="lb-card-desc">"Engage the Future" and "The Time is NOW" internal sales event creative systems — environmental graphics and collateral for Merck's global commercial teams.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="cs-section" style="text-align:center;">
+  <span class="section-label">Design Process</span>
+  <h2 class="cs-h2">Five Years of <em>Creative Leadership</em></h2>
+  <div class="process-grid" style="text-align:left;">
+    <div class="process-step">
+      <div class="process-step-img">
+        <img src="images/Merck Millipore/MM-layout-1.jpg" alt="Product Launch Campaigns" />
+      </div>
+      <div class="process-step-body">
+        <div class="process-num">01</div>
+        <div class="process-title">Product Launch Campaigns</div>
+        <div class="process-desc">Led full creative development from concept through production for Muse Cell Analyzer, Mobius, and CORE product families — including audience strategy, visual concepting, and copywriting direction.</div>
       </div>
     </div>
-    <div class="img-frame">
-      <img src="images/Merck Millipore/MM-Feature.jpg" alt="Merck Millipore Portfolio Overview" />
+    <div class="process-step">
+      <div class="process-step-img">
+        <img src="images/Merck Millipore/MUSE_Billboard_Page_1.jpg" alt="Tradeshow and OOH" />
+      </div>
+      <div class="process-step-body">
+        <div class="process-num">02</div>
+        <div class="process-title">Tradeshow &amp; OOH</div>
+        <div class="process-desc">Designed tradeshow booth graphics, event materials, and the ASCB 2011 Denver billboard campaign — a building-facade takeover that became a conference landmark and GD USA winner.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-img">
+        <img src="images/Merck Millipore/bus/JulieDionPortfolio_20218-cover.jpg" alt="Life:Expressed Mobile Tour" />
+      </div>
+      <div class="process-step-body">
+        <div class="process-num">03</div>
+        <div class="process-title">Life:Expressed Mobile Tour</div>
+        <div class="process-desc">Developed branding for the Life:Expressed mobile laboratory bus — a traveling experiential marketing vehicle showcasing Merck's bioprocessing capabilities to research institutions nationwide.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-img">
+        <img src="images/Merck Millipore/GSM.jpg" alt="Sales Meeting Branding" />
+      </div>
+      <div class="process-step-body">
+        <div class="process-num">04</div>
+        <div class="process-title">Sales Meeting Branding</div>
+        <div class="process-desc">Produced "Engage the Future" and "The Time is NOW" internal sales event branding — motivational creative systems for Merck's global commercial teams, complete with environmental graphics and collateral.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cs-section">
-  <span class="section-label">Campaign Spotlight</span>
-  <h2 class="cs-h2">Muse Cell Analyzer — <em>"Have You Seen It?"</em></h2>
-  <p class="cs-p">The Muse Cell Analyzer launch campaign used a mysterious owl motif across a multi-channel rollout — full-page magazine ads, ASCB conference materials, and an ambitious building-facade billboard in downtown Denver during the 2011 conference. The curiosity-driven approach generated significant pre-launch buzz and won a GD USA 2012 award.</p>
-  <div class="img-grid-2">
-    <div class="img-frame">
-      <img src="images/Merck Millipore/MM-layout-1.jpg" alt="Muse Campaign — Have You Seen It?" />
-    </div>
-    <div class="img-frame">
-      <img src="images/Merck Millipore/MM-layout-2.jpg" alt="GD USA 2011 Winners — Green Campaign" />
-    </div>
-  </div>
-</section>
-
-<section class="cs-section cs-section-alt">
-  <div class="two-col two-col-reverse">
-    <div>
-      <span class="section-label">Campaign Creative</span>
-      <h2 class="cs-h2">Mobius by Millipore —<br /><em>"Curiosity Killed Our Competition"</em></h2>
-      <p class="cs-p">The Mobius product line campaign featured striking gymnast silhouettes in high-contrast black and white, paired with the bold tagline "CURIOSITY killed our competition." Designed for Science and Nature full-page placements, the campaign positioned Mobius as the bold disruptor in single-use bioprocessing.</p>
-      <p class="cs-p">The gymnast motif conveyed flexibility, precision, and performance — all core attributes of the Mobius product family — while standing out dramatically against the dense editorial environment of scientific journals.</p>
-    </div>
-    <div class="img-frame">
-      <img src="images/Merck Millipore/JulieDionPortfolio_202112.jpg" alt="Mobius Campaign — Curiosity Killed Our Competition" />
-    </div>
-  </div>
-</section>
-
-<section class="cs-section">
-  <span class="section-label">Process</span>
-  <h2 class="cs-h2">Five Years of Creative Leadership</h2>
-  <div class="process-grid">
-    <div class="process-step">
-      <div class="process-num">01</div>
-      <div class="process-title">Product Launch Campaigns</div>
-      <div class="process-desc">Led full creative development from concept through production for Muse Cell Analyzer, Mobius, and CORE product families — including audience strategy, visual concepting, and copywriting direction.</div>
-    </div>
-    <div class="process-step">
-      <div class="process-num">02</div>
-      <div class="process-title">Tradeshow & OOH</div>
-      <div class="process-desc">Designed tradeshow booth graphics, event materials, and the ASCB 2011 Denver billboard campaign — a building-facade takeover that became a conference landmark and GD USA winner.</div>
-    </div>
-    <div class="process-step">
-      <div class="process-num">03</div>
-      <div class="process-title">Life:Expressed Mobile Tour</div>
-      <div class="process-desc">Developed branding for the Life:Expressed mobile laboratory bus — a traveling experiential marketing vehicle showcasing Merck's bioprocessing capabilities to research institutions nationwide.</div>
-    </div>
-    <div class="process-step">
-      <div class="process-num">04</div>
-      <div class="process-title">Sales Meeting Branding</div>
-      <div class="process-desc">Produced "Engage the Future" and "The Time is NOW" internal sales event branding — motivational creative systems for Merck's global commercial teams, complete with environmental graphics and collateral.</div>
-    </div>
-  </div>
-</section>
-
-<section class="cs-section cs-section-alt">
-  <div class="two-col">
-    <div class="pj-card bs-ill" style="min-height:300px; border-radius:var(--radius);">
-  <div class="bs-wrap">
-    <div class="bs-tbl"><div class="bs-lp"></div></div>
-    <div class="bs-p tp"><div class="h" style="background:#0077B6"></div><div class="b" style="background:#0077B6"></div></div>
-    <div class="bs-p bl"><div class="h" style="background:#00C8E8"></div><div class="b" style="background:#00C8E8"></div></div>
-    <div class="bs-p br"><div class="h" style="background:#EF476F"></div><div class="b" style="background:#EF476F"></div></div>
-    <div class="bs-p lt"><div class="h" style="background:#FFD166"></div><div class="b" style="background:#FFD166"></div></div>
-    <div class="bs-p rt"><div class="h" style="background:#06D6A0"></div><div class="b" style="background:#06D6A0"></div></div>
-    <div class="bs-sk" style="background:#FFD166;top:16px;right:24px;transform:rotate(8deg)"></div>
-    <div class="bs-sk" style="background:#EF476F;top:36px;right:8px;transform:rotate(-5deg)"></div>
-    <div class="bs-sk" style="background:#06D6A0;bottom:16px;left:16px;transform:rotate(12deg)"></div>
-    <div class="bs-sk" style="background:#0077B6;bottom:28px;right:36px;transform:rotate(-8deg)"></div>
-  </div>
-  <div class="pj-lbl"><span class="pj-stg">Process</span><div class="pj-nm">Team Collaboration &amp; Brainstorm</div></div>
-</div>
-    <div>
-      <span class="section-label">Recognition</span>
-      <h2 class="cs-h2">Five Consecutive <em>GD USA Awards</em></h2>
-      <p class="cs-p">Winning GD USA recognition five years in a row is a testament to the sustained creative quality delivered across every Merck Millipore campaign. Each award represented a different product family or campaign — from the Muse owl campaign to the Mobius gymnast ads to the ASCB billboard installation.</p>
-      <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2012 — Muse Cell Analyzer Campaign</span></div><br/>
-      <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2011 — ASCB Denver Billboard</span></div><br/>
+<section class="cs-section cs-section-alt" style="text-align:center;">
+  <div style="max-width:900px;margin:0 auto;">
+    <span class="section-label">Recognition</span>
+    <h2 class="cs-h2">Five Consecutive <em>GD USA Awards</em></h2>
+    <p class="cs-p" style="margin-left:auto;margin-right:auto;">Winning GD USA recognition five years in a row is a testament to the sustained creative quality delivered across every Merck Millipore campaign — from the Muse owl campaign to the Mobius gymnast ads to the ASCB billboard installation.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:28px;">
+      <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2012 — Muse Cell Analyzer Campaign</span></div>
+      <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2011 — ASCB Denver Billboard</span></div>
       <div class="award-badge"><i class="fas fa-trophy"></i><span>GD USA 2010–2014 — 5 Consecutive Wins</span></div>
     </div>
   </div>
 </section>
 
-<section class="cs-section cs-section-dark">
+<section class="cs-section cs-section-dark" style="text-align:center;">
   <div style="max-width:900px; margin:0 auto;">
     <span class="section-label section-label-light">Results</span>
     <h2 class="cs-h2 cs-h2-light">A Legacy of Creative <em style="color:var(--cyan);">Excellence</em></h2>
@@ -357,5 +412,24 @@
   <a href="index.html#portfolio" class="btn btn-outline">Back to Portfolio</a>
 </div>
 
+<!-- Full image viewer -->
+<div id="full-img-overlay" class="full-img-overlay" onclick="closeFullImg()">
+  <img id="full-img-el" src="" alt="" />
+</div>
+
+<script>
+function openFullImg(src, alt) {
+  const o = document.getElementById('full-img-overlay');
+  document.getElementById('full-img-el').src = src;
+  document.getElementById('full-img-el').alt = alt || '';
+  o.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeFullImg() {
+  document.getElementById('full-img-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFullImg(); });
+</script>
 </body>
 </html>
