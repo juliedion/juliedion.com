@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspired Thinking Group — Julie Dion</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cyan: #00C8E8; --blue: #0077B6;
+      --grad: linear-gradient(135deg, #0077B6 0%, #00C8E8 100%);
+      --dark: #111827; --mid: #374151; --muted: #6B7280;
+      --light: #F9FAFB; --white: #fff; --border: #E5E7EB;
+      --radius: 12px; --shadow: 0 4px 24px rgba(0,0,0,.08); --trans: .3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .topbar { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; }
+    .topbar-back { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--muted); transition: color var(--trans); }
+    .topbar-back:hover { color: var(--blue); }
+    .topbar-logo img { height: 32px; }
+    .topbar-tags { display: flex; gap: 8px; }
+    .topbar-tag { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.08); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+    .cs-hero { background: var(--dark); padding: 80px 48px 64px; overflow: hidden; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
+    .cs-hero-inner { max-width: 1400px; display: flex; gap: 56px; align-items: center; }
+    .hero-text { flex: 1; min-width: 0; }
+    .cs-client { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 24px; }
+    .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
+    .cs-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 40px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
+    .cs-meta-item label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); display: block; margin-bottom: 4px; }
+    .cs-meta-item span { font-size: 14px; font-weight: 500; color: var(--white); }
+    .stats-bar { background: var(--grad); padding: 40px 48px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .1em; margin-top: 6px; }
+    .cs-section { padding: 72px 48px; }
+    .cs-section-alt { background: var(--white); }
+    .cs-section-dark { background: var(--dark); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline-block; margin-bottom: 10px; }
+    .section-label-light { color: rgba(255,255,255,.4); background: none; -webkit-text-fill-color: rgba(255,255,255,.4); }
+    .cs-h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+    .cs-h2-light { color: var(--white); }
+    .cs-p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; max-width: 760px; }
+    .cs-p-light { color: rgba(255,255,255,.6); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .two-col-reverse { direction: rtl; }
+    .two-col-reverse > * { direction: ltr; }
+    @media(max-width:768px) { .two-col { grid-template-columns: 1fr; } .two-col-reverse { direction: ltr; } }
+    .img-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.18); }
+    .img-frame img { width: 100%; display: block; }
+    .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .role-tag { padding: 7px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; background: rgba(0,119,182,.07); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 40px; }
+    .result-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px 20px; text-align: center; }
+    .result-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .result-label { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 8px; line-height: 1.5; }
+    .next-project { background: var(--dark); padding: 64px 48px; text-align: center; }
+    .next-project p { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+    .next-project h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin-bottom: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: all var(--trans); cursor: pointer; }
+    .btn-primary { background: var(--grad); color: var(--white); box-shadow: 0 4px 20px rgba(0,119,182,.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,119,182,.5); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.25); margin-left: 12px; }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+    @media(max-width:768px) { .topbar { padding: 14px 20px; } .cs-hero { padding: 60px 20px 48px; } .cs-section { padding: 56px 20px; } .stats-bar { padding: 36px 20px; } .next-project { padding: 56px 20px; } }
+
+    .lb-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1.5px solid var(--border); cursor:pointer; transition:box-shadow .25s ease, transform .25s ease; }
+    .lb-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.14); }
+    .lb-card-img { height:200px; overflow:hidden; }
+    .lb-card-img img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .4s ease; }
+    .lb-card:hover .lb-card-img img { transform:scale(1.04); }
+    .lb-card-body { padding:16px 18px; }
+    .lb-card-tag { font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--blue); margin-bottom:5px; }
+    .lb-card-title { font-size:14px; font-weight:700; color:var(--dark); margin:0 0 5px; }
+    .lb-card-desc { font-size:12px; color:var(--muted); line-height:1.6; }
+    .lb-card-cta { display:inline-flex; align-items:center; gap:6px; margin-top:12px; background:var(--grad); color:#fff; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:7px 14px; border-radius:6px; }
+
+    .browser-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.22); background: #1e1e1e; }
+    .browser-bar { background: #2c2c2c; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
+    .browser-dots { display: flex; gap: 6px; }
+    .browser-dots span { width: 12px; height: 12px; border-radius: 50%; background: #555; }
+    .browser-dots span:first-child { background: #FF5F57; }
+    .browser-dots span:nth-child(2) { background: #FEBC2E; }
+    .browser-dots span:last-child { background: #28C840; }
+    .browser-url { flex: 1; background: #3a3a3a; border-radius: 4px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,.5); font-family: monospace; }
+    .browser-frame img { width: 100%; display: block; }
+
+    .full-img-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:99999; align-items:center; justify-content:center; cursor:zoom-out; }
+    .full-img-overlay img { max-width:95vw; max-height:92vh; border-radius:8px; object-fit:contain; display:block; box-shadow:0 24px 80px rgba(0,0,0,.7); }
+
+    .ms-asset-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1.5px solid var(--border); }
+    .ms-asset-img { text-align:center; background:#f0f2f5; padding:16px; }
+    .ms-asset-img img { max-width:100%; max-height:320px; object-fit:contain; margin:0 auto; border-radius:8px; }
+    .ms-asset-body { padding:16px 18px; }
+    .ms-asset-tag { font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--blue); margin-bottom:5px; }
+    .ms-asset-title { font-size:14px; font-weight:700; color:var(--dark); margin-bottom:6px; }
+    .ms-asset-desc { font-size:12px; color:var(--muted); line-height:1.6; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html#portfolio" class="topbar-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <div class="topbar-logo"><img src="images/logos/julie-dion-logo-02.png" alt="Julie Dion" /></div>
+  <div class="topbar-tags">
+    <span class="topbar-tag">Web Design</span>
+    <span class="topbar-tag">Digital</span>
+    <span class="topbar-tag">Brand</span>
+  </div>
+</div>
+
+<section class="cs-hero" style="position:relative;overflow:hidden;padding-right:0;">
+  <div class="cs-hero-inner" style="padding-right:520px;">
+    <div class="hero-text">
+      <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,42px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Inspired Thinking Group</div>
+      <h1 class="cs-title">Multi-Client Creative<br /><span>Web, Digital &amp; Brand</span></h1>
+      <p class="cs-subtitle">Senior UI Designer at Inspired Thinking Group (ITG) — delivering web design, digital campaigns, and brand work across Charter Spectrum, ShareBuilder 401k, Newpoint Real Estate, and Microsoft Dynamics 365 motion campaigns.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><label>My Role</label><span>Senior UI Designer</span></div>
+        <div class="cs-meta-item"><label>Agency</label><span>Inspired Thinking Group</span></div>
+        <div class="cs-meta-item"><label>Clients</label><span>Charter · ShareBuilder · Newpoint · Microsoft</span></div>
+        <div class="cs-meta-item"><label>Deliverables</label><span>Web · Digital Ads · Motion · Brand</span></div>
+        <div class="cs-meta-item"><label>Design</label><span>UX/UI · Campaign Art Direction · Motion Design</span></div>
+        <div class="cs-meta-item"><label>Industry</label><span>Telecom · Financial · Real Estate · Technology</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:500px;display:flex;align-items:center;justify-content:center;">
+    <img src="images/Inspired Thinking Group/ITG-Featured.jpg" alt="Inspired Thinking Group" style="width:100%;height:100%;object-fit:contain;object-position:center;border-radius:0;max-width:none;" />
+  </div>
+</section>
+
+<div class="stats-bar" style="flex-direction:column; align-items:center; gap:0; padding:28px 48px 40px;">
+  <p style="font-size:14px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:32px;">Results &amp; Measurable Impact</p>
+  <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:24px; width:100%; padding-bottom:16px;">
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Major Client Accounts</div></div>
+    <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Charter Spectrum Pages</div></div>
+    <div class="stat-item"><div class="stat-num">Multi</div><div class="stat-label">Channel Campaign Delivery</div></div>
+    <div class="stat-item"><div class="stat-num">F500</div><div class="stat-label">Fortune 500 Client Work</div></div>
+  </div>
+</div>
+
+<section class="cs-section cs-section-alt">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;">
+    <span class="section-label">The Work</span>
+    <h2 class="cs-h2">Creative Across <em>Four Major Clients</em></h2>
+    <p class="cs-p" style="max-width:720px;margin-left:auto;margin-right:auto;">From designing 15+ Spectrum Business web pages in Adobe XD and AEM to customer-facing web design for ShareBuilder 401k, real estate brand work for Newpoint, and enterprise motion campaigns for Microsoft Dynamics 365.</p>
+    <div class="role-tags" style="justify-content:center;margin-top:20px;margin-bottom:40px;flex-wrap:wrap;">
+      <span class="role-tag"><i class="fas fa-desktop"></i> Web Design</span>
+      <span class="role-tag"><i class="fas fa-paint-brush"></i> Campaign Art Direction</span>
+      <span class="role-tag"><i class="fas fa-video"></i> Motion Design</span>
+      <span class="role-tag"><i class="fas fa-home"></i> Real Estate Brand</span>
+      <span class="role-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;text-align:left;">
+
+      <div class="lb-card" onclick="window.open('cs-charter-smb-homepage.html','_blank')">
+        <div class="lb-card-img"><img src="images/Charter Spectrum/FireShot-001-SMB-Homepage.jpg" alt="Charter Spectrum" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">UX/UI Design · Web</div>
+          <h3 class="lb-card-title">Charter Spectrum — 15+ Page Web Experience</h3>
+          <p class="lb-card-desc">Designed and authored 15+ major Spectrum Business pages — Small Business homepage, product pages, industry verticals, and more — across desktop, tablet, and mobile in Adobe XD and AEM.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Case Study</div>
+        </div>
+      </div>
+
+      <div class="lb-card" onclick="openFullImg('images/Pyxis/pyxislayout-02.jpg','ShareBuilder 401k — Customer-First Digital Design')">
+        <div class="lb-card-img">
+          <img src="images/Pyxis/pyxislayout-02.jpg" alt="ShareBuilder 401k Website Design" style="object-position:top;" />
+        </div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Web Design</div>
+          <h3 class="lb-card-title">ShareBuilder 401k — Customer-First Digital Design</h3>
+          <p class="lb-card-desc">Designed the customer-facing website and landing pages — bringing clarity and confidence to the retirement savings journey. Prioritized trust signals, simplified navigation, and clear model portfolio comparisons.</p>
+          <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View Design</div>
+        </div>
+      </div>
+
+      <div class="lb-card" onclick="openFullImg('images/Inspired Thinking Group/Newpoint.jpg','Newpoint Real Estate')">
+        <div class="lb-card-img">
+          <img src="images/Inspired Thinking Group/Newpoint.jpg" alt="Newpoint Real Estate" style="object-position:top;" />
+        </div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Brand · Digital</div>
+          <h3 class="lb-card-title">Newpoint Real Estate — Brand &amp; Digital Creative</h3>
+          <p class="lb-card-desc">Brand and digital creative for Newpoint Real Estate — developing visual identity, marketing materials, and digital assets to elevate their market presence.</p>
+          <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div style="max-width:1200px;margin:0 auto;">
+    <span class="section-label">Motion Campaign</span>
+    <h2 class="cs-h2">Microsoft Dynamics 365 — <em>Enterprise Motion &amp; Video</em></h2>
+    <p class="cs-p">Motion design and digital advertising for Microsoft Dynamics 365 — including tablet carousel animations, Facebook video ads, LinkedIn animated campaigns, and illustrated motion graphics targeted at enterprise buyers across key sales initiatives.</p>
+    <div class="role-tags" style="margin-bottom:32px;">
+      <span class="role-tag"><i class="fas fa-film"></i> Motion Design</span>
+      <span class="role-tag"><i class="fas fa-video"></i> Video Production</span>
+      <span class="role-tag"><i class="fab fa-facebook"></i> Facebook Ads</span>
+      <span class="role-tag"><i class="fab fa-linkedin"></i> LinkedIn Creative</span>
+      <span class="role-tag"><i class="fas fa-tablet-alt"></i> Tablet Animation</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;">
+
+      <div class="ms-asset-card">
+        <div class="ms-asset-img">
+          <img src="images/Microsoft/microsoft-d365-animated-ad.gif" alt="Microsoft D365 Animated Ad" />
+        </div>
+        <div class="ms-asset-body">
+          <div class="ms-asset-tag">Animated Campaign · Facebook · LinkedIn</div>
+          <div class="ms-asset-title">D365 Sell — Animated Digital Campaign</div>
+          <div class="ms-asset-desc">Animated digital ad for Microsoft Dynamics 365 Sell — dynamic text animation with illustrated data visualization, optimized for in-feed autoplay with sound-off viewing on Facebook and LinkedIn.</div>
+        </div>
+      </div>
+
+      <div class="ms-asset-card" style="padding:28px;">
+        <div class="ms-asset-tag">Campaign Deliverables</div>
+        <div class="ms-asset-title" style="font-size:15px;margin-bottom:12px;">Four Motion Assets, One Campaign Voice</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-tablet-alt" style="color:#fff;font-size:13px;"></i></div>
+            <div><div style="font-size:12px;font-weight:700;color:#111827;margin-bottom:2px;">Tablet Carousel — D365 Sell Service</div><div style="font-size:11px;color:#6b7280;line-height:1.5;">Animated tablet carousel for sales presentations and digital displays. MP4 · Tablet Format</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fab fa-facebook" style="color:#fff;font-size:13px;"></i></div>
+            <div><div style="font-size:12px;font-weight:700;color:#111827;margin-bottom:2px;">Facebook Video Ad — 3-Way ROI</div><div style="font-size:11px;color:#6b7280;line-height:1.5;">1200×1200 in-feed video ad targeting enterprise buyers. MP4 · Facebook</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fab fa-linkedin" style="color:#fff;font-size:13px;"></i></div>
+            <div><div style="font-size:12px;font-weight:700;color:#111827;margin-bottom:2px;">LinkedIn Animated Campaign</div><div style="font-size:11px;color:#6b7280;line-height:1.5;">Case study-driven creative unit for enterprise decision-makers. MP4 · LinkedIn</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#0077B6,#00C8E8);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-magic" style="color:#fff;font-size:13px;"></i></div>
+            <div><div style="font-size:12px;font-weight:700;color:#111827;margin-bottom:2px;">Illustration GIF — Statistic Animation</div><div style="font-size:11px;color:#6b7280;line-height:1.5;">Looping illustrated GIF for web and email deployment. Animated GIF · Web &amp; Email</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cs-section-dark" style="padding:72px 48px;">
+  <div style="max-width:900px; margin:0 auto;">
+    <span class="section-label section-label-light">Results</span>
+    <h2 class="cs-h2 cs-h2-light">Enterprise Creative <em style="color:var(--cyan);">Across Four Industries</em></h2>
+    <div class="results-grid">
+      <div class="result-card"><div class="result-num">15+</div><div class="result-label">Spectrum Business pages designed in AEM</div></div>
+      <div class="result-card"><div class="result-num">4</div><div class="result-label">Motion deliverables for Microsoft D365 Sell campaign</div></div>
+      <div class="result-card"><div class="result-num">F500</div><div class="result-label">Fortune 500 client creative — Microsoft Dynamics 365</div></div>
+      <div class="result-card"><div class="result-num">Multi</div><div class="result-label">Channels: web, social, motion, print, digital ads</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="next-project">
+  <p>Continue Exploring</p>
+  <h3>More Portfolio Work</h3>
+  <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <a href="cs-charter-smb-homepage.html" class="btn btn-outline">Charter Case Study <i class="fas fa-arrow-right"></i></a>
+</div>
+
+<div class="full-img-overlay" id="full-img-overlay" onclick="closeFullImg()">
+  <img id="full-img-el" src="" alt="" />
+</div>
+
+<script>
+  function openFullImg(src, alt) {
+    const o = document.getElementById('full-img-overlay');
+    document.getElementById('full-img-el').src = src;
+    document.getElementById('full-img-el').alt = alt || '';
+    o.style.display = 'flex';
+  }
+  function closeFullImg() {
+    document.getElementById('full-img-overlay').style.display = 'none';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFullImg(); });
+</script>
+</body>
+</html>
