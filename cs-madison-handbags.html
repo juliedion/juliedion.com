@@ -26,23 +26,21 @@
     .topbar-logo img { height: 32px; }
     .topbar-tags { display: flex; gap: 8px; }
     .topbar-tag { padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; background: rgba(0,119,182,.08); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+
     .cs-hero { background: var(--dark); padding: 80px 48px 64px; overflow: hidden; background-image: radial-gradient(ellipse at 80% 50%, rgba(0,119,182,.2) 0%, transparent 65%); }
-    .cs-hero-inner { max-width: 1400px; display: flex; gap: 56px; align-items: center; }
-    .hero-text { flex: 1; min-width: 0; }
-    .hero-visual { flex: 0 0 480px; overflow: hidden; display: flex; align-items: center; justify-content: center; align-self: stretch; margin-top: -36px; margin-bottom: -64px; }
-    .hero-visual img { width: 110%; max-width: none; filter: drop-shadow(0 24px 56px rgba(0,10,40,.92)) drop-shadow(0 6px 16px rgba(0,15,50,.85)); border-radius: 12px; }
-    @media(max-width:900px) { .cs-hero-inner { flex-direction: column; } .hero-visual { flex: none; width: 100%; margin: 0; } }
-    .cs-client { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 24px; }
+    .cs-hero-inner { max-width: 1400px; }
     .cs-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
     .cs-title span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .cs-subtitle { font-size: 17px; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 640px; margin-bottom: 40px; }
     .cs-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 40px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 32px; }
     .cs-meta-item label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.35); display: block; margin-bottom: 4px; }
     .cs-meta-item span { font-size: 14px; font-weight: 500; color: var(--white); }
+
     .stats-bar { background: var(--grad); padding: 40px 48px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
     .stat-item { text-align: center; }
     .stat-num { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--white); line-height: 1; }
     .stat-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .1em; margin-top: 6px; }
+
     .cs-section { padding: 72px 48px; }
     .cs-section-alt { background: var(--white); }
     .cs-section-dark { background: var(--dark); }
@@ -51,34 +49,27 @@
     .cs-h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
     .cs-h2-light { color: var(--white); }
     .cs-p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; max-width: 760px; }
+    .cs-p-light { color: rgba(255,255,255,.6); }
+
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .two-col-reverse { direction: rtl; }
-    .two-col-reverse > * { direction: ltr; }
-    @media(max-width:768px) { .two-col { grid-template-columns: 1fr; } .two-col-reverse { direction: ltr; } }
+    @media(max-width:768px) { .two-col { grid-template-columns: 1fr; } }
     .img-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.18); }
     .img-frame img { width: 100%; display: block; }
-    .figma-frame { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.22); background: #1e1e1e; }
-    .figma-titlebar { background: #2c2c2c; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
-    .figma-dots { display: flex; gap: 6px; }
-    .figma-dots span { width: 12px; height: 12px; border-radius: 50%; }
-    .figma-dots .d1 { background: #FF5F57; } .figma-dots .d2 { background: #FEBC2E; } .figma-dots .d3 { background: #28C840; }
-    .figma-title { font-size: 12px; color: rgba(255,255,255,.5); margin-left: 8px; }
-    .figma-body img { width: 100%; display: block; }
+
+    .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .role-tag { padding: 7px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; background: rgba(0,119,182,.07); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
+
     .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
     .process-step { background: var(--white); border-radius: var(--radius); padding: 28px 24px; border: 1.5px solid var(--border); }
     .process-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 12px; }
     .process-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
     .process-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
-    .role-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-    .role-tag { padding: 7px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; background: rgba(0,119,182,.07); color: var(--blue); border: 1px solid rgba(0,119,182,.15); }
-    .img-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
-    @media(max-width:600px) { .img-grid-2 { grid-template-columns: 1fr; } }
-    .team-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-    .team-photo img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
     .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 40px; }
     .result-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px 20px; text-align: center; }
     .result-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .result-label { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 8px; line-height: 1.5; }
+
     .next-project { background: var(--dark); padding: 64px 48px; text-align: center; }
     .next-project p { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
     .next-project h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--white); margin-bottom: 28px; }
@@ -87,70 +78,100 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,119,182,.5); }
     .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.25); margin-left: 12px; }
     .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* lb-card system */
+    .lb-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1.5px solid var(--border); cursor:pointer; transition:box-shadow .25s ease, transform .25s ease; }
+    .lb-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.14); }
+    .lb-card-img { height:200px; overflow:hidden; }
+    .lb-card-img img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .4s ease; }
+    .lb-card:hover .lb-card-img img { transform:scale(1.04); }
+    .lb-card-body { padding:16px 18px; }
+    .lb-card-tag { font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--blue); margin-bottom:5px; }
+    .lb-card-title { font-size:14px; font-weight:700; color:var(--dark); margin:0 0 5px; }
+    .lb-card-desc { font-size:12px; color:var(--muted); line-height:1.6; }
+    .lb-card-cta { display:inline-flex; align-items:center; gap:6px; margin-top:12px; background:var(--grad); color:#fff; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:7px 14px; border-radius:6px; }
+
+    /* builder lightbox */
+    .blb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.8); z-index:9999; align-items:flex-start; justify-content:center; padding:24px; overflow-y:auto; }
+    .blb-modal { background:#fff; border-radius:14px; width:100%; max-width:1100px; min-height:0; display:flex; flex-direction:column; box-shadow:0 32px 80px rgba(0,0,0,.5); margin:auto; }
+    .blb-header { padding:16px 24px; border-bottom:1px solid #e5e7eb; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; position:sticky; top:0; background:#fff; z-index:2; border-radius:14px 14px 0 0; }
+    .blb-close { background:none; border:none; font-size:22px; color:#6b7280; cursor:pointer; line-height:1; padding:4px 8px; border-radius:6px; }
+    .blb-close:hover { background:#f3f4f6; }
+    .blb-screens { padding:24px; background:#f9fafb; border-radius:0 0 14px 14px; display:flex; flex-direction:column; gap:32px; }
+
+    /* full-img overlay */
+    .full-img-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:99999; align-items:center; justify-content:center; cursor:zoom-out; }
+    .full-img-overlay img { max-width:95vw; max-height:92vh; border-radius:8px; object-fit:contain; display:block; box-shadow:0 24px 80px rgba(0,0,0,.7); }
+
     @media(max-width:768px) { .topbar { padding: 14px 20px; } .cs-hero { padding: 60px 20px 48px; } .cs-section { padding: 56px 20px; } .stats-bar { padding: 36px 20px; } .next-project { padding: 56px 20px; } }
 
-    /* ── Process Journey Illustrations ── */
-    .pj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; }
-    @media(max-width:700px) { .pj-grid { grid-template-columns: 1fr; } }
-    .pj-card { border-radius: 14px; overflow: hidden; position: relative; min-height: 270px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,.2); }
-    .pj-lbl { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 22px; background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, transparent 100%); }
-    .pj-stg { display: block; font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 3px; }
-    .pj-nm { font-size: 14px; font-weight: 700; color: white; }
-    /* Brainstorm */
-    .bs-ill { background: #0d1b2a; }
-    .bs-wrap { position: relative; width: 200px; height: 148px; }
-    .bs-tbl { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 140px; height: 70px; background: #1a2744; border-radius: 35px; border: 2px solid #243a6a; }
-    .bs-lp { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 42px; height: 28px; background: #243a6a; border-radius: 3px 3px 0 0; border: 1.5px solid #3a5090; }
-    .bs-lp::after { content: ''; position: absolute; bottom: -4px; left: -5px; right: -5px; height: 4px; background: #1a2744; border-radius: 0 0 3px 3px; }
-    .bs-p { position: absolute; display: flex; flex-direction: column; align-items: center; }
-    .bs-p .h { width: 18px; height: 18px; border-radius: 50%; }
-    .bs-p .b { width: 28px; height: 11px; border-radius: 6px 6px 0 0; margin-top: 2px; opacity: .85; }
-    .bs-p.tp { top: -8px; left: 50%; transform: translateX(-50%); }
-    .bs-p.bl { bottom: -8px; left: 10px; }
-    .bs-p.br { bottom: -8px; right: 10px; }
-    .bs-p.lt { top: 50%; left: -6px; transform: translateY(-50%) rotate(-90deg); }
-    .bs-p.rt { top: 50%; right: -6px; transform: translateY(-50%) rotate(90deg); }
-    .bs-sk { position: absolute; width: 22px; height: 22px; border-radius: 2px; }
-    /* Whiteboard */
-    .wb-ill { background: #eef0f2; }
-    .wb-bd { background: white; border-radius: 8px; border: 3px solid #c5cad0; box-shadow: 3px 3px 0 #c5cad0; padding: 14px; width: 240px; }
-    .wb-tr { height: 6px; background: #c5cad0; border-radius: 3px; margin-bottom: 12px; }
-    .wb-rw { display: flex; align-items: center; gap: 5px; margin-bottom: 6px; }
-    .wb-nd { border: 2px solid; border-radius: 5px; padding: 4px 8px; font-size: 9px; font-weight: 700; white-space: nowrap; }
-    .wb-bl { border-color: #0077B6; color: #0077B6; background: white; }
-    .wb-fl { border-color: #0077B6; background: #0077B6; color: white; }
-    .wb-ar { font-size: 11px; color: #adb5bd; }
-    .wb-ps { display: flex; gap: 5px; margin-top: 10px; }
-    .wb-pt { width: 42px; height: 42px; border-radius: 2px; font-size: 7px; font-weight: 600; padding: 4px; line-height: 1.4; color: rgba(0,0,0,.7); }
-    /* Device Showcase */
-    .dv-ill { background: #0d1117; flex-direction: row; padding: 22px; gap: 16px; }
-    .dv-mon { flex-shrink: 0; }
-    .dv-sc { width: 190px; height: 118px; background: #161b22; border-radius: 5px 5px 0 0; border: 5px solid #30363d; overflow: hidden; }
-    .dv-sc img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-    .dv-nk { width: 28px; height: 10px; background: #30363d; margin: 0 auto; }
-    .dv-st { width: 64px; height: 6px; background: #30363d; border-radius: 3px; margin: 0 auto; }
-    .dv-ph { flex-shrink: 0; margin-top: 18px; }
-    .dv-ps { width: 56px; height: 104px; background: #161b22; border-radius: 11px; border: 4px solid #30363d; overflow: hidden; position: relative; }
-    .dv-ps::before { content: ''; position: absolute; top: 5px; left: 50%; transform: translateX(-50%); width: 14px; height: 3px; background: #30363d; border-radius: 2px; z-index: 2; }
-    .dv-ps img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    /* Wireframe */
-    .wf-ill { background: #0d1117; padding: 22px; }
-    .wf-win { width: 100%; max-width: 240px; background: #161b22; border-radius: 8px; border: 1.5px solid #30363d; overflow: hidden; }
-    .wf-tb { background: #21262d; padding: 7px 10px; display: flex; align-items: center; gap: 4px; }
-    .wf-d { width: 7px; height: 7px; border-radius: 50%; }
-    .wf-u { flex: 1; background: #30363d; border-radius: 3px; height: 12px; margin: 0 5px; }
-    .wf-hr { padding: 12px; background: #0d1117; }
-    .wf-ln { height: 7px; border-radius: 4px; margin-bottom: 5px; }
-    .wf-la { background: linear-gradient(90deg, #0077B6, #00C8E8); width: 72%; }
-    .wf-lb { background: #21262d; width: 58%; }
-    .wf-lc { background: #21262d; width: 42%; }
-    .wf-bt { width: 64px; height: 18px; background: linear-gradient(135deg, #0077B6, #00C8E8); border-radius: 4px; margin-top: 8px; }
-    .wf-gr { padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
-    .wf-tl { background: #21262d; border-radius: 4px; overflow: hidden; }
-    .wf-ti { height: 34px; background: linear-gradient(135deg, #0d1117, #21262d); }
-    .wf-bd2 { padding: 5px; }
-    .wf-tln { height: 4px; background: #30363d; border-radius: 2px; margin-bottom: 3px; }
-    .wf-tls { width: 55%; }
+    /* ── Monet bag builder screens ── */
+    .mhb-screen { border-radius:10px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,.18); }
+    .mhb-bar { background:#2d2d2d; padding:9px 14px; display:flex; align-items:center; gap:10px; }
+    .mhb-dots { display:flex; gap:5px; }
+    .mhb-dots span { width:9px; height:9px; border-radius:50%; }
+    .mhb-dots .r { background:#FF5F57; } .mhb-dots .y { background:#FEBC2E; } .mhb-dots .g { background:#28C840; }
+    .mhb-url { flex:1; background:#3d3d3d; border-radius:4px; padding:3px 10px; font-size:10px; color:rgba(255,255,255,.45); }
+    .mhb-body { background:#f5f0eb; font-family:'Georgia',serif; }
+
+    /* site nav */
+    .mhb-nav { background:#f5f0eb; border-bottom:1px solid #e0d8cf; padding:14px 32px; display:flex; align-items:center; justify-content:space-between; }
+    .mhb-logo { font-family:'Georgia',serif; font-size:15px; letter-spacing:.18em; color:#5a4a3a; text-transform:uppercase; }
+    .mhb-logo em { font-style:italic; font-size:11px; display:block; letter-spacing:.3em; color:#a08060; margin-top:1px; }
+    .mhb-nav-links { display:flex; gap:24px; list-style:none; }
+    .mhb-nav-links li { font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:#7a6a5a; cursor:pointer; }
+    .mhb-nav-links li:hover { color:#5a4a3a; }
+    .mhb-nav-icons { display:flex; gap:12px; color:#7a6a5a; font-size:12px; }
+
+    /* hero banner */
+    .mhb-hero { background:#ede5da; padding:32px; text-align:center; }
+    .mhb-hero-eyebrow { font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:#a08060; margin-bottom:8px; }
+    .mhb-hero-title { font-size:22px; letter-spacing:.06em; color:#3a2e22; margin-bottom:6px; }
+    .mhb-hero-sub { font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:#a08060; margin-bottom:20px; }
+    .mhb-hero-btn { display:inline-block; background:#5a4a3a; color:#f5f0eb; font-size:9px; letter-spacing:.2em; text-transform:uppercase; padding:8px 20px; border-radius:2px; cursor:pointer; }
+
+    /* section heading */
+    .mhb-section-head { text-align:center; padding:24px 32px 12px; }
+    .mhb-section-title { font-size:11px; letter-spacing:.35em; text-transform:uppercase; color:#5a4a3a; border-bottom:1px solid #c8b8a4; padding-bottom:12px; display:inline-block; }
+
+    /* product grid */
+    .mhb-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; padding:0 24px 24px; background:#f5f0eb; }
+    .mhb-product { padding:12px; text-align:center; border:1px solid transparent; cursor:pointer; }
+    .mhb-product:hover { border-color:#ddd0c2; background:#ede5da; }
+    .mhb-product-img { aspect-ratio:1; background:#e8e0d5; border-radius:4px; margin-bottom:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .mhb-product-img img { width:90%; height:90%; object-fit:contain; }
+    .mhb-product-name { font-size:8px; letter-spacing:.2em; text-transform:uppercase; color:#5a4a3a; margin-bottom:2px; }
+    .mhb-product-price { font-size:8px; color:#a08060; }
+
+    /* builder screen */
+    .mhb-builder-body { background:#f5f0eb; display:flex; gap:0; min-height:380px; }
+    .mhb-builder-sidebar { width:220px; flex-shrink:0; background:#ede5da; border-right:1px solid #d8cfc4; padding:20px 16px; }
+    .mhb-builder-sidebar h4 { font-size:9px; letter-spacing:.25em; text-transform:uppercase; color:#5a4a3a; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #c8b8a4; }
+    .mhb-option-group { margin-bottom:18px; }
+    .mhb-option-label { font-size:8px; letter-spacing:.2em; text-transform:uppercase; color:#a08060; margin-bottom:8px; display:block; }
+    .mhb-color-row { display:flex; gap:6px; flex-wrap:wrap; }
+    .mhb-swatch { width:18px; height:18px; border-radius:50%; cursor:pointer; border:2px solid transparent; }
+    .mhb-swatch.active { border-color:#5a4a3a; }
+    .mhb-style-row { display:flex; flex-direction:column; gap:4px; }
+    .mhb-style-opt { font-size:8px; padding:5px 8px; background:#fff; border:1px solid #d8cfc4; border-radius:2px; cursor:pointer; color:#5a4a3a; letter-spacing:.05em; }
+    .mhb-style-opt.active { background:#5a4a3a; color:#f5f0eb; border-color:#5a4a3a; }
+    .mhb-builder-preview { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px; gap:16px; }
+    .mhb-preview-bag { width:200px; height:160px; background:#e8e0d5; border-radius:8px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(0,0,0,.12); overflow:hidden; }
+    .mhb-preview-bag img { width:80%; height:80%; object-fit:contain; }
+    .mhb-preview-actions { display:flex; gap:8px; }
+    .mhb-preview-btn { font-size:8px; letter-spacing:.15em; text-transform:uppercase; padding:7px 16px; border-radius:2px; cursor:pointer; }
+    .mhb-preview-btn.primary { background:#5a4a3a; color:#f5f0eb; }
+    .mhb-preview-btn.secondary { background:transparent; border:1px solid #5a4a3a; color:#5a4a3a; }
+    .mhb-builder-specs { width:180px; flex-shrink:0; background:#ede5da; border-left:1px solid #d8cfc4; padding:20px 16px; }
+    .mhb-builder-specs h4 { font-size:9px; letter-spacing:.25em; text-transform:uppercase; color:#5a4a3a; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #c8b8a4; }
+    .mhb-spec-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid #e8e0d5; }
+    .mhb-spec-key { font-size:7px; letter-spacing:.15em; text-transform:uppercase; color:#a08060; }
+    .mhb-spec-val { font-size:8px; color:#5a4a3a; font-weight:600; }
+    .mhb-add-cart { width:100%; margin-top:16px; background:#5a4a3a; color:#f5f0eb; font-size:8px; letter-spacing:.2em; text-transform:uppercase; padding:9px; border-radius:2px; text-align:center; cursor:pointer; }
+
+    /* screen label */
+    .screen-label { font-size:11px; font-weight:700; color:#374151; margin-bottom:10px; letter-spacing:.05em; }
+    .screen-caption { font-size:12px; color:#6b7280; margin-top:10px; line-height:1.6; }
   </style>
 </head>
 <body>
@@ -165,106 +186,151 @@
   </div>
 </div>
 
-<section class="cs-hero">
-  <div class="cs-hero-inner">
-    <div class="hero-text">
-      <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,42px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Madison Handbags — Monet Line</div>
+<!-- Hero -->
+<section class="cs-hero" style="position:relative;overflow:hidden;padding-right:0;">
+  <div class="cs-hero-inner" style="padding-right:520px;">
+    <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,42px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Madison Handbags — Monet Line</div>
     <h1 class="cs-title">Brand Transformation &amp;<br /><span>Custom Digital Commerce</span></h1>
-    <p class="cs-subtitle">As Marketing &amp; Creative Director for Madison Handbags — makers of the Monet Handbags line — I led a full brand relaunch: new visual identity, a custom online handbag builder, seasonal catalogs, newsletters, lifestyle photography direction, and print advertising.</p>
+    <p class="cs-subtitle">As Marketing &amp; Creative Director for Madison Handbags — makers of the Monet Handbags line — I led a full brand relaunch: new visual identity, a custom online bag builder, seasonal catalogs, newsletters, lifestyle photography direction, and print advertising.</p>
     <div class="cs-meta">
       <div class="cs-meta-item"><label>My Role</label><span>Marketing &amp; Creative Director</span></div>
       <div class="cs-meta-item"><label>Company</label><span>Madison Handbags (Monet)</span></div>
       <div class="cs-meta-item"><label>Timeline</label><span>2013 – 2014</span></div>
       <div class="cs-meta-item"><label>Deliverables</label><span>Brand · E-Commerce · Catalog · Print</span></div>
-              <div class="cs-meta-item"><label>Design</label><span>Brand Identity · E-Commerce Design · Catalog Production</span></div>
-        <div class="cs-meta-item"><label>Deliverables</label><span>Custom Online Builder · Seasonal Catalogs · Email Newsletters</span></div>
-        <div class="cs-meta-item"><label>Direction</label><span>Photo Art Direction · Print Advertising · 360° Digital Ecosystem</span></div>
-        <div class="cs-meta-item"><label>Industry</label><span>Retail · E-Commerce</span></div>
+      <div class="cs-meta-item"><label>Design</label><span>Brand Identity · E-Commerce Design · Catalog Production</span></div>
+      <div class="cs-meta-item"><label>Deliverables</label><span>Custom Online Builder · Seasonal Catalogs · Email Newsletters</span></div>
+      <div class="cs-meta-item"><label>Direction</label><span>Photo Art Direction · Print Advertising · 360° Digital Ecosystem</span></div>
+      <div class="cs-meta-item"><label>Industry</label><span>Retail · E-Commerce</span></div>
     </div>
-    </div>
-    <div class="hero-visual">
-      <img src="images/Madison Handbags/MHB-Feature.jpg" alt="Madison Handbags — Monet Line" />
-    </div>
+  </div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:500px;display:flex;align-items:center;justify-content:center;">
+    <img src="images/Madison Handbags/MHBSpringCatalog.png" alt="Madison Handbags Spring Catalog" style="width:100%;height:100%;object-fit:cover;object-position:left top;border-radius:0;max-width:none;" />
   </div>
 </section>
 
+<!-- Stats ribbon -->
 <div class="stats-bar" style="flex-direction:column; align-items:center; gap:0; padding:28px 48px 40px;">
   <p style="font-size:14px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:32px;">Results &amp; Measurable Impact</p>
   <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:24px; width:100%; padding-bottom:16px;">
-  <div class="stat-item"><div class="stat-num">Full</div><div class="stat-label">Brand Relaunch</div></div>
-  <div class="stat-item"><div class="stat-num">Custom</div><div class="stat-label">Online Handbag Builder</div></div>
-  <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Seasonal Catalog Campaigns</div></div>
-  <div class="stat-item"><div class="stat-num">360°</div><div class="stat-label">Digital &amp; Print Ecosystem</div></div>
-</div>
+    <div class="stat-item"><div class="stat-num">Full</div><div class="stat-label">Brand Relaunch</div></div>
+    <div class="stat-item"><div class="stat-num">Custom</div><div class="stat-label">Online Handbag Builder</div></div>
+    <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Seasonal Catalog Campaigns</div></div>
+    <div class="stat-item"><div class="stat-num">360°</div><div class="stat-label">Digital &amp; Print Ecosystem</div></div>
+  </div>
 </div>
 
-<section class="cs-section cs-section-alt">
-  <div class="two-col">
-    <div>
-      <span class="section-label">The Challenge</span>
-      <h2 class="cs-h2">Reinventing a Fashion Brand<br /><em>for the Digital Age</em></h2>
-      <p class="cs-p">Madison Handbags needed to transform from a traditional catalog-only brand into a digitally-driven fashion retailer. The Monet Handbags line had strong product quality but an identity that hadn't kept pace with the market. As Marketing and Creative Director, I owned the full scope of the brand evolution.</p>
-      <p class="cs-p">The strategy centered on three pillars: a refreshed brand identity with elevated lifestyle photography, a custom online handbag configurator letting customers build their own bags, and a seasonal catalog system that worked across print and digital channels.</p>
-      <div class="role-tags">
-        <span class="role-tag"><i class="fas fa-palette"></i> Brand Identity</span>
-        <span class="role-tag"><i class="fas fa-shopping-cart"></i> E-Commerce Design</span>
-        <span class="role-tag"><i class="fas fa-book"></i> Catalog Production</span>
-        <span class="role-tag"><i class="fas fa-camera"></i> Photo Art Direction</span>
-        <span class="role-tag"><i class="fas fa-envelope"></i> Email / Newsletter Design</span>
+<!-- Collection of Work -->
+<section class="cs-section cs-section-alt" style="text-align:center;">
+  <div style="max-width:800px; margin:0 auto;">
+    <span class="section-label">Collection of Work</span>
+    <h2 class="cs-h2">Reinventing a Fashion Brand<br /><em>for the Digital Age</em></h2>
+    <p class="cs-p" style="margin:0 auto 28px;">Madison Handbags needed to transform from a catalog-only brand into a digitally-driven fashion retailer. The strategy centered on three pillars: a refreshed brand identity with elevated lifestyle photography, a custom online handbag configurator letting customers build their own bags, and a seasonal catalog system that worked across print and digital channels.</p>
+    <div class="role-tags" style="justify-content:center;">
+      <span class="role-tag"><i class="fas fa-palette"></i> Brand Identity</span>
+      <span class="role-tag"><i class="fas fa-shopping-cart"></i> E-Commerce Design</span>
+      <span class="role-tag"><i class="fas fa-book"></i> Catalog Production</span>
+      <span class="role-tag"><i class="fas fa-camera"></i> Photo Art Direction</span>
+      <span class="role-tag"><i class="fas fa-envelope"></i> Email / Newsletter Design</span>
+      <span class="role-tag"><i class="fas fa-cog"></i> Custom Configurator UX</span>
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; margin-top:48px; text-align:left;">
+
+    <!-- Card 1: Online Bag Builder -->
+    <div class="lb-card" onclick="openBuilderLb()">
+      <div class="lb-card-img" style="background:#ede5da; display:flex; align-items:center; justify-content:center; height:200px;">
+        <!-- mini preview of builder UI -->
+        <div style="width:90%; background:#f5f0eb; border-radius:6px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.15);">
+          <div style="background:#2d2d2d; padding:5px 10px; display:flex; gap:4px; align-items:center;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#FF5F57;display:inline-block;"></span>
+            <span style="width:6px;height:6px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span>
+            <span style="width:6px;height:6px;border-radius:50%;background:#28C840;display:inline-block;"></span>
+            <span style="flex:1;background:#3d3d3d;border-radius:3px;height:8px;margin-left:6px;font-size:7px;color:rgba(255,255,255,.4);padding:1px 6px;display:flex;align-items:center;">monethandbags.com/builder</span>
+          </div>
+          <div style="background:#f5f0eb; padding:8px 10px;">
+            <div style="text-align:center; font-size:6px; letter-spacing:.3em; text-transform:uppercase; color:#5a4a3a; margin-bottom:6px; padding-bottom:5px; border-bottom:1px solid #d8cfc4;">Style All Your Own</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;">
+              <div style="background:#ede5da;border-radius:3px;aspect-ratio:1;"></div>
+              <div style="background:#e8e0d5;border-radius:3px;aspect-ratio:1;border:1px solid #c8b8a4;"></div>
+              <div style="background:#ede5da;border-radius:3px;aspect-ratio:1;"></div>
+            </div>
+            <div style="margin-top:5px; display:flex; gap:3px; justify-content:center;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#c8a882;"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#8b7355;border:1.5px solid #5a4a3a;"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#d4c4b0;"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#e8d5c0;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">E-Commerce · UX Design</div>
+        <h3 class="lb-card-title">Online Bag Builder — "Style All Your Own"</h3>
+        <p class="lb-card-desc">Custom handbag configurator letting customers select style, color, hardware, and lining to build a personalized bag — a first in the brand's history.</p>
+        <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Screens</div>
       </div>
     </div>
-    <div class="img-frame">
-      <img src="images/Madison Handbags/MHB-Feature.jpg" alt="Madison Handbags Portfolio Overview" />
+
+    <!-- Card 2: Spring Catalog -->
+    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/MHBSpringCatalog.png','Spring Collection Catalog')">
+      <div class="lb-card-img"><img src="images/Madison Handbags/MHBSpringCatalog.png" alt="Spring Catalog" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Print · Catalog</div>
+        <h3 class="lb-card-title">Spring Collection Catalog</h3>
+        <p class="lb-card-desc">Editorial-quality spring catalog — lifestyle photography direction, product layout, and print production for the Monet Handbags seasonal campaign.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+      </div>
     </div>
+
+    <!-- Card 3: Fall Catalog -->
+    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/MHBFallCatalog.png','Fall Collection Catalog')">
+      <div class="lb-card-img"><img src="images/Madison Handbags/MHBFallCatalog.png" alt="Fall Catalog" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Print · Catalog</div>
+        <h3 class="lb-card-title">Fall / Winter Catalog</h3>
+        <p class="lb-card-desc">Fall/Winter seasonal catalog — rich photography curation, editorial layout, and dual-channel print and digital deployment.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+      </div>
+    </div>
+
+    <!-- Card 4: Brand & Logo -->
+    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/fancymonetlogo_frame_gray_large_whiteback_facebook.jpg','Monet Brand Identity')">
+      <div class="lb-card-img"><img src="images/Madison Handbags/fancymonetlogo_frame_gray_large_whiteback_facebook.jpg" alt="Monet Brand Identity" style="object-fit:contain; background:#f9f9f9;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Brand Identity</div>
+        <h3 class="lb-card-title">Monet Brand Identity System</h3>
+        <p class="lb-card-desc">Full brand system including logo, typography, color palette, and brand standards — built from the ground up to position Monet as accessible luxury.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+      </div>
+    </div>
+
+    <!-- Card 5: Layout & Brand -->
+    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/Mhb.Monet-layout.jpg','Monet Layout &amp; Campaign Materials')">
+      <div class="lb-card-img"><img src="images/Madison Handbags/Mhb.Monet-layout.jpg" alt="Monet Layout" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Campaign · Print</div>
+        <h3 class="lb-card-title">Brand Campaign Materials</h3>
+        <p class="lb-card-desc">Campaign materials spanning print advertising, social assets, and retail touchpoints — "Classy &amp; Fabulous" brand positioning at every channel.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+      </div>
+    </div>
+
+    <!-- Card 6: VIP Invitation -->
+    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/Invitation.jpg','VIP Catalog Preview Event Invitation')">
+      <div class="lb-card-img"><img src="images/Madison Handbags/Invitation.jpg" alt="VIP Invitation" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Brand Experience</div>
+        <h3 class="lb-card-title">VIP Catalog Preview Invitation</h3>
+        <p class="lb-card-desc">Exclusive invitation for the VIP catalog preview event — part of The Insider loyalty program building brand community and repeat purchase.</p>
+        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="cs-section">
-  <span class="section-label">Monet Rebrand</span>
-  <h2 class="cs-h2">From Catalog Brand to <em>Fashion Identity</em></h2>
-  <p class="cs-p">The Monet Handbags rebrand centered on elegance and aspiration — lifestyle photography shot in outdoor settings with model talent, a sophisticated color palette of burgundy and cream, and editorial-quality layout for the seasonal catalog. The brand's new tagline "Classy &amp; Fabulous" set the tone for every touchpoint.</p>
-  <div class="img-grid-2">
-    <div class="figma-frame">
-      <div class="figma-titlebar">
-        <div class="figma-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-        <span class="figma-title">Monet Handbags — Brand &amp; Catalog System</span>
-      </div>
-      <div class="figma-body">
-        <img src="images/Madison Handbags/mhblayout.jpg" alt="Monet Handbags Brand Layout" />
-      </div>
-    </div>
-    <div class="img-frame">
-      <img src="images/Madison Handbags/Invitation.jpg" alt="Madison Handbags VIP Catalog Preview Event Invitation" />
-    </div>
-  </div>
-</section>
-
-<section class="cs-section cs-section-alt">
-  <div class="two-col two-col-reverse">
-    <div>
-      <span class="section-label">Digital Commerce</span>
-      <h2 class="cs-h2">Custom Handbag Builder —<br /><em>"Style All Your Own"</em></h2>
-      <p class="cs-p">The flagship digital initiative was a custom handbag configurator — "Style All Your Own" — letting customers select from dozens of base styles, colors, and hardware options to build a personalized bag. This was a significant innovation for the brand and a primary driver of online engagement.</p>
-      <p class="cs-p">I designed the full UX for the configurator, product photography display, and the e-commerce site architecture that housed both the Monet line and the Madison Handbags brand.</p>
-    </div>
-    <div class="pj-card bs-ill" style="min-height:300px; border-radius:var(--radius);">
-  <div class="bs-wrap">
-    <div class="bs-tbl"><div class="bs-lp"></div></div>
-    <div class="bs-p tp"><div class="h" style="background:#0077B6"></div><div class="b" style="background:#0077B6"></div></div>
-    <div class="bs-p bl"><div class="h" style="background:#00C8E8"></div><div class="b" style="background:#00C8E8"></div></div>
-    <div class="bs-p br"><div class="h" style="background:#EF476F"></div><div class="b" style="background:#EF476F"></div></div>
-    <div class="bs-p lt"><div class="h" style="background:#FFD166"></div><div class="b" style="background:#FFD166"></div></div>
-    <div class="bs-p rt"><div class="h" style="background:#06D6A0"></div><div class="b" style="background:#06D6A0"></div></div>
-    <div class="bs-sk" style="background:#FFD166;top:16px;right:24px;transform:rotate(8deg)"></div>
-    <div class="bs-sk" style="background:#EF476F;top:36px;right:8px;transform:rotate(-5deg)"></div>
-    <div class="bs-sk" style="background:#06D6A0;bottom:16px;left:16px;transform:rotate(12deg)"></div>
-    <div class="bs-sk" style="background:#0077B6;bottom:28px;right:36px;transform:rotate(-8deg)"></div>
-  </div>
-  <div class="pj-lbl"><span class="pj-stg">Process</span><div class="pj-nm">Team Collaboration &amp; Brainstorm</div></div>
-</div>
-  </div>
-</section>
-
+<!-- Design Process -->
 <section class="cs-section">
   <span class="section-label">Design Process</span>
   <h2 class="cs-h2">Full Brand Ecosystem<br /><em>in 12 Months</em></h2>
@@ -272,27 +338,28 @@
     <div class="process-step">
       <div class="process-num">01</div>
       <div class="process-title">Brand Strategy</div>
-      <div class="process-desc">Conducted market positioning analysis and defined the Monet brand strategy — identifying the lifestyle-focused "accessible luxury" positioning that differentiated Madison Handbags in the direct-to-consumer market.</div>
+      <div class="process-desc">Conducted market positioning analysis and defined the Monet brand strategy — "accessible luxury" positioning that differentiated Madison Handbags in the direct-to-consumer market.</div>
     </div>
     <div class="process-step">
       <div class="process-num">02</div>
       <div class="process-title">Visual Identity</div>
-      <div class="process-desc">Developed the Monet visual identity system: logo, typography, color palette, lifestyle photography art direction, and brand standards applied across catalog, digital, and retail touchpoints.</div>
+      <div class="process-desc">Developed the Monet visual identity system: logo, typography, color palette, lifestyle photography art direction, and brand standards across catalog, digital, and retail.</div>
     </div>
     <div class="process-step">
       <div class="process-num">03</div>
       <div class="process-title">Catalog &amp; Print</div>
-      <div class="process-desc">Produced Fall/Winter and Spring catalogs — editorial layout, product photography curation, model shoot art direction, and print production management for 2 seasonal campaigns.</div>
+      <div class="process-desc">Produced Fall/Winter and Spring catalogs — editorial layout, product photography curation, model shoot art direction, and print production for 2 seasonal campaigns.</div>
     </div>
     <div class="process-step">
       <div class="process-num">04</div>
       <div class="process-title">Digital &amp; E-Commerce</div>
-      <div class="process-desc">Designed the "Style All Your Own" handbag configurator, e-commerce site, email newsletter templates, and insider newsletter "The Insider" — a VIP program building brand loyalty and repeat purchase.</div>
+      <div class="process-desc">Designed the "Style All Your Own" bag builder, e-commerce site, and The Insider VIP newsletter — a loyalty program building brand community and repeat purchase.</div>
     </div>
   </div>
 </section>
 
-<section class="cs-section cs-section-dark">
+<!-- Results -->
+<section class="cs-section-dark" style="padding:72px 48px;">
   <div style="max-width:900px; margin:0 auto;">
     <span class="section-label section-label-light">Results</span>
     <h2 class="cs-h2 cs-h2-light">A Brand Transformed<br /><em style="color:var(--cyan);">Inside and Out</em></h2>
@@ -305,21 +372,220 @@
   </div>
 </section>
 
+<div class="next-project">
+  <p>Continue Exploring</p>
+  <h3>More Portfolio Work</h3>
+  <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
 
-<!-- Work Samples Gallery -->
-<section class="cs-section cs-section-alt">
-  <span class="section-label">Work Samples</span>
-  <h2 class="cs-h2">Brand, Print & Catalog Work</h2>
-  <div class="gs-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:32px;">
-      <div class="gs-item"><img src="images/Madison Handbags/MHBFallCatalog.png" alt="Madison Handbags fall catalog" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Madison Handbags/MHBSpringCatalog.png" alt="Madison Handbags spring catalog" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Madison Handbags/Mhb-layout.jpg" alt="MHB layout" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Madison Handbags/Mhb.Monet-layout.jpg" alt="Monet layout" loading="lazy" /></div>
-      <div class="gs-item"><img src="images/Madison Handbags/fancymonetlogo_frame_gray_large_whiteback_facebook.jpg" alt="Fancy Monet logo — Facebook" loading="lazy" /></div>
-  </div>
-</section>
-<style>
-  .gs-item { border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6; }
-  .gs-item img { width:100%;height:220px;object-fit:cover;display:block; }
-</style></body>
+<!-- ═══ Bag Builder Lightbox ═══ -->
+<div class="blb-overlay" id="blb-overlay" onclick="if(event.target===this)closeBuilderLb()">
+  <div class="blb-modal">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Online Bag Builder — "Style All Your Own"</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Monet Handbags · E-Commerce Configurator</div>
+      </div>
+      <button class="blb-close" onclick="closeBuilderLb()">×</button>
+    </div>
+    <div class="blb-screens">
+
+      <!-- Screen 1: Collections / Shop page -->
+      <div>
+        <div class="screen-label">Screen 1 — Collections / Shop</div>
+        <div class="mhb-screen">
+          <div class="mhb-bar">
+            <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+            <div class="mhb-url">monethandbags.com/collections/handbags</div>
+          </div>
+          <div class="mhb-body">
+            <nav class="mhb-nav">
+              <div class="mhb-logo">Monet<em>by Madison Handbags</em></div>
+              <ul class="mhb-nav-links">
+                <li>Home</li><li>Collections</li><li>Build Yours</li><li>About</li><li>Sale</li><li>Contact</li>
+              </ul>
+              <div class="mhb-nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-shopping-bag"></i>
+              </div>
+            </nav>
+            <div class="mhb-section-head">
+              <div class="mhb-section-title">Handbags</div>
+            </div>
+            <div class="mhb-grid">
+              <div class="mhb-product">
+                <div class="mhb-product-img"><img src="images/Madison Handbags/MHB-Feature.jpg" alt="Nova" style="object-fit:contain;width:80%;height:80%;" /></div>
+                <div class="mhb-product-name">Nova</div>
+                <div class="mhb-product-price">$148</div>
+              </div>
+              <div class="mhb-product">
+                <div class="mhb-product-img" style="background:#ddd0c2;"></div>
+                <div class="mhb-product-name">Agatha</div>
+                <div class="mhb-product-price">$162</div>
+              </div>
+              <div class="mhb-product">
+                <div class="mhb-product-img" style="background:#d8cfc4;"></div>
+                <div class="mhb-product-name">Bandwagon</div>
+                <div class="mhb-product-price">$134</div>
+              </div>
+              <div class="mhb-product">
+                <div class="mhb-product-img" style="background:#e0d8cf;"></div>
+                <div class="mhb-product-name">Balione</div>
+                <div class="mhb-product-price">$179</div>
+              </div>
+              <div class="mhb-product">
+                <div class="mhb-product-img" style="background:#c8b8a4;"></div>
+                <div class="mhb-product-name">Elara</div>
+                <div class="mhb-product-price">$155</div>
+              </div>
+              <div class="mhb-product">
+                <div class="mhb-product-img" style="background:#d4c4b0;"></div>
+                <div class="mhb-product-name">Cleo</div>
+                <div class="mhb-product-price">$142</div>
+              </div>
+              <div class="mhb-product">
+                <div class="mhb-product-img" style="background:#c0b09a;"></div>
+                <div class="mhb-product-name">Soleil</div>
+                <div class="mhb-product-price">$168</div>
+              </div>
+              <div class="mhb-product">
+                <div class="mhb-product-img" style="background:#e8e0d5;"></div>
+                <div class="mhb-product-name">Isla</div>
+                <div class="mhb-product-price">$138</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">Product grid displaying the full Monet Handbags collection — minimal cream aesthetic with product name and price labels. Four-column layout mirrors the original site's handbag browsing experience.</div>
+      </div>
+
+      <!-- Screen 2: Bag Builder / Configurator -->
+      <div>
+        <div class="screen-label">Screen 2 — Bag Builder / Configurator</div>
+        <div class="mhb-screen">
+          <div class="mhb-bar">
+            <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+            <div class="mhb-url">monethandbags.com/build</div>
+          </div>
+          <div class="mhb-body">
+            <nav class="mhb-nav">
+              <div class="mhb-logo">Monet<em>by Madison Handbags</em></div>
+              <ul class="mhb-nav-links">
+                <li>Home</li><li>Collections</li><li style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;padding-bottom:2px;">Build Yours</li><li>About</li><li>Sale</li><li>Contact</li>
+              </ul>
+              <div class="mhb-nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-shopping-bag"></i>
+              </div>
+            </nav>
+            <div class="mhb-section-head" style="padding-bottom:0;">
+              <div class="mhb-section-title">Style All Your Own</div>
+              <div style="font-size:9px;color:#a08060;margin-top:8px;letter-spacing:.1em;">Choose your style, color, hardware &amp; lining to create your perfect bag.</div>
+            </div>
+            <div class="mhb-builder-body">
+              <!-- Options sidebar -->
+              <div class="mhb-builder-sidebar">
+                <h4>Customize</h4>
+                <div class="mhb-option-group">
+                  <span class="mhb-option-label">Bag Style</span>
+                  <div class="mhb-style-row">
+                    <div class="mhb-style-opt active">Tote</div>
+                    <div class="mhb-style-opt">Crossbody</div>
+                    <div class="mhb-style-opt">Clutch</div>
+                    <div class="mhb-style-opt">Satchel</div>
+                  </div>
+                </div>
+                <div class="mhb-option-group">
+                  <span class="mhb-option-label">Color</span>
+                  <div class="mhb-color-row">
+                    <div class="mhb-swatch active" style="background:#c8a882;" title="Camel"></div>
+                    <div class="mhb-swatch" style="background:#8b7355;" title="Cognac"></div>
+                    <div class="mhb-swatch" style="background:#d4c4b0;" title="Ivory"></div>
+                    <div class="mhb-swatch" style="background:#e8d5c0;" title="Blush"></div>
+                    <div class="mhb-swatch" style="background:#2d2420;" title="Black"></div>
+                    <div class="mhb-swatch" style="background:#7a3030;" title="Wine"></div>
+                  </div>
+                </div>
+                <div class="mhb-option-group">
+                  <span class="mhb-option-label">Hardware</span>
+                  <div class="mhb-color-row">
+                    <div class="mhb-swatch" style="background:#c8a84a;" title="Gold"></div>
+                    <div class="mhb-swatch active" style="background:#b0b0b0;" title="Silver"></div>
+                    <div class="mhb-swatch" style="background:#8c7853;" title="Antique"></div>
+                  </div>
+                </div>
+                <div class="mhb-option-group">
+                  <span class="mhb-option-label">Lining</span>
+                  <div class="mhb-style-row">
+                    <div class="mhb-style-opt active">Champagne Satin</div>
+                    <div class="mhb-style-opt">Ivory Canvas</div>
+                    <div class="mhb-style-opt">Blush Micro-dot</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Preview center -->
+              <div class="mhb-builder-preview">
+                <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:4px;">Preview</div>
+                <div class="mhb-preview-bag">
+                  <img src="images/Madison Handbags/MHB-Feature.jpg" alt="Bag preview" />
+                </div>
+                <div style="font-size:8px;color:#5a4a3a;letter-spacing:.1em;">Tote · Camel · Silver · Champagne Satin</div>
+                <div class="mhb-preview-actions">
+                  <div class="mhb-preview-btn secondary">Save Look</div>
+                  <div class="mhb-preview-btn primary">Add to Cart — $148</div>
+                </div>
+              </div>
+              <!-- Specs panel -->
+              <div class="mhb-builder-specs">
+                <h4>Details</h4>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Style</span><span class="mhb-spec-val">Tote</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Color</span><span class="mhb-spec-val">Camel</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Hardware</span><span class="mhb-spec-val">Silver</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Lining</span><span class="mhb-spec-val">Champagne</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Width</span><span class="mhb-spec-val">13"</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Height</span><span class="mhb-spec-val">11"</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Depth</span><span class="mhb-spec-val">5"</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Strap</span><span class="mhb-spec-val">Removable</span></div>
+                <div class="mhb-spec-row"><span class="mhb-spec-key">Ships</span><span class="mhb-spec-val">4–6 weeks</span></div>
+                <div class="mhb-add-cart">Add to Cart — $148</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-caption">The "Style All Your Own" bag configurator — customers select bag style, color, hardware finish, and lining to build a personalized Monet bag. Live preview updates with each selection. The first digital innovation in Madison Handbags' history.</div>
+      </div>
+
+    </div><!-- /blb-screens -->
+  </div><!-- /blb-modal -->
+</div><!-- /blb-overlay -->
+
+<!-- Full-image overlay -->
+<div class="full-img-overlay" id="full-img-overlay" onclick="closeFullImg()">
+  <img id="full-img-el" src="" alt="" />
+</div>
+
+<script>
+  function openBuilderLb() {
+    const o = document.getElementById('blb-overlay');
+    o.style.display = 'flex';
+  }
+  function closeBuilderLb() {
+    document.getElementById('blb-overlay').style.display = 'none';
+  }
+  function openFullImg(src, alt) {
+    const o = document.getElementById('full-img-overlay');
+    document.getElementById('full-img-el').src = src;
+    document.getElementById('full-img-el').alt = alt || '';
+    o.style.display = 'flex';
+  }
+  function closeFullImg() {
+    document.getElementById('full-img-overlay').style.display = 'none';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeBuilderLb(); closeFullImg(); }
+  });
+</script>
+</body>
 </html>
