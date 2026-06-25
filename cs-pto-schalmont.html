@@ -133,7 +133,7 @@
     </div>
   </div>
   <div style="position:absolute;right:0;top:0;bottom:0;width:540px;">
-    <img src="images/PTO/pto-banner.png" alt="Schalmont PTO Platform" style="width:100%;height:100%;object-fit:cover;object-position:left top;display:block;" />
+    <img src="images/PTO/pto-banner.png" alt="Schalmont PTO Platform" style="width:120%;height:100%;object-fit:cover;object-position:left top;display:block;margin-left:-10%;" />
   </div>
 </section>
 
@@ -323,6 +323,56 @@
       </div>
     </div>
 
+    <div class="lb-card" onclick="openDancesLb()">
+      <div class="lb-card-img"><img src="images/PTO/dances/Glow_Gala_Invite.png" alt="School Dances" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design · Photography</div>
+        <h3 class="lb-card-title">School Dances</h3>
+        <p class="lb-card-desc">Invitations and event-night photography from Schalmont and Jefferson school dances — Glow Gala, Hollywood Night, Space Dance, Summer in the Snow, and more.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openMarchMadnessLb()">
+      <div class="lb-card-img"><img src="images/PTO/March Madness/March Madness Flyer.jpg" alt="March Madness" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design</div>
+        <h3 class="lb-card-title">March Madness Reading Challenge</h3>
+        <p class="lb-card-desc">Tournament-bracket-style reading challenge — flyer, calendar, and promotional materials for the annual March Madness book competition.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openPennyWarsLb()">
+      <div class="lb-card-img"><img src="images/PTO/penny wars/JES_PENNY_WAR_Flyer.jpg" alt="Penny Wars" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design</div>
+        <h3 class="lb-card-title">Penny Wars Fundraiser</h3>
+        <p class="lb-card-desc">Friendly classroom competition fundraiser — event flyer and results graphics for Jefferson Elementary's Penny Wars.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openTrunkOrTreatLb()">
+      <div class="lb-card-img"><img src="images/PTO/trunk or treat/JES_trunk-or-treat-flyer.jpg" alt="Trunk or Treat" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design · Photography</div>
+        <h3 class="lb-card-title">Trunk or Treat</h3>
+        <p class="lb-card-desc">Halloween community event — flyer design and event-night photography from Jefferson Elementary's Trunk or Treat celebration.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openTurnOffScreensLb()">
+      <div class="lb-card-img"><img src="images/PTO/turn off the screens/Family Fun Night Event Flyer.png" alt="Turn Off the Screens" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design</div>
+        <h3 class="lb-card-title">Turn Off the Screens Night</h3>
+        <p class="lb-card-desc">Community wellness event encouraging families to unplug — flyer, promotional graphics, and event materials for Jefferson's Family Fun Night series.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -442,6 +492,199 @@
   <p>Continue Exploring</p>
   <h3>More Portfolio Work</h3>
   <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
+
+<!-- ── Dances Gallery Lightbox ── -->
+<div class="blb-overlay" id="dances-lb-overlay" onclick="if(event.target===this)closeDancesLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">School Dances</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Schalmont &amp; Jefferson · Invitations · Event Photography</div>
+      </div>
+      <button class="blb-close" onclick="closeDancesLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/Glow_Gala_Invite.png','Glow Gala Invitation')">
+          <img src="images/PTO/dances/Glow_Gala_Invite.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Glow Gala — Invitation</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/Hollywood_Invite.png','Hollywood Night Invitation')">
+          <img src="images/PTO/dances/Hollywood_Invite.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Hollywood Night — Invitation</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/Space_Dance_Invite_FNL.png','Space Dance Invitation')">
+          <img src="images/PTO/dances/Space_Dance_Invite_FNL.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Space Dance — Invitation</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/Summer-in-the-snow-Invitation.png','Summer in the Snow Invitation')">
+          <img src="images/PTO/dances/Summer-in-the-snow-Invitation.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Summer in the Snow — Invitation</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/Lasso-the-night.jpg','Lasso the Night Invitation')">
+          <img src="images/PTO/dances/Lasso-the-night.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Lasso the Night — Invitation</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/pict230210_1957380000.jpg','Dance Night — Photo')">
+          <img src="images/PTO/dances/pict230210_1957380000.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Night — Photo 1</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/pict230210_1957380000.jpg','Dance Night — Photo')">
+          <img src="images/PTO/dances/MES_7281.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Night — Photo 2</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/MES_7306.jpg','Dance Night — Photo')">
+          <img src="images/PTO/dances/MES_7306.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Night — Photo 3</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/dances/pict230210_2007490000.jpg','Dance Night — Photo')">
+          <img src="images/PTO/dances/pict230210_2007490000.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Night — Photo 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── March Madness Gallery Lightbox ── -->
+<div class="blb-overlay" id="marchmadness-lb-overlay" onclick="if(event.target===this)closeMarchMadnessLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">March Madness Reading Challenge</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Jefferson Elementary · Event Design · Print</div>
+      </div>
+      <button class="blb-close" onclick="closeMarchMadnessLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/March Madness/March Madness Flyer.jpg','March Madness Flyer')">
+          <img src="images/PTO/March Madness/March Madness Flyer.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">March Madness — Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/March Madness/calendar_3.png','March Madness Calendar')">
+          <img src="images/PTO/March Madness/calendar_3.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Reading Calendar</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/March Madness/2023 Tournament of Books.jpg','2023 Tournament of Books')">
+          <img src="images/PTO/March Madness/2023 Tournament of Books.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">2023 Tournament of Books</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/March Madness/monstervstiny.png','Monster vs. Tiny')">
+          <img src="images/PTO/March Madness/monstervstiny.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Monster vs. Tiny — Bracket</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Penny Wars Gallery Lightbox ── -->
+<div class="blb-overlay" id="pennywars-lb-overlay" onclick="if(event.target===this)closePennyWarsLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Penny Wars Fundraiser</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Jefferson Elementary · Event Design · Results Graphics</div>
+      </div>
+      <button class="blb-close" onclick="closePennyWarsLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/penny wars/JES_PENNY_WAR_Flyer.jpg','Penny Wars Flyer')">
+          <img src="images/PTO/penny wars/JES_PENNY_WAR_Flyer.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Penny Wars — Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/penny wars/12-results.png','Penny Wars — Week 12 Results')">
+          <img src="images/PTO/penny wars/12-results.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Week 12 Results</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/penny wars/15-results.png','Penny Wars — Week 15 Results')">
+          <img src="images/PTO/penny wars/15-results.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Week 15 Results</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Trunk or Treat Gallery Lightbox ── -->
+<div class="blb-overlay" id="trunkortreat-lb-overlay" onclick="if(event.target===this)closeTrunkOrTreatLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Trunk or Treat</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Jefferson Elementary · Event Design · Photography</div>
+      </div>
+      <button class="blb-close" onclick="closeTrunkOrTreatLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/trunk or treat/JES_trunk-or-treat-flyer.jpg','Trunk or Treat Flyer')">
+          <img src="images/PTO/trunk or treat/JES_trunk-or-treat-flyer.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Trunk or Treat — Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/trunk or treat/tot-photo-1.png','Trunk or Treat — Event Day')">
+          <img src="images/PTO/trunk or treat/tot-photo-1.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 1</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/trunk or treat/tot-photo-2.png','Trunk or Treat — Event Day')">
+          <img src="images/PTO/trunk or treat/tot-photo-2.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 2</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/trunk or treat/tot-photo-3.png','Trunk or Treat — Event Day')">
+          <img src="images/PTO/trunk or treat/tot-photo-3.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Turn Off the Screens Gallery Lightbox ── -->
+<div class="blb-overlay" id="turnoffscreens-lb-overlay" onclick="if(event.target===this)closeTurnOffScreensLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Turn Off the Screens Night</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Jefferson Elementary · Family Fun Night · Event Design</div>
+      </div>
+      <button class="blb-close" onclick="closeTurnOffScreensLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/turn off the screens/Family Fun Night Event Flyer.png','Family Fun Night Flyer')">
+          <img src="images/PTO/turn off the screens/Family Fun Night Event Flyer.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Family Fun Night — Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/turn off the screens/Turn_off_the_screen_flyer-full-fnl_01 copy.jpg','Turn Off the Screens — Flyer')">
+          <img src="images/PTO/turn off the screens/Turn_off_the_screen_flyer-full-fnl_01 copy.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Turn Off the Screens — Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/turn off the screens/JeffersonNight_VarsityGame.png','Jefferson Night — Varsity Game')">
+          <img src="images/PTO/turn off the screens/JeffersonNight_VarsityGame.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Jefferson Night — Varsity Game</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/turn off the screens/EBA0123B-E9F9-4737-B73D-4ECC87C43C07.jpeg','Turn Off the Screens — Event')">
+          <img src="images/PTO/turn off the screens/EBA0123B-E9F9-4737-B73D-4ECC87C43C07.jpeg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 1</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/turn off the screens/EC1BE719-97AD-494D-A7CB-FFA7AE8F5AD6.jpeg','Turn Off the Screens — Event')">
+          <img src="images/PTO/turn off the screens/EC1BE719-97AD-494D-A7CB-FFA7AE8F5AD6.jpeg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 2</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/turn off the screens/EC790A6E-3CBB-414B-9703-824297266717.jpeg','Turn Off the Screens — Event')">
+          <img src="images/PTO/turn off the screens/EC790A6E-3CBB-414B-9703-824297266717.jpeg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 3</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/turn off the screens/ECFE5970-0D0C-4908-B848-26089E14942C.jpeg','Turn Off the Screens — Event')">
+          <img src="images/PTO/turn off the screens/ECFE5970-0D0C-4908-B848-26089E14942C.jpeg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ── Camp Fair Gallery Lightbox ── -->
@@ -1081,6 +1324,16 @@
 </div>
 
 <script>
+  function openDancesLb() { document.getElementById('dances-lb-overlay').style.display = 'flex'; }
+  function closeDancesLb() { document.getElementById('dances-lb-overlay').style.display = 'none'; }
+  function openMarchMadnessLb() { document.getElementById('marchmadness-lb-overlay').style.display = 'flex'; }
+  function closeMarchMadnessLb() { document.getElementById('marchmadness-lb-overlay').style.display = 'none'; }
+  function openPennyWarsLb() { document.getElementById('pennywars-lb-overlay').style.display = 'flex'; }
+  function closePennyWarsLb() { document.getElementById('pennywars-lb-overlay').style.display = 'none'; }
+  function openTrunkOrTreatLb() { document.getElementById('trunkortreat-lb-overlay').style.display = 'flex'; }
+  function closeTrunkOrTreatLb() { document.getElementById('trunkortreat-lb-overlay').style.display = 'none'; }
+  function openTurnOffScreensLb() { document.getElementById('turnoffscreens-lb-overlay').style.display = 'flex'; }
+  function closeTurnOffScreensLb() { document.getElementById('turnoffscreens-lb-overlay').style.display = 'none'; }
   function openCampFairLb() { document.getElementById('campfair-lb-overlay').style.display = 'flex'; }
   function closeCampFairLb() { document.getElementById('campfair-lb-overlay').style.display = 'none'; }
   function openCarnivalLb() { document.getElementById('carnival-lb-overlay').style.display = 'flex'; }
@@ -1117,7 +1370,7 @@
     document.getElementById('full-img-overlay').style.display = 'none';
   }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeCampFairLb(); closeCarnivalLb(); closeColorRunLb(); closeSantaLb(); closeBookFairLb(); closePtoWebsiteLb(); closeFullImg(); }
+    if (e.key === 'Escape') { closeDancesLb(); closeMarchMadnessLb(); closePennyWarsLb(); closeTrunkOrTreatLb(); closeTurnOffScreensLb(); closeCampFairLb(); closeCarnivalLb(); closeColorRunLb(); closeSantaLb(); closeBookFairLb(); closePtoWebsiteLb(); closeFullImg(); }
   });
 </script>
 </body>
