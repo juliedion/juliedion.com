@@ -283,6 +283,46 @@
       </div>
     </div>
 
+    <div class="lb-card" onclick="openCampFairLb()">
+      <div class="lb-card-img"><img src="images/PTO/CampFair/camp-fair.png" alt="Summer Camp Fair" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design</div>
+        <h3 class="lb-card-title">Summer Camp Fair</h3>
+        <p class="lb-card-desc">Annual Camp Fair flyers and attendee materials for Schalmont and Jefferson — connecting families with local summer camp programs and activities.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openCarnivalLb()">
+      <div class="lb-card-img"><img src="images/PTO/carnival/carnival-flyer.png" alt="School Carnival" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design</div>
+        <h3 class="lb-card-title">School Carnival</h3>
+        <p class="lb-card-desc">Full event design for the Jefferson Elementary School Carnival — flyers, dunk tank promotions, volunteer recruitment, FAQ materials, and event-day photography.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openColorRunLb()">
+      <div class="lb-card-img"><img src="images/PTO/ColorRun/color-run-flyer.jpg" alt="Color Run" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Brand · Print</div>
+        <h3 class="lb-card-title">Color Run — Jefferson Elementary</h3>
+        <p class="lb-card-desc">Full Color Run branding — original logo, event flyer, press release, and event-day photography for Jefferson Elementary's signature school fundraiser.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
+    <div class="lb-card" onclick="openSantaLb()">
+      <div class="lb-card-img"><img src="images/PTO/santa/craft-fair-flyer.png" alt="Craft Fair & Lunch with Santa" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Events · Print Design</div>
+        <h3 class="lb-card-title">Craft Fair &amp; Lunch with Santa</h3>
+        <p class="lb-card-desc">Holiday event design for Jefferson Elementary's annual Craft Fair and Lunch with Santa — flyer and event-day photography from the community celebration.</p>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -402,6 +442,170 @@
   <p>Continue Exploring</p>
   <h3>More Portfolio Work</h3>
   <a href="index.html#portfolio" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+</div>
+
+<!-- ── Camp Fair Gallery Lightbox ── -->
+<div class="blb-overlay" id="campfair-lb-overlay" onclick="if(event.target===this)closeCampFairLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Summer Camp Fair</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Schalmont &amp; Jefferson PTO · Annual Camp Fair · Event Design</div>
+      </div>
+      <button class="blb-close" onclick="closeCampFairLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/CampFair/camp-fair.png','Camp Fair Flyer')">
+          <img src="images/PTO/CampFair/camp-fair.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Camp Fair — Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/CampFair/camp-fair-2024.png','Camp Fair 2024')">
+          <img src="images/PTO/CampFair/camp-fair-2024.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Camp Fair 2024</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/CampFair/jefferson-camp-attendee.jpg','Jefferson Camp Fair — Attendee Info')">
+          <img src="images/PTO/CampFair/jefferson-camp-attendee.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Jefferson — Attendee Info Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/CampFair/ziti-flyer-2025.jpg','Ziti Dinner Fundraiser 2025')">
+          <img src="images/PTO/CampFair/ziti-flyer-2025.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Ziti Dinner Fundraiser 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Carnival Gallery Lightbox ── -->
+<div class="blb-overlay" id="carnival-lb-overlay" onclick="if(event.target===this)closeCarnivalLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">School Carnival</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Jefferson Elementary · Event Design · Flyers · Photography</div>
+      </div>
+      <button class="blb-close" onclick="closeCarnivalLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/carnival-flyer.png','Carnival Flyer')">
+          <img src="images/PTO/carnival/carnival-flyer.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Carnival Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/dunk.png','Dunk Tank Promotion')">
+          <img src="images/PTO/carnival/dunk.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Dunk Tank Promotion</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/volunteers-flyer.png','Volunteer Recruitment Flyer')">
+          <img src="images/PTO/carnival/volunteers-flyer.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Volunteer Recruitment Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/carnival-faq.jpg','Carnival FAQ')">
+          <img src="images/PTO/carnival/carnival-faq.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Carnival FAQ</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/carnival-photo-1.png','Carnival — Event Day')">
+          <img src="images/PTO/carnival/carnival-photo-1.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 1</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/carnival-photo-2.png','Carnival — Event Day')">
+          <img src="images/PTO/carnival/carnival-photo-2.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 2</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/carnival-photo-3.png','Carnival — Event Day')">
+          <img src="images/PTO/carnival/carnival-photo-3.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 3</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/carnival-photo-4.png','Carnival — Event Day')">
+          <img src="images/PTO/carnival/carnival-photo-4.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 4</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/carnival/carnival-photo-5.png','Carnival — Event Day')">
+          <img src="images/PTO/carnival/carnival-photo-5.png" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Color Run Gallery Lightbox ── -->
+<div class="blb-overlay" id="colorrun-lb-overlay" onclick="if(event.target===this)closeColorRunLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Color Run — Jefferson Elementary</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Brand · Logo · Event Flyer · Press Release · Photography</div>
+      </div>
+      <button class="blb-close" onclick="closeColorRunLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/ColorRun/color-run-flyer.jpg','Color Run — Event Flyer')">
+          <img src="images/PTO/ColorRun/color-run-flyer.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/ColorRun/color-run-logo.png','Color Run — Logo')">
+          <img src="images/PTO/ColorRun/color-run-logo.png" style="width:100%;display:block;background:#f9fafb;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Original Logo</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/ColorRun/color-run-pr.jpg','Color Run — Press Release')">
+          <img src="images/PTO/ColorRun/color-run-pr.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Press Release</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/ColorRun/514647465_10163506462546660_4602277309961201805_n.jpg','Color Run — Event Day')">
+          <img src="images/PTO/ColorRun/514647465_10163506462546660_4602277309961201805_n.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 1</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/ColorRun/00-qM5i8WsIDZVfBX87W3KYV2s0p8Ikl-vt0dVSW5bNa5lz7ZfHdImbJOkNJWwzDQFvqCe7ffHDJpwno-pEcjtJnw.jpeg','Color Run — Event Day')">
+          <img src="images/PTO/ColorRun/00-qM5i8WsIDZVfBX87W3KYV2s0p8Ikl-vt0dVSW5bNa5lz7ZfHdImbJOkNJWwzDQFvqCe7ffHDJpwno-pEcjtJnw.jpeg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 2</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/ColorRun/00-qM5i8WsIDZVfBX87W3KYV2s0p8Ikl-vt0dVSW5bNa5mZKtRkmq7R4qoFNIVNMjbtrnHjCyIZu59oV2we_kMG9A.jpeg','Color Run — Event Day')">
+          <img src="images/PTO/ColorRun/00-qM5i8WsIDZVfBX87W3KYV2s0p8Ikl-vt0dVSW5bNa5mZKtRkmq7R4qoFNIVNMjbtrnHjCyIZu59oV2we_kMG9A.jpeg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Craft Fair & Lunch with Santa Gallery Lightbox ── -->
+<div class="blb-overlay" id="santa-lb-overlay" onclick="if(event.target===this)closeSantaLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Craft Fair &amp; Lunch with Santa</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Jefferson Elementary · Holiday Event · Flyer &amp; Photography</div>
+      </div>
+      <button class="blb-close" onclick="closeSantaLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/santa/craft-fair-flyer.png','Craft Fair &amp; Lunch with Santa — Flyer')">
+          <img src="images/PTO/santa/craft-fair-flyer.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/santa/469506134_10162685648376660_7981654366222626860_n.jpg','Craft Fair &amp; Lunch with Santa')">
+          <img src="images/PTO/santa/469506134_10162685648376660_7981654366222626860_n.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 1</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/santa/469510605_10162685649526660_4724871105923728300_n.jpg','Craft Fair &amp; Lunch with Santa')">
+          <img src="images/PTO/santa/469510605_10162685649526660_4724871105923728300_n.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 2</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/santa/469672650_10162685649251660_1973675807003242436_n.jpg','Craft Fair &amp; Lunch with Santa')">
+          <img src="images/PTO/santa/469672650_10162685649251660_1973675807003242436_n.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 3</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/santa/469740950_10162685649271660_8145033407004760139_n.jpg','Craft Fair &amp; Lunch with Santa')">
+          <img src="images/PTO/santa/469740950_10162685649271660_8145033407004760139_n.jpg" style="width:100%;display:block;object-fit:cover;height:160px;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Event Day — Photo 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ── Book Fair Gallery Lightbox ── -->
@@ -877,6 +1081,14 @@
 </div>
 
 <script>
+  function openCampFairLb() { document.getElementById('campfair-lb-overlay').style.display = 'flex'; }
+  function closeCampFairLb() { document.getElementById('campfair-lb-overlay').style.display = 'none'; }
+  function openCarnivalLb() { document.getElementById('carnival-lb-overlay').style.display = 'flex'; }
+  function closeCarnivalLb() { document.getElementById('carnival-lb-overlay').style.display = 'none'; }
+  function openColorRunLb() { document.getElementById('colorrun-lb-overlay').style.display = 'flex'; }
+  function closeColorRunLb() { document.getElementById('colorrun-lb-overlay').style.display = 'none'; }
+  function openSantaLb() { document.getElementById('santa-lb-overlay').style.display = 'flex'; }
+  function closeSantaLb() { document.getElementById('santa-lb-overlay').style.display = 'none'; }
   function openBookFairLb() { document.getElementById('bookfair-lb-overlay').style.display = 'flex'; }
   function closeBookFairLb() { document.getElementById('bookfair-lb-overlay').style.display = 'none'; }
   function openPtoWebsiteLb() {
@@ -905,7 +1117,7 @@
     document.getElementById('full-img-overlay').style.display = 'none';
   }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeBookFairLb(); closePtoWebsiteLb(); closeFullImg(); }
+    if (e.key === 'Escape') { closeCampFairLb(); closeCarnivalLb(); closeColorRunLb(); closeSantaLb(); closeBookFairLb(); closePtoWebsiteLb(); closeFullImg(); }
   });
 </script>
 </body>
