@@ -238,6 +238,16 @@
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;text-align:left;">
 
+      <div class="lb-card" onclick="openBusLb()">
+        <div class="lb-card-img"><img src="images/Merck Millipore/bus/518375286_10163626265346660_382476958000456549_n.jpg" alt="Life:Expressed Tour" style="object-position:center;" /></div>
+        <div class="lb-card-body">
+          <div class="lb-card-tag">Experiential Design</div>
+          <h3 class="lb-card-title">Life: Expressed Tour</h3>
+          <p class="lb-card-desc">Full branding for the Life:Expressed mobile lab bus — a traveling experiential vehicle showcasing Merck's bioprocessing capabilities to research institutions nationwide.</p>
+          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Photos</div>
+        </div>
+      </div>
+
       <div class="lb-card" onclick="openFullImg('images/Merck Millipore/MM-Feature.jpg','Merck Millipore — Portfolio Overview')">
         <div class="lb-card-img"><img src="images/Merck Millipore/MM-Feature.jpg" alt="Merck Millipore Portfolio Overview" /></div>
         <div class="lb-card-body">
@@ -254,46 +264,6 @@
           <div class="lb-card-tag">Product Launch</div>
           <h3 class="lb-card-title">Muse Cell Analyzer — "Have You Seen It?"</h3>
           <p class="lb-card-desc">Curiosity-driven owl campaign across magazines, ASCB conference, and building-facade billboard. GD USA 2012 winner.</p>
-          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
-        </div>
-      </div>
-
-      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/JulieDionPortfolio_202112.jpg','Mobius — Curiosity Killed Our Competition')">
-        <div class="lb-card-img"><img src="images/Merck Millipore/JulieDionPortfolio_202112.jpg" alt="Mobius Campaign" /></div>
-        <div class="lb-card-body">
-          <div class="lb-card-tag">Print Campaign</div>
-          <h3 class="lb-card-title">Mobius — "Curiosity Killed Our Competition"</h3>
-          <p class="lb-card-desc">High-contrast gymnast silhouette campaign for Science and Nature full-page placements — positioning Mobius as the bold disruptor in bioprocessing.</p>
-          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
-        </div>
-      </div>
-
-      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/MUSE_Billboard_Page_1.jpg','ASCB Denver Billboard — Muse Campaign')">
-        <div class="lb-card-img"><img src="images/Merck Millipore/MUSE_Billboard_Page_1.jpg" alt="ASCB Denver Billboard" /></div>
-        <div class="lb-card-body">
-          <div class="lb-card-tag">OOH / Billboard</div>
-          <h3 class="lb-card-title">ASCB Denver — Building-Facade Billboard</h3>
-          <p class="lb-card-desc">Dramatic conference landmark billboard installation at ASCB 2011. A four-panel building takeover that became the talk of the conference.</p>
-          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
-        </div>
-      </div>
-
-      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/bus/JulieDionPortfolio_20218-cover.jpg','Life:Expressed Mobile Lab Tour')">
-        <div class="lb-card-img"><img src="images/Merck Millipore/bus/JulieDionPortfolio_20218-cover.jpg" alt="Life:Expressed Bus" /></div>
-        <div class="lb-card-body">
-          <div class="lb-card-tag">Experiential Design</div>
-          <h3 class="lb-card-title">Life:Expressed Mobile Laboratory</h3>
-          <p class="lb-card-desc">Full branding for the Life:Expressed mobile lab bus — a traveling experiential vehicle showcasing Merck's bioprocessing capabilities to research institutions nationwide.</p>
-          <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
-        </div>
-      </div>
-
-      <div class="lb-card" onclick="openFullImg('images/Merck Millipore/GSM.jpg','Global Sales Meeting — Engage the Future')">
-        <div class="lb-card-img"><img src="images/Merck Millipore/GSM.jpg" alt="Global Sales Meeting" /></div>
-        <div class="lb-card-body">
-          <div class="lb-card-tag">Internal Branding</div>
-          <h3 class="lb-card-title">Global Sales Meeting Branding</h3>
-          <p class="lb-card-desc">"Engage the Future" and "The Time is NOW" internal sales event creative systems — environmental graphics and collateral for Merck's global commercial teams.</p>
           <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View</div>
         </div>
       </div>
@@ -421,6 +391,35 @@ function closeFullImg() {
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFullImg(); });
+</script>
+<!-- Bus Gallery Lightbox -->
+<div id="bus-lb-modal" onclick="if(event.target===this)closeBusLb()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#fff;border-radius:14px;width:100%;max-width:1000px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.5);">
+    <div style="padding:16px 24px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#0077B6;margin-bottom:3px;">Experiential Design</div>
+        <div style="font-size:17px;font-weight:700;color:#111827;">Life: Expressed Tour</div>
+      </div>
+      <button onclick="closeBusLb()" style="background:#f3f4f6;border:none;border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;color:#6b7280;">✕</button>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;background:#f9fafb;">
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer;" onclick="openFullImg('images/Merck Millipore/bus/518375286_10163626265346660_382476958000456549_n.jpg','Life:Expressed — Bus Side View')"><img src="images/Merck Millipore/bus/518375286_10163626265346660_382476958000456549_n.jpg" alt="Bus Side" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" /><div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">Bus — Side View</div></div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer;" onclick="openFullImg('images/Merck Millipore/bus/518291805_10163626265331660_6932769599304816835_n.jpg','Life:Expressed — Bus Rear View')"><img src="images/Merck Millipore/bus/518291805_10163626265331660_6932769599304816835_n.jpg" alt="Bus Rear" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" /><div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">Bus — Rear View</div></div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer;" onclick="openFullImg('images/Merck Millipore/bus/518403709_10163626265221660_2061575200582912417_n.jpg','Life:Expressed — Tour Stop')"><img src="images/Merck Millipore/bus/518403709_10163626265221660_2061575200582912417_n.jpg" alt="Tour Stop" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" /><div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">Tour Stop</div></div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);cursor:pointer;" onclick="openFullImg('images/Merck Millipore/bus/JulieDionPortfolio_20218.jpg','Life:Expressed — Campaign Design')"><img src="images/Merck Millipore/bus/JulieDionPortfolio_20218.jpg" alt="Campaign Design" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" /><div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">Campaign Design</div></div>
+    </div>
+  </div>
+</div>
+<script>
+function openBusLb() {
+  document.getElementById('bus-lb-modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeBusLb() {
+  document.getElementById('bus-lb-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeFullImg(); closeBusLb(); } });
 </script>
 <!-- Portfolio footer -->
 <div style="background:var(--dark);padding:40px 48px;text-align:center;border-top:1px solid rgba(255,255,255,.07);">
