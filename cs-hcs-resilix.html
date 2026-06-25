@@ -943,7 +943,7 @@ function openHcsLb(key) {
   } else {
     const isCampaigns = (key === 'campaigns');
     const isAward = (key === 'award');
-    gallery.style.gridTemplateColumns = isCampaigns ? 'repeat(auto-fill,260px)' : 'repeat(auto-fill,minmax(220px,1fr))';
+    gallery.style.gridTemplateColumns = 'repeat(auto-fit,minmax(220px,1fr))';
     gallery.style.background = '#f9fafb';
     gallery.innerHTML = (d.imgs || []).map(([src,alt,type]) => {
       if (type === 'pptx') {
