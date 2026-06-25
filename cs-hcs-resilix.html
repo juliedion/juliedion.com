@@ -216,7 +216,7 @@
 </div>
 
 <section class="cs-hero" style="position:relative;overflow:hidden;padding-right:0;">
-  <div class="cs-hero-inner" style="padding-right:380px;">
+  <div class="cs-hero-inner" style="padding-right:280px;">
     <div class="hero-text">
       <div style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,42px); font-weight:700; color:#fff; line-height:1.1; margin-bottom:4px;">Human Care Systems</div>
     <h1 class="cs-title">Resilix Treatment Experience<br /><span>Platform &amp; Brand</span></h1>
@@ -234,7 +234,7 @@
     </div>
   </div>
   <!-- Desktop hero image: full-bleed right panel -->
-  <div class="hero-visual-desktop" style="position:absolute;right:0;top:0;bottom:0;width:360px;overflow:hidden;display:flex;">
+  <div class="hero-visual-desktop" style="position:absolute;right:0;top:0;bottom:0;width:260px;overflow:hidden;display:flex;">
     <img src="images/Human Care Systems/resilix-hero-2.png" alt="Resilix Platform" style="width:100%;height:100%;object-fit:cover;object-position:left top;border-radius:0;filter:none;max-width:none;" />
   </div>
   <!-- Mobile hero image -->
@@ -294,7 +294,7 @@
     </div>
 
     <div class="lb-card" onclick="openHcsLb('campaigns')">
-      <div class="lb-card-img"><img src="images/Human Care Systems/JulieDionPortfolio_20216.jpg" alt="Omnichannel Campaigns" style="object-position:top center;" /></div>
+      <div class="lb-card-img"><img src="images/Human Care Systems/campaign work/JulieDionPortfolio_20216.jpg" alt="Omnichannel Campaigns" style="width:100%;height:100%;object-fit:cover;object-position:top;" /></div>
       <div class="lb-card-body">
         <div class="lb-card-tag">Campaign Design</div>
         <h3 class="lb-card-title">Omnichannel Campaigns</h3>
@@ -317,7 +317,7 @@
       <div class="lb-card-img"><img src="images/Human Care Systems/Resilix.jpg" alt="GD USA Award" /></div>
       <div class="lb-card-body">
         <div class="lb-card-tag">Award Winner</div>
-        <h3 class="lb-card-title">2019 GD USA Award</h3>
+        <h3 class="lb-card-title">GD USA Awards</h3>
         <p class="lb-card-desc">Health &amp; Wellness Interactive Award recognizing the full Resilix design ecosystem — platform UI, brand, and marketing campaign.</p>
         <div class="lb-card-cta"><i class="fas fa-arrow-right"></i> View Work</div>
       </div>
@@ -806,7 +806,7 @@ const hcsLbData = {
     ]
   },
   award: {
-    tag: 'Award Winner', title: '2019 GD USA Award',
+    tag: 'Award Winner', title: 'GD USA Awards',
     imgs: [
       ['images/HCS/LinkedIn_GDUSA.png','GD USA LinkedIn Post'],
       ['images/Human Care Systems/JulieDionPortfolio_20212.jpg','GDUSA 2019 Winner Spread'],
@@ -866,11 +866,11 @@ const hcsLbData = {
   },
   designprocess: {
     tag: 'Design Process', title: 'From Research to Platform',
-    imgs: [
-      ['images/Human Care Systems/process-01-patient-mapping.jpg','01 — Patient Experience Mapping'],
-      ['images/Human Care Systems/process-02-brand.jpg','02 — Brand Identity — Resilix'],
-      ['images/Human Care Systems/process-03-axure-patient.jpg','03 — UX Prototyping in Axure'],
-      ['images/Human Care Systems/Resilix-01.jpg','04 — Marketing Ecosystem'],
+    steps: [
+      { num:'01', title:'Patient Experience Mapping', desc:'Behavioral science mapping of patient journeys across the treatment continuum — identifying friction points, moments of doubt, and opportunities to support adherence.', img:'images/Human Care Systems/process-01-patient-mapping.jpg' },
+      { num:'02', title:'Brand Identity — Resilix', desc:'Crafting a visual language that communicates clinical trust and human warmth. Logo, color system, typography, and iconography built from scratch.', img:'images/Human Care Systems/process-02-brand.jpg' },
+      { num:'03', title:'UX Prototyping in Axure', desc:'11 rounds of iterative design in Axure RP — wireframes, interactions, and clickable prototypes reviewed by clinical, account, and engineering teams.', img:'images/Human Care Systems/process-03-axure-patient.jpg' },
+      { num:'04', title:'Marketing Ecosystem', desc:'Full omnichannel system: sales collateral, patient infographics, webinar design, digital ads, and a microsite — all within a unified brand system.', img:'images/Human Care Systems/Resilix-01.jpg' },
     ]
   },
   otherwork: {
@@ -909,35 +909,53 @@ function openHcsLb(key) {
   document.getElementById('hcs-lb-tag').textContent = d.tag;
   document.getElementById('hcs-lb-title').textContent = d.title;
   const gallery = document.getElementById('hcs-lb-gallery');
-  // Set gallery layout for video — 1 col, taller
-  if (key === 'video') {
+
+  if (key === 'designprocess') {
+    gallery.style.gridTemplateColumns = 'repeat(auto-fill,minmax(260px,1fr))';
+    gallery.style.background = '#f3f4f6';
+    gallery.innerHTML = d.steps.map(s => `
+      <div style="background:#fff;border-radius:12px;overflow:hidden;border:1.5px solid #e5e7eb;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+        <div style="height:180px;overflow:hidden;">
+          <img src="${s.img}" alt="${s.title}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" loading="lazy" />
+        </div>
+        <div style="padding:20px 22px 24px;">
+          <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:700;background:linear-gradient(135deg,#0077B6,#00C8E8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px;">${s.num}</div>
+          <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:8px;">${s.title}</div>
+          <div style="font-size:12px;color:#6b7280;line-height:1.7;">${s.desc}</div>
+        </div>
+      </div>`).join('');
+  } else if (key === 'video') {
     gallery.style.gridTemplateColumns = 'repeat(auto-fill,minmax(400px,1fr))';
+    gallery.style.background = '#f9fafb';
+    gallery.innerHTML = d.imgs.map(([src,alt,type]) => `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#000;">
+      <video controls preload="metadata" style="width:100%;display:block;max-height:300px;background:#000;">
+        <source src="${src}" type="video/mp4" />
+      </video>
+      <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;background:#f9fafb;">${alt}</div>
+    </div>`).join('');
   } else {
-    gallery.style.gridTemplateColumns = 'repeat(auto-fill,minmax(300px,1fr))';
-  }
-  gallery.innerHTML = d.imgs.map(([src,alt,type]) => {
-    if (type === 'video') {
-      return `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#000;">
-        <video controls preload="metadata" style="width:100%;display:block;max-height:300px;background:#000;">
-          <source src="${src}" type="video/mp4" />
-        </video>
-        <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;background:#f9fafb;">${alt}</div>
-      </div>`;
-    }
-    if (type === 'pptx') {
-      return `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;display:flex;flex-direction:column;">
-        <a href="${src}" download style="flex:1;display:flex;align-items:center;justify-content:center;min-height:160px;background:#e0e8f0;text-decoration:none;flex-direction:column;gap:10px;padding:20px;">
-          <i class="fas fa-file-powerpoint" style="font-size:48px;color:#c43e1c;"></i>
-          <span style="font-size:11px;font-weight:700;color:#374151;">Download PPTX</span>
-        </a>
+    const isSquare = (key === 'campaigns');
+    gallery.style.gridTemplateColumns = 'repeat(auto-fill,minmax(220px,1fr))';
+    gallery.style.background = '#f9fafb';
+    gallery.innerHTML = (d.imgs || []).map(([src,alt,type]) => {
+      if (type === 'pptx') {
+        return `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;display:flex;flex-direction:column;">
+          <a href="${src}" download style="flex:1;display:flex;align-items:center;justify-content:center;min-height:160px;background:#e0e8f0;text-decoration:none;flex-direction:column;gap:10px;padding:20px;">
+            <i class="fas fa-file-powerpoint" style="font-size:48px;color:#c43e1c;"></i>
+            <span style="font-size:11px;font-weight:700;color:#374151;">Download PPTX</span>
+          </a>
+          <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">${alt}</div>
+        </div>`;
+      }
+      const imgStyle = isSquare
+        ? 'width:100%;aspect-ratio:1/1;display:block;object-fit:cover;object-position:top;'
+        : 'width:100%;display:block;object-fit:cover;';
+      return `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;cursor:pointer;" onclick="openFullImg('${src}','${alt}')">
+        <img src="${src}" alt="${alt}" style="${imgStyle}" loading="lazy" />
         <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">${alt}</div>
       </div>`;
-    }
-    return `<div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);background:#f3f4f6;cursor:pointer;" onclick="openFullImg('${src}','${alt}')">
-      <img src="${src}" alt="${alt}" style="width:100%;display:block;object-fit:cover;" loading="lazy" />
-      <div style="padding:8px 10px;font-size:11px;font-weight:600;color:#6b7280;">${alt}</div>
-    </div>`;
-  }).join('');
+    }).join('');
+  }
   const modal = document.getElementById('hcs-lb-modal');
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -989,7 +1007,6 @@ function closeBrandLb() {
       <div class="result-card"><div class="result-num">85%</div><div class="result-label">Adherence rate for HCS-enrolled vs. 60% non-enrolled</div></div>
       <div class="result-card"><div class="result-num">22%</div><div class="result-label">Increase in days on therapy for enrolled patients</div></div>
       <div class="result-card"><div class="result-num">2.3×</div><div class="result-label">Extra vials per patient vs. control group</div></div>
-      <div class="result-card"><div class="result-num">5</div><div class="result-label">GD USA Awards — Health &amp; Wellness Interactive</div></div>
     </div>
     <div class="cs-quote" style="margin-top:40px; border-color:var(--cyan);">
       <p style="color:rgba(255,255,255,.8);">"Adherence is the single most modifiable factor that compromises treatment outcome across various diseases — and the design of patient touchpoints is what makes the difference."</p>
