@@ -244,38 +244,40 @@
 
     <!-- Card 1: Online Bag Builder -->
     <div class="lb-card" onclick="openBuilderLb()">
-      <div class="lb-card-img" style="background:#ede5da; position:relative; overflow:hidden; height:200px;">
-        <!-- browser chrome mini-mockup with real bag -->
-        <div style="position:absolute;inset:12px;background:#f5f0eb;border-radius:6px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.18);">
-          <div style="background:#2d2d2d;padding:5px 10px;display:flex;gap:4px;align-items:center;">
+      <div class="lb-card-img" style="background:#f5f0eb;position:relative;overflow:hidden;height:200px;padding:0;">
+        <!-- Step 1 screen thumbnail -->
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;">
+          <div style="background:#3c3c3c;padding:4px 8px;display:flex;gap:3px;align-items:center;flex-shrink:0;">
             <span style="width:6px;height:6px;border-radius:50%;background:#FF5F57;display:inline-block;"></span>
             <span style="width:6px;height:6px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span>
             <span style="width:6px;height:6px;border-radius:50%;background:#28C840;display:inline-block;"></span>
-            <span style="flex:1;background:#3d3d3d;border-radius:3px;height:8px;margin-left:6px;font-size:7px;color:rgba(255,255,255,.35);padding:1px 6px;display:flex;align-items:center;">monethandbags.com/build</span>
+            <span style="flex:1;background:#555;border-radius:2px;padding:1px 5px;font-size:6px;color:rgba(255,255,255,.5);margin-left:5px;">monethandbags.com/build · Step 1</span>
           </div>
-          <div style="display:flex;height:calc(100% - 22px);">
-            <!-- sidebar -->
-            <div style="width:60px;background:#ede5da;border-right:1px solid #d8cfc4;padding:6px;">
-              <div style="font-size:5px;letter-spacing:.2em;text-transform:uppercase;color:#5a4a3a;margin-bottom:5px;border-bottom:1px solid #c8b8a4;padding-bottom:3px;">Customize</div>
-              <div style="font-size:5px;color:#a08060;margin-bottom:3px;">Style</div>
-              <div style="font-size:5px;padding:2px 4px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;margin-bottom:2px;">Tote</div>
-              <div style="font-size:5px;padding:2px 4px;background:#fff;border:1px solid #d8cfc4;border-radius:1px;margin-bottom:5px;">Crossbody</div>
-              <div style="font-size:5px;color:#a08060;margin-bottom:3px;">Color</div>
-              <div style="display:flex;gap:2px;flex-wrap:wrap;margin-bottom:5px;">
-                <div style="width:8px;height:8px;border-radius:50%;background:#c8a882;border:1.5px solid #5a4a3a;"></div>
-                <div style="width:8px;height:8px;border-radius:50%;background:#8b7355;"></div>
-                <div style="width:8px;height:8px;border-radius:50%;background:#d4c4b0;"></div>
-                <div style="width:8px;height:8px;border-radius:50%;background:#2d2420;"></div>
+          <div style="background:#ede5da;padding:4px 8px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
+            <div style="font-size:7px;letter-spacing:.2em;color:#5a4a3a;font-weight:800;">MONET</div>
+            <div style="display:flex;gap:8px;font-size:5px;color:#9a8070;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+          </div>
+          <div style="padding:5px 8px 3px;background:#f9f5f0;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+            <div style="font-size:6px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#5a4a3a;">Step 1 — Choose Your Style</div>
+          </div>
+          <div style="flex:1;padding:6px 8px;overflow:hidden;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;height:100%;">
+              <div style="border:2px solid #5a4a3a;border-radius:5px;padding:4px;background:#ede5da;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;">
+                <img src="images/Madison Handbags/bags/bag-tote.png" style="height:42px;width:auto;object-fit:contain;display:block;" />
+                <div style="font-size:5.5px;font-weight:700;color:#5a4a3a;">Tote ✓</div>
               </div>
-            </div>
-            <!-- preview -->
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;gap:4px;">
-              <div style="font-size:5px;letter-spacing:.15em;text-transform:uppercase;color:#a08060;">Preview</div>
-              <div style="width:56px;height:48px;background:#e8e0d5;border-radius:4px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);">
-                <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+              <div style="border:1px solid #e0d4c4;border-radius:5px;padding:4px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;">
+                <img src="images/Madison Handbags/bags/bag-crossbody.png" style="height:42px;width:auto;object-fit:contain;display:block;" />
+                <div style="font-size:5.5px;font-weight:700;color:#a08060;">Crossbody</div>
               </div>
-              <div style="font-size:4px;color:#5a4a3a;letter-spacing:.05em;">Tote · Camel · Silver</div>
-              <div style="font-size:5px;padding:3px 8px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;">Add to Cart — $148</div>
+              <div style="border:1px solid #e0d4c4;border-radius:5px;padding:4px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;">
+                <img src="images/Madison Handbags/bags/bag-clutch.png" style="height:42px;width:auto;object-fit:contain;display:block;" />
+                <div style="font-size:5.5px;font-weight:700;color:#a08060;">Clutch</div>
+              </div>
+              <div style="border:1px solid #e0d4c4;border-radius:5px;padding:4px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;">
+                <img src="images/Madison Handbags/bags/bag-backpack.png" style="height:42px;width:auto;object-fit:contain;display:block;" />
+                <div style="font-size:5.5px;font-weight:700;color:#a08060;">Backpack</div>
+              </div>
             </div>
           </div>
         </div>
@@ -508,74 +510,63 @@
           </div>
           <!-- Canvas -->
           <div style="flex:1;background:#2d2d3d;display:flex;align-items:center;justify-content:center;gap:24px;padding:24px;overflow:hidden;">
-            <!-- Desktop artboard -->
+            <!-- Step 1 Desktop artboard -->
             <div style="flex-shrink:0;">
-              <div style="font-size:9px;color:rgba(255,255,255,.35);text-align:center;margin-bottom:6px;letter-spacing:.1em;">Builder — Desktop  1440×900</div>
-              <div style="background:#f5f0eb;border-radius:4px;width:300px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.5);">
-                <!-- nav -->
-                <div style="background:#ede5da;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;">
+              <div style="font-size:9px;color:rgba(255,255,255,.35);text-align:center;margin-bottom:6px;letter-spacing:.1em;">Step 1 — Bag Type  1440×900</div>
+              <div style="background:#f5f0eb;border-radius:4px;width:300px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.5);display:flex;flex-direction:column;">
+                <div style="background:#ede5da;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
                   <div style="font-size:7px;letter-spacing:.25em;color:#5a4a3a;font-weight:700;">MONET</div>
-                  <div style="display:flex;gap:8px;font-size:7px;color:#7a6a5a;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span><span>About</span></div>
+                  <div style="display:flex;gap:8px;font-size:7px;color:#7a6a5a;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
                 </div>
-                <!-- page title -->
-                <div style="background:#f5f0eb;padding:7px 10px;text-align:center;border-bottom:1px solid #e8ddd0;">
-                  <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#5a4a3a;font-weight:700;">Style All Your Own</div>
-                  <div style="font-size:6px;color:#a08060;margin-top:2px;">Choose your style · color · hardware · lining</div>
+                <div style="background:#f9f5f0;padding:5px 10px;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+                  <div style="font-size:7px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#5a4a3a;">Step 1 — Choose Your Style</div>
+                  <div style="font-size:5.5px;color:#a08060;margin-top:1px;">Select the bag silhouette you want to customize</div>
                 </div>
-                <!-- builder body -->
-                <div style="display:flex;height:200px;">
-                  <!-- sidebar -->
-                  <div style="width:90px;background:#ede5da;border-right:1px solid #d8cfc4;padding:8px 6px;flex-shrink:0;">
-                    <div style="font-size:6px;text-transform:uppercase;letter-spacing:.2em;color:#5a4a3a;margin-bottom:4px;border-bottom:1px solid #c8b8a4;padding-bottom:3px;">Style</div>
-                    <div style="font-size:6px;padding:3px 5px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;margin-bottom:2px;text-align:center;">Tote</div>
-                    <div style="font-size:6px;padding:3px 5px;background:#fff;border:1px solid #d8cfc4;border-radius:1px;margin-bottom:2px;text-align:center;">Crossbody</div>
-                    <div style="font-size:6px;padding:3px 5px;background:#fff;border:1px solid #d8cfc4;border-radius:1px;margin-bottom:8px;text-align:center;">Clutch</div>
-                    <div style="font-size:6px;text-transform:uppercase;letter-spacing:.2em;color:#5a4a3a;margin-bottom:4px;">Color</div>
-                    <div style="display:flex;gap:3px;flex-wrap:wrap;margin-bottom:8px;">
-                      <div style="width:10px;height:10px;border-radius:50%;background:#c8a882;border:2px solid #5a4a3a;"></div>
-                      <div style="width:10px;height:10px;border-radius:50%;background:#8b7355;"></div>
-                      <div style="width:10px;height:10px;border-radius:50%;background:#d4c4b0;"></div>
-                      <div style="width:10px;height:10px;border-radius:50%;background:#2d2420;"></div>
-                      <div style="width:10px;height:10px;border-radius:50%;background:#7a3b2e;"></div>
+                <div style="padding:10px;flex:1;">
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                    <div style="border:2px solid #5a4a3a;border-radius:6px;padding:8px 6px;background:#ede5da;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-tote.png" style="height:52px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:6px;font-weight:700;color:#5a4a3a;margin-top:4px;">Tote</div>
+                      <div style="font-size:5px;color:#a08060;">Spacious &amp; structured</div>
+                      <div style="margin-top:4px;font-size:5.5px;padding:2px 6px;background:#5a4a3a;color:#fff;border-radius:2px;display:inline-block;">Selected ✓</div>
                     </div>
-                    <div style="font-size:6px;text-transform:uppercase;letter-spacing:.2em;color:#5a4a3a;margin-bottom:4px;">Hardware</div>
-                    <div style="display:flex;gap:3px;">
-                      <div style="font-size:5px;padding:2px 4px;background:#c0a040;color:#fff;border-radius:1px;">Gold</div>
-                      <div style="font-size:5px;padding:2px 4px;background:#fff;border:1px solid #d8cfc4;border-radius:1px;">Silver</div>
+                    <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px 6px;background:#fff;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-crossbody.png" style="height:52px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:6px;font-weight:700;color:#5a4a3a;margin-top:4px;">Crossbody</div>
+                      <div style="font-size:5px;color:#a08060;">Hands-free &amp; sleek</div>
+                    </div>
+                    <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px 6px;background:#fff;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-clutch.png" style="height:52px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:6px;font-weight:700;color:#5a4a3a;margin-top:4px;">Clutch</div>
+                      <div style="font-size:5px;color:#a08060;">Evening &amp; compact</div>
+                    </div>
+                    <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px 6px;background:#fff;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-backpack.png" style="height:52px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:6px;font-weight:700;color:#5a4a3a;margin-top:4px;">Backpack</div>
+                      <div style="font-size:5px;color:#a08060;">Casual &amp; functional</div>
                     </div>
                   </div>
-                  <!-- preview -->
-                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;gap:6px;">
-                    <div style="font-size:5px;color:#a08060;letter-spacing:.15em;text-transform:uppercase;">Preview</div>
-                    <div style="width:90px;height:74px;overflow:hidden;border-radius:3px;box-shadow:0 4px 12px rgba(0,0,0,.15);">
-                      <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
-                    </div>
-                    <div style="font-size:5px;color:#5a4a3a;text-align:center;">Tote · Camel · Gold Hardware</div>
-                    <div style="font-size:6px;color:#a08060;">Est. $148</div>
-                    <div style="font-size:6px;padding:4px 10px;background:#5a4a3a;color:#f5f0eb;border-radius:2px;letter-spacing:.1em;text-transform:uppercase;">Add to Cart</div>
-                  </div>
+                  <div style="margin-top:8px;text-align:right;"><div style="font-size:6px;padding:4px 10px;background:#5a4a3a;color:#fff;border-radius:2px;display:inline-block;">Next: Choose Strap →</div></div>
                 </div>
               </div>
             </div>
-            <!-- Mobile artboard -->
+            <!-- Step 6 Mobile artboard (Final Preview) -->
             <div style="flex-shrink:0;">
-              <div style="font-size:9px;color:rgba(255,255,255,.35);text-align:center;margin-bottom:6px;letter-spacing:.1em;">Mobile  390×844</div>
-              <div style="background:#3a3a4a;border-radius:16px;padding:8px 4px;box-shadow:0 8px 30px rgba(0,0,0,.5);width:90px;">
+              <div style="font-size:9px;color:rgba(255,255,255,.35);text-align:center;margin-bottom:6px;letter-spacing:.1em;">Step 6 — Preview  390×844</div>
+              <div style="background:#3a3a4a;border-radius:16px;padding:8px 4px;box-shadow:0 8px 30px rgba(0,0,0,.5);width:100px;">
                 <div style="background:#f5f0eb;border-radius:10px;overflow:hidden;">
-                  <div style="background:#ede5da;padding:4px 6px;text-align:center;border-bottom:1px solid #d8cfc4;">
+                  <div style="background:#ede5da;padding:4px 6px;text-align:center;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
                     <div style="font-size:5px;letter-spacing:.2em;color:#5a4a3a;font-weight:700;">MONET</div>
                   </div>
                   <div style="padding:5px 6px;">
-                    <div style="font-size:5px;text-align:center;color:#5a4a3a;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px;">Build Yours</div>
-                    <div style="width:100%;height:50px;overflow:hidden;border-radius:2px;margin-bottom:4px;">
-                      <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+                    <div style="font-size:5px;font-weight:700;text-align:center;color:#5a4a3a;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;">Your Bag Preview</div>
+                    <div style="background:#f9f5f0;border-radius:4px;padding:4px;text-align:center;margin-bottom:3px;">
+                      <img src="images/Madison Handbags/bags/bag-tote.png" style="height:44px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:5px;color:#a08060;margin-top:2px;">Tote · Camel · Gold</div>
                     </div>
-                    <div style="display:flex;gap:3px;justify-content:center;margin-bottom:3px;">
-                      <div style="width:8px;height:8px;border-radius:50%;background:#c8a882;border:1.5px solid #5a4a3a;"></div>
-                      <div style="width:8px;height:8px;border-radius:50%;background:#8b7355;"></div>
-                      <div style="width:8px;height:8px;border-radius:50%;background:#2d2420;"></div>
-                    </div>
-                    <div style="font-size:5px;text-align:center;padding:3px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;">Add to Cart</div>
+                    <div style="font-size:4.5px;color:#5a4a3a;margin-bottom:1px;display:flex;justify-content:space-between;"><span style="color:#a08060;">Monogram</span><span>JRD</span></div>
+                    <div style="font-size:4.5px;color:#5a4a3a;margin-bottom:4px;display:flex;justify-content:space-between;"><span style="color:#a08060;">Total</span><span style="font-weight:700;">$178</span></div>
+                    <div style="font-size:5px;text-align:center;padding:3px;background:#5a4a3a;color:#f5f0eb;border-radius:1px;font-weight:700;">Add to Cart</div>
                   </div>
                 </div>
               </div>
@@ -967,8 +958,8 @@
             <!-- Left: bag preview -->
             <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f9f5f0;border-radius:8px;padding:10px;">
               <div style="font-size:6.5px;letter-spacing:.15em;text-transform:uppercase;color:#a08060;margin-bottom:6px;">Your Custom Monet</div>
-              <div style="width:90px;height:76px;overflow:hidden;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.15);position:relative;">
-                <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+              <div style="width:90px;height:96px;overflow:hidden;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.12);background:#f9f5f0;display:flex;align-items:center;justify-content:center;position:relative;">
+                <img src="images/Madison Handbags/bags/bag-tote.png" style="height:88px;width:auto;object-fit:contain;display:block;" />
                 <!-- monogram badge -->
                 <div style="position:absolute;bottom:4px;right:4px;background:rgba(90,74,58,.85);color:#f5f0eb;font-size:6px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:.15em;">JRD</div>
               </div>
@@ -1166,59 +1157,136 @@
         <div class="screen-caption">Brand color palette and typography system — five tones built around warm neutrals: Espresso (primary), Camel (accent), Warm Taupe (secondary), Cream (background), and Linen (surfaces). Georgia serif pairs with tracked uppercase sans for all label and navigation type.</div>
       </div>
 
-      <!-- Screen 3: Applied Brand — Spring Catalog -->
+      <!-- Screen 3: Applied Brand — Bag Builder UI Screens 1–3 -->
       <div>
-        <div class="screen-label">Screen 3 — Applied Brand · Spring Catalog &amp; Campaign</div>
+        <div class="screen-label">Screen 3 — Applied Brand · Online Bag Builder UI</div>
         <div class="mhb-screen">
           <div class="mhb-bar">
             <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-            <div class="mhb-url">Monet Spring Collection — Catalog &amp; Campaign Photography</div>
+            <div class="mhb-url">monethandbags.com/build-yours — "Style All Your Own" Configurator</div>
           </div>
           <div style="background:#f9f7f4;padding:20px;">
-            <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#a08060;margin-bottom:14px;text-align:center;border-bottom:1px solid #e0d8cf;padding-bottom:10px;">Spring Collection — Applied Brand in Print &amp; Photography</div>
-            <!-- Hero spread -->
-            <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);margin-bottom:14px;position:relative;">
-              <img src="images/Madison Handbags/spring catalog/spring-cover.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" />
-              <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(90,74,58,.7));padding:12px 16px;">
-                <div style="font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#f5f0eb;font-weight:700;">Spring Collection</div>
-                <div style="font-size:7px;color:rgba(255,255,255,.75);margin-top:2px;">Editorial photography · On-location shoot · Art direction by Julie Dion</div>
+            <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#a08060;margin-bottom:14px;text-align:center;border-bottom:1px solid #e0d8cf;padding-bottom:10px;">Brand Applied — Online Bag Builder · Steps 1–3</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+
+              <!-- Step 1: Bag Type -->
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);">
+                <div style="background:#3c3c3c;padding:4px 8px;display:flex;gap:3px;align-items:center;">
+                  <span style="width:5px;height:5px;border-radius:50%;background:#FF5F57;display:inline-block;"></span>
+                  <span style="width:5px;height:5px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span>
+                  <span style="width:5px;height:5px;border-radius:50%;background:#28C840;display:inline-block;"></span>
+                  <span style="flex:1;background:#555;border-radius:2px;padding:1px 5px;font-size:5.5px;color:rgba(255,255,255,.45);margin-left:4px;">Step 1 of 6</span>
+                </div>
+                <div style="background:#ede5da;padding:4px 8px;border-bottom:1px solid #d8cfc4;display:flex;justify-content:space-between;align-items:center;">
+                  <div style="font-size:7px;letter-spacing:.2em;color:#5a4a3a;font-weight:800;">MONET</div>
+                  <div style="font-size:5px;color:#9a8070;">Build Yours</div>
+                </div>
+                <div style="background:#f9f5f0;padding:4px 8px;border-bottom:1px solid #e8ddd0;">
+                  <div style="font-size:6px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#5a4a3a;">Choose Your Style</div>
+                </div>
+                <div style="background:#f5f0eb;padding:8px;">
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;">
+                    <div style="border:2px solid #5a4a3a;border-radius:5px;padding:6px 4px;background:#ede5da;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-tote.png" style="height:36px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:5.5px;font-weight:700;color:#5a4a3a;margin-top:3px;">Tote ✓</div>
+                    </div>
+                    <div style="border:1px solid #e0d4c4;border-radius:5px;padding:6px 4px;background:#fff;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-crossbody.png" style="height:36px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:5.5px;font-weight:700;color:#a08060;margin-top:3px;">Crossbody</div>
+                    </div>
+                    <div style="border:1px solid #e0d4c4;border-radius:5px;padding:6px 4px;background:#fff;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-clutch.png" style="height:36px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:5.5px;font-weight:700;color:#a08060;margin-top:3px;">Clutch</div>
+                    </div>
+                    <div style="border:1px solid #e0d4c4;border-radius:5px;padding:6px 4px;background:#fff;text-align:center;">
+                      <img src="images/Madison Handbags/bags/bag-backpack.png" style="height:36px;width:auto;object-fit:contain;display:block;margin:0 auto;" />
+                      <div style="font-size:5.5px;font-weight:700;color:#a08060;margin-top:3px;">Backpack</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <!-- Catalog spreads grid -->
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
-              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
-                <img src="images/Madison Handbags/spring catalog/spring-p4.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
-                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.4</div></div>
+
+              <!-- Step 2: Strap -->
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);">
+                <div style="background:#3c3c3c;padding:4px 8px;display:flex;gap:3px;align-items:center;">
+                  <span style="width:5px;height:5px;border-radius:50%;background:#FF5F57;display:inline-block;"></span>
+                  <span style="width:5px;height:5px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span>
+                  <span style="width:5px;height:5px;border-radius:50%;background:#28C840;display:inline-block;"></span>
+                  <span style="flex:1;background:#555;border-radius:2px;padding:1px 5px;font-size:5.5px;color:rgba(255,255,255,.45);margin-left:4px;">Step 2 of 6</span>
+                </div>
+                <div style="background:#ede5da;padding:4px 8px;border-bottom:1px solid #d8cfc4;display:flex;justify-content:space-between;align-items:center;">
+                  <div style="font-size:7px;letter-spacing:.2em;color:#5a4a3a;font-weight:800;">MONET</div>
+                  <div style="font-size:5px;color:#9a8070;">Build Yours</div>
+                </div>
+                <div style="background:#f9f5f0;padding:4px 8px;border-bottom:1px solid #e8ddd0;">
+                  <div style="font-size:6px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#5a4a3a;">Choose Your Strap</div>
+                </div>
+                <div style="background:#f5f0eb;padding:8px;display:flex;flex-direction:column;gap:4px;">
+                  <div style="border:2px solid #5a4a3a;border-radius:5px;padding:5px 7px;background:#ede5da;display:flex;align-items:center;gap:5px;">
+                    <div style="font-size:11px;">〰️</div>
+                    <div><div style="font-size:6px;font-weight:700;color:#5a4a3a;">Long Leather ✓</div><div style="font-size:5px;color:#a08060;">Adjustable 18"–22"</div></div>
+                  </div>
+                  <div style="border:1px solid #e0d4c4;border-radius:5px;padding:5px 7px;background:#fff;display:flex;align-items:center;gap:5px;">
+                    <div style="font-size:11px;">🔗</div>
+                    <div><div style="font-size:6px;font-weight:700;color:#5a4a3a;">Gold Chain</div><div style="font-size:5px;color:#a08060;">Fixed 14" · Evening</div></div>
+                  </div>
+                  <div style="border:1px solid #e0d4c4;border-radius:5px;padding:5px 7px;background:#fff;display:flex;align-items:center;gap:5px;">
+                    <div style="font-size:11px;">🎀</div>
+                    <div><div style="font-size:6px;font-weight:700;color:#5a4a3a;">Top Handles</div><div style="font-size:5px;color:#a08060;">Structured carry</div></div>
+                  </div>
+                  <div style="border:1px solid #e0d4c4;border-radius:5px;padding:5px 7px;background:#fff;display:flex;align-items:center;gap:5px;">
+                    <div style="font-size:11px;">✖️</div>
+                    <div><div style="font-size:6px;font-weight:700;color:#5a4a3a;">No Strap</div><div style="font-size:5px;color:#a08060;">Clutch mode</div></div>
+                  </div>
+                </div>
               </div>
-              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
-                <img src="images/Madison Handbags/spring catalog/spring-p10.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
-                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.10</div></div>
+
+              <!-- Step 3: Fabric & Color -->
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);">
+                <div style="background:#3c3c3c;padding:4px 8px;display:flex;gap:3px;align-items:center;">
+                  <span style="width:5px;height:5px;border-radius:50%;background:#FF5F57;display:inline-block;"></span>
+                  <span style="width:5px;height:5px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span>
+                  <span style="width:5px;height:5px;border-radius:50%;background:#28C840;display:inline-block;"></span>
+                  <span style="flex:1;background:#555;border-radius:2px;padding:1px 5px;font-size:5.5px;color:rgba(255,255,255,.45);margin-left:4px;">Step 3 of 6</span>
+                </div>
+                <div style="background:#ede5da;padding:4px 8px;border-bottom:1px solid #d8cfc4;display:flex;justify-content:space-between;align-items:center;">
+                  <div style="font-size:7px;letter-spacing:.2em;color:#5a4a3a;font-weight:800;">MONET</div>
+                  <div style="font-size:5px;color:#9a8070;">Build Yours</div>
+                </div>
+                <div style="background:#f9f5f0;padding:4px 8px;border-bottom:1px solid #e8ddd0;">
+                  <div style="font-size:6px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#5a4a3a;">Fabric &amp; Color</div>
+                </div>
+                <div style="background:#f5f0eb;padding:8px;">
+                  <div style="font-size:6px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Material</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:7px;">
+                    <div style="border:2px solid #5a4a3a;border-radius:4px;padding:4px 5px;background:#ede5da;"><div style="font-size:6px;font-weight:700;color:#5a4a3a;">Vegan Leather ✓</div><div style="font-size:5px;color:#a08060;">Smooth, durable</div></div>
+                    <div style="border:1px solid #e0d4c4;border-radius:4px;padding:4px 5px;background:#fff;"><div style="font-size:6px;font-weight:700;color:#5a4a3a;">Canvas</div><div style="font-size:5px;color:#a08060;">Casual, light</div></div>
+                    <div style="border:1px solid #e0d4c4;border-radius:4px;padding:4px 5px;background:#fff;"><div style="font-size:6px;font-weight:700;color:#5a4a3a;">Suede</div><div style="font-size:5px;color:#a08060;">Soft, textured</div></div>
+                    <div style="border:1px solid #e0d4c4;border-radius:4px;padding:4px 5px;background:#fff;"><div style="font-size:6px;font-weight:700;color:#5a4a3a;">Patent</div><div style="font-size:5px;color:#a08060;">High-gloss</div></div>
+                  </div>
+                  <div style="font-size:6px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Color</div>
+                  <div style="display:flex;gap:5px;flex-wrap:wrap;">
+                    <div style="text-align:center;"><div style="width:16px;height:16px;border-radius:50%;background:#c8a882;border:2px solid #5a4a3a;margin:0 auto;"></div><div style="font-size:5px;color:#5a4a3a;margin-top:1px;">Camel ✓</div></div>
+                    <div style="text-align:center;"><div style="width:16px;height:16px;border-radius:50%;background:#8b7355;border:1px solid #e0d4c4;margin:0 auto;"></div><div style="font-size:5px;color:#a08060;margin-top:1px;">Cognac</div></div>
+                    <div style="text-align:center;"><div style="width:16px;height:16px;border-radius:50%;background:#2d2420;border:1px solid #e0d4c4;margin:0 auto;"></div><div style="font-size:5px;color:#a08060;margin-top:1px;">Black</div></div>
+                    <div style="text-align:center;"><div style="width:16px;height:16px;border-radius:50%;background:#7a3b2e;border:1px solid #e0d4c4;margin:0 auto;"></div><div style="font-size:5px;color:#a08060;margin-top:1px;">Burg.</div></div>
+                  </div>
+                </div>
               </div>
-              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
-                <img src="images/Madison Handbags/spring catalog/spring-p18.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
-                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.18</div></div>
-              </div>
-              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
-                <img src="images/Madison Handbags/spring catalog/spring-p26.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
-                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.26</div></div>
-              </div>
-              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
-                <img src="images/Madison Handbags/spring catalog/spring-p28.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
-                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.28</div></div>
-              </div>
+
             </div>
             <div style="margin-top:12px;background:#fff;border-radius:6px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-              <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:8px;">Production Credits</div>
+              <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:6px;">Brand Applied — UX &amp; Visual Identity</div>
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;">
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Art Direction</div><div style="font-size:7px;color:#a08060;">On-location shoot mgmt</div></div>
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Photography</div><div style="font-size:7px;color:#a08060;">Product &amp; lifestyle</div></div>
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Layout</div><div style="font-size:7px;color:#a08060;">InDesign · Print-ready</div></div>
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Models &amp; Vendors</div><div style="font-size:7px;color:#a08060;">Casting &amp; management</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Typography</div><div style="font-size:7px;color:#a08060;">Georgia serif · Inter body</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Color System</div><div style="font-size:7px;color:#a08060;">Espresso · Camel · Cream</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Interaction</div><div style="font-size:7px;color:#a08060;">Step flow · JS state</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Product Images</div><div style="font-size:7px;color:#a08060;">Real bag photography</div></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="screen-caption">Spring Collection catalog — full editorial shoot art-directed and produced by Julie Dion. On-location photography, model casting, vendor management, and InDesign layout through print-ready production.</div>
+        <div class="screen-caption">Brand applied to the online configurator — the same Espresso/Camel/Cream palette and Georgia serif typography from the catalog carries through every step of the digital builder UI, using real Monet product photography.</div>
       </div>
 
     </div><!-- /blb-screens -->
