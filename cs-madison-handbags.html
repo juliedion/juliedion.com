@@ -202,7 +202,7 @@
       <div class="cs-meta-item"><label>Deliverables</label><span>Brand · E-Commerce · Catalog · Print</span></div>
       <div class="cs-meta-item"><label>Design</label><span>Brand Identity · E-Commerce Design · Catalog Production</span></div>
       <div class="cs-meta-item"><label>Deliverables</label><span>Custom Online Builder · Seasonal Catalogs · Email Newsletters</span></div>
-      <div class="cs-meta-item"><label>Direction</label><span>Photo Art Direction · Print Advertising · 360° Digital Ecosystem</span></div>
+      <div class="cs-meta-item"><label>Direction</label><span>Photo Art Direction · Print Advertising</span></div>
       <div class="cs-meta-item"><label>Industry</label><span>Retail · E-Commerce</span></div>
     </div>
   </div>
@@ -220,7 +220,6 @@
     <div class="stat-item"><div class="stat-num">$10K+</div><div class="stat-label">Revenue Growth — Year 1</div></div>
     <div class="stat-item"><div class="stat-num">25</div><div class="stat-label">Events Produced</div></div>
     <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Catalogs &amp; Conferences</div></div>
-    <div class="stat-item"><div class="stat-num">360°</div><div class="stat-label">Production &amp; Brand Ecosystem</div></div>
   </div>
 </div>
 
@@ -323,6 +322,17 @@
       </div>
     </div>
 
+    <!-- Card 4b: Fall 2013 Catalog -->
+    <div class="lb-card" onclick="openFall2013CatalogLb()">
+      <div class="lb-card-img"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_04.jpg" alt="Fall 2013 Catalog" style="object-fit:cover;object-position:top;" /></div>
+      <div class="lb-card-body">
+        <div class="lb-card-tag">Print · Catalog · 17 Pages</div>
+        <h3 class="lb-card-title">Fall 2013 Catalog</h3>
+        <p class="lb-card-desc">Full 17-page Fall 2013 print catalog — lifestyle photography, editorial spreads, and print-ready InDesign production for the Madison Handbags fall campaign.</p>
+        <div class="lb-card-cta"><i class="fas fa-book-open"></i> Browse Catalog</div>
+      </div>
+    </div>
+
     <!-- Card 5: Layout & Brand -->
     <div class="lb-card" onclick="openFullImg('images/Madison Handbags/Mhb.Monet-layout.jpg','Monet Layout &amp; Campaign Materials')">
       <div class="lb-card-img"><img src="images/Madison Handbags/Mhb.Monet-layout.jpg" alt="Monet Layout" /></div>
@@ -390,7 +400,7 @@
       <div class="result-card"><div class="result-num">$10K+</div><div class="result-label">Revenue growth in Year 1 following the rebrand and digital launch</div></div>
       <div class="result-card"><div class="result-num">25</div><div class="result-label">Events produced — shows, trunk sales, design conferences, and VIP launches</div></div>
       <div class="result-card"><div class="result-num">4</div><div class="result-label">Seasonal catalogs produced with full photography, layout, and print production</div></div>
-      <div class="result-card"><div class="result-num">360°</div><div class="result-label">Unified brand across catalog, web, email, social, retail, and on-location shoots</div></div>
+      <div class="result-card"></div>
     </div>
   </div>
 </section>
@@ -955,17 +965,27 @@
           </div>
           <!-- body -->
           <div style="padding:10px 12px;flex:1;display:flex;gap:10px;overflow:hidden;">
-            <!-- Left: bag preview -->
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f9f5f0;border-radius:8px;padding:10px;">
-              <div style="font-size:6.5px;letter-spacing:.15em;text-transform:uppercase;color:#a08060;margin-bottom:6px;">Your Custom Monet</div>
-              <div style="width:90px;height:96px;overflow:hidden;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.12);background:#f9f5f0;display:flex;align-items:center;justify-content:center;position:relative;">
-                <img src="images/Madison Handbags/bags/bag-tote.png" style="height:88px;width:auto;object-fit:contain;display:block;" />
-                <!-- monogram badge -->
-                <div style="position:absolute;bottom:4px;right:4px;background:rgba(90,74,58,.85);color:#f5f0eb;font-size:6px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:.15em;">JRD</div>
+            <!-- Left: bag mockup lifestyle display -->
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:8px;overflow:hidden;background:linear-gradient(160deg,#ede5da 0%,#d8cfc4 60%,#c8b8a4 100%);padding:10px;position:relative;">
+              <!-- surface texture suggestion -->
+              <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0px,rgba(255,255,255,.04) 1px,transparent 1px,transparent 8px);pointer-events:none;"></div>
+              <div style="font-size:6px;letter-spacing:.2em;text-transform:uppercase;color:rgba(90,74,58,.65);margin-bottom:8px;position:relative;">Your Custom Monet</div>
+              <!-- Mockup frame: drop-shadow product shot -->
+              <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;">
+                <!-- subtle ground shadow -->
+                <div style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:80px;height:10px;background:radial-gradient(ellipse at center,rgba(90,74,58,.3) 0%,transparent 70%);border-radius:50%;"></div>
+                <img src="images/Madison Handbags/bags/bag-tote.png" style="height:94px;width:auto;object-fit:contain;display:block;filter:drop-shadow(0 8px 16px rgba(90,74,58,.35)) drop-shadow(0 2px 4px rgba(90,74,58,.2));position:relative;z-index:1;" />
+                <!-- monogram hang tag -->
+                <div style="position:absolute;top:8px;right:-4px;z-index:2;">
+                  <div style="width:1px;height:10px;background:#c8a050;margin:0 auto;"></div>
+                  <div style="background:#f5f0eb;border:1px solid #c8a050;border-radius:3px;padding:2px 4px;font-size:5.5px;font-weight:700;color:#5a4a3a;letter-spacing:.15em;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.12);">JRD</div>
+                </div>
               </div>
-              <!-- charm -->
-              <div style="margin-top:4px;font-size:14px;">🌸</div>
-              <div style="font-size:6.5px;color:#a08060;margin-top:2px;text-align:center;">Floral Charm · Gold Hardware</div>
+              <div style="margin-top:8px;display:flex;align-items:center;gap:4px;position:relative;">
+                <div style="width:6px;height:6px;border-radius:50%;background:#c8a050;"></div>
+                <div style="font-size:6px;color:rgba(90,74,58,.75);letter-spacing:.05em;">Gold Hardware · Floral Charm</div>
+              </div>
+              <div style="margin-top:4px;font-size:6px;font-weight:700;color:#5a4a3a;letter-spacing:.1em;">Camel Vegan Leather Tote</div>
             </div>
             <!-- Right: spec summary + price -->
             <div style="width:110px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;">
@@ -1324,6 +1344,41 @@
   </div>
 </div>
 
+
+<!-- ═══ Fall 2013 Catalog Lightbox ═══ -->
+<div class="blb-overlay" id="fall2013-catalog-overlay" onclick="if(event.target===this)closeFall2013CatalogLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Fall 2013 Catalog</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Madison Handbags · 17-Page Catalog · Print-Ready Production</div>
+      </div>
+      <button class="blb-close" onclick="closeFall2013CatalogLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;grid-column:span 2;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_01.jpg','Fall 2013 Catalog — Page 1')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_01.jpg" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_02.jpg','Fall 2013 Catalog — Page 2')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_02.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_03.jpg','Fall 2013 Catalog — Page 3')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_03.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_04.jpg','Fall 2013 Catalog — Page 4')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_04.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_05.jpg','Fall 2013 Catalog — Page 5')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_05.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_06.jpg','Fall 2013 Catalog — Page 6')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_06.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_07.jpg','Fall 2013 Catalog — Page 7')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_07.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_08.jpg','Fall 2013 Catalog — Page 8')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_08.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_09.jpg','Fall 2013 Catalog — Page 9')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_09.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_10.jpg','Fall 2013 Catalog — Page 10')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_10.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_11.jpg','Fall 2013 Catalog — Page 11')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_11.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_12.jpg','Fall 2013 Catalog — Page 12')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_12.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_13.jpg','Fall 2013 Catalog — Page 13')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_13.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_14.jpg','Fall 2013 Catalog — Page 14')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_14.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_15.jpg','Fall 2013 Catalog — Page 15')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_15.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_16.jpg','Fall 2013 Catalog — Page 16')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_16.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_17.jpg','Fall 2013 Catalog — Page 17')"><img src="images/Madison Handbags/fall 2013 catalog/JRo_MHB Fall 2013 Catalog_FNL_Page_17.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Full-image overlay -->
 <div class="full-img-overlay" id="full-img-overlay" onclick="closeFullImg()">
   <img id="full-img-el" src="" alt="" />
@@ -1346,6 +1401,8 @@
   function closeSpringCatalogLb() { document.getElementById('spring-catalog-overlay').style.display = 'none'; }
   function openBrandLb() { document.getElementById('brand-lb-overlay').style.display = 'flex'; }
   function closeBrandLb() { document.getElementById('brand-lb-overlay').style.display = 'none'; }
+  function openFall2013CatalogLb() { document.getElementById('fall2013-catalog-overlay').style.display = 'flex'; }
+  function closeFall2013CatalogLb() { document.getElementById('fall2013-catalog-overlay').style.display = 'none'; }
   function openFallCatalogLb() { document.getElementById('fall-catalog-overlay').style.display = 'flex'; }
   function closeFallCatalogLb() { document.getElementById('fall-catalog-overlay').style.display = 'none'; }
   function openFullImg(src, alt) {
@@ -1356,7 +1413,7 @@
   }
   function closeFullImg() { document.getElementById('full-img-overlay').style.display = 'none'; }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeBuilderLb(); closeSpringCatalogLb(); closeBrandLb(); closeFallCatalogLb(); closeFullImg(); }
+    if (e.key === 'Escape') { closeBuilderLb(); closeSpringCatalogLb(); closeBrandLb(); closeFallCatalogLb(); closeFall2013CatalogLb(); closeFullImg(); }
   });
 </script>
 </body>
