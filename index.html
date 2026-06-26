@@ -893,11 +893,13 @@
       font-size: 13px;
       font-weight: 500;
       color: rgba(255,255,255,.7);
-      cursor: default;
+      cursor: pointer;
       transition: all var(--trans);
       display: flex;
       align-items: center;
       gap: 8px;
+      position: relative;
+      text-decoration: none;
     }
 
     .industry-chip i {
@@ -914,6 +916,48 @@
       background: rgba(0,200,232,.08);
       transform: translateY(-2px);
     }
+
+    .ind-popover {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a2232;
+      border: 1px solid rgba(0,200,232,.35);
+      border-radius: 12px;
+      padding: 10px;
+      min-width: 220px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.6);
+      z-index: 200;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .ind-popover.open { display: flex; }
+    .ind-popover::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: rgba(0,200,232,.35);
+    }
+    .ind-popover a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 8px;
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      transition: background .15s;
+      white-space: nowrap;
+    }
+    .ind-popover a:hover { background: rgba(0,200,232,.15); color: #fff; }
+    .ind-popover a i { font-size: 13px; background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; flex-shrink:0; }
 
     /* ─── Testimonials ───────────────────────────────────────────────── */
     #testimonials {
@@ -1731,16 +1775,46 @@
       <p class="section-subtitle">Deep experience across sectors means I understand your audience, your constraints, and your goals before the first pixel is placed.</p>
     </div>
     <div class="industry-grid fade-up">
-      <div class="industry-chip"><i class="fas fa-heart-pulse"></i> Healthcare</div>
-      <div class="industry-chip"><i class="fas fa-signal"></i> Telecommunications</div>
-      <div class="industry-chip"><i class="fas fa-graduation-cap"></i> Education</div>
-      <div class="industry-chip"><i class="fas fa-hand-holding-heart"></i> Nonprofit</div>
-      <div class="industry-chip"><i class="fas fa-store"></i> Retail</div>
-      <div class="industry-chip"><i class="fas fa-cart-shopping"></i> E-Commerce</div>
-      <div class="industry-chip"><i class="fas fa-chart-line"></i> Financial Services</div>
-      <div class="industry-chip"><i class="fas fa-plane"></i> Travel &amp; Hospitality</div>
-      <div class="industry-chip"><i class="fas fa-microchip"></i> Technology</div>
-      <div class="industry-chip"><i class="fas fa-users"></i> Community Organizations</div>
+
+      <!-- Healthcare — popover: HCS or Merck -->
+      <div class="industry-chip" onclick="toggleIndPopover(event,'pop-healthcare')">
+        <i class="fas fa-heart-pulse"></i> Healthcare <i class="fas fa-chevron-up" style="font-size:10px;opacity:.6;background:none;-webkit-text-fill-color:rgba(255,255,255,.6);"></i>
+        <div class="ind-popover" id="pop-healthcare">
+          <a href="cs-hcs-resilix.html"><i class="fas fa-laptop-medical"></i> Human Care Systems — Resilix</a>
+          <a href="cs-merck-campaigns.html"><i class="fas fa-flask"></i> Merck Millipore — Campaigns</a>
+        </div>
+      </div>
+
+      <!-- Telecom → Charter -->
+      <a class="industry-chip" href="cs-charter-smb-homepage.html"><i class="fas fa-signal"></i> Telecommunications</a>
+
+      <!-- Education → PTO -->
+      <a class="industry-chip" href="cs-pto-schalmont.html"><i class="fas fa-graduation-cap"></i> Education</a>
+
+      <!-- Nonprofit → PTO -->
+      <a class="industry-chip" href="cs-pto-schalmont.html"><i class="fas fa-hand-holding-heart"></i> Nonprofit</a>
+
+      <!-- Retail → Madison -->
+      <a class="industry-chip" href="cs-madison-handbags.html"><i class="fas fa-store"></i> Retail</a>
+
+      <!-- E-Commerce → Madison -->
+      <a class="industry-chip" href="cs-madison-handbags.html"><i class="fas fa-cart-shopping"></i> E-Commerce</a>
+
+      <!-- Financial Services → ITG / ShareBuilder -->
+      <a class="industry-chip" href="cs-itg.html#sharebuilder"><i class="fas fa-chart-line"></i> Financial Services</a>
+
+      <!-- Technology — popover: Charter, Inspired, Microsoft, PTO, Madison -->
+      <div class="industry-chip" onclick="toggleIndPopover(event,'pop-technology')">
+        <i class="fas fa-microchip"></i> Technology <i class="fas fa-chevron-up" style="font-size:10px;opacity:.6;background:none;-webkit-text-fill-color:rgba(255,255,255,.6);"></i>
+        <div class="ind-popover" id="pop-technology">
+          <a href="cs-charter-smb-homepage.html"><i class="fas fa-tv"></i> Charter Spectrum</a>
+          <a href="cs-inspired.html"><i class="fas fa-lightbulb"></i> Inspired eLearning</a>
+          <a href="cs-itg.html"><i class="fab fa-microsoft"></i> Microsoft / ITG</a>
+          <a href="cs-pto-schalmont.html"><i class="fas fa-school"></i> Schalmont PTO</a>
+          <a href="cs-madison-handbags.html"><i class="fas fa-bag-shopping"></i> Madison Handbags</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -2042,6 +2116,18 @@
 
 <!-- ═══ JavaScript ══════════════════════════════════════════════════ -->
 <script>
+  /* ── Industry Popovers ────────────────────────────────────────── */
+  function toggleIndPopover(e, id) {
+    e.stopPropagation();
+    const pop = document.getElementById(id);
+    const isOpen = pop.classList.contains('open');
+    document.querySelectorAll('.ind-popover.open').forEach(p => p.classList.remove('open'));
+    if (!isOpen) pop.classList.add('open');
+  }
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.ind-popover.open').forEach(p => p.classList.remove('open'));
+  });
+
   /* ── Year ─────────────────────────────────────────────────────── */
   document.getElementById('year').textContent = new Date().getFullYear();
 
