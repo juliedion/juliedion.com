@@ -705,60 +705,310 @@
       </div>
 
       <!-- ── Final Product Panel ── -->
-      <div id="mhb-panel-final" style="display:none;height:100%;flex-direction:column;background:#1a1a2e;align-items:center;justify-content:center;padding:24px;gap:16px;">
-        <div style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px;">Final Product — Live Bag Builder</div>
-        <!-- Browser chrome -->
-        <div style="background:#f5f0eb;border-radius:10px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6);width:100%;max-width:780px;">
-          <!-- Browser bar -->
-          <div style="background:#3c3c3c;padding:8px 14px;display:flex;align-items:center;gap:10px;">
-            <div style="display:flex;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:10px;height:10px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
-            <div style="flex:1;background:#555;border-radius:4px;padding:4px 10px;font-size:9px;color:rgba(255,255,255,.6);">monethandbags.com/build-yours</div>
+      <div id="mhb-panel-final" style="display:none;height:100%;flex-direction:column;background:#2a2030;overflow:hidden;">
+        <!-- panel header -->
+        <div style="padding:10px 20px;background:#1a1424;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-size:11px;font-weight:700;color:#fff;letter-spacing:.05em;">Style All Your Own — 6-Screen Builder Flow</div>
+          <div style="font-size:9px;color:rgba(255,255,255,.35);">monethandbags.com/build-yours</div>
+        </div>
+        <!-- screens grid -->
+        <div style="flex:1;overflow-y:auto;padding:16px 20px;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+            <div style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-height:0;">
+          <!-- browser bar -->
+          <div style="background:#3c3c3c;padding:5px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;">
+            <div style="display:flex;gap:3px;"><span style="width:7px;height:7px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+            <div style="flex:1;background:#555;border-radius:3px;padding:2px 7px;font-size:7px;color:rgba(255,255,255,.55);">monethandbags.com/build · Step 1</div>
           </div>
-          <!-- Page nav -->
-          <div style="background:#ede5da;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;">
-            <div style="font-size:10px;letter-spacing:.3em;color:#5a4a3a;font-weight:700;">MONET</div>
-            <div style="display:flex;gap:16px;font-size:9px;color:#7a6a5a;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span><span>About</span></div>
+          <div style="background:#ede5da;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
+              <div style="font-size:9px;letter-spacing:.3em;color:#5a4a3a;font-weight:800;">MONET</div>
+              <div style="display:flex;gap:12px;font-size:7px;color:#9a8070;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+            </div>
+          <div style="display:flex;align-items:center;padding:7px 12px;background:#f9f5f0;border-bottom:1px solid #e8ddd0;flex-shrink:0;"><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#c8a882;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">1</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Bag Type</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">2</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Strap</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">3</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Fabric</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">4</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Interior</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">5</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Personalize</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">6</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Preview</div></div></div>
+          <!-- step header -->
+          <div style="padding:7px 12px 6px;background:#f5f0eb;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a4a3a;">Step 1 — Bag Type</div>
+            <div style="font-size:7px;color:#a08060;margin-top:1px;">Pick your silhouette</div>
           </div>
-          <!-- Page title -->
-          <div style="padding:12px 20px;text-align:center;background:#f5f0eb;border-bottom:1px solid #e8ddd0;">
-            <div style="font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#5a4a3a;font-weight:700;">Style All Your Own</div>
-            <div style="font-size:9px;color:#a08060;margin-top:3px;">Choose your style · color · hardware · lining</div>
-          </div>
-          <!-- Builder layout -->
-          <div style="display:flex;height:240px;">
-            <!-- Sidebar -->
-            <div style="width:140px;background:#ede5da;border-right:1px solid #d8cfc4;padding:14px 12px;flex-shrink:0;">
-              <div style="font-size:7px;text-transform:uppercase;letter-spacing:.2em;color:#5a4a3a;margin-bottom:6px;border-bottom:1px solid #c8b8a4;padding-bottom:4px;">Style</div>
-              <div style="font-size:8px;padding:4px 8px;background:#5a4a3a;color:#f5f0eb;border-radius:2px;margin-bottom:3px;text-align:center;">Tote</div>
-              <div style="font-size:8px;padding:4px 8px;background:#fff;border:1px solid #d8cfc4;border-radius:2px;margin-bottom:3px;text-align:center;color:#5a4a3a;">Crossbody</div>
-              <div style="font-size:8px;padding:4px 8px;background:#fff;border:1px solid #d8cfc4;border-radius:2px;margin-bottom:12px;text-align:center;color:#5a4a3a;">Clutch</div>
-              <div style="font-size:7px;text-transform:uppercase;letter-spacing:.2em;color:#5a4a3a;margin-bottom:6px;">Color</div>
-              <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;">
-                <div style="width:16px;height:16px;border-radius:50%;background:#c8a882;border:2px solid #5a4a3a;"></div>
-                <div style="width:16px;height:16px;border-radius:50%;background:#8b7355;"></div>
-                <div style="width:16px;height:16px;border-radius:50%;background:#d4c4b0;"></div>
-                <div style="width:16px;height:16px;border-radius:50%;background:#2d2420;"></div>
-                <div style="width:16px;height:16px;border-radius:50%;background:#7a3b2e;"></div>
+          <!-- body -->
+          <div style="padding:10px 12px;flex:1;overflow:hidden;">
+            <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:7px;letter-spacing:.1em;text-transform:uppercase;">Choose Your Bag Style</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+              <div style="border:2px solid #5a4a3a;border-radius:6px;padding:8px;background:#ede5da;text-align:center;">
+                <div style="font-size:18px;margin-bottom:3px;">👜</div>
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Tote</div>
+                <div style="font-size:6px;color:#a08060;margin-top:1px;">Spacious &amp; structured</div>
+                <div style="margin-top:5px;font-size:6px;padding:2px 6px;background:#5a4a3a;color:#fff;border-radius:2px;display:inline-block;">Selected ✓</div>
               </div>
-              <div style="font-size:7px;text-transform:uppercase;letter-spacing:.2em;color:#5a4a3a;margin-bottom:5px;">Hardware</div>
-              <div style="display:flex;gap:4px;">
-                <div style="font-size:7px;padding:3px 6px;background:#c0a040;color:#fff;border-radius:2px;font-weight:600;">Gold</div>
-                <div style="font-size:7px;padding:3px 6px;background:#fff;border:1px solid #d8cfc4;border-radius:2px;color:#5a4a3a;">Silver</div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px;background:#fff;text-align:center;">
+                <div style="font-size:18px;margin-bottom:3px;">👛</div>
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Crossbody</div>
+                <div style="font-size:6px;color:#a08060;margin-top:1px;">Hands-free &amp; sleek</div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px;background:#fff;text-align:center;">
+                <div style="font-size:18px;margin-bottom:3px;">💼</div>
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Clutch</div>
+                <div style="font-size:6px;color:#a08060;margin-top:1px;">Evening &amp; compact</div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px;background:#fff;text-align:center;">
+                <div style="font-size:18px;margin-bottom:3px;">🎒</div>
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Backpack</div>
+                <div style="font-size:6px;color:#a08060;margin-top:1px;">Casual &amp; functional</div>
               </div>
             </div>
-            <!-- Preview panel -->
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;gap:8px;background:#f5f0eb;">
-              <div style="font-size:7px;color:#a08060;letter-spacing:.2em;text-transform:uppercase;">Preview</div>
-              <div style="width:130px;height:110px;overflow:hidden;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.12);">
-                <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <div style="margin-top:8px;text-align:right;"><div style="font-size:7px;padding:4px 12px;background:#5a4a3a;color:#fff;border-radius:3px;display:inline-block;cursor:pointer;">Next: Choose Strap →</div></div>
+          </div>
+        </div>
+            <div style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-height:0;">
+          <!-- browser bar -->
+          <div style="background:#3c3c3c;padding:5px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;">
+            <div style="display:flex;gap:3px;"><span style="width:7px;height:7px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+            <div style="flex:1;background:#555;border-radius:3px;padding:2px 7px;font-size:7px;color:rgba(255,255,255,.55);">monethandbags.com/build · Step 2</div>
+          </div>
+          <div style="background:#ede5da;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
+              <div style="font-size:9px;letter-spacing:.3em;color:#5a4a3a;font-weight:800;">MONET</div>
+              <div style="display:flex;gap:12px;font-size:7px;color:#9a8070;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+            </div>
+          <div style="display:flex;align-items:center;padding:7px 12px;background:#f9f5f0;border-bottom:1px solid #e8ddd0;flex-shrink:0;"><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Bag Type</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#c8a882;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">2</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Strap</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">3</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Fabric</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">4</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Interior</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">5</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Personalize</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">6</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Preview</div></div></div>
+          <!-- step header -->
+          <div style="padding:7px 12px 6px;background:#f5f0eb;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a4a3a;">Step 2 — Strap</div>
+            <div style="font-size:7px;color:#a08060;margin-top:1px;">How will you carry it?</div>
+          </div>
+          <!-- body -->
+          <div style="padding:10px 12px;flex:1;overflow:hidden;">
+            <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:7px;letter-spacing:.1em;text-transform:uppercase;">Choose Your Strap</div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="border:2px solid #5a4a3a;border-radius:6px;padding:7px 10px;background:#ede5da;display:flex;align-items:center;gap:8px;">
+                <div style="font-size:13px;">〰️</div>
+                <div style="flex:1;"><div style="font-size:7px;font-weight:700;color:#5a4a3a;">Long Leather Strap</div><div style="font-size:6px;color:#a08060;">Adjustable 18"–22" · Shoulder or crossbody</div></div>
+                <div style="font-size:6px;color:#5a4a3a;font-weight:700;">Selected ✓</div>
               </div>
-              <div style="font-size:8px;color:#5a4a3a;text-align:center;">Tote · Camel · Gold Hardware</div>
-              <div style="font-size:9px;color:#a08060;font-weight:600;">$148</div>
-              <div style="font-size:8px;padding:6px 18px;background:#5a4a3a;color:#f5f0eb;border-radius:3px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;">Add to Cart</div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:7px 10px;background:#fff;display:flex;align-items:center;gap:8px;">
+                <div style="font-size:13px;">🔗</div>
+                <div style="flex:1;"><div style="font-size:7px;font-weight:700;color:#5a4a3a;">Gold Chain Strap</div><div style="font-size:6px;color:#a08060;">Fixed 14" · Evening &amp; special occasions</div></div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:7px 10px;background:#fff;display:flex;align-items:center;gap:8px;">
+                <div style="font-size:13px;">🎀</div>
+                <div style="flex:1;"><div style="font-size:7px;font-weight:700;color:#5a4a3a;">Short Top Handles</div><div style="font-size:6px;color:#a08060;">Structured carry · Classic handbag silhouette</div></div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:7px 10px;background:#fff;display:flex;align-items:center;gap:8px;">
+                <div style="font-size:13px;">✖️</div>
+                <div style="flex:1;"><div style="font-size:7px;font-weight:700;color:#5a4a3a;">No Strap / Clutch Mode</div><div style="font-size:6px;color:#a08060;">Hand carry only</div></div>
+              </div>
+            </div>
+            <div style="margin-top:8px;display:flex;justify-content:space-between;"><div style="font-size:7px;padding:4px 10px;border:1px solid #d8cfc4;color:#5a4a3a;border-radius:3px;display:inline-block;">← Back</div><div style="font-size:7px;padding:4px 12px;background:#5a4a3a;color:#fff;border-radius:3px;display:inline-block;">Next: Fabric →</div></div>
+          </div>
+        </div>
+            <div style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-height:0;">
+          <!-- browser bar -->
+          <div style="background:#3c3c3c;padding:5px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;">
+            <div style="display:flex;gap:3px;"><span style="width:7px;height:7px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+            <div style="flex:1;background:#555;border-radius:3px;padding:2px 7px;font-size:7px;color:rgba(255,255,255,.55);">monethandbags.com/build · Step 3</div>
+          </div>
+          <div style="background:#ede5da;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
+              <div style="font-size:9px;letter-spacing:.3em;color:#5a4a3a;font-weight:800;">MONET</div>
+              <div style="display:flex;gap:12px;font-size:7px;color:#9a8070;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+            </div>
+          <div style="display:flex;align-items:center;padding:7px 12px;background:#f9f5f0;border-bottom:1px solid #e8ddd0;flex-shrink:0;"><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Bag Type</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Strap</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#c8a882;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">3</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Fabric</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">4</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Interior</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">5</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Personalize</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">6</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Preview</div></div></div>
+          <!-- step header -->
+          <div style="padding:7px 12px 6px;background:#f5f0eb;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a4a3a;">Step 3 — Fabric &amp; Color</div>
+            <div style="font-size:7px;color:#a08060;margin-top:1px;">Material and palette</div>
+          </div>
+          <!-- body -->
+          <div style="padding:10px 12px;flex:1;overflow:hidden;">
+            <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:5px;letter-spacing:.1em;text-transform:uppercase;">Choose Fabric &amp; Color</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:7px;">
+              <div style="border:2px solid #5a4a3a;border-radius:5px;padding:6px 8px;background:#ede5da;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Vegan Leather ✓</div>
+                <div style="font-size:6px;color:#a08060;">Smooth, durable, cruelty-free</div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:5px;padding:6px 8px;background:#fff;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Canvas</div>
+                <div style="font-size:6px;color:#a08060;">Lightweight, casual</div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:5px;padding:6px 8px;background:#fff;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Suede</div>
+                <div style="font-size:6px;color:#a08060;">Soft, textured, luxe</div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:5px;padding:6px 8px;background:#fff;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;">Patent Leather</div>
+                <div style="font-size:6px;color:#a08060;">High-gloss, statement</div>
+              </div>
+            </div>
+            <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:5px;letter-spacing:.1em;text-transform:uppercase;">Pick Your Color</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:7px;">
+              <div style="text-align:center;"><div style="width:22px;height:22px;border-radius:50%;background:#c8a882;border:2.5px solid #5a4a3a;margin:0 auto;"></div><div style="font-size:5.5px;color:#5a4a3a;margin-top:2px;">Camel ✓</div></div>
+              <div style="text-align:center;"><div style="width:22px;height:22px;border-radius:50%;background:#8b7355;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:2px;">Cognac</div></div>
+              <div style="text-align:center;"><div style="width:22px;height:22px;border-radius:50%;background:#d4c4b0;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:2px;">Cream</div></div>
+              <div style="text-align:center;"><div style="width:22px;height:22px;border-radius:50%;background:#2d2420;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:2px;">Black</div></div>
+              <div style="text-align:center;"><div style="width:22px;height:22px;border-radius:50%;background:#7a3b2e;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:2px;">Burgundy</div></div>
+              <div style="text-align:center;"><div style="width:22px;height:22px;border-radius:50%;background:#4a6741;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:2px;">Forest</div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;"><div style="font-size:7px;padding:4px 10px;border:1px solid #d8cfc4;color:#5a4a3a;border-radius:3px;display:inline-block;">← Back</div><div style="font-size:7px;padding:4px 12px;background:#5a4a3a;color:#fff;border-radius:3px;display:inline-block;">Next: Interior →</div></div>
+          </div>
+        </div>
+            <div style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-height:0;">
+          <!-- browser bar -->
+          <div style="background:#3c3c3c;padding:5px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;">
+            <div style="display:flex;gap:3px;"><span style="width:7px;height:7px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+            <div style="flex:1;background:#555;border-radius:3px;padding:2px 7px;font-size:7px;color:rgba(255,255,255,.55);">monethandbags.com/build · Step 4</div>
+          </div>
+          <div style="background:#ede5da;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
+              <div style="font-size:9px;letter-spacing:.3em;color:#5a4a3a;font-weight:800;">MONET</div>
+              <div style="display:flex;gap:12px;font-size:7px;color:#9a8070;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+            </div>
+          <div style="display:flex;align-items:center;padding:7px 12px;background:#f9f5f0;border-bottom:1px solid #e8ddd0;flex-shrink:0;"><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Bag Type</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Strap</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Fabric</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#c8a882;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">4</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Interior</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">5</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Personalize</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">6</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Preview</div></div></div>
+          <!-- step header -->
+          <div style="padding:7px 12px 6px;background:#f5f0eb;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a4a3a;">Step 4 — Interior</div>
+            <div style="font-size:7px;color:#a08060;margin-top:1px;">Pockets, lining &amp; hardware</div>
+          </div>
+          <!-- body -->
+          <div style="padding:10px 12px;flex:1;overflow:hidden;">
+            <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:6px;letter-spacing:.1em;text-transform:uppercase;">Customize the Inside</div>
+            <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:7px;">
+              <div style="border-bottom:1px solid #e8ddd0;padding-bottom:5px;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Lining Color</div>
+                <div style="display:flex;gap:5px;">
+                  <div style="text-align:center;"><div style="width:18px;height:18px;border-radius:50%;background:#f5e6d0;border:2px solid #5a4a3a;margin:0 auto;"></div><div style="font-size:5.5px;color:#5a4a3a;margin-top:1px;">Blush ✓</div></div>
+                  <div style="text-align:center;"><div style="width:18px;height:18px;border-radius:50%;background:#1a1a2e;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:1px;">Navy</div></div>
+                  <div style="text-align:center;"><div style="width:18px;height:18px;border-radius:50%;background:#c8a882;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:1px;">Tan</div></div>
+                  <div style="text-align:center;"><div style="width:18px;height:18px;border-radius:50%;background:#fff;border:1.5px solid #d8cfc4;margin:0 auto;"></div><div style="font-size:5.5px;color:#a08060;margin-top:1px;">White</div></div>
+                </div>
+              </div>
+              <div style="border-bottom:1px solid #e8ddd0;padding-bottom:5px;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Interior Pockets</div>
+                <div style="display:flex;flex-direction:column;gap:3px;">
+                  <div style="display:flex;align-items:center;gap:5px;"><div style="width:10px;height:10px;border-radius:2px;background:#5a4a3a;border:1px solid #5a4a3a;display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;">✓</div><div style="font-size:7px;color:#5a4a3a;">Phone pocket (with elastic sides)</div></div>
+                  <div style="display:flex;align-items:center;gap:5px;"><div style="width:10px;height:10px;border-radius:2px;background:#5a4a3a;border:1px solid #5a4a3a;display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;">✓</div><div style="font-size:7px;color:#5a4a3a;">Zip coin pocket</div></div>
+                  <div style="display:flex;align-items:center;gap:5px;"><div style="width:10px;height:10px;border-radius:2px;background:#fff;border:1.5px solid #d8cfc4;"></div><div style="font-size:7px;color:#a08060;">Key hook + ring</div></div>
+                  <div style="display:flex;align-items:center;gap:5px;"><div style="width:10px;height:10px;border-radius:2px;background:#fff;border:1.5px solid #d8cfc4;"></div><div style="font-size:7px;color:#a08060;">Hidden ID window pocket</div></div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Hardware Finish</div>
+                <div style="display:flex;gap:5px;">
+                  <div style="font-size:7px;padding:3px 8px;background:#c0a040;color:#fff;border-radius:2px;font-weight:600;border:1.5px solid #c0a040;">Gold ✓</div>
+                  <div style="font-size:7px;padding:3px 8px;background:#fff;color:#5a4a3a;border-radius:2px;border:1.5px solid #d8cfc4;">Silver</div>
+                  <div style="font-size:7px;padding:3px 8px;background:#fff;color:#5a4a3a;border-radius:2px;border:1.5px solid #d8cfc4;">Rose Gold</div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;"><div style="font-size:7px;padding:4px 10px;border:1px solid #d8cfc4;color:#5a4a3a;border-radius:3px;display:inline-block;">← Back</div><div style="font-size:7px;padding:4px 12px;background:#5a4a3a;color:#fff;border-radius:3px;display:inline-block;">Next: Personalize →</div></div>
+          </div>
+        </div>
+            <div style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-height:0;">
+          <!-- browser bar -->
+          <div style="background:#3c3c3c;padding:5px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;">
+            <div style="display:flex;gap:3px;"><span style="width:7px;height:7px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+            <div style="flex:1;background:#555;border-radius:3px;padding:2px 7px;font-size:7px;color:rgba(255,255,255,.55);">monethandbags.com/build · Step 5</div>
+          </div>
+          <div style="background:#ede5da;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
+              <div style="font-size:9px;letter-spacing:.3em;color:#5a4a3a;font-weight:800;">MONET</div>
+              <div style="display:flex;gap:12px;font-size:7px;color:#9a8070;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+            </div>
+          <div style="display:flex;align-items:center;padding:7px 12px;background:#f9f5f0;border-bottom:1px solid #e8ddd0;flex-shrink:0;"><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Bag Type</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Strap</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Fabric</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Interior</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#c8a882;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">5</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Personalize</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#f5f0eb;color:#c8b8a4;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #c8b8a4;flex-shrink:0;">6</div><div style="font-size:5.5px;color:#c8b8a4;font-weight:600;margin-top:2px;white-space:nowrap;">Preview</div></div></div>
+          <!-- step header -->
+          <div style="padding:7px 12px 6px;background:#f5f0eb;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a4a3a;">Step 5 — Personalize</div>
+            <div style="font-size:7px;color:#a08060;margin-top:1px;">Monogram, charm &amp; gifting</div>
+          </div>
+          <!-- body -->
+          <div style="padding:10px 12px;flex:1;overflow:hidden;">
+            <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:6px;letter-spacing:.1em;text-transform:uppercase;">Make It Yours</div>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:7px;">
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px 10px;background:#fff;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Monogram / Initials</div>
+                <div style="display:flex;align-items:center;gap:6px;">
+                  <div style="border:1.5px solid #c8a882;border-radius:4px;padding:4px 10px;font-size:11px;font-weight:700;color:#5a4a3a;letter-spacing:.2em;background:#f9f5f0;font-family:Georgia,serif;">JRD</div>
+                  <div style="font-size:6px;color:#a08060;line-height:1.4;">Debossed in matching leather · +$18<br/><span style="color:#c8a882;">✓ Added</span></div>
+                </div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px 10px;background:#fff;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Bag Charm</div>
+                <div style="display:flex;gap:6px;">
+                  <div style="border:2px solid #5a4a3a;border-radius:4px;padding:4px 6px;background:#ede5da;text-align:center;"><div style="font-size:12px;">🌸</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;">Floral ✓</div></div>
+                  <div style="border:1.5px solid #e0d4c4;border-radius:4px;padding:4px 6px;text-align:center;"><div style="font-size:12px;">⭐</div><div style="font-size:5.5px;color:#a08060;">Star</div></div>
+                  <div style="border:1.5px solid #e0d4c4;border-radius:4px;padding:4px 6px;text-align:center;"><div style="font-size:12px;">🔑</div><div style="font-size:5.5px;color:#a08060;">Key</div></div>
+                  <div style="border:1.5px solid #e0d4c4;border-radius:4px;padding:4px 6px;text-align:center;"><div style="font-size:12px;">✖</div><div style="font-size:5.5px;color:#a08060;">None</div></div>
+                </div>
+              </div>
+              <div style="border:1.5px solid #e0d4c4;border-radius:6px;padding:8px 10px;background:#fff;">
+                <div style="font-size:7px;font-weight:700;color:#5a4a3a;margin-bottom:4px;">Gift Options</div>
+                <div style="display:flex;flex-direction:column;gap:3px;">
+                  <div style="display:flex;align-items:center;gap:5px;"><div style="width:10px;height:10px;border-radius:2px;background:#5a4a3a;display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;">✓</div><div style="font-size:7px;color:#5a4a3a;">Signature Monet gift box · +$12</div></div>
+                  <div style="display:flex;align-items:center;gap:5px;"><div style="width:10px;height:10px;border-radius:2px;background:#fff;border:1.5px solid #d8cfc4;"></div><div style="font-size:7px;color:#a08060;">Handwritten gift note · +$5</div></div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;"><div style="font-size:7px;padding:4px 10px;border:1px solid #d8cfc4;color:#5a4a3a;border-radius:3px;display:inline-block;">← Back</div><div style="font-size:7px;padding:4px 12px;background:#5a4a3a;color:#fff;border-radius:3px;display:inline-block;">Preview My Bag →</div></div>
+          </div>
+        </div>
+            <div style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.18);display:flex;flex-direction:column;min-height:0;">
+          <!-- browser bar -->
+          <div style="background:#3c3c3c;padding:5px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;">
+            <div style="display:flex;gap:3px;"><span style="width:7px;height:7px;border-radius:50%;background:#FF5F57;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#FEBC2E;display:inline-block;"></span><span style="width:7px;height:7px;border-radius:50%;background:#28C840;display:inline-block;"></span></div>
+            <div style="flex:1;background:#555;border-radius:3px;padding:2px 7px;font-size:7px;color:rgba(255,255,255,.55);">monethandbags.com/build · Step 6</div>
+          </div>
+          <div style="background:#ede5da;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8cfc4;flex-shrink:0;">
+              <div style="font-size:9px;letter-spacing:.3em;color:#5a4a3a;font-weight:800;">MONET</div>
+              <div style="display:flex;gap:12px;font-size:7px;color:#9a8070;"><span>Home</span><span style="color:#5a4a3a;font-weight:700;border-bottom:1px solid #5a4a3a;">Build Yours</span><span>Shop</span></div>
+            </div>
+          <div style="display:flex;align-items:center;padding:7px 12px;background:#f9f5f0;border-bottom:1px solid #e8ddd0;flex-shrink:0;"><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Bag Type</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Strap</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Fabric</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Interior</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#5a4a3a;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">✓</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Personalize</div></div><div style="flex:1;height:1px;background:#d8cfc4;margin:0 3px;"></div><div style="display:flex;flex-direction:column;align-items:center;"><div style="width:16px;height:16px;border-radius:50%;background:#c8a882;color:#fff;font-size:6px;display:flex;align-items:center;justify-content:center;font-weight:700;border:1.5px solid #5a4a3a;flex-shrink:0;">6</div><div style="font-size:5.5px;color:#5a4a3a;font-weight:600;margin-top:2px;white-space:nowrap;">Preview</div></div></div>
+          <!-- step header -->
+          <div style="padding:7px 12px 6px;background:#f5f0eb;border-bottom:1px solid #e8ddd0;flex-shrink:0;">
+            <div style="font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:#5a4a3a;">Step 6 — Your Preview</div>
+            <div style="font-size:7px;color:#a08060;margin-top:1px;">Review &amp; add to cart</div>
+          </div>
+          <!-- body -->
+          <div style="padding:10px 12px;flex:1;display:flex;gap:10px;overflow:hidden;">
+            <!-- Left: bag preview -->
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f9f5f0;border-radius:8px;padding:10px;">
+              <div style="font-size:6.5px;letter-spacing:.15em;text-transform:uppercase;color:#a08060;margin-bottom:6px;">Your Custom Monet</div>
+              <div style="width:90px;height:76px;overflow:hidden;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.15);position:relative;">
+                <img src="images/Madison Handbags/MHB-Feature.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" />
+                <!-- monogram badge -->
+                <div style="position:absolute;bottom:4px;right:4px;background:rgba(90,74,58,.85);color:#f5f0eb;font-size:6px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:.15em;">JRD</div>
+              </div>
+              <!-- charm -->
+              <div style="margin-top:4px;font-size:14px;">🌸</div>
+              <div style="font-size:6.5px;color:#a08060;margin-top:2px;text-align:center;">Floral Charm · Gold Hardware</div>
+            </div>
+            <!-- Right: spec summary + price -->
+            <div style="width:110px;display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;">
+              <div>
+                <div style="font-size:7px;font-weight:800;color:#5a4a3a;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">Your Selections</div>
+                <div style="display:flex;flex-direction:column;gap:3px;">
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Style</span><span style="color:#5a4a3a;font-weight:600;">Tote</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Strap</span><span style="color:#5a4a3a;font-weight:600;">Long Leather</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Fabric</span><span style="color:#5a4a3a;font-weight:600;">Vegan Leather</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Color</span><span style="color:#5a4a3a;font-weight:600;">Camel</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Lining</span><span style="color:#5a4a3a;font-weight:600;">Blush</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Hardware</span><span style="color:#5a4a3a;font-weight:600;">Gold</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Monogram</span><span style="color:#5a4a3a;font-weight:600;">JRD</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6.5px;"><span style="color:#a08060;">Charm</span><span style="color:#5a4a3a;font-weight:600;">Floral</span></div>
+                </div>
+                <div style="height:1px;background:#e8ddd0;margin:6px 0;"></div>
+                <div style="display:flex;flex-direction:column;gap:2px;">
+                  <div style="display:flex;justify-content:space-between;font-size:6px;"><span style="color:#a08060;">Base price</span><span style="color:#5a4a3a;">$148</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6px;"><span style="color:#a08060;">Monogram</span><span style="color:#5a4a3a;">+$18</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:6px;"><span style="color:#a08060;">Gift box</span><span style="color:#5a4a3a;">+$12</span></div>
+                  <div style="height:1px;background:#e8ddd0;margin:3px 0;"></div>
+                  <div style="display:flex;justify-content:space-between;font-size:8px;font-weight:800;"><span style="color:#5a4a3a;">Total</span><span style="color:#5a4a3a;">$178</span></div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:4px;margin-top:6px;">
+                <div style="font-size:7px;padding:5px 8px;background:#5a4a3a;color:#f5f0eb;border-radius:3px;text-align:center;font-weight:700;letter-spacing:.1em;cursor:pointer;">Add to Cart</div>
+                <div style="font-size:6.5px;padding:4px 8px;border:1.5px solid #d8cfc4;color:#5a4a3a;border-radius:3px;text-align:center;cursor:pointer;">← Edit Selections</div>
+                <div style="font-size:6px;color:#a08060;text-align:center;line-height:1.3;">Ships in 5–7 business days · Free returns</div>
+              </div>
             </div>
           </div>
         </div>
-        <div style="font-size:10px;color:rgba(255,255,255,.4);text-align:center;max-width:480px;line-height:1.6;">Custom bag configurator — sidebar style selection updates the live preview bag via JavaScript. Swatch selection, hardware toggle, and add-to-cart all built in vanilla HTML, CSS, and JS from the XD spec.</div>
+          </div>
+        </div>
       </div>
 
     </div><!-- /panels -->
