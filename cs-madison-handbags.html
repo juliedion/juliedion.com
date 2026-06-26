@@ -300,13 +300,13 @@
     </div>
 
     <!-- Card 3: Spring Catalog -->
-    <div class="lb-card" onclick="openFullImg('images/Madison Handbags/MHBSpringCatalog.png','Spring Collection Catalog')">
-      <div class="lb-card-img"><img src="images/Madison Handbags/MHBSpringCatalog.png" alt="Spring Catalog" /></div>
+    <div class="lb-card" onclick="openSpringCatalogLb()">
+      <div class="lb-card-img"><img src="images/Madison Handbags/spring catalog/spring-cover.jpg" alt="Spring Collection Catalog" style="object-fit:cover;object-position:top;" /></div>
       <div class="lb-card-body">
-        <div class="lb-card-tag">Print · Catalog</div>
+        <div class="lb-card-tag">Print · Catalog · Photography</div>
         <h3 class="lb-card-title">Spring Collection Catalog</h3>
-        <p class="lb-card-desc">Editorial-quality spring catalog — lifestyle photography direction, product layout, and print production for the Monet Handbags seasonal campaign.</p>
-        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+        <p class="lb-card-desc">Editorial spring catalog — on-location lifestyle photography, model casting, vendor management, and InDesign layout through print-ready production.</p>
+        <div class="lb-card-cta"><i class="fas fa-book-open"></i> Browse Catalog</div>
       </div>
     </div>
 
@@ -1015,6 +1015,47 @@
   </div>
 </div>
 
+<!-- ═══ Spring Catalog Lightbox ═══ -->
+<div class="blb-overlay" id="spring-catalog-overlay" onclick="if(event.target===this)closeSpringCatalogLb()">
+  <div class="blb-modal" style="max-width:960px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Spring Collection Catalog</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Monet Handbags · Editorial Photography · Print Production</div>
+      </div>
+      <button class="blb-close" onclick="closeSpringCatalogLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;grid-column:span 2;" onclick="openFullImg('images/Madison Handbags/spring catalog/spring-cover.jpg','Spring Catalog — Cover Spread')">
+          <img src="images/Madison Handbags/spring catalog/spring-cover.jpg" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Cover Spread — Editorial Photography</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/spring catalog/spring-p4.jpg','Spring Catalog — Page 4')">
+          <img src="images/Madison Handbags/spring catalog/spring-p4.jpg" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Page 4</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/spring catalog/spring-p10.jpg','Spring Catalog — Page 10')">
+          <img src="images/Madison Handbags/spring catalog/spring-p10.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Page 10</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/spring catalog/spring-p18.jpg','Spring Catalog — Page 18')">
+          <img src="images/Madison Handbags/spring catalog/spring-p18.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Page 18</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/spring catalog/spring-p26.jpg','Spring Catalog — Page 26')">
+          <img src="images/Madison Handbags/spring catalog/spring-p26.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Page 26</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/Madison Handbags/spring catalog/spring-p28.jpg','Spring Catalog — Page 28')">
+          <img src="images/Madison Handbags/spring catalog/spring-p28.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Page 28</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ Monet Brand Identity Lightbox ═══ -->
 <div class="blb-overlay" id="brand-lb-overlay" onclick="if(event.target===this)closeBrandLb()">
   <div class="blb-modal">
@@ -1125,66 +1166,59 @@
         <div class="screen-caption">Brand color palette and typography system — five tones built around warm neutrals: Espresso (primary), Camel (accent), Warm Taupe (secondary), Cream (background), and Linen (surfaces). Georgia serif pairs with tracked uppercase sans for all label and navigation type.</div>
       </div>
 
-      <!-- Screen 3: Applied Brand -->
+      <!-- Screen 3: Applied Brand — Spring Catalog -->
       <div>
-        <div class="screen-label">Screen 3 — Applied Brand · Campaign &amp; Digital</div>
+        <div class="screen-label">Screen 3 — Applied Brand · Spring Catalog &amp; Campaign</div>
         <div class="mhb-screen">
           <div class="mhb-bar">
             <div class="mhb-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
-            <div class="mhb-url">Monet_BrandGuide_v2.pdf — Page 6</div>
+            <div class="mhb-url">Monet Spring Collection — Catalog &amp; Campaign Photography</div>
           </div>
-          <div style="background:#f9f7f4;padding:24px;min-height:300px;">
-            <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#a08060;margin-bottom:16px;text-align:center;border-bottom:1px solid #e0d8cf;padding-bottom:10px;">Brand In Use</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
-              <!-- Catalog thumbnail -->
-              <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
-                <div style="height:120px;overflow:hidden;">
-                  <img src="images/Madison Handbags/MHBFallCatalog.png" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
-                </div>
-                <div style="padding:8px;border-top:1px solid #e8e0d5;">
-                  <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;">Print</div>
-                  <div style="font-size:8px;color:#5a4a3a;font-family:Georgia,serif;">Fall Catalog</div>
-                </div>
-              </div>
-              <!-- Website thumbnail -->
-              <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
-                <div style="height:120px;background:#ede5da;display:flex;flex-direction:column;overflow:hidden;">
-                  <div style="background:#5a4a3a;padding:4px 8px;display:flex;justify-content:space-between;align-items:center;">
-                    <div style="font-size:6px;letter-spacing:.15em;color:#f5f0eb;">MONET</div>
-                    <div style="display:flex;gap:5px;font-size:5px;color:rgba(255,255,255,.5);"><span>Shop</span><span>Build</span><span>About</span></div>
-                  </div>
-                  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:8px;">
-                    <img src="images/Madison Handbags/MHB-Feature.jpg" style="height:64px;width:auto;object-fit:contain;display:block;" />
-                  </div>
-                </div>
-                <div style="padding:8px;border-top:1px solid #e8e0d5;">
-                  <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;">Digital</div>
-                  <div style="font-size:8px;color:#5a4a3a;font-family:Georgia,serif;">E-Commerce</div>
-                </div>
-              </div>
-              <!-- Campaign layout thumbnail -->
-              <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
-                <div style="height:120px;overflow:hidden;">
-                  <img src="images/Madison Handbags/Mhb.Monet-layout.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
-                </div>
-                <div style="padding:8px;border-top:1px solid #e8e0d5;">
-                  <div style="font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;">Campaign</div>
-                  <div style="font-size:8px;color:#5a4a3a;font-family:Georgia,serif;">Brand Materials</div>
-                </div>
+          <div style="background:#f9f7f4;padding:20px;">
+            <div style="font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#a08060;margin-bottom:14px;text-align:center;border-bottom:1px solid #e0d8cf;padding-bottom:10px;">Spring Collection — Applied Brand in Print &amp; Photography</div>
+            <!-- Hero spread -->
+            <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);margin-bottom:14px;position:relative;">
+              <img src="images/Madison Handbags/spring catalog/spring-cover.jpg" style="width:100%;height:180px;object-fit:cover;object-position:top;display:block;" />
+              <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(90,74,58,.7));padding:12px 16px;">
+                <div style="font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#f5f0eb;font-weight:700;">Spring Collection</div>
+                <div style="font-size:7px;color:rgba(255,255,255,.75);margin-top:2px;">Editorial photography · On-location shoot · Art direction by Julie Dion</div>
               </div>
             </div>
-            <div style="margin-top:16px;background:#fff;border-radius:6px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-              <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:6px;">Brand Standards Summary</div>
+            <!-- Catalog spreads grid -->
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+                <img src="images/Madison Handbags/spring catalog/spring-p4.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
+                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.4</div></div>
+              </div>
+              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+                <img src="images/Madison Handbags/spring catalog/spring-p10.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
+                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.10</div></div>
+              </div>
+              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+                <img src="images/Madison Handbags/spring catalog/spring-p18.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
+                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.18</div></div>
+              </div>
+              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+                <img src="images/Madison Handbags/spring catalog/spring-p26.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
+                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.26</div></div>
+              </div>
+              <div style="border-radius:5px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+                <img src="images/Madison Handbags/spring catalog/spring-p28.jpg" style="width:100%;height:80px;object-fit:cover;object-position:top;display:block;" />
+                <div style="padding:4px 6px;background:#fff;border-top:1px solid #e8e0d5;"><div style="font-size:6px;color:#a08060;">p.28</div></div>
+              </div>
+            </div>
+            <div style="margin-top:12px;background:#fff;border-radius:6px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,.06);">
+              <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#a08060;margin-bottom:8px;">Production Credits</div>
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;">
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Catalog</div><div style="font-size:7px;color:#a08060;">Print · Digital PDF</div></div>
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">E-Commerce</div><div style="font-size:7px;color:#a08060;">Web · Mobile</div></div>
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Social</div><div style="font-size:7px;color:#a08060;">Facebook · Instagram</div></div>
-                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Email</div><div style="font-size:7px;color:#a08060;">Newsletter · VIP</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Art Direction</div><div style="font-size:7px;color:#a08060;">On-location shoot mgmt</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Photography</div><div style="font-size:7px;color:#a08060;">Product &amp; lifestyle</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Layout</div><div style="font-size:7px;color:#a08060;">InDesign · Print-ready</div></div>
+                <div><div style="font-size:9px;font-weight:700;color:#5a4a3a;font-family:Georgia,serif;">Models &amp; Vendors</div><div style="font-size:7px;color:#a08060;">Casting &amp; management</div></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="screen-caption">Brand applied across every channel — print catalog, e-commerce site, campaign materials, email, and social. The same Espresso/Camel/Cream palette and Georgia serif typography carries through every touchpoint for a consistent, elevated brand experience.</div>
+        <div class="screen-caption">Spring Collection catalog — full editorial shoot art-directed and produced by Julie Dion. On-location photography, model casting, vendor management, and InDesign layout through print-ready production.</div>
       </div>
 
     </div><!-- /blb-screens -->
@@ -1243,6 +1277,8 @@
   }
   function openBuilderLb() { document.getElementById('blb-overlay').style.display = 'flex'; }
   function closeBuilderLb() { document.getElementById('blb-overlay').style.display = 'none'; }
+  function openSpringCatalogLb() { document.getElementById('spring-catalog-overlay').style.display = 'flex'; }
+  function closeSpringCatalogLb() { document.getElementById('spring-catalog-overlay').style.display = 'none'; }
   function openBrandLb() { document.getElementById('brand-lb-overlay').style.display = 'flex'; }
   function closeBrandLb() { document.getElementById('brand-lb-overlay').style.display = 'none'; }
   function openFallCatalogLb() { document.getElementById('fall-catalog-overlay').style.display = 'flex'; }
@@ -1255,7 +1291,7 @@
   }
   function closeFullImg() { document.getElementById('full-img-overlay').style.display = 'none'; }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeBuilderLb(); closeBrandLb(); closeFallCatalogLb(); closeFullImg(); }
+    if (e.key === 'Escape') { closeBuilderLb(); closeSpringCatalogLb(); closeBrandLb(); closeFallCatalogLb(); closeFullImg(); }
   });
 </script>
 </body>
