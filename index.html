@@ -1416,13 +1416,7 @@
           <button class="filter-btn" data-industry="retail">Retail</button>
           <button class="filter-btn" data-industry="ecommerce">E-Commerce</button>
           <button class="filter-btn" data-industry="financial">Financial Services</button>
-          <button class="filter-btn" data-industry="travel">Travel &amp; Hospitality</button>
           <button class="filter-btn" data-industry="technology">Technology</button>
-          <button class="filter-btn" data-industry="community">Community Org</button>
-          <button class="filter-btn" data-industry="home-services">Home Services</button>
-          <button class="filter-btn" data-industry="legal">Legal</button>
-          <button class="filter-btn" data-industry="food-beverage">Food &amp; Beverage</button>
-          <button class="filter-btn" data-industry="professional-services">Professional Services</button>
         </div>
       </div>
     </div>
@@ -1445,7 +1439,7 @@
       </div>
 
       <!-- Inspired Thinking Group -->
-      <div class="portfolio-card" data-cat="brand web uxui digital" data-industry="telecom">
+      <div class="portfolio-card" data-cat="brand web uxui digital" data-industry="telecom financial">
         <div class="card-image">
           <img src="images/Inspired Thinking Group/newpoint-banner.png" alt="Inspired Thinking Group" loading="lazy" />
           <div class="card-overlay">
@@ -1460,7 +1454,7 @@
       </div>
 
       <!-- HCS Resilix -->
-      <div class="portfolio-card" data-cat="uxui" data-industry="healthcare">
+      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="healthcare">
         <div class="card-image">
           <img src="images/untitled folder/resilix-screen-02-patient-record-tablet.jpg" alt="HCS Resilix Platform" loading="lazy" />
           <div class="card-overlay">
@@ -1475,7 +1469,7 @@
       </div>
 
       <!-- Microsoft -->
-      <div class="portfolio-card" data-cat="motion" data-industry="technology">
+      <div class="portfolio-card" data-cat="brand web uxui digital motion" data-industry="technology">
         <div class="card-image">
           <img src="images/Microsoft/microsoft-d365-animated-ad.gif" alt="Microsoft Dynamics 365 Motion" loading="lazy" />
           <div class="card-overlay">
@@ -1490,7 +1484,7 @@
       </div>
 
       <!-- Merck Millipore -->
-      <div class="portfolio-card" data-cat="print" data-industry="healthcare">
+      <div class="portfolio-card" data-cat="brand print motion" data-industry="healthcare">
         <div class="card-image" style="background:#0d1117;">
           <img src="images/Merck Millipore/JulieDionPortfolio_20218-cover.jpg" alt="Merck Millipore Campaigns" loading="lazy" style="object-fit:cover;object-position:center;" />
           <div class="card-overlay">
@@ -1521,7 +1515,7 @@
       </div>
 
       <!-- Schalmont PTO -->
-      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="education">
+      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="education nonprofit">
         <div class="card-image">
           <img src="images/PTO/pto-cover.png" alt="Schalmont PTO Website &amp; Events" loading="lazy" style="object-fit:cover;object-position:20% top;" />
           <div class="card-overlay">
@@ -1536,7 +1530,7 @@
       </div>
 
       <!-- Madison Handbags -->
-      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="ecommerce">
+      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="ecommerce retail">
         <div class="card-image">
           <img src="images/Madison Handbags/spring catalog/spring-p18.jpg" alt="Madison Handbags Brand" loading="lazy" style="object-position:top;" />
           <div class="card-overlay">
@@ -2236,7 +2230,7 @@
   function filterCards() {
     document.querySelectorAll('.portfolio-card').forEach(card => {
       const catMatch = activeCat === 'all' || (card.dataset.cat || '').split(' ').includes(activeCat);
-      const indMatch = activeInd === 'all' || card.dataset.industry === activeInd;
+      const indMatch = activeInd === 'all' || (card.dataset.industry || '').split(' ').includes(activeInd);
       card.classList.toggle('hidden', !(catMatch && indMatch));
     });
   }
