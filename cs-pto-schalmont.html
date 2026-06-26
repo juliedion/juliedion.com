@@ -92,7 +92,13 @@
     .full-img-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:99999; align-items:center; justify-content:center; cursor:zoom-out; }
     .full-img-overlay img { max-width:95vw; max-height:92vh; border-radius:8px; object-fit:contain; display:block; box-shadow:0 24px 80px rgba(0,0,0,.7); }
     @media(max-width:768px) { .topbar { padding:14px 20px; } .cs-hero { padding:60px 20px 48px; } .cs-section { padding:56px 20px; } .stats-bar { padding:36px 20px; } .next-project { padding:56px 20px; } }
-  
+
+    .blb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.8); z-index:9999; align-items:flex-start; justify-content:center; padding:24px; overflow-y:auto; }
+    .blb-modal { background:#fff; border-radius:14px; width:100%; max-width:900px; margin:auto; box-shadow:0 40px 100px rgba(0,0,0,.6); overflow:hidden; }
+    .blb-header { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid #e5e7eb; }
+    .blb-close { background:none; border:none; font-size:22px; color:#6b7280; cursor:pointer; line-height:1; padding:4px 8px; }
+    .blb-screens { padding:20px; max-height:80vh; overflow-y:auto; }
+    .full-img-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:10000; align-items:center; justify-content:center; cursor:pointer; }
     /* ── PTO Website Lightbox (Charter-style) ── */
     .pto-lb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.78); z-index:9999; padding:24px; box-sizing:border-box; backdrop-filter:blur(6px); align-items:center; justify-content:center; }
     .pto-lb-modal { background:#fff; border-radius:14px; width:100%; max-width:1440px; height:94vh; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 40px 100px rgba(0,0,0,.6); }
@@ -133,7 +139,7 @@
     </div>
   </div>
   <div style="position:absolute;right:0;top:0;bottom:0;width:540px;">
-    <img src="images/PTO/pto-banner.png" alt="Schalmont PTO Platform" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+    <img src="images/PTO/pto-banner.png" alt="Schalmont PTO Platform" style="width:110%;height:100%;object-fit:cover;object-position:center top;display:block;margin-left:-5%;" />
   </div>
 </section>
 
@@ -282,13 +288,13 @@
       </div>
     </div>
 
-    <div class="lb-card" onclick="openFullImg('images/PTO/Journey_Flyer_Beauty2.png','Journey Program — Flyer')">
+    <div class="lb-card" onclick="openJourneyLb()">
       <div class="lb-card-img"><img src="images/PTO/Journey_Flyer_Beauty2.png" alt="Journey Flyer" /></div>
       <div class="lb-card-body">
         <div class="lb-card-tag">Program · Flyer</div>
         <h3 class="lb-card-title">Journey Program — Flyer</h3>
         <p class="lb-card-desc">Special program flyer encouraging student participation in an enrichment initiative at Schalmont elementary level.</p>
-        <div class="lb-card-cta"><i class="fas fa-expand-alt"></i> View</div>
+        <div class="lb-card-cta"><i class="fas fa-images"></i> View All</div>
       </div>
     </div>
 
@@ -825,6 +831,32 @@
   </div>
 </div>
 
+
+<!-- ── Journey to JES Gallery Lightbox ── -->
+<div class="blb-overlay" id="journey-lb-overlay" onclick="if(event.target===this)closeJourneyLb()">
+  <div class="blb-modal" style="max-width:900px;">
+    <div class="blb-header">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#111827;">Journey to JES Program</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px;">Jefferson Elementary · Student Enrichment · Event Design</div>
+      </div>
+      <button class="blb-close" onclick="closeJourneyLb()">×</button>
+    </div>
+    <div class="blb-screens">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/Journey_Flyer_Beauty2.png','Journey Program — Flyer')">
+          <img src="images/PTO/Journey_Flyer_Beauty2.png" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Journey Program — Flyer</div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;" onclick="openFullImg('images/PTO/Journey to JES/Journey-to-JES-Flyer.jpg','Journey to JES — Event Flyer')">
+          <img src="images/PTO/Journey to JES/Journey-to-JES-Flyer.jpg" style="width:100%;display:block;" />
+          <div style="padding:8px 12px;background:#fff;font-size:11px;font-weight:600;color:#374151;">Journey to JES — Event Flyer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── PTO Website Lightbox (Charter-style) ── -->
 <div class="pto-lb-overlay" id="pto-lb-overlay" onclick="if(event.target===this)closePtoWebsiteLb()">
   <div class="pto-lb-modal">
@@ -1261,6 +1293,8 @@
 </div>
 
 <script>
+  function openJourneyLb() { document.getElementById('journey-lb-overlay').style.display = 'flex'; }
+  function closeJourneyLb() { document.getElementById('journey-lb-overlay').style.display = 'none'; }
   function openDancesLb() { document.getElementById('dances-lb-overlay').style.display = 'flex'; }
   function closeDancesLb() { document.getElementById('dances-lb-overlay').style.display = 'none'; }
   function openMarchMadnessLb() { document.getElementById('marchmadness-lb-overlay').style.display = 'flex'; }
@@ -1307,7 +1341,7 @@
     document.getElementById('full-img-overlay').style.display = 'none';
   }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeDancesLb(); closeMarchMadnessLb(); closePennyWarsLb(); closeTrunkOrTreatLb(); closeTurnOffScreensLb(); closeCampFairLb(); closeCarnivalLb(); closeColorRunLb(); closeSantaLb(); closeBookFairLb(); closePtoWebsiteLb(); closeFullImg(); }
+    if (e.key === 'Escape') { closeDancesLb(); closeMarchMadnessLb(); closePennyWarsLb(); closeTrunkOrTreatLb(); closeTurnOffScreensLb(); closeCampFairLb(); closeCarnivalLb(); closeColorRunLb(); closeSantaLb(); closeBookFairLb(); closePtoWebsiteLb(); closeJourneyLb(); closeFullImg(); }
   });
 </script>
 </body>
