@@ -1176,9 +1176,107 @@ function initNavAuth() {
 }
 
 /* ============================================================
+   THEME: hero word reveal, scroll reveal, nav state, quotes
+   ============================================================ */
+function initTheme() {
+  $$('[data-split]').forEach(el => {
+    const words = el.textContent.trim().split(/\s+/);
+    el.setAttribute('aria-label', el.textContent.trim());
+    el.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true" style="--i:${i}">${esc(w)}</span>`).join(' ');
+  });
+
+  const header = $('.site-header');
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  const reveals = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+
+  const quotes = $('#jp-quotes');
+  if (quotes) {
+    $$('.jp-quotes-nav button').forEach(btn => btn.addEventListener('click', () => {
+      const card = quotes.querySelector('.jp-quote');
+      const step = card ? card.offsetWidth + 24 : quotes.clientWidth;
+      quotes.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
+    }));
+  }
+
+  // Muted loops play only while on screen, and never under reduced motion
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const loops = $$('.jp-showreel-media video');
+  if (loops.length && !reduceMotion && 'IntersectionObserver' in window) {
+    const vo = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.play().catch(() => {});
+        else e.target.pause();
+      });
+    }, { threshold: 0.25 });
+    loops.forEach(v => vo.observe(v));
+  }
+
+  initLightbox();
+
+  const year = $('#year');
+  if (year) year.textContent = new Date().getFullYear();
+}
+
+function initLightbox() {
+  const figs = $$('.jp-gallery figure, [data-lightbox]');
+  if (!figs.length) return;
+  const box = document.createElement('div');
+  box.className = 'jp-lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'Image viewer');
+  box.innerHTML = '<img alt=""><button class="jp-lb-close" aria-label="Close">×</button>' +
+    '<button class="jp-lb-prev" aria-label="Previous">←</button><button class="jp-lb-next" aria-label="Next">→</button>' +
+    '<div class="jp-lb-count"></div>';
+  document.body.appendChild(box);
+  const img = $('img', box), count = $('.jp-lb-count', box);
+  if (figs.length < 2) $$('.jp-lb-prev, .jp-lb-next, .jp-lb-count', box).forEach(el => el.hidden = true);
+  let idx = 0;
+  const show = i => {
+    idx = (i + figs.length) % figs.length;
+    const src = figs[idx].tagName === 'IMG' ? figs[idx] : $('img', figs[idx]);
+    img.src = src.dataset.full || src.src;
+    img.alt = src.alt;
+    count.textContent = `${idx + 1} / ${figs.length}`;
+  };
+  const close = () => box.classList.remove('open');
+  figs.forEach((f, i) => {
+    f.tabIndex = 0;
+    f.addEventListener('click', () => { show(i); box.classList.add('open'); });
+    f.addEventListener('keydown', e => { if (e.key === 'Enter') { show(i); box.classList.add('open'); } });
+  });
+  $('.jp-lb-close', box).addEventListener('click', close);
+  $('.jp-lb-prev', box).addEventListener('click', () => show(idx - 1));
+  $('.jp-lb-next', box).addEventListener('click', () => show(idx + 1));
+  box.addEventListener('click', e => { if (e.target === box) close(); });
+  document.addEventListener('keydown', e => {
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+}
+
+/* ============================================================
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   seedData();
   initNavToggle();
   setActiveNav();

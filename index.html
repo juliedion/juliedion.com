@@ -13,9 +13,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julie Dion — Portfolio & Resume</title>
-  <meta name="description" content="Portfolio and resume for Julie Dion — designer and developer building engaging digital experiences.">
+  <meta name="description" content="Portfolio of Julie Dion, Senior UX/UI Developer with 20+ years building design systems and enterprise web experiences.">
   <meta property="og:title" content="Julie Dion — Portfolio & Resume">
-  <meta property="og:description" content="Portfolio and resume for Julie Dion — designer and developer building engaging digital experiences.">
+  <meta property="og:description" content="Portfolio of Julie Dion, Senior UX/UI Developer with 20+ years building design systems and enterprise web experiences.">
   <meta property="og:image" content="https://raw.githubusercontent.com/juliedion/juliedion.com/main/Banner/julie-dion-banner.jpg">
   <meta property="og:image:alt" content="Julie Dion — designer and developer">
   <meta property="og:image:type" content="image/jpeg">
@@ -23,10 +23,12 @@
   <meta property="og:url" content="https://juliedion.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Julie Dion — Portfolio & Resume">
-  <meta name="twitter:description" content="Portfolio and resume for Julie Dion — designer and developer building engaging digital experiences.">
+  <meta name="twitter:description" content="Portfolio of Julie Dion, Senior UX/UI Developer with 20+ years building design systems and enterprise web experiences.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/juliedion/juliedion.com/main/Banner/julie-dion-banner.jpg">
-  <link rel="stylesheet" href="css/styles.css?v=13">
-  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css?v=26">
+  <link rel="icon" href="images/favicon-32.png?v=3" sizes="32x32">
+  <link rel="icon" href="images/favicon.png?v=3" sizes="512x512">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=3">
 </head>
 <body>
 
@@ -47,380 +49,282 @@
     </nav>
   </header>
 
+  <main>
+
   <!-- HERO -->
-  <section class="home-hero">
-
-    <div class="hero-inner">
-
-      <!-- Eyebrow + sparkle -->
-      <div class="hero-top-line">
-        <p class="eyebrow">Welcome! I'm Julie</p>
-        <span class="hero-sparkle" aria-hidden="true">flare</span>
-      </div>
-
-      <!-- Cycling statements -->
-      <div class="hero-statements" id="hero-statements" aria-live="polite">
-        <p class="hero-statement visible">I am a product designer.</p>
-        <p class="hero-statement">I turn complex problems into<br>beautiful, user-friendly solutions.</p>
-        <p class="hero-statement">I have a meticulous eye for detail.</p>
-        <p class="hero-statement">I have been crafting designs<br>for B2C &amp; B2B since 2012.</p>
-        <p class="hero-statement">I am open to new opportunities.</p>
-      </div>
-
-      <!-- CTAs -->
-      <div class="hero-actions">
-        <a href="portfolio.html" class="btn btn-primary btn-lg">See My Work</a>
-        <a href="resume.html" class="btn btn-outline-dark btn-lg">View Resume</a>
-      </div>
-
-    </div>
-
-    <!-- Bottom bar: scroll + contact info -->
-    <div class="hero-bottom-bar">
-      <div class="hero-scroll-col" aria-hidden="true">Scroll</div>
-
-      <div class="hero-contact-bar">
-        <div class="hero-contact-group">
-          <span class="hero-contact-label">Get in Touch</span>
-          <div class="hero-contact-items">
-            <a href="mailto:juliedion1@gmail.com" class="hero-contact-item">
-              <span class="hero-contact-icon" aria-hidden="true">id_card</span>
-              juliedion1@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener" class="hero-contact-item">
-              <span class="hero-contact-icon" aria-hidden="true">link</span>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-        <div class="hero-location">
-          <span class="hero-contact-icon" aria-hidden="true">home_pin</span>
-          Northeast, NY
+  <section class="jp-hero">
+    <div class="jp-wrap">
+      <h1 data-split>Designing digital experiences from strategy to delivery.</h1>
+      <div class="jp-hero-foot">
+        <div class="jp-hero-meta">
+          <span class="jp-status">Open to new opportunities</span>
+          <span>Capital Region, NY</span>
         </div>
       </div>
     </div>
-
   </section>
 
-  <!-- CASE STUDIES -->
-  <section class="cs-section" id="case-studies">
-    <div class="cs-section-inner">
-
-      <div class="cs-section-header">
-        <div class="cs-pill">
-          <span class="cs-pill-icon" aria-hidden="true">cases</span>
-          <span class="cs-pill-text">Case Studies</span>
+  <!-- INTRO + VIDEO -->
+  <section class="jp-showreel">
+    <div class="jp-wrap">
+      <div class="jp-showreel-row">
+        <p class="jp-showreel-text reveal">I'm Julie, a senior UX/UI developer. For 20+ years I've built design systems and web experiences for brands like Microsoft, Merck, Charter Spectrum, and American Airlines.</p>
+        <div class="jp-showreel-media reveal">
+          <video src="images/portfolio-reel.mp4" poster="images/portfolio-reel-poster.jpg" muted loop playsinline preload="none" aria-label="A reel of my work: Schalmont PTO, American Airlines, Spectrum, Amazon, Human Care Systems, DHL, Pyxis, and Merck"></video>
         </div>
-        <h2 class="cs-section-title">What I've designed recently</h2>
       </div>
+    </div>
+  </section>
 
-      <div class="cs-cards">
+  <!-- CLIENT LOGOS -->
+  <section class="jp-clients" aria-label="Brands I've worked with">
+    <div class="jp-clients-track">
+      <ul class="jp-clients-list">
+            <li><img src="images/logos/novartis.svg" alt="Novartis" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/microsoft.svg" alt="Microsoft" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/merck.svg" alt="Merck" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/american-airlines.svg" alt="American Airlines" style="--h:20px" loading="lazy"></li>
+            <li><img src="images/logos/thermo-fisher.svg" alt="Thermo Fisher Scientific" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/charter.svg" alt="Charter Communications" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/spectrum.svg" alt="Spectrum" style="--h:24px" loading="lazy"></li>
+            <li><img src="images/logos/amazon.svg" alt="Amazon" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/bayer.svg" alt="Bayer" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/madison-handbags.png" alt="Madison Handbags" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/halo-labs.png" alt="Halo Labs" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/pyxis.png" alt="Pyxis Communications" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/alaska-airlines.svg?v=2" alt="Alaska Airlines" style="--h:46px" loading="lazy"></li>
+            <li><img src="images/logos/spirit-airlines.svg" alt="Spirit Airlines" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/genentech.svg" alt="Genentech" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/washington-post.svg" alt="The Washington Post" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/dhl.svg" alt="DHL" style="--h:22px" loading="lazy"></li>
+      </ul>
+      <ul class="jp-clients-list" aria-hidden="true">
+            <li><img src="images/logos/novartis.svg" alt="" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/microsoft.svg" alt="" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/merck.svg" alt="" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/american-airlines.svg" alt="" style="--h:20px" loading="lazy"></li>
+            <li><img src="images/logos/thermo-fisher.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/charter.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/spectrum.svg" alt="" style="--h:24px" loading="lazy"></li>
+            <li><img src="images/logos/amazon.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/bayer.svg" alt="" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/madison-handbags.png" alt="" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/halo-labs.png" alt="" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/pyxis.png" alt="" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/alaska-airlines.svg?v=2" alt="" style="--h:46px" loading="lazy"></li>
+            <li><img src="images/logos/spirit-airlines.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/genentech.svg" alt="" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/washington-post.svg" alt="" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/dhl.svg" alt="" style="--h:22px" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
 
-        <!-- Card 1: Schalmont PTO -->
-        <div class="cs-card">
-          <div class="cs-card-text">
-            <p class="cs-card-company">Schalmont Central Schools PTO</p>
-            <h3 class="cs-card-title">Building a community hub for 4 schools and 2,000+ students.</h3>
-            <p class="cs-card-desc">Designed and developed a full-featured multi-school platform — centralizing events, news, and volunteer resources for a 2,000+ student community.</p>
-            <div class="cs-card-tags">
-              <span class="cs-tag">Web Design &amp; Dev</span>
-              <span class="cs-tag">Community Platform</span>
-              <span class="cs-tag">2026</span>
-            </div>
-            <div class="cs-card-metrics">
-              <div class="cs-metric">
-                <span class="cs-metric-value">4</span>
-                <span class="cs-metric-label">Schools served</span>
-              </div>
-              <div class="cs-metric">
-                <span class="cs-metric-value">2,000+</span>
-                <span class="cs-metric-label">Students reached</span>
-              </div>
-            </div>
-            <div class="cs-card-actions">
-              <a href="case-study-schalmont.html" class="cs-link-primary">
-                View case study <span class="cs-arrow-icon" aria-hidden="true">arrow_forward</span>
-              </a>
+  <!-- WORK -->
+  <section class="jp-work jp-section" id="work" style="padding-bottom:0;">
+    <div class="jp-wrap">
+      <div class="jp-work-list">
+        <a class="jp-card reveal" href="case-study-spectrum.html" style="--card-bg:#001842;">
+          <div class="jp-card-bg" style="background-image:url('images/Charter/charter.jpg')"></div>
+          <div class="jp-card-text">
+            <p class="jp-card-meta">Charter Spectrum</p>
+            <h3>Redesigning Spectrum's small business platform for millions of users</h3>
+            <div>
+              <div class="jp-card-tags"><span>Enterprise UI</span><span>SEO</span><span>AEM</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
             </div>
           </div>
-          <div class="cs-card-image">
-            <img src="images/pto-screenshots/pto-beautyshot-1.png" alt="Schalmont PTO website">
-          </div>
-        </div>
+          <div class="jp-card-media"><img src="images/Charter/charter.jpg" alt="Charter Spectrum Business website" loading="lazy"></div>
+        </a>
 
-        <!-- Card 2: Spectrum Business -->
-        <div class="cs-card">
-          <div class="cs-card-text">
-            <p class="cs-card-company">Charter Spectrum</p>
-            <h3 class="cs-card-title">Redesigning Spectrum's SMB web platform to reach millions.</h3>
-            <p class="cs-card-desc">Led the full redesign of Spectrum Business — restructuring information architecture, improving SEO, and crafting a conversion-focused UI within an enterprise AEM environment.</p>
-            <div class="cs-card-tags">
-              <span class="cs-tag">Enterprise UI</span>
-              <span class="cs-tag">SEO</span>
-              <span class="cs-tag">AEM</span>
+        <a class="jp-card reveal" href="case-study-amazon.html" style="--card-bg:#131a22;">
+          <div class="jp-card-bg" style="background-image:url('images/amazon/amazon-headphones.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Amazon</p>
+              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
             </div>
-            <div class="cs-card-metrics">
-              <div class="cs-metric">
-                <span class="cs-metric-value">Millions</span>
-                <span class="cs-metric-label">Users impacted</span>
-              </div>
-              <div class="cs-metric">
-                <span class="cs-metric-value">Enterprise</span>
-                <span class="cs-metric-label">Scale platform</span>
-              </div>
-            </div>
-            <div class="cs-card-actions">
-              <a href="case-study-spectrum.html" class="cs-link-primary">
-                View case study <span class="cs-arrow-icon" aria-hidden="true">arrow_forward</span>
-              </a>
+            <h3>Product pages for Amazon Basics electronics and home</h3>
+            <div>
+              <div class="jp-card-tags"><span>E-commerce</span><span>Desktop &amp; mobile</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
             </div>
           </div>
-          <div class="cs-card-image">
-            <img src="images/Charter/charter.jpg" alt="Charter Spectrum Business website">
-          </div>
-        </div>
+          <div class="jp-card-media"><img src="images/amazon/amazon-headphones.jpg" alt="Amazon Basics product page design" loading="lazy"></div>
+        </a>
 
-        <!-- Card 3: HCS Resilix -->
-        <div class="cs-card">
-          <div class="cs-card-text">
-            <p class="cs-card-company">Human Care Systems</p>
-            <h3 class="cs-card-title">0-to-1 design of an award-winning telenursing platform.</h3>
-            <p class="cs-card-desc">From blank canvas to GDUSA award-winner — led end-to-end UX/UI design for Resilix, a telenursing platform built to connect patients with care from anywhere.</p>
-            <div class="cs-card-tags">
-              <span class="cs-tag">0 to 1 Design</span>
-              <span class="cs-tag">Healthcare</span>
-              <span class="cs-tag">iOS &amp; Web</span>
-            </div>
-            <div class="cs-card-metrics">
-              <div class="cs-metric">
-                <span class="cs-metric-value">GDUSA</span>
-                <span class="cs-metric-label">2019 Award Winner</span>
-              </div>
-              <div class="cs-metric">
-                <span class="cs-metric-value">0→1</span>
-                <span class="cs-metric-label">Full product launch</span>
-              </div>
-            </div>
-            <div class="cs-card-actions">
-              <a href="case-study-hcs.html" class="cs-link-primary">
-                View case study <span class="cs-arrow-icon" aria-hidden="true">arrow_forward</span>
-              </a>
+        <a class="jp-card reveal" href="case-study-hcs.html" style="--card-bg:#06343f;">
+          <div class="jp-card-bg" style="background-image:url('images/hcs/Resilix.jpg')"></div>
+          <div class="jp-card-text">
+            <p class="jp-card-meta">Human Care Systems · 2015–2021</p>
+            <h3>0-to-1 design of an award-winning telenursing platform</h3>
+            <div>
+              <div class="jp-card-tags"><span>0 to 1</span><span>Healthcare</span><span>iOS &amp; web</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
             </div>
           </div>
-          <div class="cs-card-image">
-            <img src="images/hcs/Resilix.jpg" alt="Resilix telenursing platform">
-          </div>
-        </div>
+          <div class="jp-card-media"><img src="images/hcs/Resilix.jpg" alt="Resilix telenursing platform" loading="lazy"></div>
+        </a>
 
-        <!-- Card 4: Merck Millipore -->
-        <div class="cs-card">
-          <div class="cs-card-text">
-            <p class="cs-card-company">Merck Millipore</p>
-            <h3 class="cs-card-title">Multi-channel campaign creative for a global life sciences leader.</h3>
-            <p class="cs-card-desc">Designed digital ads, print collateral, and brand-aligned marketing systems across 10+ campaigns for Merck's life sciences division — reaching a global scientific audience.</p>
-            <div class="cs-card-tags">
-              <span class="cs-tag">Print &amp; Digital</span>
-              <span class="cs-tag">Life Sciences</span>
-              <span class="cs-tag">Campaign Creative</span>
-            </div>
-            <div class="cs-card-metrics">
-              <div class="cs-metric">
-                <span class="cs-metric-value">10+</span>
-                <span class="cs-metric-label">Campaigns delivered</span>
-              </div>
-              <div class="cs-metric">
-                <span class="cs-metric-value">Global</span>
-                <span class="cs-metric-label">Audience reach</span>
-              </div>
-            </div>
-            <div class="cs-card-actions">
-              <a href="case-study-merck.html" class="cs-link-primary">
-                View case study <span class="cs-arrow-icon" aria-hidden="true">arrow_forward</span>
-              </a>
+        <a class="jp-card reveal" href="case-study-merck.html" style="--card-bg:#22174f;">
+          <div class="jp-card-bg" style="background-image:url('images/mm/mmimages/MM-layout-1.jpg')"></div>
+          <div class="jp-card-text">
+            <p class="jp-card-meta">Merck Millipore · 2008–2013</p>
+            <h3>Multi-channel campaign creative for a global life sciences leader</h3>
+            <div>
+              <div class="jp-card-tags"><span>Print &amp; digital</span><span>Life sciences</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
             </div>
           </div>
-          <div class="cs-card-image">
-            <img src="images/mm/mmimages/MM-layout-1.jpg" alt="Merck Millipore campaigns">
+          <div class="jp-card-media"><img src="images/mm/mmimages/MM-layout-1.jpg" alt="Merck Millipore campaigns" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="case-study-pyxis.html" style="--card-bg:#032e4d;">
+          <div class="jp-card-bg" style="background-image:url('images/Pyxis/layouts-03.jpg')"></div>
+          <div class="jp-card-text">
+            <p class="jp-card-meta">Pyxis Communications · 2021–2024</p>
+            <h3>Creative direction for specialty pharma brands</h3>
+            <div>
+              <div class="jp-card-tags"><span>Healthcare advertising</span><span>Campaigns</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
           </div>
-        </div>
+          <div class="jp-card-media"><img src="images/Pyxis/layouts-03.jpg" alt="Pyxis healthcare campaign layouts" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="case-study-american-airlines.html" style="--card-bg:#0a2a5c;">
+          <div class="jp-card-bg" style="background-image:url('images/american-airlines/aa-card.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">American Airlines</p>
+              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
+            </div>
+            <h3>The American Airlines mobile app, from check-in to boarding</h3>
+            <div>
+              <div class="jp-card-tags"><span>Mobile app</span><span>iOS</span><span>Travel</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/american-airlines/aa-card.jpg" alt="American Airlines mobile app screens" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="case-study-dhl.html" style="--card-bg:#3d1310;">
+          <div class="jp-card-bg" style="background-image:url('images/dhl/dhl-delivery-airlines.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">DHL Delivery Airlines</p>
+              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
+            </div>
+            <h3>One connected experience across web, mobile, and operations</h3>
+            <div>
+              <div class="jp-card-tags"><span>Web</span><span>Mobile</span><span>Dashboard</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/dhl/dhl-delivery-airlines.jpg" alt="DHL Delivery Airlines website, mobile and dashboard" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="case-study-schalmont.html" style="--card-bg:#0f3320;">
+          <div class="jp-card-bg" style="background-image:url('images/pto-screenshots/pto-beautyshot-1.png')"></div>
+          <div class="jp-card-text">
+            <p class="jp-card-meta">Schalmont Central Schools PTO · 2026</p>
+            <h3>A community hub for 4 schools and 2,000+ students</h3>
+            <div>
+              <div class="jp-card-tags"><span>Web design &amp; dev</span><span>Community platform</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/pto-screenshots/pto-beautyshot-1.png" alt="Schalmont PTO website" loading="lazy"></div>
+        </a>
 
       </div>
     </div>
   </section>
 
-  <!-- MY KEY STRENGTHS -->
-  <section class="cs-section" style="background:#f7fafb;">
-    <div class="cs-section-inner">
-
-      <div class="cs-section-header">
-        <div class="cs-pill">
-          <span class="cs-pill-icon" aria-hidden="true">star</span>
-          <span class="cs-pill-text">Why me?</span>
+  <!-- INTRO -->
+  <section class="jp-section">
+    <div class="jp-wrap">
+      <div class="jp-intro">
+        <div class="jp-intro-photo reveal">
+          <img src="images/julie/julie-award.jpg" alt="Julie Dion, one of the 20 Most Outstanding Women of the Capital Region, 2024. Press release." loading="lazy" data-lightbox role="button" aria-label="Open the press release larger">
         </div>
-        <h2 class="cs-section-title">My key strengths</h2>
-      </div>
-
-      <div class="strengths-grid">
-
-        <div class="strength-card">
-          <div class="strength-icon">🔍</div>
-          <h3>15+ Years of Experience</h3>
-          <p>Deep cross-industry expertise spanning healthcare, enterprise software, life sciences, and community platforms.</p>
+        <div class="reveal">
+          <p class="jp-eyebrow">About</p>
+          <h2 class="jp-h2">Hi. I'm Julie Dion.</h2>
+          <p>I'm a senior UX/UI developer, rooted in print and digital design. I pair visual judgment with hands-on front-end code, and I work closely with product managers, engineers, and stakeholders to move work from concept to launch. I can help you with:</p>
+          <ul class="jp-services">
+            <li>Design systems</li>
+            <li>UX/UI design</li>
+            <li>Front-end development</li>
+            <li>AEM authoring</li>
+            <li>Prototyping in Figma</li>
+            <li>User research &amp; A/B testing</li>
+            <li>Accessibility (WCAG)</li>
+            <li>AI-assisted workflows</li>
+          </ul>
+          <p>Browse <a class="jp-inline-link" href="portfolio.html">my portfolio</a>, read <a class="jp-inline-link" href="about.html">more about me</a>, or see <a class="jp-inline-link" href="resume.html">my resume</a>.</p>
         </div>
-
-        <div class="strength-card">
-          <div class="strength-icon">🎨</div>
-          <h3>Design Systems &amp; Visual UI</h3>
-          <p>Clean, scalable interface design — from component libraries and style guides to pixel-perfect production screens.</p>
-        </div>
-
-        <div class="strength-card">
-          <div class="strength-icon">👥</div>
-          <h3>Human-Centered Research</h3>
-          <p>Usability testing, qualitative interviews, and data synthesis that grounds every decision in real user needs.</p>
-        </div>
-
-        <div class="strength-card">
-          <div class="strength-icon">💻</div>
-          <h3>Front-End Development</h3>
-          <p>HTML, CSS, JavaScript, and React — I bridge the gap between design and engineering to ship polished, performant builds.</p>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="cs-section" style="background:#fff;">
-    <div class="cs-section-inner">
-      <div class="cs-section-header">
-        <div class="cs-pill">
-          <span class="cs-pill-icon" aria-hidden="true">forum</span>
-          <span class="cs-pill-text">Testimonials</span>
+  <section class="jp-section" style="padding-top:0;">
+    <div class="jp-wrap">
+      <div class="jp-quotes-head reveal">
+        <div>
+          <p class="jp-eyebrow">Kind words</p>
+          <h2 class="jp-h2">From managers &amp; peers</h2>
         </div>
-        <h2 class="cs-section-title">Don't take it from me — hear it from my managers &amp; peers</h2>
+        <div class="jp-quotes-nav">
+          <button type="button" data-dir="-1" aria-label="Previous testimonial">←</button>
+          <button type="button" data-dir="1" aria-label="Next testimonial">→</button>
+        </div>
       </div>
-
-      <div class="testimonials-grid">
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"Julie consistently delivers work that is both visually exceptional and strategically sound. She has a rare ability to translate ambiguous requirements into clear, elegant solutions that resonate with users and stakeholders alike."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MR</div>
-            <div>
-              <div class="testimonial-name">Michael R.</div>
-              <div class="testimonial-role">Director of Product Design</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"What sets Julie apart is her ability to wear multiple hats without sacrificing quality in any of them. Her research is rigorous, her designs are beautiful, and her front-end code actually ships. She's one of the most complete designers I've worked with."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SK</div>
-            <div>
-              <div class="testimonial-name">Sarah K.</div>
-              <div class="testimonial-role">VP of Engineering</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"Julie brought clarity to a product that had none. She ran user research, mapped our entire experience, and redesigned it in a way that immediately improved engagement. The GDUSA award we won is a direct result of her vision."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">DL</div>
-            <div>
-              <div class="testimonial-name">David L.</div>
-              <div class="testimonial-role">CEO, Human Care Systems</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"Julie is the kind of designer who makes everyone around her better. She documents her decisions, communicates with engineers in their language, and never loses sight of the user in the process. A true professional and a genuine pleasure to collaborate with."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">AT</div>
-            <div>
-              <div class="testimonial-name">Amanda T.</div>
-              <div class="testimonial-role">Senior Product Manager</div>
-            </div>
-          </div>
-        </div>
-
+      <div class="jp-quotes reveal" id="jp-quotes">
+        <figure class="jp-quote">
+          <blockquote>Julie consistently delivers work that is both visually exceptional and strategically sound. She has a rare ability to translate ambiguous requirements into clear, elegant solutions that resonate with users and stakeholders alike.</blockquote>
+          <figcaption><div class="jp-quote-name">Michael R.</div><div class="jp-quote-role">Director of Product Design</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>What sets Julie apart is her ability to wear multiple hats without sacrificing quality in any of them. Her research is rigorous, her designs are beautiful, and her front-end code actually ships. She's one of the most complete designers I've worked with.</blockquote>
+          <figcaption><div class="jp-quote-name">Sarah K.</div><div class="jp-quote-role">VP of Engineering</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Julie brought clarity to a product that had none. She ran user research, mapped our entire experience, and redesigned it in a way that immediately improved engagement. The GDUSA award we won is a direct result of her vision.</blockquote>
+          <figcaption><div class="jp-quote-name">David L.</div><div class="jp-quote-role">CEO, Human Care Systems</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Julie is the kind of designer who makes everyone around her better. She documents her decisions, communicates with engineers in their language, and never loses sight of the user in the process. A true professional and a genuine pleasure to collaborate with.</blockquote>
+          <figcaption><div class="jp-quote-name">Amanda T.</div><div class="jp-quote-role">Senior Product Manager</div></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo-circle">
-            <img src="images/julie-dion-logo-04.png" alt="Julie Dion">
-          </div>
-          <p>Product designer &amp; front-end developer based in the Northeast. I build accessible experiences that solve real user needs.</p>
-          <a href="contact.html" class="btn btn-primary" style="margin-top:16px;display:inline-block;">Contact Me</a>
-        </div>
+  </main>
 
-        <div>
-          <div class="footer-heading">Quick Links</div>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-heading">Connect</div>
-          <ul class="footer-links">
-            <li><a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a></li>
-          </ul>
-        </div>
+  <!-- CTA + FOOTER -->
+  <section class="jp-cta">
+    <div class="jp-wrap">
+      <h2>Have a role or project in mind? <span>Let's talk.</span></h2>
+      <div class="jp-cta-actions">
+        <a href="contact.html" class="btn btn-light btn-lg">Get in touch</a>
+        <a href="mailto:juliedion1@gmail.com" class="btn btn-ghost-light btn-lg">juliedion1@gmail.com</a>
       </div>
-      <div class="footer-bottom">
-        <div>© <span id="year"></span> Julie Dion. All rights reserved.</div>
-      </div>
+      <footer class="jp-footer">
+        <a href="index.html"><img src="images/julie-dion-logo-07.png" alt="Julie Dion"></a>
+        <nav aria-label="Footer">
+          <a href="portfolio.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+        <div>© <span id="year"></span> Julie Dion</div>
+      </footer>
     </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Hero cycling statements -->
-  <script>
-    (function() {
-      const statements = document.querySelectorAll('.hero-statement');
-      if (!statements.length) return;
-      let current = 0;
-      const HOLD    = 2800;   // how long each statement is visible
-      const OUT_DUR = 520;    // matches the CSS exit transition
-
-      function cycle() {
-        const prev = current;
-        current = (current + 1) % statements.length;
-
-        // Exit the current one
-        statements[prev].classList.remove('visible');
-        statements[prev].classList.add('exiting');
-
-        // After exit transition, remove exiting and show next
-        setTimeout(function() {
-          statements[prev].classList.remove('exiting');
-          statements[current].classList.add('visible');
-        }, OUT_DUR);
-      }
-
-      // Start cycling after the first hold period
-      setInterval(cycle, HOLD + OUT_DUR);
-    })();
-  </script>
-
+  </section>
   <script src="js/app.js"></script>
 </body>
 </html>

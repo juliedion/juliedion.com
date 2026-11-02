@@ -14,8 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Julie Dion</title>
   <meta name="description" content="Get in touch with Julie Dion for design, development, or collaboration opportunities.">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css?v=26">
+  <link rel="icon" href="images/favicon-32.png?v=3" sizes="32x32">
+  <link rel="icon" href="images/favicon.png?v=3" sizes="512x512">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=3">
 </head>
 <body>
 
@@ -107,45 +109,27 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/julie-dion-logo-04.png" alt="Julie Dion" style="width:110px;height:auto;margin-bottom:16px;display:block;">
-          <p>Looking forward to hearing from you — whether it’s a short hello or a long-term partnership.</p>
-          <a href="contact.html" class="btn btn-outline" style="margin-top:12px;display:inline-block;">Contact Me</a>
-        </div>
-
-        <div>
-          <div class="footer-heading">Quick Links</div>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-heading">Connect</div>
-          <ul class="footer-links">
-            <li><a href="tel:5188927495">518.892.7495</a></li>
-            <li><a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a></li>
-          </ul>
-        </div>
+  <!-- CTA + FOOTER -->
+  <section class="jp-cta">
+    <div class="jp-wrap">
+      <h2>Have a role or project in mind? <span>Let's talk.</span></h2>
+      <div class="jp-cta-actions">
+        <a href="contact.html" class="btn btn-light btn-lg">Get in touch</a>
+        <a href="mailto:juliedion1@gmail.com" class="btn btn-ghost-light btn-lg">juliedion1@gmail.com</a>
       </div>
-      <div class="footer-bottom">
-        <div>© <span id="year"></span> Julie Dion. All rights reserved.</div>
-      </div>
+      <footer class="jp-footer">
+        <a href="index.html"><img src="images/julie-dion-logo-07.png" alt="Julie Dion"></a>
+        <nav aria-label="Footer">
+          <a href="portfolio.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+        <div>© <span id="year"></span> Julie Dion</div>
+      </footer>
     </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  </section>
   <script src="js/app.js"></script>
 </body>
 </html>
