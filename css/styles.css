@@ -2820,6 +2820,53 @@ h1, h2, h3, h4, h5, h6 { color: var(--ink); letter-spacing: -0.02em; font-weight
   margin-left: auto;
   aspect-ratio: 1;
 }
+.jp-showreel-media { position: relative; }
+.jp-showreel-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(253,250,247,0.10);
+  pointer-events: none;
+}
+.jp-reel-chip, .jp-reel-toggle {
+  position: absolute;
+  bottom: 14px;
+  z-index: 1;
+  background: rgba(3,19,38,0.62);
+  border: 1px solid rgba(253,250,247,0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--on-dark);
+  transition: background .25s var(--ease), transform .25s var(--ease);
+}
+.jp-reel-chip {
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 84px);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.jp-reel-chip span { color: var(--on-dark-3); }
+.jp-reel-chip strong { font-weight: 500; overflow: hidden; text-overflow: ellipsis; }
+.jp-reel-chip i { font-style: normal; opacity: 0; transform: translateX(-4px); transition: all .25s var(--ease); }
+.jp-reel-chip:hover { background: rgba(3,19,38,0.85); color: var(--on-dark); }
+.jp-reel-chip:hover i { opacity: 1; transform: none; }
+.jp-reel-chip.swap strong { animation: jp-chip-in .45s var(--ease-out); }
+@keyframes jp-chip-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.jp-reel-toggle {
+  right: 14px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.jp-reel-toggle:hover { background: rgba(3,19,38,0.85); transform: scale(1.06); }
+.jp-icon-pause, .jp-icon-play { display: block; width: 12px; height: 12px; }
+.jp-icon-pause { border-left: 4px solid currentColor; border-right: 4px solid currentColor; width: 12px; box-sizing: border-box; }
+.jp-icon-play { width: 0; height: 0; border-style: solid; border-width: 7px 0 7px 11px; border-color: transparent transparent transparent currentColor; margin-left: 3px; }
 .jp-showreel-media video {
   display: block;
   width: 100%;
@@ -3364,3 +3411,73 @@ img[style*="border-radius:14px"], img[style*="border-radius:20px"] { border-radi
   .jp-hero h1 .w, .jp-hero-sub, .jp-hero-meta { animation: none; opacity: 1; transform: none; filter: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ============================================================
+   HERO WAVE + NAVY HOMEPAGE + TEAL FOOTER
+   ============================================================ */
+
+/* --- Hero: WebGL wave gradient (js/app.js initHeroShader) --- */
+.jp-hero::before {
+  background:
+    radial-gradient(60% 70% at 20% 10%, rgba(7,171,182,0.9), transparent 70%),
+    radial-gradient(50% 60% at 75% 30%, rgba(13,127,140,0.8), transparent 70%),
+    linear-gradient(170deg, #0d7f8c 0%, #00203b 55%, #031326 100%);
+}
+.jp-hero-shader {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+}
+.jp-hero.has-shader .jp-hero-shader { opacity: 1; }
+.jp-hero.has-shader::before { animation: none; }
+.jp-hero::after { opacity: .16; }
+.jp-hero h1 { color: #fff; }
+
+/* --- Homepage sits on deep navy, like the hero band --- */
+body.jp-home { background: var(--navy-deep); }
+.jp-home main {
+  --ink:        var(--on-dark);
+  --ink-2:      var(--on-dark-2);
+  --ink-3:      rgba(253,250,247,0.62);
+  --text:       var(--on-dark-2);
+  --text-light: var(--on-dark-3);
+  --accent:     var(--teal);
+  --white:      #06203d;
+  --cream:      var(--navy-deep);
+  --cream-dark: rgba(253,250,247,0.08);
+  --border:     rgba(253,250,247,0.12);
+  color: var(--on-dark-2);
+  color-scheme: dark;
+}
+.jp-home .jp-services-section { background: transparent; border: 0; }
+.jp-home .jp-services-grid { background: var(--border); }
+.jp-home .jp-inline-link { text-decoration-color: rgba(253,250,247,0.3); }
+.jp-home .jp-inline-link:hover { color: var(--teal-soft); text-decoration-color: var(--teal-soft); }
+.jp-home .jp-quotes-nav button:hover { background: var(--on-dark); color: var(--navy-deep); }
+.jp-home main .btn-primary { background: var(--on-dark); border-color: var(--on-dark); color: var(--navy-deep); }
+.jp-home main .btn-primary:hover { background: var(--teal-soft); border-color: var(--teal-soft); color: var(--navy-deep); }
+.jp-home main .btn-outline { border-color: rgba(253,250,247,0.3); }
+.jp-home main .btn-outline:hover { border-color: var(--on-dark); }
+.jp-home .jp-form input:focus,
+.jp-home .jp-form select:focus,
+.jp-home .jp-form textarea:focus { box-shadow: 0 0 0 3px rgba(7,171,182,0.25); }
+
+/* --- CTA + footer: solid teal band with navy type --- */
+.jp-cta { background: var(--teal); color: var(--navy-deep); }
+.jp-cta::before { display: none; }
+.jp-cta::after { opacity: .12; }
+.jp-cta h2 { color: var(--navy-deep); }
+.jp-cta h2 span { color: rgba(3,19,38,0.6); }
+.jp-cta .btn-light { background: var(--navy-deep); border-color: var(--navy-deep); color: var(--on-dark); }
+.jp-cta .btn-light:hover { background: var(--navy); border-color: var(--navy); color: var(--on-dark); }
+.jp-cta .btn-ghost-light { border-color: rgba(3,19,38,0.3); color: var(--navy-deep); }
+.jp-cta .btn-ghost-light:hover { border-color: var(--navy-deep); color: var(--navy-deep); }
+.jp-footer { border-top-color: rgba(3,19,38,0.2); color: rgba(3,19,38,0.7); }
+.jp-footer a { color: rgba(3,19,38,0.8); }
+.jp-footer a:hover { color: var(--navy-deep); }
+.jp-footer img { filter: brightness(0); opacity: .85; }
