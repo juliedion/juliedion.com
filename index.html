@@ -1,2303 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Julie Dion — Senior Product Designer & Digital Marketing Leader</title>
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    /* ─── Reset & Variables ─────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --cyan:    #00C8E8;
-      --blue:    #0077B6;
-      --grad:    linear-gradient(135deg, #0077B6 0%, #00C8E8 100%);
-      --grad-v:  linear-gradient(180deg, #0077B6 0%, #00C8E8 100%);
-      --dark:    #111827;
-      --mid:     #374151;
-      --muted:   #6B7280;
-      --light:   #F9FAFB;
-      --white:   #FFFFFF;
-      --border:  #E5E7EB;
-      --sidebar: 290px;
-      --radius:  12px;
-      --shadow:  0 4px 24px rgba(0,0,0,.08);
-      --trans:   .3s ease;
-    }
-
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      display: flex;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    ul { list-style: none; }
-
-    /* ─── Sidebar ────────────────────────────────────────────────────── */
-    #sidebar {
-      width: var(--sidebar);
-      min-height: 100vh;
-      background: var(--white);
-      border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0; left: 0;
-      z-index: 100;
-      overflow-y: auto;
-      transition: transform var(--trans);
-    }
-
-    .sidebar-logo {
-      padding: 36px 28px 24px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .sidebar-logo img {
-      width: 160px;
-      height: auto;
-    }
-
-    .sidebar-tagline {
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 8px;
-      text-align: left;
-    }
-
-    .sidebar-nav {
-      flex: 1;
-      padding: 32px 0;
-    }
-
-    .sidebar-nav .nav-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 0 28px 10px;
-    }
-
-    .sidebar-nav a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 11px 28px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--mid);
-      border-left: 3px solid transparent;
-      transition: all var(--trans);
-    }
-
-    .sidebar-nav a i {
-      width: 18px;
-      font-size: 14px;
-      color: var(--muted);
-      transition: color var(--trans);
-    }
-
-    .sidebar-nav a:hover,
-    .sidebar-nav a.active {
-      color: var(--blue);
-      border-left-color: var(--cyan);
-      background: linear-gradient(90deg, rgba(0,200,232,.06) 0%, transparent 100%);
-    }
-
-    .sidebar-nav a:hover i,
-    .sidebar-nav a.active i {
-      color: var(--cyan);
-    }
-
-    .sidebar-nav .nav-sep {
-      height: 1px;
-      background: var(--border);
-      margin: 16px 28px;
-    }
-
-    .sidebar-social {
-      padding: 24px 28px;
-      border-top: 1px solid var(--border);
-    }
-
-    .sidebar-social p {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .social-icons a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: var(--muted);
-      transition: all var(--trans);
-    }
-
-    .social-icons a:hover {
-      background: var(--grad);
-      border-color: transparent;
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    .sidebar-contact-mini {
-      padding: 16px 28px 28px;
-    }
-
-    .sidebar-contact-mini a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 8px;
-      transition: color var(--trans);
-    }
-
-    .sidebar-contact-mini a:hover { color: var(--cyan); }
-
-    .sidebar-contact-mini a i {
-      font-size: 12px;
-      width: 14px;
-      color: var(--cyan);
-    }
-
-    /* ─── Mobile Toggle ──────────────────────────────────────────────── */
-    #menu-toggle {
-      display: none;
-      position: fixed;
-      top: 18px; left: 18px;
-      z-index: 200;
-      background: var(--grad);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      width: 44px;
-      height: 44px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-    }
-
-    #sidebar-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.4);
-      z-index: 99;
-    }
-
-    /* ─── Main Content ───────────────────────────────────────────────── */
-    #main {
-      margin-left: var(--sidebar);
-      flex: 1;
-    }
-
-    /* ─── Section Shared ─────────────────────────────────────────────── */
-    .section {
-      padding: 90px 60px;
-    }
-
-    .section-alt {
-      background: var(--white);
-    }
-
-    .section-dark {
-      background: var(--dark);
-      color: var(--white);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: inline-block;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 3.5vw, 42px);
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.2;
-    }
-
-    .section-dark .section-title { color: var(--white); }
-
-    .section-subtitle {
-      font-size: 16px;
-      color: var(--muted);
-      margin-top: 12px;
-      max-width: 540px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
-    }
-
-    .section-dark .section-subtitle { color: rgba(255,255,255,.6); }
-
-    .divider {
-      width: 50px;
-      height: 3px;
-      background: var(--grad);
-      border-radius: 2px;
-      margin: 18px auto 0;
-    }
-
-    /* ─── Hero Section ───────────────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      background-color: #0a1628;
-      background-image: url('images/julie-dion-banner-desktop.jpg');
-      background-size: cover;
-      background-position: top right;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      padding: 80px 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    @media (max-width: 768px) {
-      #hero {
-        background-image: url('images/julie-dion-banner-mobile.jpg');
-        background-position: top center;
-        background-size: cover;
-        min-height: 100svh;
-        align-items: flex-start;
-        padding-top: 100px;
-      }
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(10,22,40,.82) 40%, rgba(10,22,40,.18) 100%);
-    }
-
-    @media (max-width: 768px) {
-      .hero-bg {
-        background: linear-gradient(180deg, rgba(10,22,40,.72) 0%, rgba(10,22,40,.45) 55%, rgba(10,22,40,.10) 100%);
-      }
-    }
-
-    .hero-grid-lines {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 50px 50px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(0,200,232,.12);
-      border: 1px solid rgba(0,200,232,.3);
-      border-radius: 50px;
-      padding: 6px 16px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 28px;
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--cyan);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .5; transform: scale(1.4); }
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(40px, 6vw, 76px);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .hero-title span {
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-roles {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(20px, 3vw, 34px);
-      font-style: italic;
-      color: rgba(255,255,255,.55);
-      margin-bottom: 28px;
-      min-height: 44px;
-    }
-
-    .hero-roles .typed-role {
-      color: var(--cyan);
-      font-style: normal;
-    }
-
-    .hero-desc {
-      font-size: 16px;
-      color: rgba(255,255,255,.6);
-      line-height: 1.8;
-      max-width: 520px;
-      margin-bottom: 40px;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 30px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: .04em;
-      transition: all var(--trans);
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--grad);
-      color: var(--white);
-      box-shadow: 0 4px 20px rgba(0,119,182,.4);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,119,182,.5);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 1.5px solid rgba(255,255,255,.3);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-      transform: translateY(-2px);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 56px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    .hero-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 700;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-stat-label {
-      font-size: 12px;
-      color: rgba(255,255,255,.45);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      margin-top: 2px;
-    }
-
-    /* ─── About ──────────────────────────────────────────────────────── */
-    #about {
-      background: var(--white);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .about-image-wrap {
-      position: relative;
-    }
-
-    .about-image-wrap img {
-      width: 100%;
-      border-radius: var(--radius);
-      display: block;
-    }
-
-    .about-image-placeholder {
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: var(--radius);
-      background: var(--grad);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 90px;
-      font-weight: 700;
-      color: rgba(255,255,255,.3);
-    }
-
-    .about-badge-card {
-      position: absolute;
-      bottom: 24px;
-      right: -24px;
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,.12);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 180px;
-    }
-
-    .about-badge-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--grad);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-
-    .about-badge-text strong {
-      display: block;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    .about-badge-text span {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .about-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 12px;
-    }
-
-    .about-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 3vw, 38px);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .about-text {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 14px;
-    }
-
-    .about-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 28px;
-    }
-
-    .about-skill-tag {
-      padding: 6px 14px;
-      border-radius: 50px;
-      font-size: 12px;
-      font-weight: 600;
-      background: rgba(0,119,182,.08);
-      color: var(--blue);
-      border: 1px solid rgba(0,119,182,.15);
-    }
-
-    /* ─── Portfolio Filter ───────────────────────────────────────────── */
-    #portfolio {
-      background: var(--light);
-    }
-
-    .filter-bar-wrap {
-      margin-bottom: 48px;
-    }
-
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 8px;
-    }
-    .filter-group:last-child { margin-bottom: 0; }
-
-    .filter-section-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-      flex-shrink: 0;
-      padding: 10px 20px 10px 0;
-      border-right: 1px solid var(--border);
-      margin-right: 8px;
-    }
-
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-    }
-
-    .filter-btn {
-      padding: 10px 15px;
-      font-size: 13px;
-      font-weight: 500;
-      border: none;
-      border-bottom: 2px solid transparent;
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      transition: color .15s ease, border-color .15s ease;
-      margin-bottom: -1px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .filter-btn:hover {
-      color: var(--dark);
-    }
-
-    .filter-btn.active {
-      color: var(--dark);
-      border-bottom-color: var(--cyan);
-      font-weight: 600;
-    }
-
-    .filter-divider { display: none; }
-    .industry-filters { margin-top: 0; }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .portfolio-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform var(--trans), box-shadow var(--trans);
-      cursor: pointer;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 48px rgba(0,0,0,.14);
-    }
-
-    .portfolio-card.hidden {
-      display: none;
-    }
-
-    .card-image {
-      width: 100%;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      transition: transform .5s ease;
-    }
-
-    .portfolio-card:hover .card-image img {
-      transform: scale(1.06);
-    }
-
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity var(--trans);
-      display: flex;
-      align-items: flex-end;
-      padding: 20px;
-    }
-
-    .portfolio-card:hover .card-overlay {
-      opacity: 1;
-    }
-
-    .card-overlay-btn {
-      background: var(--white);
-      color: var(--dark);
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: background var(--trans);
-    }
-
-    .card-overlay-btn:hover {
-      background: var(--cyan);
-      color: var(--white);
-    }
-
-    .card-body {
-      padding: 20px;
-    }
-
-    .card-category {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 6px;
-    }
-
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .card-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .card-tag {
-      padding: 3px 10px;
-      border-radius: 50px;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-
-    .tag-industry {
-      background: rgba(0,119,182,.08);
-      color: var(--blue);
-      border: 1px solid rgba(0,119,182,.15);
-    }
-
-    .tag-sub {
-      background: rgba(0,200,232,.08);
-      color: #007A9A;
-      border: 1px solid rgba(0,200,232,.2);
-    }
-
-    /* ─── Services ───────────────────────────────────────────────────── */
-    #services {
-      background: var(--white);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: all var(--trans);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--grad);
-      opacity: 0;
-      transition: opacity var(--trans);
-    }
-
-    .service-card:hover::before { opacity: 1; }
-    .service-card:hover { border-color: transparent; color: var(--white); box-shadow: 0 8px 32px rgba(0,119,182,.35); }
-    .service-card:hover .service-icon { background: rgba(255,255,255,.2); color: var(--white); }
-    .service-card:hover .service-title { color: var(--white); }
-    .service-card:hover .service-sub { color: rgba(255,255,255,.75); }
-    .service-card:hover .service-sub li::before { color: rgba(255,255,255,.6); }
-
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: rgba(0,119,182,.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      color: var(--blue);
-      margin-bottom: 20px;
-      position: relative;
-      transition: all var(--trans);
-    }
-
-    .service-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 14px;
-      position: relative;
-      transition: color var(--trans);
-    }
-
-    .service-sub {
-      position: relative;
-    }
-
-    .service-sub li {
-      font-size: 13px;
-      color: var(--muted);
-      padding: 3px 0;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      transition: color var(--trans);
-    }
-
-    .service-sub li::before {
-      content: '→';
-      font-size: 11px;
-      color: var(--cyan);
-      transition: color var(--trans);
-    }
-
-    /* ─── Industry Tags Section ──────────────────────────────────────── */
-    #industries {
-      background: var(--dark);
-      padding: 64px 60px;
-    }
-
-    .industry-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .industry-chip {
-      padding: 12px 24px;
-      border-radius: 50px;
-      border: 1.5px solid rgba(255,255,255,.15);
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,.7);
-      cursor: pointer;
-      transition: all var(--trans);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      position: relative;
-      text-decoration: none;
-    }
-
-    .industry-chip i {
-      font-size: 14px;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .industry-chip:hover {
-      border-color: var(--cyan);
-      color: var(--white);
-      background: rgba(0,200,232,.08);
-      transform: translateY(-2px);
-    }
-
-    .ind-popover {
-      display: none;
-      position: absolute;
-      bottom: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: #1a2232;
-      border: 1px solid rgba(0,200,232,.35);
-      border-radius: 12px;
-      padding: 10px;
-      min-width: 220px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.6);
-      z-index: 200;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .ind-popover.open { display: flex; }
-    .ind-popover::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 7px solid transparent;
-      border-top-color: rgba(0,200,232,.35);
-    }
-    .ind-popover a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 14px;
-      border-radius: 8px;
-      color: rgba(255,255,255,.85);
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 600;
-      transition: background .15s;
-      white-space: nowrap;
-    }
-    .ind-popover a:hover { background: rgba(0,200,232,.15); color: #fff; }
-    .ind-popover a i { font-size: 13px; background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; flex-shrink:0; }
-
-    /* ─── Testimonials ───────────────────────────────────────────────── */
-    #testimonials {
-      background: var(--light);
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '\201C';
-      font-family: 'Playfair Display', serif;
-      font-size: 80px;
-      color: var(--cyan);
-      opacity: .2;
-      position: absolute;
-      top: 12px;
-      left: 20px;
-      line-height: 1;
-    }
-
-    .testimonial-text {
-      font-size: 14px;
-      color: var(--mid);
-      line-height: 1.8;
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    .testimonial-stars {
-      color: #F59E0B;
-      font-size: 13px;
-      margin-bottom: 14px;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--grad);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-
-    .author-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .author-role {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* ─── Contact ────────────────────────────────────────────────────── */
-    #contact {
-      background: var(--white);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 64px;
-    }
-
-    .contact-info-block {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .contact-info-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .contact-info-text {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .contact-detail-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--grad);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-
-    .contact-detail-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-
-    .contact-detail-value {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--dark);
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-group label {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--muted);
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding: 12px 16px;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: var(--dark);
-      background: var(--light);
-      transition: border-color var(--trans);
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--cyan);
-      background: var(--white);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 130px;
-    }
-
-    /* ─── Footer ─────────────────────────────────────────────────────── */
-    #footer {
-      background: var(--dark);
-      padding: 40px 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-logo img { width: 130px; }
-
-    .footer-copy {
-      font-size: 13px;
-      color: rgba(255,255,255,.4);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-      color: rgba(255,255,255,.4);
-      transition: color var(--trans);
-    }
-
-    .footer-links a:hover { color: var(--cyan); }
-
-    /* ─── Scrollbar ──────────────────────────────────────────────────── */
-    #main::-webkit-scrollbar { width: 5px; }
-    #main::-webkit-scrollbar-track { background: transparent; }
-    #main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-
-    /* ─── Animations ─────────────────────────────────────────────────── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── Responsive ─────────────────────────────────────────────────── */
-    @media (max-width: 1024px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .about-image-wrap { max-width: 360px; }
-      .about-badge-card { right: 0; }
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      #sidebar {
-        transform: translateX(-100%);
-      }
-      #sidebar.open {
-        transform: translateX(0);
-      }
-      #sidebar-overlay.open {
-        display: block;
-      }
-      #menu-toggle { display: flex; align-items: center; justify-content: center; }
-      #main { margin-left: 0; width: 100%; max-width: 100vw; }
-      .section { padding: 70px 24px; }
-      #hero { padding: 80px 24px; }
-      .hero-content { width: 100%; max-width: 100%; }
-      .hero-desc { max-width: 100%; }
-      .hero-cta { flex-direction: column; }
-      .hero-cta .btn { width: 100%; justify-content: center; }
-      .hero-stats { gap: 16px; flex-wrap: wrap; }
-      .hero-stats > div { min-width: calc(50% - 8px); }
-      #industries { padding: 64px 24px; }
-      #footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-      .form-row { grid-template-columns: 1fr; }
-      .filter-group { flex-direction: column; align-items: flex-start; }
-      .filter-section-label { border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; margin-right: 0; margin-bottom: 4px; width: 100%; }
-      .filter-bar { width: 100%; }
-      .awards-strip { padding-left: 24px !important; padding-right: 24px !important; }
-      .awards-strip-inner { grid-template-columns: 1fr 1fr !important; }
-      #award-module > div { grid-template-columns: 1fr !important; gap: 32px !important; }
-    }
-
-    @media (max-width: 480px) {
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-<!-- ═══ Mobile Toggle ═══════════════════════════════════════════════════ -->
-<button id="menu-toggle" aria-label="Open menu">
-  <i class="fas fa-bars"></i>
-</button>
-<div id="sidebar-overlay"></div>
-
-<!-- ═══ Sidebar ═════════════════════════════════════════════════════════ -->
-<aside id="sidebar">
-  <div class="sidebar-logo">
-    <a href="#hero" style="display:block;">
-      <img src="images/logos/julie-dion-logo-02.png" alt="Julie Dion" style="width:180px; height:auto;" />
-    </a>
-    <div style="padding-left:2px; margin-top:10px; display:flex; flex-direction:column; gap:3px;">
-      <span style="font-size:13px; font-weight:300; color:var(--muted); letter-spacing:.02em;">Product Designer</span>
-      <span style="font-size:13px; font-weight:300; color:var(--muted); letter-spacing:.02em;">UX/UI Designer</span>
-      <span style="font-size:13px; font-weight:300; color:var(--muted); letter-spacing:.02em;">Front End Developer</span>
-      <span style="font-size:13px; font-weight:300; color:var(--muted); letter-spacing:.02em;">Digital Marketing Leader</span>
-    </div>
-  </div>
-
-  <nav class="sidebar-nav">
-    <p class="nav-label">Navigation</p>
-    <a href="#hero" class="active"><i class="fas fa-house"></i> Home</a>
-    <a href="#about"><i class="fas fa-user"></i> About</a>
-    <a href="#portfolio"><i class="fas fa-table-cells-large"></i> Portfolio</a>
-    <a href="#services"><i class="fas fa-wand-magic-sparkles"></i> Services</a>
-    <a href="#industries"><i class="fas fa-building"></i> Industries</a>
-    <a href="#testimonials"><i class="fas fa-comment-dots"></i> Testimonials</a>
-    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-
-    <div class="nav-sep"></div>
-    <p class="nav-label">Quick Links</p>
-    <a href="#portfolio"><i class="fas fa-images"></i> View My Work</a>
-    <a href="#contact"><i class="fas fa-paper-plane"></i> Start a Project</a>
-    <a href="/Users/juliedion/Library/CloudStorage/Dropbox/Career/Resume/Resume/Top Resume/Julie Dion Resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Download Résumé</a>
-  </nav>
-
-  <div class="sidebar-contact-mini">
-    <a href="mailto:juliedion1@gmail.com">
-      <i class="fas fa-envelope"></i> juliedion1@gmail.com
-    </a>
-    <a href="tel:+15188927495">
-      <i class="fas fa-phone"></i> (518) 892-7495
-    </a>
-  </div>
-
-  <div class="sidebar-social">
-    <p>Connect</p>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
-      <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-    </div>
-  </div>
-</aside>
-
-<!-- ═══ Main Content ══════════════════════════════════════════════════ -->
-<main id="main">
-
-  <!-- ── Hero ──────────────────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid-lines"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Available for New Projects</div>
-      <h1 class="hero-title">
-        Hi, I'm<br /><span>Julie Dion</span>
-      </h1>
-      <div class="hero-roles">
-        <span class="typed-role" id="typed-role"></span>
-      </div>
-      <p class="hero-desc">
-        Award-winning Senior Product Designer and Digital Marketing leader with 18+ years driving user-centric digital experiences, web design, and integrated campaigns — from Fortune 500 corporations to growing startups and nonprofits.
-      </p>
-      <div class="hero-cta">
-        <a href="#portfolio" class="btn btn-primary"><i class="fas fa-table-cells-large"></i> View My Work</a>
-        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Start a Project</a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num" data-count="18">0</div>
-          <div class="hero-stat-label">Years Experience</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" data-count="300">0</div>
-          <div class="hero-stat-label">Projects Completed</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" data-count="10">0</div>
-          <div class="hero-stat-label">Awards Won</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" data-count="10">0</div>
-          <div class="hero-stat-label">Industries Served</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── About ──────────────────────────────────────────────────────── -->
-
-  <!-- ── Awards Strip ──────────────────────────────────────────────── -->
-  <section class="awards-strip" style="background:var(--dark); padding:40px 60px; overflow:hidden;">
-    <div style="text-align:center; color:rgba(255,255,255,.35); font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:28px;">Honors &amp; Awards</div>
-    <div class="awards-strip-inner" style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:900px; margin:0 auto;">
-      <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-trophy" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
-        <div>
-          <div style="font-size:13px; font-weight:600;">20 Most Outstanding Women</div>
-          <div style="font-size:11px; color:rgba(255,255,255,.45);">Capital Region — 2024</div>
-        </div>
-      </div>
-      <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-medal" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
-        <div>
-          <div style="font-size:13px; font-weight:600;">MarCom Award Winner</div>
-          <div style="font-size:11px; color:rgba(255,255,255,.45);">Halo Labs Butterfly Campaign — 2022</div>
-        </div>
-      </div>
-      <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-star" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
-        <div>
-          <div style="font-size:13px; font-weight:600;">Graphic Design USA Winner</div>
-          <div style="font-size:11px; color:rgba(255,255,255,.45);">UX/UI, Web &amp; Print — 2010, 2012, 2019</div>
-        </div>
-      </div>
-      <div style="display:flex; align-items:center; gap:10px; color:white;">
-        <i class="fas fa-award" style="color:#00C8E8; font-size:16px; flex-shrink:0;"></i>
-        <div>
-          <div style="font-size:13px; font-weight:600;">HOW Design &amp; In HOWSE Winner</div>
-          <div style="font-size:11px; color:rgba(255,255,255,.45);">Print &amp; In-House Design — 2010, 2011, 2012</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:32px;">
-      <a href="/Users/juliedion/Library/CloudStorage/Dropbox/Career/Resume/Resume/Top Resume/Julie Dion Resume.pdf" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#0077B6,#00C8E8); border-radius:8px; padding:10px 20px; color:white; font-size:13px; font-weight:600; text-decoration:none; transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-        <i class="fas fa-file-pdf"></i> Download Résumé
-      </a>
-    </div>
-  </section>
-
-  <!-- ── Portfolio ──────────────────────────────────────────────────── -->
-  <section id="portfolio" class="section">
-    <div class="section-header fade-up">
-      <span class="section-label">Creative Work</span>
-      <h2 class="section-title">Selected Portfolio</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Explore work across disciplines and industries. Filter by category or industry to find what matters most to you.</p>
-    </div>
-
-    <div class="filter-bar-wrap fade-up">
-      <div class="filter-group">
-        <div class="filter-section-label">Category</div>
-        <div class="filter-bar" id="cat-filters">
-          <button class="filter-btn active" data-filter="all">All Work</button>
-          <button class="filter-btn" data-filter="brand">Brand &amp; Identity</button>
-          <button class="filter-btn" data-filter="web">Web Design</button>
-          <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
-          <button class="filter-btn" data-filter="digital">Digital Marketing</button>
-          <button class="filter-btn" data-filter="print">Print Design</button>
-          <a class="filter-btn" href="cs-pto-schalmont.html">Event &amp; Community</a>
-          <button class="filter-btn" data-filter="motion">Motion &amp; Video</button>
-        </div>
-      </div>
-      <div class="filter-group">
-        <div class="filter-section-label">Industry</div>
-        <div class="filter-bar" id="ind-filters">
-          <button class="filter-btn active" data-industry="all">All Industries</button>
-          <button class="filter-btn" data-industry="healthcare">Healthcare</button>
-          <button class="filter-btn" data-industry="telecom">Telecommunications</button>
-          <button class="filter-btn" data-industry="education">Education</button>
-          <button class="filter-btn" data-industry="nonprofit">Nonprofit</button>
-          <button class="filter-btn" data-industry="retail">Retail</button>
-          <button class="filter-btn" data-industry="ecommerce">E-Commerce</button>
-          <button class="filter-btn" data-industry="financial">Financial Services</button>
-          <button class="filter-btn" data-industry="technology">Technology</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="portfolio-grid" id="portfolio-grid">
-
-      <!-- Charter: Small Business Homepage / Full Engagement -->
-      <div class="portfolio-card" data-cat="brand web uxui" data-industry="telecom">
-        <div class="card-image">
-          <img src="images/Charter Spectrum/FireShot-001-SMB-Homepage.jpg" alt="Spectrum Business Small Business Homepage" loading="lazy" />
-          <div class="card-overlay">
-            <a href="cs-charter-smb-homepage.html" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">UX/UI Design · Web Design · B2B · B2C</div>
-          <h3 class="card-title">Charter Spectrum — 15+ Page Web Experience</h3>
-          <p class="card-desc">Designed and authored 15+ major Spectrum Business pages — Small Business homepage, product pages, industry verticals, and more — across desktop, tablet, and mobile in Adobe XD and AEM.</p>
-          </div>
-      </div>
-
-      <!-- Inspired Thinking Group -->
-      <div class="portfolio-card" data-cat="brand web uxui digital" data-industry="telecom financial">
-        <div class="card-image">
-          <img src="images/Inspired Thinking Group/newpoint-banner.png" alt="Inspired Thinking Group" loading="lazy" />
-          <div class="card-overlay">
-            <a href="cs-itg.html" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">Web Design · Digital · Brand</div>
-          <h3 class="card-title">Inspired Thinking Group — Multi-Client Creative</h3>
-          <p class="card-desc">Web design, digital campaigns, and brand work across Charter Spectrum, ShareBuilder 401k, Newpoint Real Estate, and Microsoft Dynamics 365 motion campaigns.</p>
-        </div>
-      </div>
-
-      <!-- HCS Resilix -->
-      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="healthcare">
-        <div class="card-image">
-          <img src="images/untitled folder/resilix-screen-02-patient-record-tablet.jpg" alt="HCS Resilix Platform" loading="lazy" />
-          <div class="card-overlay">
-            <a href="cs-hcs-resilix.html" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">UX/UI Design · SaaS · Healthcare</div>
-          <h3 class="card-title">Human Care Systems — Resilix Platform &amp; Brand</h3>
-          <p class="card-desc">End-to-end UX design and brand identity for a telenursing patient support platform — generating $1.26M in sales by Q3 and winning the 2019 GD USA Health &amp; Wellness Interactive Award.</p>
-          </div>
-      </div>
-
-      <!-- Microsoft -->
-      <div class="portfolio-card" data-cat="brand web uxui digital motion" data-industry="technology">
-        <div class="card-image">
-          <img src="images/Microsoft/microsoft-d365-animated-ad.gif" alt="Microsoft Dynamics 365 Motion" loading="lazy" />
-          <div class="card-overlay">
-            <a href="cs-itg.html#motion-campaign" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">Motion Design · Video · Digital Advertising</div>
-          <h3 class="card-title">Microsoft — Dynamics 365 Motion &amp; Video Campaigns</h3>
-          <p class="card-desc">Motion design and digital advertising for Microsoft Dynamics 365 — tablet carousel animations, Facebook video ads, LinkedIn animated campaigns, and illustrated motion graphics for enterprise buyers.</p>
-          </div>
-      </div>
-
-      <!-- Merck Millipore -->
-      <div class="portfolio-card" data-cat="brand print motion" data-industry="healthcare">
-        <div class="card-image" style="background:#0d1117;">
-          <img src="images/Merck Millipore/JulieDionPortfolio_20218-cover.jpg" alt="Merck Millipore Campaigns" loading="lazy" style="object-fit:cover;object-position:center;" />
-          <div class="card-overlay">
-            <a href="cs-merck-campaigns.html" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">Campaign Art Direction · Life Sciences · Marketing Design</div>
-          <h3 class="card-title">Merck Millipore — 5 Years of Award-Winning Campaigns</h3>
-          <p class="card-desc">Five consecutive GD USA awards spanning Muse Cell Analyzer, Mobius gymnast ads, ASCB Denver billboards, and the Life:Expressed branded mobile lab tour. Ads ran in Science, Nature, and Boston Business Journal.</p>
-          </div>
-      </div>
-
-
-      <!-- Pyxis Communications -->
-      <div class="portfolio-card" data-cat="brand web uxui digital print" data-industry="technology">
-        <div class="card-image">
-          <img src="images/Pyxis/HL_Marcom_Facebook_Ad copy.png" alt="Pyxis Communications Campaigns" loading="lazy" style="object-fit:cover;object-position:center top;" />
-          <div class="card-overlay">
-            <a href="cs-pyxis-freelance.html" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">Art Direction · Digital Advertising · Print</div>
-          <h3 class="card-title">Pyxis Communications — Science Campaigns &amp; Digital Ads</h3>
-          <p class="card-desc">Freelance Art Director delivering full-page ads, ShareBuilder 401k website, Thermo Fisher tradeshow materials, and the 2022 MarCom Gold Award-winning Halo Labs butterfly campaign.</p>
-        </div>
-      </div>
-
-      <!-- Schalmont PTO -->
-      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="education nonprofit">
-        <div class="card-image">
-          <img src="images/PTO/pto-cover.png" alt="Schalmont PTO Website &amp; Events" loading="lazy" style="object-fit:cover;object-position:20% top;" />
-          <div class="card-overlay">
-            <a href="cs-pto-schalmont.html" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">Web Design · Event Design · Community</div>
-          <h3 class="card-title">Schalmont PTO — Community Platform &amp; Event Design</h3>
-          <p class="card-desc">As PTO President, designed and built the community web platform for two schools plus the full event marketing suite — Color Run, Glow Gala, Trunk-or-Treat, spirit wear, and fundraising materials.</p>
-          </div>
-      </div>
-
-      <!-- Madison Handbags -->
-      <div class="portfolio-card" data-cat="brand web uxui digital print motion" data-industry="ecommerce retail">
-        <div class="card-image">
-          <img src="images/Madison Handbags/spring catalog/spring-p18.jpg" alt="Madison Handbags Brand" loading="lazy" style="object-position:top;" />
-          <div class="card-overlay">
-            <a href="cs-madison-handbags.html" target="_blank" rel="noopener" class="card-overlay-btn"><i class="fas fa-eye"></i> View Collection</a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-category">Brand Identity · E-Commerce · Catalog Design</div>
-          <h3 class="card-title">Madison Handbags — Brand Transformation &amp; Digital Commerce</h3>
-          <p class="card-desc">As Marketing &amp; Creative Director, led a full brand relaunch for the Monet Handbags line — new visual identity, custom online handbag builder, seasonal catalogs, newsletters, and lifestyle photography direction.</p>
-          </div>
-      </div>
-
-
-
-
-
-      
-
-      
-
-
-      
-
-      
-
-      
-
-      
-
-
-
-      
-
-
-
-      
-
-      
-
-      
-
-      
-
-
-    </div>
-  </section>
-
-    <!-- ── Services ───────────────────────────────────────────────────── -->
-  <section id="services" class="section section-alt">
-    <div class="section-header fade-up">
-      <span class="section-label">What I Offer</span>
-      <h2 class="section-title">Services &amp; Specialties</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">From concept to final file — comprehensive design services across every medium and touchpoint.</p>
-    </div>
-
-    <div class="services-grid fade-up">
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-star"></i></div>
-        <h3 class="service-title">Brand &amp; Identity Design</h3>
-        <ul class="service-sub">
-          <li>Logo Design</li>
-          <li>Brand Systems</li>
-          <li>Brand Guidelines</li>
-          <li>Visual Identity Development</li>
-          <li>Brand Refreshes</li>
-          <li>Naming &amp; Tagline Development</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-laptop"></i></div>
-        <h3 class="service-title">Web Design</h3>
-        <ul class="service-sub">
-          <li>Website Design</li>
-          <li>Landing Pages</li>
-          <li>Microsites</li>
-          <li>WordPress Websites</li>
-          <li>Shopify Storefronts</li>
-          <li>Responsive Web Design</li>
-          <li>Website Redesigns</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-pen-ruler"></i></div>
-        <h3 class="service-title">UX/UI Design</h3>
-        <ul class="service-sub">
-          <li>User Experience Design</li>
-          <li>User Interface Design</li>
-          <li>Design Systems</li>
-          <li>Wireframes &amp; Prototypes</li>
-          <li>User Flows</li>
-          <li>Mobile App Design</li>
-          <li>Dashboard Design</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-        <h3 class="service-title">Digital Marketing</h3>
-        <ul class="service-sub">
-          <li>Display Ads</li>
-          <li>Google Ads</li>
-          <li>Social Media Graphics</li>
-          <li>Email Marketing Campaigns</li>
-          <li>Digital Banners</li>
-          <li>Remarketing Ads</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-print"></i></div>
-        <h3 class="service-title">Print Design</h3>
-        <ul class="service-sub">
-          <li>Brochures &amp; Flyers</li>
-          <li>Annual Reports</li>
-          <li>Posters</li>
-          <li>Direct Mail</li>
-          <li>Catalogs</li>
-          <li>Sell Sheets</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-people-group"></i></div>
-        <h3 class="service-title">Event &amp; Community Design</h3>
-        <ul class="service-sub">
-          <li>Event Branding</li>
-          <li>Fundraising Campaigns</li>
-          <li>School/PTO Promotions</li>
-          <li>Signage</li>
-          <li>Registration Materials</li>
-          <li>Step-and-Repeat Backdrops</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-presentation-screen"></i></div>
-        <h3 class="service-title">Presentation Design</h3>
-        <ul class="service-sub">
-          <li>Pitch Decks</li>
-          <li>Investor Presentations</li>
-          <li>Sales Presentations</li>
-          <li>Executive Presentations</li>
-          <li>Conference Slides</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-film"></i></div>
-        <h3 class="service-title">Motion &amp; Video</h3>
-        <ul class="service-sub">
-          <li>Motion Graphics</li>
-          <li>Animated Ads</li>
-          <li>Lottie Animations</li>
-          <li>Explainer Videos</li>
-          <li>Social Media Video Content</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-box-open"></i></div>
-        <h3 class="service-title">Packaging &amp; Product Design</h3>
-        <ul class="service-sub">
-          <li>Product Packaging</li>
-          <li>Labels</li>
-          <li>Retail Displays</li>
-          <li>Product Inserts</li>
-          <li>Unboxing Experiences</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-shirt"></i></div>
-        <h3 class="service-title">Apparel &amp; Merchandise</h3>
-        <ul class="service-sub">
-          <li>Spirit Wear</li>
-          <li>Team Stores</li>
-          <li>T-Shirt Graphics</li>
-          <li>Promotional Merchandise</li>
-          <li>Fundraising Merchandise</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-book-open"></i></div>
-        <h3 class="service-title">Publication Design</h3>
-        <ul class="service-sub">
-          <li>Magazines &amp; Newsletters</li>
-          <li>Reports</li>
-          <li>Books &amp; eBooks</li>
-          <li>Educational Materials</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-signs-post"></i></div>
-        <h3 class="service-title">Environmental &amp; Signage</h3>
-        <ul class="service-sub">
-          <li>Trade Show Displays</li>
-          <li>Wayfinding Systems</li>
-          <li>Exterior Signage</li>
-          <li>Vehicle Wraps</li>
-          <li>Wall Graphics</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-rocket"></i></div>
-        <h3 class="service-title">Content &amp; Campaign Development</h3>
-        <ul class="service-sub">
-          <li>Integrated Marketing Campaigns</li>
-          <li>Product Launches</li>
-          <li>Awareness Campaigns</li>
-          <li>Seasonal Promotions</li>
-          <li>Multi-Channel Campaigns</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Industries ─────────────────────────────────────────────────── -->
-  <section id="industries" class="section-dark">
-    <div class="section-header fade-up">
-      <span class="section-label">Who I Work With</span>
-      <h2 class="section-title">Industries Served</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Deep experience across sectors means I understand your audience, your constraints, and your goals before the first pixel is placed.</p>
-    </div>
-    <div class="industry-grid fade-up">
-
-      <!-- Healthcare — popover: HCS or Merck -->
-      <div class="industry-chip" onclick="toggleIndPopover(event,'pop-healthcare')">
-        <i class="fas fa-heart-pulse"></i> Healthcare <i class="fas fa-chevron-up" style="font-size:10px;opacity:.6;background:none;-webkit-text-fill-color:rgba(255,255,255,.6);"></i>
-        <div class="ind-popover" id="pop-healthcare">
-          <a href="cs-hcs-resilix.html"><i class="fas fa-laptop-medical"></i> Human Care Systems — Resilix</a>
-          <a href="cs-merck-campaigns.html"><i class="fas fa-flask"></i> Merck Millipore — Campaigns</a>
-        </div>
-      </div>
-
-      <!-- Telecom → Charter -->
-      <a class="industry-chip" href="cs-charter-smb-homepage.html"><i class="fas fa-signal"></i> Telecommunications</a>
-
-      <!-- Education → PTO -->
-      <a class="industry-chip" href="cs-pto-schalmont.html"><i class="fas fa-graduation-cap"></i> Education</a>
-
-      <!-- Nonprofit → PTO -->
-      <a class="industry-chip" href="cs-pto-schalmont.html"><i class="fas fa-hand-holding-heart"></i> Nonprofit</a>
-
-      <!-- Retail → Madison -->
-      <a class="industry-chip" href="cs-madison-handbags.html"><i class="fas fa-store"></i> Retail</a>
-
-      <!-- E-Commerce → Madison -->
-      <a class="industry-chip" href="cs-madison-handbags.html"><i class="fas fa-cart-shopping"></i> E-Commerce</a>
-
-      <!-- Financial Services → ITG / ShareBuilder -->
-      <a class="industry-chip" href="cs-itg.html#sharebuilder"><i class="fas fa-chart-line"></i> Financial Services</a>
-
-      <!-- Technology — popover: Charter, Inspired, Microsoft, PTO, Madison -->
-      <div class="industry-chip" onclick="toggleIndPopover(event,'pop-technology')">
-        <i class="fas fa-microchip"></i> Technology <i class="fas fa-chevron-up" style="font-size:10px;opacity:.6;background:none;-webkit-text-fill-color:rgba(255,255,255,.6);"></i>
-        <div class="ind-popover" id="pop-technology">
-          <a href="cs-charter-smb-homepage.html"><i class="fas fa-tv"></i> Charter Spectrum</a>
-          <a href="cs-inspired.html"><i class="fas fa-lightbulb"></i> Inspired eLearning</a>
-          <a href="cs-itg.html"><i class="fab fa-microsoft"></i> Microsoft / ITG</a>
-          <a href="cs-pto-schalmont.html"><i class="fas fa-school"></i> Schalmont PTO</a>
-          <a href="cs-madison-handbags.html"><i class="fas fa-bag-shopping"></i> Madison Handbags</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="about" class="section section-alt">
-    <div class="about-grid">
-      <div class="about-image-wrap fade-up">
-        <img src="images/headshots/juliedion.png" alt="Julie Dion" style="width:100%; border-radius:var(--radius); display:block;" />
-        <div class="about-badge-card">
-          <div class="about-badge-icon"><i class="fas fa-award"></i></div>
-          <div class="about-badge-text">
-            <strong>18+</strong>
-            <span>Years of Expertise</span>
-          </div>
-        </div>
-      </div>
-      <div class="fade-up">
-        <div class="about-label">About Me</div>
-        <h2 class="about-title">Design That Connects,<br /><em>Converts &amp; Endures</em></h2>
-        <p class="about-text">
-          I'm Julie Dion — a versatile, senior product designer and digital marketing leader with 18+ years transforming complex business requirements into effective design and technical solutions. My career spans Senior UI Designer at ITG for Charter Spectrum, Lead UX/UI Designer at Human Care Systems, Senior Graphic Designer at Merck Millipore, and Creative Director at Monet/Madison Handbags.
-        </p>
-        <p class="about-text">
-          I specialize in leading cross-functional teams, building cross-platform design systems, and executing campaigns that drive measurable results — including a brand identity that generated $1.26 million in sales by Q3 and a design that earned the 2019 Graphic Design USA Health &amp; Wellness interactive award.
-        </p>
-        <p class="about-text">
-          Named one of the <strong><a href="#award-module" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">20 Most Outstanding Women of the Capital Region (2024)</a></strong> and a MarCom Award winner, I bring the same passion to Fortune 500 work, growing startups, and community organizations.
-        </p>
-        <div class="about-skills">
-          <span class="about-skill-tag">UX/UI Design &amp; Prototyping</span>
-          <span class="about-skill-tag">Strategic Branding</span>
-          <span class="about-skill-tag">Cross-Platform Design Systems</span>
-          <span class="about-skill-tag">Adobe Creative Suite</span>
-          <span class="about-skill-tag">Adobe XD &amp; AEM</span>
-          <span class="about-skill-tag">Figma / Axure RP</span>
-          <span class="about-skill-tag">WordPress</span>
-          <span class="about-skill-tag">HTML &amp; CSS</span>
-          <span class="about-skill-tag">Motion Graphics</span>
-          <span class="about-skill-tag">Digital Content Strategy</span>
-          <span class="about-skill-tag">User Research &amp; A/B Testing</span>
-          <span class="about-skill-tag">HubSpot / JIRA</span>
-        </div>
-        <div style="margin-top:28px;">
-          <a href="Julie-Dion-Resume.pdf" download style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0077B6,#00C8E8);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:11px 20px;border-radius:8px;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'"><i class="fas fa-file-pdf"></i> Download Résumé</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 20 Most Outstanding Video Module ── -->
-  <section id="award-module" class="section section-dark" style="background:var(--dark);">
-    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
-      <div>
-        <span class="section-label" style="-webkit-text-fill-color:transparent;">Recognition</span>
-        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:16px;">20 Most Outstanding Women of the Capital Region</h2>
-        <p style="font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px;">Named one of the Capital Region's 20 Most Outstanding Women of 2024 — recognized for her leadership, creativity, and community impact. Watch the radio interview.</p>
-        <button onclick="openAwardVideo()" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0077B6,#00C8E8);border:none;border-radius:8px;padding:12px 22px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'"><i class="fas fa-play"></i> Listen to Interview</button>
-      </div>
-      <div onclick="openAwardVideo()" style="cursor:pointer;position:relative;border-radius:12px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.5);">
-        <img src="images/julie-dion-20-most-outstanding-award.jpg" alt="Julie Dion — 20 Most Outstanding Women 2024" style="width:100%;display:block;" onerror="this.style.display='none'" />
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,119,182,.3),rgba(0,200,232,.15));display:flex;align-items:center;justify-content:center;">
-          <div style="width:60px;height:60px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.4);">
-            <i class="fas fa-play" style="color:#fff;font-size:18px;margin-left:3px;"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Award Video Lightbox -->
-  <div id="award-video-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;backdrop-filter:blur(6px);" onclick="if(event.target===this)closeAwardVideo()">
-    <div style="width:100%;max-width:860px;background:#000;border-radius:14px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.8);position:relative;">
-      <div style="padding:12px 16px;background:#111;display:flex;align-items:center;justify-content:space-between;">
-        <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.7);">Radio Interview — 20 Most Outstanding Women of the Capital Region 2024</div>
-        <button onclick="closeAwardVideo()" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:22px;cursor:pointer;line-height:1;padding:4px 8px;">×</button>
-      </div>
-      <div style="position:relative;padding-bottom:56.25%;height:0;">
-        <iframe id="award-video-iframe" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Testimonials ───────────────────────────────────────────────── -->
-  <section id="testimonials" class="section">
-    <div class="section-header fade-up">
-      <span class="section-label">Client Love</span>
-      <h2 class="section-title">What Clients Say</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="testimonials-grid fade-up">
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Julie and I have worked together at two vastly different companies. In both roles, Julie's design sense and creativity have amazed me. With a genuine smile and positive disposition, she always seems to come up with the treatment or business solution that is needed. As a manager, she is a good listener and has no qualms about when and how to take action. I have always felt that she has been in my corner."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">PH</div>
-          <div>
-            <div class="author-name">Paul Hurd</div>
-            <div class="author-role">Graphic Design Manager, CISCRP</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Julie Dion is one of the best designers and art directors I have worked with during my career. We worked together for over four years and she is incredibly creative and resourceful. When given a task or project, she will always tackle it with enthusiasm and positivity. She also is adept at leading teams of developers, writers, and designers and keeping her eye on the big picture. She understands the time it takes to do something because she has pretty much done it all herself at some point and will always be happy to jump in to put in the work to get it done."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">JL</div>
-          <div>
-            <div class="author-name">Jill Laufer</div>
-            <div class="author-role">Political Scientist — managed Julie directly</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Julie is simply an exceptional person. She epitomizes empathy and feasibility with visuals that convey a brand's promise to their archetypes and users. Her experience in writing for the Associated Press has led to a solid understanding of how communication plays a critical role in experiences that keep a brand's promise resulting in campaign and product success for some of the largest brands in the biotech and healthcare industries."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">BN</div>
-          <div>
-            <div class="author-name">Brant Nesbitt, MA</div>
-            <div class="author-role">Principal Solutions Consultant, Cync Spreading · FinTech</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Working with Julie was a delight. With her great attitude and excellent communication skills, she brought something substantive to every project we worked on together. In particular her combination of writing and design skills were a great asset."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">EW</div>
-          <div>
-            <div class="author-name">Edith Westfall</div>
-            <div class="author-role">Strategic Planning, Change Management &amp; Workforce Development</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Julie is a very capable, industrious individual. Her strength lies in the ability to operate effectively in the creative areas as well as on the business side."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">SG</div>
-          <div>
-            <div class="author-name">Steven Greenberg</div>
-            <div class="author-role">Manager FPA / Sr. Business Analyst, ARC</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Julie is a multi-talented designer who excels in a team environment. Her contributions have always been innovative and of the highest quality. She's an amazing communicator and can work effectively with people at all levels. I have always enjoyed working with her and seeing her wonderful growth as a designer!"</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">MF</div>
-          <div>
-            <div class="author-name">Maggie Fischer</div>
-            <div class="author-role">Transforming Brands Through Compelling Creative &amp; Content</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Julie is a dedicated, hard working individual who is able to successfully translate ideas given to her into a finished piece, whether it is designing a magazine cover, writing a script for a video or a communications message to be sent to a targeted group of people. In the time that I worked with Julie, she was ready to contribute to any project at any time."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">JS</div>
-          <div>
-            <div class="author-name">Jenn Sutton</div>
-            <div class="author-role">Internal and Brand Communications Leadership</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Contact ────────────────────────────────────────────────────── -->
-  <section id="contact" class="section section-alt">
-    <div class="section-header fade-up">
-      <span class="section-label">Let's Work Together</span>
-      <h2 class="section-title">Start a Conversation</h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Have a project in mind? I'd love to hear about it. Let's create something remarkable together.</p>
-    </div>
-
-    <div class="contact-grid fade-up">
-      <div class="contact-info-block">
-        <div>
-          <h3 class="contact-info-title">Ready to bring your vision to life?</h3>
-          <p class="contact-info-text">Whether you're launching a brand, redesigning a website, or building a campaign from scratch — I'm here to make it exceptional. Let's talk.</p>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
-          <div>
-            <div class="contact-detail-label">Email</div>
-            <div class="contact-detail-value"><a href="mailto:juliedion1@gmail.com" style="color:inherit;">juliedion1@gmail.com</a></div>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
-          <div>
-            <div class="contact-detail-label">Phone</div>
-            <div class="contact-detail-value"><a href="tel:+15188927495" style="color:inherit;">(518) 892-7495</a></div>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon"><i class="fas fa-map-pin"></i></div>
-          <div>
-            <div class="contact-detail-label">Location</div>
-            <div class="contact-detail-value">Schenectady, NY — Available Remotely</div>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon"><i class="fas fa-globe"></i></div>
-          <div>
-            <div class="contact-detail-label">Website</div>
-            <div class="contact-detail-value"><a href="https://juliedion.com" target="_blank" rel="noopener" style="color:inherit;">juliedion.com</a></div>
-          </div>
-        </div>
-
-        <a href="Julie-Dion-Resume.pdf" download style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0077B6,#00C8E8);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:11px 20px;border-radius:8px;margin-bottom:20px;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'"><i class="fas fa-file-pdf"></i> Download Résumé</a>
-
-        <div class="social-icons" style="margin-top:8px;">
-          <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
-          <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="f-name">First Name</label>
-            <input type="text" id="f-name" placeholder="Jane" required />
-          </div>
-          <div class="form-group">
-            <label for="f-lastname">Last Name</label>
-            <input type="text" id="f-lastname" placeholder="Smith" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="f-email">Email Address</label>
-          <input type="email" id="f-email" placeholder="jane@company.com" required />
-        </div>
-        <div class="form-group">
-          <label for="f-service">Project Type</label>
-          <select id="f-service">
-            <option value="">Select a service...</option>
-            <option>Brand &amp; Identity Design</option>
-            <option>Web Design</option>
-            <option>UX/UI Design</option>
-            <option>Digital Marketing</option>
-            <option>Print Design</option>
-            <option>Event &amp; Community Design</option>
-            <option>Presentation Design</option>
-            <option>Motion &amp; Video</option>
-            <option>Packaging &amp; Product Design</option>
-            <option>Apparel &amp; Merchandise</option>
-            <option>Publication Design</option>
-            <option>Environmental &amp; Signage</option>
-            <option>Content &amp; Campaign Development</option>
-            <option>Multiple Services / Not Sure Yet</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="f-message">Tell Me About Your Project</label>
-          <textarea id="f-message" placeholder="Share your goals, timeline, budget range, and anything else that will help me understand your vision..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="align-self:flex-start; width:100%;">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ── Footer ─────────────────────────────────────────────────────── -->
-  <footer id="footer">
-    <div class="footer-logo">
-      <img src="images/logos/julie-dion-logo-02.png" alt="Julie Dion" style="width:170px; height:auto;" />
-    </div>
-    <div class="footer-copy">
-      &copy; <span id="year"></span> Julie Dion. All rights reserved.
-    </div>
-    <div class="footer-links">
-      <a href="#hero">Home</a>
-      <a href="#portfolio">Work</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </footer>
-
-</main>
-
-<!-- ═══ JavaScript ══════════════════════════════════════════════════ -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NXSLWRBW52"></script>
 <script>
-  /* ── Industry Popovers ────────────────────────────────────────── */
-  function toggleIndPopover(e, id) {
-    e.stopPropagation();
-    const pop = document.getElementById(id);
-    const isOpen = pop.classList.contains('open');
-    document.querySelectorAll('.ind-popover.open').forEach(p => p.classList.remove('open'));
-    if (!isOpen) pop.classList.add('open');
-  }
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.ind-popover.open').forEach(p => p.classList.remove('open'));
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  /* ── Year ─────────────────────────────────────────────────────── */
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  /* ── Mobile Sidebar ───────────────────────────────────────────── */
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-  const toggle  = document.getElementById('menu-toggle');
-
-  toggle.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-    overlay.classList.toggle('open');
-  });
-  overlay.addEventListener('click', () => {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('open');
-  });
-
-  /* ── Close sidebar on nav click (mobile) ─────────────────────── */
-  sidebar.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('open');
-    });
-  });
-
-  /* ── Active Nav on Scroll ─────────────────────────────────────── */
-  const sections = document.querySelectorAll('section[id], footer[id]');
-  const navLinks = document.querySelectorAll('.sidebar-nav a');
-
-  const updateNav = () => {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-    });
-  };
-
-  document.getElementById('main').addEventListener('scroll', updateNav);
-  window.addEventListener('scroll', updateNav);
-
-  // Make sections scroll on main element
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  /* ── Typed Role Effect ────────────────────────────────────────── */
-  const roles = ['Senior Product Designer', 'UX/UI Designer', 'Digital Marketing Leader', 'Web Designer', 'Creative Director'];
-  let roleIdx = 0, charIdx = 0, isDeleting = false;
-  const typedEl = document.getElementById('typed-role');
-
-  function typeRole() {
-    const current = roles[roleIdx];
-    if (isDeleting) {
-      typedEl.textContent = current.substring(0, charIdx--);
-      if (charIdx < 0) { isDeleting = false; roleIdx = (roleIdx + 1) % roles.length; setTimeout(typeRole, 400); return; }
-    } else {
-      typedEl.textContent = current.substring(0, charIdx++);
-      if (charIdx > current.length) { isDeleting = true; setTimeout(typeRole, 1800); return; }
-    }
-    setTimeout(typeRole, isDeleting ? 60 : 100);
-  }
-  typeRole();
-
-  /* ── Counter Animation ────────────────────────────────────────── */
-  const counters = document.querySelectorAll('[data-count]');
-  let counted = false;
-
-  function animateCounters() {
-    counters.forEach(el => {
-      const target = +el.getAttribute('data-count');
-      const suffix = target >= 100 ? '+' : '+';
-      let start = 0;
-      const step = () => {
-        start += Math.ceil(target / 50);
-        if (start >= target) { el.textContent = target + suffix; return; }
-        el.textContent = start + suffix;
-        requestAnimationFrame(step);
-      };
-      step();
-    });
-    counted = true;
-  }
-
-  /* ── Intersection Observer ────────────────────────────────────── */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        if (!counted && entry.target.closest('#hero')) animateCounters();
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
-
-  // Trigger hero counters on load
-  setTimeout(animateCounters, 800);
-
-  /* ── Portfolio Filter ─────────────────────────────────────────── */
-  let activeCat = 'all';
-  let activeInd = 'all';
-
-  function filterCards() {
-    document.querySelectorAll('.portfolio-card').forEach(card => {
-      const catMatch = activeCat === 'all' || (card.dataset.cat || '').split(' ').includes(activeCat);
-      const indMatch = activeInd === 'all' || (card.dataset.industry || '').split(' ').includes(activeInd);
-      card.classList.toggle('hidden', !(catMatch && indMatch));
-    });
-  }
-
-  document.querySelectorAll('#cat-filters .filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#cat-filters .filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeCat = btn.dataset.filter;
-      filterCards();
-    });
-  });
-
-  document.querySelectorAll('#ind-filters .filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#ind-filters .filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeInd = btn.dataset.industry;
-      filterCards();
-    });
-  });
-
-  /* ── Portfolio card — entire card clickable ──────────────────── */
-  document.querySelectorAll('.portfolio-card').forEach(card => {
-    const link = card.querySelector('.card-overlay-btn, .card-body a');
-    if (!link) return;
-    card.addEventListener('click', e => {
-      if (e.target.closest('a')) return; // let real links handle themselves
-      window.open(link.href, link.target || '_blank');
-    });
-  });
-
-  /* ── Contact Form ─────────────────────────────────────────────── */
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-    btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-      btn.style.background = '';
-      btn.disabled = false;
-      e.target.reset();
-    }, 4000);
-  }
-  function openAwardVideo() {
-    document.getElementById('award-video-iframe').src = 'https://player.vimeo.com/video/917562006?autoplay=1';
-    document.getElementById('award-video-overlay').style.display = 'flex';
-  }
-  function closeAwardVideo() {
-    document.getElementById('award-video-iframe').src = '';
-    document.getElementById('award-video-overlay').style.display = 'none';
-  }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAwardVideo(); });
+  gtag('config', 'G-NXSLWRBW52');
 </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julie Dion — Senior UX/UI Developer</title>
+  <meta name="description" content="Portfolio of Julie Dion, Senior UX/UI Developer with 20+ years building design systems and enterprise web experiences.">
+  <meta property="og:title" content="Julie Dion — Senior UX/UI Developer">
+  <meta property="og:description" content="Portfolio of Julie Dion, Senior UX/UI Developer with 20+ years building design systems and enterprise web experiences.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/juliedion/juliedion.com/main/Banner/julie-dion-banner.jpg">
+  <meta property="og:image:alt" content="Julie Dion — designer and developer">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://juliedion.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Julie Dion — Senior UX/UI Developer">
+  <meta name="twitter:description" content="Portfolio of Julie Dion, Senior UX/UI Developer with 20+ years building design systems and enterprise web experiences.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/juliedion/juliedion.com/main/Banner/julie-dion-banner.jpg">
+  <link rel="stylesheet" href="css/styles.css?v=27">
+  <link rel="icon" href="images/favicon-32.png?v=3" sizes="32x32">
+  <link rel="icon" href="images/favicon.png?v=3" sizes="512x512">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=3">
+</head>
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="container nav-inner">
+      <a href="#top" class="nav-brand">
+        <img src="images/julie-dion-logo-07.png" alt="Julie Dion" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="Julie-Dion-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="jp-hero">
+    <div class="jp-wrap">
+      <h1 data-split>Designing digital experiences from strategy to delivery.</h1>
+      <div class="jp-hero-foot">
+        <div class="jp-hero-meta">
+          <span class="jp-status">Open to new opportunities</span>
+          <span>Capital Region, NY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO + VIDEO -->
+  <section class="jp-showreel">
+    <div class="jp-wrap">
+      <div class="jp-showreel-row">
+        <p class="jp-showreel-text reveal">I'm Julie, a senior UX/UI developer. For 20+ years I've built design systems and web experiences for brands like Microsoft, Merck, Charter Spectrum, and American Airlines.</p>
+        <div class="jp-showreel-media reveal">
+          <video src="images/portfolio-reel.mp4" poster="images/portfolio-reel-poster.jpg" muted loop playsinline preload="none" aria-label="A reel of my work: Schalmont PTO, American Airlines, Spectrum, Amazon, Human Care Systems, DHL, Pyxis, and Merck"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGOS -->
+  <section class="jp-clients" aria-label="Brands I've worked with">
+    <div class="jp-clients-track">
+      <ul class="jp-clients-list">
+            <li><img src="images/logos/novartis.svg" alt="Novartis" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/microsoft.svg" alt="Microsoft" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/merck.svg" alt="Merck" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/american-airlines.svg" alt="American Airlines" style="--h:20px" loading="lazy"></li>
+            <li><img src="images/logos/thermo-fisher.svg" alt="Thermo Fisher Scientific" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/charter.svg" alt="Charter Communications" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/spectrum.svg" alt="Spectrum" style="--h:24px" loading="lazy"></li>
+            <li><img src="images/logos/amazon.svg" alt="Amazon" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/bayer.svg" alt="Bayer" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/madison-handbags.png" alt="Madison Handbags" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/halo-labs.png" alt="Halo Labs" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/pyxis.png" alt="Pyxis Communications" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/alaska-airlines.svg?v=2" alt="Alaska Airlines" style="--h:46px" loading="lazy"></li>
+            <li><img src="images/logos/spirit-airlines.svg" alt="Spirit Airlines" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/genentech.svg" alt="Genentech" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/washington-post.svg" alt="The Washington Post" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/dhl.svg" alt="DHL" style="--h:22px" loading="lazy"></li>
+      </ul>
+      <ul class="jp-clients-list" aria-hidden="true">
+            <li><img src="images/logos/novartis.svg" alt="" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/microsoft.svg" alt="" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/merck.svg" alt="" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/american-airlines.svg" alt="" style="--h:20px" loading="lazy"></li>
+            <li><img src="images/logos/thermo-fisher.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/charter.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/spectrum.svg" alt="" style="--h:24px" loading="lazy"></li>
+            <li><img src="images/logos/amazon.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/bayer.svg" alt="" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/madison-handbags.png" alt="" style="--h:44px" loading="lazy"></li>
+            <li><img src="images/logos/halo-labs.png" alt="" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/pyxis.png" alt="" style="--h:40px" loading="lazy"></li>
+            <li><img src="images/logos/alaska-airlines.svg?v=2" alt="" style="--h:46px" loading="lazy"></li>
+            <li><img src="images/logos/spirit-airlines.svg" alt="" style="--h:30px" loading="lazy"></li>
+            <li><img src="images/logos/genentech.svg" alt="" style="--h:22px" loading="lazy"></li>
+            <li><img src="images/logos/washington-post.svg" alt="" style="--h:26px" loading="lazy"></li>
+            <li><img src="images/logos/dhl.svg" alt="" style="--h:22px" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="jp-work jp-section" id="portfolio" style="padding-bottom:0;">
+    <div class="jp-wrap">
+      <div class="jp-work-list">
+        <a class="jp-card reveal" href="cs-charter-smb-homepage.html" style="--card-bg:#001842;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/charter.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Charter Spectrum · via Inspired Thinking Group</p>
+            </div>
+            <h3>Redesigning Spectrum Business: a 15+ page web experience for millions of users</h3>
+            <div>
+              <div class="jp-card-tags"><span>Enterprise UI</span><span>AEM</span><span>SEO</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/charter.jpg" alt="Charter Spectrum small business website" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="case-study-amazon.html" style="--card-bg:#131a22;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/amazon.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Amazon</p>
+              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
+            </div>
+            <h3>Product pages for Amazon Basics electronics and home</h3>
+            <div>
+              <div class="jp-card-tags"><span>E-commerce</span><span>Desktop &amp; mobile</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/amazon.jpg" alt="Amazon Basics product page design" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="cs-hcs-resilix.html" style="--card-bg:#06343f;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/hcs.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Human Care Systems · 2015–2021</p>
+            </div>
+            <h3>0-to-1 design of an award-winning telenursing platform</h3>
+            <div>
+              <div class="jp-card-tags"><span>0 to 1</span><span>Healthcare</span><span>iOS &amp; web</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/hcs.jpg" alt="Resilix telenursing platform on a tablet" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="cs-merck-campaigns.html" style="--card-bg:#22174f;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/merck.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Merck Millipore · 2008–2013</p>
+            </div>
+            <h3>Five years of award-winning campaigns for a global life sciences leader</h3>
+            <div>
+              <div class="jp-card-tags"><span>Campaigns</span><span>Print &amp; digital</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/merck.jpg" alt="Merck Millipore campaign work" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="cs-pyxis-freelance.html" style="--card-bg:#032e4d;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/pyxis.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Pyxis Communications · 2021–2024</p>
+            </div>
+            <h3>Science campaigns and digital ads, including MarCom Gold-winning work for Halo Labs</h3>
+            <div>
+              <div class="jp-card-tags"><span>Art direction</span><span>Digital ads</span><span>Print</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/pyxis.jpg" alt="Halo Labs campaign ad for Pyxis Communications" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="cs-itg.html" style="--card-bg:#10204a;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/itg.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Inspired Thinking Group</p>
+            </div>
+            <h3>Web, digital, and brand work for Charter, ShareBuilder 401k, Newpoint, and Microsoft</h3>
+            <div>
+              <div class="jp-card-tags"><span>Web design</span><span>Digital</span><span>Brand</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/itg.jpg" alt="Newpoint Real Estate Capital banner" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="cs-itg.html#motion-campaign" style="--card-bg:#3a0a4a;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/microsoft.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Microsoft · via Inspired Thinking Group</p>
+            </div>
+            <h3>Dynamics 365 motion and video campaigns for enterprise buyers</h3>
+            <div>
+              <div class="jp-card-tags"><span>Motion</span><span>Video</span><span>Digital ads</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/microsoft.jpg" alt="Microsoft Dynamics 365 animated ad" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="cs-madison-handbags.html" style="--card-bg:#3a2a1c;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/madison.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Madison Handbags · 2013–2015</p>
+            </div>
+            <h3>A full brand relaunch, an online bag builder, and seasonal catalogs</h3>
+            <div>
+              <div class="jp-card-tags"><span>Brand identity</span><span>E-commerce</span><span>Catalog</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/madison.jpg" alt="Madison Handbags spring catalog page" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="case-study-american-airlines.html" style="--card-bg:#0a2a5c;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/american-airlines.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">American Airlines</p>
+              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
+            </div>
+            <h3>The American Airlines mobile app, from check-in to boarding</h3>
+            <div>
+              <div class="jp-card-tags"><span>Mobile app</span><span>iOS</span><span>Travel</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/american-airlines.jpg" alt="American Airlines mobile app screens" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="case-study-dhl.html" style="--card-bg:#3d1310;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/dhl.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">DHL Delivery Airlines</p>
+              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
+            </div>
+            <h3>One connected experience across web, mobile, and operations</h3>
+            <div>
+              <div class="jp-card-tags"><span>Web</span><span>Mobile</span><span>Dashboard</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/dhl.jpg" alt="DHL Delivery Airlines website, mobile and dashboard" loading="lazy"></div>
+        </a>
+
+        <a class="jp-card reveal" href="cs-pto-schalmont.html" style="--card-bg:#0f3320;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/pto.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Schalmont Central Schools PTO</p>
+            </div>
+            <h3>A community platform and full event design suite for the Schalmont PTO</h3>
+            <div>
+              <div class="jp-card-tags"><span>Web design &amp; dev</span><span>Event design</span><span>Community</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/pto.jpg" alt="Schalmont PTO website" loading="lazy"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="jp-section jp-services-section" id="services">
+    <div class="jp-wrap">
+      <div class="jp-section-head reveal">
+        <p class="jp-eyebrow">What I offer</p>
+        <h2 class="jp-h2">Services &amp; specialties</h2>
+        <p class="jp-section-lede">From concept to final file, design across every medium and touchpoint.</p>
+      </div>
+      <div class="jp-services-grid">
+        <div class="jp-service reveal">
+          <h3>Brand &amp; Identity Design</h3>
+          <p>Logo design, brand systems, guidelines, visual identity, brand refreshes, naming &amp; taglines</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Web Design</h3>
+          <p>Websites, landing pages, microsites, WordPress, Shopify, responsive design, redesigns</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>UX/UI Design</h3>
+          <p>UX and UI design, design systems, wireframes &amp; prototypes, user flows, mobile apps, dashboards</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Digital Marketing</h3>
+          <p>Display and Google ads, social graphics, email campaigns, digital banners, remarketing</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Print Design</h3>
+          <p>Brochures &amp; flyers, annual reports, posters, direct mail, catalogs, sell sheets</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Event &amp; Community Design</h3>
+          <p>Event branding, fundraising campaigns, school &amp; PTO promotions, signage, registration materials</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Presentation Design</h3>
+          <p>Pitch decks, investor, sales and executive presentations, conference slides</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Motion &amp; Video</h3>
+          <p>Motion graphics, animated ads, Lottie animations, explainer videos, social video</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Packaging &amp; Product Design</h3>
+          <p>Product packaging, labels, retail displays, product inserts, unboxing experiences</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Apparel &amp; Merchandise</h3>
+          <p>Spirit wear, team stores, T-shirt graphics, promotional and fundraising merchandise</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Publication Design</h3>
+          <p>Magazines &amp; newsletters, reports, books &amp; eBooks, educational materials</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Environmental &amp; Signage</h3>
+          <p>Trade show displays, wayfinding, exterior signage, vehicle wraps, wall graphics</p>
+        </div>
+        <div class="jp-service reveal">
+          <h3>Content &amp; Campaign Development</h3>
+          <p>Integrated campaigns, product launches, awareness and seasonal campaigns, multi-channel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="jp-section jp-industries" id="industries">
+    <div class="jp-wrap">
+      <div class="jp-section-head reveal">
+        <p class="jp-eyebrow">Who I work with</p>
+        <h2 class="jp-h2">Industries served</h2>
+        <p class="jp-section-lede">Experience across sectors means I understand your audience, your constraints, and your goals before the first pixel is placed.</p>
+      </div>
+      <div class="jp-chips reveal">
+        <details class="jp-chip jp-chip-menu">
+          <summary>Healthcare</summary>
+          <div class="jp-chip-pop">
+            <a href="cs-hcs-resilix.html">Human Care Systems — Resilix</a>
+            <a href="cs-merck-campaigns.html">Merck Millipore — Campaigns</a>
+            <a href="cs-pyxis-freelance.html">Pyxis Communications</a>
+          </div>
+        </details>
+        <details class="jp-chip jp-chip-menu">
+          <summary>Technology</summary>
+          <div class="jp-chip-pop">
+            <a href="cs-charter-smb-homepage.html">Charter Spectrum</a>
+            <a href="cs-itg.html">Microsoft / ITG</a>
+            <a href="cs-pto-schalmont.html">Schalmont PTO</a>
+            <a href="cs-madison-handbags.html">Madison Handbags</a>
+          </div>
+        </details>
+        <a class="jp-chip" href="cs-charter-smb-homepage.html">Telecommunications</a>
+        <a class="jp-chip" href="cs-pto-schalmont.html">Education</a>
+        <a class="jp-chip" href="cs-pto-schalmont.html">Nonprofit</a>
+        <a class="jp-chip" href="cs-madison-handbags.html">Retail</a>
+        <a class="jp-chip" href="case-study-amazon.html">E-Commerce</a>
+        <a class="jp-chip" href="cs-itg.html#sharebuilder">Financial Services</a>
+        <a class="jp-chip" href="case-study-american-airlines.html">Travel &amp; Aviation</a>
+        <a class="jp-chip" href="case-study-dhl.html">Logistics</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="jp-section" id="about">
+    <div class="jp-wrap">
+      <div class="jp-intro">
+        <div class="jp-intro-photo jp-intro-headshot reveal">
+          <img src="images/headshots/juliedion.png" alt="Julie Dion" loading="lazy">
+        </div>
+        <div class="reveal">
+          <p class="jp-eyebrow">About</p>
+          <h2 class="jp-h2">Hi. I'm Julie Dion.</h2>
+          <p>I'm a senior UX/UI developer, rooted in print and digital design. I pair visual judgment with hands-on front-end code, and I work closely with product managers, engineers, and stakeholders to move work from concept to launch. I can help you with:</p>
+          <ul class="jp-services">
+            <li>Design systems</li>
+            <li>UX/UI design</li>
+            <li>Front-end development</li>
+            <li>AEM authoring</li>
+            <li>Prototyping in Figma</li>
+            <li>User research &amp; A/B testing</li>
+            <li>Accessibility (WCAG)</li>
+            <li>AI-assisted workflows</li>
+          </ul>
+          <p>See <a class="jp-inline-link" href="#portfolio">my work</a>, or <a class="jp-inline-link" href="Julie-Dion-Resume.pdf" target="_blank" rel="noopener">download my resume</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARD -->
+  <section class="jp-award" id="award-module">
+    <div class="jp-wrap">
+      <div class="jp-award-row">
+        <div class="reveal">
+          <p class="jp-eyebrow" style="color:var(--teal-soft);">Recognition</p>
+          <h2>20 Most Outstanding Women of the Capital Region</h2>
+          <p>Named one of the Capital Region's 20 Most Outstanding Women of 2024, recognized for leadership, creativity, and community impact.</p>
+          <div class="jp-cta-actions">
+            <button type="button" class="btn btn-light" data-award-video>▶ Listen to the interview</button>
+          </div>
+        </div>
+        <div class="reveal">
+          <img src="images/julie-dion-20-most-outstanding-award.jpg" alt="Julie Dion with her award and the press release naming her one of the 20 Most Outstanding Women of the Capital Region, 2024" loading="lazy" data-lightbox role="button" aria-label="Open the press release larger">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="jp-video-modal" id="award-video" role="dialog" aria-modal="true" aria-label="Radio interview, 20 Most Outstanding Women of the Capital Region 2024">
+    <div class="jp-video-frame">
+      <button type="button" class="jp-video-close" aria-label="Close">×</button>
+      <iframe title="Radio interview" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="jp-section" id="testimonials" style="padding-top:0;">
+    <div class="jp-wrap">
+      <div class="jp-quotes-head reveal">
+        <div>
+          <p class="jp-eyebrow">Kind words</p>
+          <h2 class="jp-h2">From managers &amp; peers</h2>
+        </div>
+        <div class="jp-quotes-nav">
+          <button type="button" data-dir="-1" aria-label="Previous testimonial">←</button>
+          <button type="button" data-dir="1" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+      <div class="jp-quotes reveal" id="jp-quotes">
+        <figure class="jp-quote">
+          <blockquote>Julie and I have worked together at two vastly different companies. In both roles, Julie's design sense and creativity have amazed me. With a genuine smile and positive disposition, she always seems to come up with the treatment or business solution that is needed. As a manager, she is a good listener and has no qualms about when and how to take action. I have always felt that she has been in my corner.</blockquote>
+          <figcaption><div class="jp-quote-name">Paul Hurd</div><div class="jp-quote-role">Graphic Design Manager, CISCRP</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Julie Dion is one of the best designers and art directors I have worked with during my career. We worked together for over four years and she is incredibly creative and resourceful. When given a task or project, she will always tackle it with enthusiasm and positivity. She also is adept at leading teams of developers, writers, and designers and keeping her eye on the big picture.</blockquote>
+          <figcaption><div class="jp-quote-name">Jill Laufer</div><div class="jp-quote-role">Political Scientist, managed Julie directly</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Julie is simply an exceptional person. She epitomizes empathy and feasibility with visuals that convey a brand's promise to their archetypes and users, resulting in campaign and product success for some of the largest brands in the biotech and healthcare industries.</blockquote>
+          <figcaption><div class="jp-quote-name">Brant Nesbitt, MA</div><div class="jp-quote-role">Principal Solutions Consultant, Cync Spreading · FinTech</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Working with Julie was a delight. With her great attitude and excellent communication skills, she brought something substantive to every project we worked on together. In particular her combination of writing and design skills were a great asset.</blockquote>
+          <figcaption><div class="jp-quote-name">Edith Westfall</div><div class="jp-quote-role">Strategic Planning, Change Management &amp; Workforce Development</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Julie is a very capable, industrious individual. Her strength lies in the ability to operate effectively in the creative areas as well as on the business side.</blockquote>
+          <figcaption><div class="jp-quote-name">Steven Greenberg</div><div class="jp-quote-role">Manager FPA / Sr. Business Analyst, ARC</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Julie is a multi-talented designer who excels in a team environment. Her contributions have always been innovative and of the highest quality. She's an amazing communicator and can work effectively with people at all levels.</blockquote>
+          <figcaption><div class="jp-quote-name">Maggie Fischer</div><div class="jp-quote-role">Transforming Brands Through Compelling Creative &amp; Content</div></figcaption>
+        </figure>
+        <figure class="jp-quote">
+          <blockquote>Julie is a dedicated, hard working individual who is able to successfully translate ideas given to her into a finished piece, whether it is designing a magazine cover, writing a script for a video or a communications message to be sent to a targeted group of people.</blockquote>
+          <figcaption><div class="jp-quote-name">Jenn Sutton</div><div class="jp-quote-role">Internal and Brand Communications Leadership</div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="jp-section jp-contact" id="contact">
+    <div class="jp-wrap">
+      <div class="jp-contact-grid">
+        <div class="reveal">
+          <p class="jp-eyebrow">Let's work together</p>
+          <h2 class="jp-h2">Start a conversation</h2>
+          <p class="jp-section-lede">Have a role or project in mind? I'd love to hear about it.</p>
+          <ul class="jp-contact-list">
+            <li><span>Email</span><a href="mailto:juliedion1@gmail.com">juliedion1@gmail.com</a></li>
+            <li><span>Phone</span><a href="tel:+15188927495">(518) 892-7495</a></li>
+            <li><span>Location</span>Capital Region, NY · available remotely</li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">linkedin.com/in/julie-aileen-dion</a></li>
+          </ul>
+          <a href="Julie-Dion-Resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download resume</a>
+        </div>
+        <form class="jp-form reveal" id="contact-form">
+          <div class="jp-form-row">
+            <label>First name<input type="text" name="first" autocomplete="given-name" required></label>
+            <label>Last name<input type="text" name="last" autocomplete="family-name" required></label>
+          </div>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          <label>Project type
+            <select name="type">
+              <option value="">Select one…</option>
+              <option>Full-time or contract role</option>
+              <option>UX/UI design</option>
+              <option>Web design &amp; development</option>
+              <option>Design systems</option>
+              <option>Brand &amp; identity</option>
+              <option>Digital marketing &amp; campaigns</option>
+              <option>Motion &amp; video</option>
+              <option>Print &amp; publication</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>Tell me about it<textarea name="message" rows="6" required></textarea></label>
+          <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+          <p class="jp-form-note" aria-live="polite">Sending opens your email app with your message ready to go.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- CTA + FOOTER -->
+  <section class="jp-cta">
+    <div class="jp-wrap">
+      <h2>Have a role or project in mind? <span>Let's talk.</span></h2>
+      <div class="jp-cta-actions">
+        <a href="#contact" class="btn btn-light btn-lg">Get in touch</a>
+        <a href="mailto:juliedion1@gmail.com" class="btn btn-ghost-light btn-lg">juliedion1@gmail.com</a>
+      </div>
+      <footer class="jp-footer">
+        <a href="#top"><img src="images/julie-dion-logo-07.png" alt="Julie Dion"></a>
+        <nav aria-label="Footer">
+          <a href="#portfolio">Work</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="Julie-Dion-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a href="#contact">Contact</a>
+          <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+        <div>© <span id="year"></span> Julie Dion</div>
+      </footer>
+    </div>
+  </section>
+  <script src="js/app.js"></script>
 </body>
 </html>
