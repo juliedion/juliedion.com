@@ -25,7 +25,7 @@
   <meta name="twitter:title" content="Julie Dion — Senior UX/UI Developer">
   <meta name="twitter:description" content="Portfolio of Julie Dion, Senior UX/UI Developer with 20+ years building design systems and enterprise web experiences.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/juliedion/juliedion.com/main/Banner/julie-dion-banner.jpg">
-  <link rel="stylesheet" href="css/styles.css?v=29">
+  <link rel="stylesheet" href="css/styles.css?v=31">
   <link rel="icon" href="images/favicon-32.png?v=3" sizes="32x32">
   <link rel="icon" href="images/favicon.png?v=3" sizes="512x512">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=3">
@@ -41,7 +41,6 @@
       <ul class="nav-links">
         <li><a href="#portfolio">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="Julie-Dion-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -55,8 +54,13 @@
   <section class="jp-hero">
     <canvas class="jp-hero-shader" aria-hidden="true"></canvas>
     <div class="jp-wrap">
+      <p class="jp-hero-role">Julie Dion · Senior UX/UI Developer</p>
       <h1 data-split>Designing digital experiences from strategy to delivery.</h1>
       <div class="jp-hero-foot">
+        <div class="jp-hero-actions">
+          <a href="#portfolio" class="btn btn-light btn-lg">View selected work</a>
+          <a href="Julie-Dion-Resume.pdf" class="btn btn-ghost-light btn-lg" target="_blank" rel="noopener">Download resume</a>
+        </div>
         <div class="jp-hero-meta">
           <span class="jp-status">Open to new opportunities</span>
           <span>Capital Region, NY</span>
@@ -71,7 +75,7 @@
       <div class="jp-showreel-row">
         <p class="jp-showreel-text reveal">I'm Julie, a senior UX/UI developer. For 20+ years I've built design systems and web experiences for brands like Microsoft, Merck, Charter Spectrum, and American Airlines.</p>
         <div class="jp-showreel-media reveal">
-          <video src="images/portfolio-reel.mp4?v=2" poster="images/portfolio-reel-poster.jpg?v=2" muted loop playsinline preload="none" aria-label="A reel of my work across Charter Spectrum, American Airlines, Microsoft, Amazon, Human Care Systems, DHL, Madison Handbags, Pyxis, Merck, and Schalmont PTO" data-scene-length="2.2" data-scenes='[["Charter Spectrum", "cs-charter-smb-homepage.html"], ["American Airlines", "case-study-american-airlines.html"], ["Microsoft Dynamics 365", "cs-itg.html#motion-campaign"], ["American Airlines", "case-study-american-airlines.html"], ["Amazon", "case-study-amazon.html"], ["Human Care Systems", "cs-hcs-resilix.html"], ["DHL Delivery Airlines", "case-study-dhl.html"], ["Charter Spectrum", "cs-charter-product-pages.html"], ["Madison Handbags", "cs-madison-handbags.html"], ["Pyxis Communications", "cs-pyxis-freelance.html"], ["Merck Millipore", "cs-merck-campaigns.html"], ["Schalmont PTO", "cs-pto-schalmont.html"]]'></video>
+          <video src="images/portfolio-reel.mp4?v=3" poster="images/portfolio-reel-poster.jpg?v=3" muted loop playsinline preload="none" aria-label="A reel of my work across Charter Spectrum, American Airlines, Microsoft, Amazon, Human Care Systems, DHL, Madison Handbags, Pyxis, Merck, and Schalmont PTO" data-scene-length="3.4" data-scenes='[["Charter Spectrum", "cs-charter-smb-homepage.html"], ["American Airlines", "case-study-american-airlines.html"], ["Microsoft Dynamics 365", "cs-itg.html#motion-campaign"], ["Amazon", "case-study-amazon.html"], ["Human Care Systems", "cs-hcs-resilix.html"], ["DHL Delivery Airlines", "case-study-dhl.html"], ["Charter Spectrum", "cs-charter-product-pages.html"], ["Madison Handbags", "cs-madison-handbags.html"], ["Pyxis Communications", "cs-pyxis-freelance.html"], ["Merck Millipore", "cs-merck-campaigns.html"], ["Schalmont PTO", "cs-pto-schalmont.html"]]'></video>
           <a class="jp-reel-chip" href="cs-charter-smb-homepage.html"><span>Now showing</span><strong>Charter Spectrum</strong><i aria-hidden="true">→</i></a>
           <button type="button" class="jp-reel-toggle" aria-label="Pause the reel"><span class="jp-icon-pause" aria-hidden="true"></span></button>
         </div>
@@ -126,12 +130,14 @@
   <!-- WORK -->
   <section class="jp-work jp-section" id="portfolio" style="padding-bottom:0;">
     <div class="jp-wrap">
+      <div class="jp-section-head jp-section-head-center reveal"><p class="jp-eyebrow">Selected work</p><h2 class="jp-h2">Six projects, from enterprise web to 0-to-1 product</h2></div>
       <div class="jp-work-list">
         <a class="jp-card reveal" href="cs-charter-smb-homepage.html" style="--card-bg:#001842;">
           <div class="jp-card-bg" style="background-image:url('images/cards/charter.jpg')"></div>
           <div class="jp-card-text">
             <div>
               <p class="jp-card-meta">Charter Spectrum · via Inspired Thinking Group</p>
+              <p class="jp-card-role">Senior UI Designer · <strong>18% lift in bundle conversions</strong></p>
             </div>
             <h3>Redesigning Spectrum Business: a 15+ page web experience for millions of users</h3>
             <div>
@@ -142,27 +148,12 @@
           <div class="jp-card-media"><img src="images/cards/charter.jpg" alt="Charter Spectrum small business website" loading="lazy"></div>
         </a>
 
-        <a class="jp-card reveal" href="case-study-amazon.html" style="--card-bg:#131a22;">
-          <div class="jp-card-bg" style="background-image:url('images/cards/amazon.jpg')"></div>
-          <div class="jp-card-text">
-            <div>
-              <p class="jp-card-meta">Amazon</p>
-              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
-            </div>
-            <h3>Product pages for Amazon Basics electronics and home</h3>
-            <div>
-              <div class="jp-card-tags"><span>E-commerce</span><span>Desktop &amp; mobile</span></div>
-              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
-            </div>
-          </div>
-          <div class="jp-card-media"><img src="images/cards/amazon.jpg" alt="Amazon Basics product page design" loading="lazy"></div>
-        </a>
-
         <a class="jp-card reveal" href="cs-hcs-resilix.html" style="--card-bg:#06343f;">
           <div class="jp-card-bg" style="background-image:url('images/cards/hcs.jpg')"></div>
           <div class="jp-card-text">
             <div>
               <p class="jp-card-meta">Human Care Systems · 2015–2021</p>
+              <p class="jp-card-role">Creative Director &amp; UX Designer · <strong>$1.26M in sales generated</strong></p>
             </div>
             <h3>0-to-1 design of an award-winning telenursing platform</h3>
             <div>
@@ -173,11 +164,28 @@
           <div class="jp-card-media"><img src="images/cards/hcs.jpg" alt="Resilix telenursing platform on a tablet" loading="lazy"></div>
         </a>
 
+        <a class="jp-card reveal" href="cs-itg.html#motion-campaign" style="--card-bg:#3a0a4a;">
+          <div class="jp-card-bg" style="background-image:url('images/cards/microsoft.jpg')"></div>
+          <div class="jp-card-text">
+            <div>
+              <p class="jp-card-meta">Microsoft · via Inspired Thinking Group</p>
+              <p class="jp-card-role">Senior UI Designer · <strong>Motion campaigns for enterprise buyers</strong></p>
+            </div>
+            <h3>Dynamics 365 motion and video campaigns for enterprise buyers</h3>
+            <div>
+              <div class="jp-card-tags"><span>Motion</span><span>Video</span><span>Digital ads</span></div>
+              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
+            </div>
+          </div>
+          <div class="jp-card-media"><img src="images/cards/microsoft.jpg" alt="Microsoft Dynamics 365 animated ad" loading="lazy"></div>
+        </a>
+
         <a class="jp-card reveal" href="cs-merck-campaigns.html" style="--card-bg:#22174f;">
           <div class="jp-card-bg" style="background-image:url('images/cards/merck.jpg')"></div>
           <div class="jp-card-text">
             <div>
               <p class="jp-card-meta">Merck Millipore · 2008–2013</p>
+              <p class="jp-card-role">Art Director &amp; Senior Designer · <strong>$2.4M campaign budget managed</strong></p>
             </div>
             <h3>Five years of award-winning campaigns for a global life sciences leader</h3>
             <div>
@@ -193,6 +201,7 @@
           <div class="jp-card-text">
             <div>
               <p class="jp-card-meta">Pyxis Communications · 2021–2024</p>
+              <p class="jp-card-role">Freelance Art Director · <strong>2022 MarCom Gold award</strong></p>
             </div>
             <h3>Science campaigns and digital ads, including MarCom Gold-winning work for Halo Labs</h3>
             <div>
@@ -203,41 +212,12 @@
           <div class="jp-card-media"><img src="images/cards/pyxis.jpg" alt="Halo Labs campaign ad for Pyxis Communications" loading="lazy"></div>
         </a>
 
-        <a class="jp-card reveal" href="cs-itg.html" style="--card-bg:#10204a;">
-          <div class="jp-card-bg" style="background-image:url('images/cards/itg.jpg')"></div>
-          <div class="jp-card-text">
-            <div>
-              <p class="jp-card-meta">Inspired Thinking Group</p>
-            </div>
-            <h3>Web, digital, and brand work for Charter, ShareBuilder 401k, Newpoint, and Microsoft</h3>
-            <div>
-              <div class="jp-card-tags"><span>Web design</span><span>Digital</span><span>Brand</span></div>
-              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
-            </div>
-          </div>
-          <div class="jp-card-media"><img src="images/cards/itg.jpg" alt="Newpoint Real Estate Capital banner" loading="lazy"></div>
-        </a>
-
-        <a class="jp-card reveal" href="cs-itg.html#motion-campaign" style="--card-bg:#3a0a4a;">
-          <div class="jp-card-bg" style="background-image:url('images/cards/microsoft.jpg')"></div>
-          <div class="jp-card-text">
-            <div>
-              <p class="jp-card-meta">Microsoft · via Inspired Thinking Group</p>
-            </div>
-            <h3>Dynamics 365 motion and video campaigns for enterprise buyers</h3>
-            <div>
-              <div class="jp-card-tags"><span>Motion</span><span>Video</span><span>Digital ads</span></div>
-              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
-            </div>
-          </div>
-          <div class="jp-card-media"><img src="images/cards/microsoft.jpg" alt="Microsoft Dynamics 365 animated ad" loading="lazy"></div>
-        </a>
-
         <a class="jp-card reveal" href="cs-madison-handbags.html" style="--card-bg:#3a2a1c;">
           <div class="jp-card-bg" style="background-image:url('images/cards/madison.jpg')"></div>
           <div class="jp-card-text">
             <div>
               <p class="jp-card-meta">Madison Handbags · 2013–2015</p>
+              <p class="jp-card-role">Marketing &amp; Creative Director · <strong>Online builder for 200+ design consultants</strong></p>
             </div>
             <h3>A full brand relaunch, an online bag builder, and seasonal catalogs</h3>
             <div>
@@ -247,159 +227,41 @@
           </div>
           <div class="jp-card-media"><img src="images/cards/madison.jpg" alt="Madison Handbags spring catalog page" loading="lazy"></div>
         </a>
-
-        <a class="jp-card reveal" href="case-study-american-airlines.html" style="--card-bg:#0a2a5c;">
-          <div class="jp-card-bg" style="background-image:url('images/cards/american-airlines.jpg')"></div>
-          <div class="jp-card-text">
-            <div>
-              <p class="jp-card-meta">American Airlines</p>
-              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
-            </div>
-            <h3>The American Airlines mobile app, from check-in to boarding</h3>
-            <div>
-              <div class="jp-card-tags"><span>Mobile app</span><span>iOS</span><span>Travel</span></div>
-              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
-            </div>
-          </div>
-          <div class="jp-card-media"><img src="images/cards/american-airlines.jpg" alt="American Airlines mobile app screens" loading="lazy"></div>
+      </div>
+      <div class="jp-more jp-section-head-center reveal">
+        <h2 class="jp-h2 jp-more-title">More work</h2>
+      </div>
+      <div class="jp-more-grid">
+        <a class="jp-mini reveal" href="case-study-amazon.html">
+          <div class="jp-mini-img"><img src="images/cards/amazon.jpg" alt="Amazon Basics product page design" loading="lazy"></div>
+          <p class="jp-card-meta">Amazon<span class="jp-mini-note">Recreated · NDA</span></p>
+          <h3>Product pages for Amazon Basics electronics and home</h3>
         </a>
-
-        <a class="jp-card reveal" href="case-study-dhl.html" style="--card-bg:#3d1310;">
-          <div class="jp-card-bg" style="background-image:url('images/cards/dhl.jpg')"></div>
-          <div class="jp-card-text">
-            <div>
-              <p class="jp-card-meta">DHL Delivery Airlines</p>
-              <p class="jp-card-note">Recreated for portfolio · Original work under NDA</p>
-            </div>
-            <h3>One connected experience across web, mobile, and operations</h3>
-            <div>
-              <div class="jp-card-tags"><span>Web</span><span>Mobile</span><span>Dashboard</span></div>
-              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
-            </div>
-          </div>
-          <div class="jp-card-media"><img src="images/cards/dhl.jpg" alt="DHL Delivery Airlines website, mobile and dashboard" loading="lazy"></div>
+        <a class="jp-mini reveal" href="case-study-american-airlines.html">
+          <div class="jp-mini-img"><img src="images/cards/american-airlines.jpg" alt="American Airlines mobile app screens" loading="lazy"></div>
+          <p class="jp-card-meta">American Airlines<span class="jp-mini-note">Recreated · NDA</span></p>
+          <h3>The American Airlines mobile app, from check-in to boarding</h3>
         </a>
-
-        <a class="jp-card reveal" href="cs-pto-schalmont.html" style="--card-bg:#0f3320;">
-          <div class="jp-card-bg" style="background-image:url('images/cards/pto.jpg')"></div>
-          <div class="jp-card-text">
-            <div>
-              <p class="jp-card-meta">Schalmont Central Schools PTO</p>
-            </div>
-            <h3>A community platform and full event design suite for the Schalmont PTO</h3>
-            <div>
-              <div class="jp-card-tags"><span>Web design &amp; dev</span><span>Event design</span><span>Community</span></div>
-              <span class="jp-card-arrow" aria-hidden="true" style="margin-top:24px;">→</span>
-            </div>
-          </div>
-          <div class="jp-card-media"><img src="images/cards/pto.jpg" alt="Schalmont PTO website" loading="lazy"></div>
+        <a class="jp-mini reveal" href="case-study-dhl.html">
+          <div class="jp-mini-img"><img src="images/cards/dhl.jpg" alt="DHL Delivery Airlines website, mobile and dashboard" loading="lazy"></div>
+          <p class="jp-card-meta">DHL Delivery Airlines<span class="jp-mini-note">Recreated · NDA</span></p>
+          <h3>One connected experience across web, mobile, and operations</h3>
+        </a>
+        <a class="jp-mini reveal" href="cs-itg.html">
+          <div class="jp-mini-img"><img src="images/cards/itg.jpg" alt="Newpoint Real Estate Capital banner" loading="lazy"></div>
+          <p class="jp-card-meta">Inspired Thinking Group</p>
+          <h3>Web, digital, and brand work for Charter, ShareBuilder 401k, Newpoint, and Microsoft</h3>
+        </a>
+        <a class="jp-mini reveal" href="cs-pto-schalmont.html">
+          <div class="jp-mini-img"><img src="images/cards/pto.jpg" alt="Schalmont PTO website" loading="lazy"></div>
+          <p class="jp-card-meta">Schalmont Central Schools PTO</p>
+          <h3>A community platform and full event design suite for the Schalmont PTO</h3>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="jp-section jp-services-section" id="services">
-    <div class="jp-wrap">
-      <div class="jp-section-head reveal">
-        <p class="jp-eyebrow">What I offer</p>
-        <h2 class="jp-h2">Services &amp; specialties</h2>
-        <p class="jp-section-lede">From concept to final file, design across every medium and touchpoint.</p>
-      </div>
-      <div class="jp-services-grid">
-        <div class="jp-service reveal">
-          <h3>Brand &amp; Identity Design</h3>
-          <p>Logo design, brand systems, guidelines, visual identity, brand refreshes, naming &amp; taglines</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Web Design</h3>
-          <p>Websites, landing pages, microsites, WordPress, Shopify, responsive design, redesigns</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>UX/UI Design</h3>
-          <p>UX and UI design, design systems, wireframes &amp; prototypes, user flows, mobile apps, dashboards</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Digital Marketing</h3>
-          <p>Display and Google ads, social graphics, email campaigns, digital banners, remarketing</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Print Design</h3>
-          <p>Brochures &amp; flyers, annual reports, posters, direct mail, catalogs, sell sheets</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Event &amp; Community Design</h3>
-          <p>Event branding, fundraising campaigns, school &amp; PTO promotions, signage, registration materials</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Presentation Design</h3>
-          <p>Pitch decks, investor, sales and executive presentations, conference slides</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Motion &amp; Video</h3>
-          <p>Motion graphics, animated ads, Lottie animations, explainer videos, social video</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Packaging &amp; Product Design</h3>
-          <p>Product packaging, labels, retail displays, product inserts, unboxing experiences</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Apparel &amp; Merchandise</h3>
-          <p>Spirit wear, team stores, T-shirt graphics, promotional and fundraising merchandise</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Publication Design</h3>
-          <p>Magazines &amp; newsletters, reports, books &amp; eBooks, educational materials</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Environmental &amp; Signage</h3>
-          <p>Trade show displays, wayfinding, exterior signage, vehicle wraps, wall graphics</p>
-        </div>
-        <div class="jp-service reveal">
-          <h3>Content &amp; Campaign Development</h3>
-          <p>Integrated campaigns, product launches, awareness and seasonal campaigns, multi-channel</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- INDUSTRIES -->
-  <section class="jp-section jp-industries" id="industries">
-    <div class="jp-wrap">
-      <div class="jp-section-head reveal">
-        <p class="jp-eyebrow">Who I work with</p>
-        <h2 class="jp-h2">Industries served</h2>
-        <p class="jp-section-lede">Experience across sectors means I understand your audience, your constraints, and your goals before the first pixel is placed.</p>
-      </div>
-      <div class="jp-chips reveal">
-        <details class="jp-chip jp-chip-menu">
-          <summary>Healthcare</summary>
-          <div class="jp-chip-pop">
-            <a href="cs-hcs-resilix.html">Human Care Systems — Resilix</a>
-            <a href="cs-merck-campaigns.html">Merck Millipore — Campaigns</a>
-            <a href="cs-pyxis-freelance.html">Pyxis Communications</a>
-          </div>
-        </details>
-        <details class="jp-chip jp-chip-menu">
-          <summary>Technology</summary>
-          <div class="jp-chip-pop">
-            <a href="cs-charter-smb-homepage.html">Charter Spectrum</a>
-            <a href="cs-itg.html">Microsoft / ITG</a>
-            <a href="cs-pto-schalmont.html">Schalmont PTO</a>
-            <a href="cs-madison-handbags.html">Madison Handbags</a>
-          </div>
-        </details>
-        <a class="jp-chip" href="cs-charter-smb-homepage.html">Telecommunications</a>
-        <a class="jp-chip" href="cs-pto-schalmont.html">Education</a>
-        <a class="jp-chip" href="cs-pto-schalmont.html">Nonprofit</a>
-        <a class="jp-chip" href="cs-madison-handbags.html">Retail</a>
-        <a class="jp-chip" href="case-study-amazon.html">E-Commerce</a>
-        <a class="jp-chip" href="cs-itg.html#sharebuilder">Financial Services</a>
-        <a class="jp-chip" href="case-study-american-airlines.html">Travel &amp; Aviation</a>
-        <a class="jp-chip" href="case-study-dhl.html">Logistics</a>
-      </div>
-    </div>
-  </section>
 
   <!-- INTRO -->
   <section class="jp-section" id="about">
@@ -428,34 +290,9 @@
     </div>
   </section>
 
-  <!-- AWARD -->
-  <section class="jp-award" id="award-module">
-    <div class="jp-wrap">
-      <div class="jp-award-row">
-        <div class="reveal">
-          <p class="jp-eyebrow" style="color:var(--teal-soft);">Recognition</p>
-          <h2>20 Most Outstanding Women of the Capital Region</h2>
-          <p>Named one of the Capital Region's 20 Most Outstanding Women of 2024, recognized for leadership, creativity, and community impact.</p>
-          <div class="jp-cta-actions">
-            <button type="button" class="btn btn-light" data-award-video>▶ Listen to the interview</button>
-          </div>
-        </div>
-        <div class="reveal">
-          <img src="images/julie-dion-20-most-outstanding-award.jpg" alt="Julie Dion with her award and the press release naming her one of the 20 Most Outstanding Women of the Capital Region, 2024" loading="lazy" data-lightbox role="button" aria-label="Open the press release larger">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="jp-video-modal" id="award-video" role="dialog" aria-modal="true" aria-label="Radio interview, 20 Most Outstanding Women of the Capital Region 2024">
-    <div class="jp-video-frame">
-      <button type="button" class="jp-video-close" aria-label="Close">×</button>
-      <iframe title="Radio interview" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
 
   <!-- TESTIMONIALS -->
-  <section class="jp-section" id="testimonials" style="padding-top:0;">
+  <section class="jp-section" id="testimonials">
     <div class="jp-wrap">
       <div class="jp-quotes-head reveal">
         <div>
@@ -499,6 +336,33 @@
       </div>
     </div>
   </section>
+
+  <!-- AWARD -->
+  <section class="jp-award" id="award-module">
+    <div class="jp-wrap">
+      <div class="jp-award-row">
+        <div class="reveal">
+          <p class="jp-eyebrow" style="color:var(--teal-soft);">Recognition</p>
+          <h2>20 Most Outstanding Women of the Capital Region</h2>
+          <p>Named one of the Capital Region's 20 Most Outstanding Women of 2024, recognized for leadership, creativity, and community impact.</p>
+          <div class="jp-cta-actions">
+            <button type="button" class="btn btn-light" data-award-video>▶ Listen to the interview</button>
+          </div>
+        </div>
+        <div class="reveal">
+          <img src="images/julie-dion-20-most-outstanding-award.jpg" alt="Julie Dion with her award and the press release naming her one of the 20 Most Outstanding Women of the Capital Region, 2024" loading="lazy" data-lightbox role="button" aria-label="Open the press release larger">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="jp-video-modal" id="award-video" role="dialog" aria-modal="true" aria-label="Radio interview, 20 Most Outstanding Women of the Capital Region 2024">
+    <div class="jp-video-frame">
+      <button type="button" class="jp-video-close" aria-label="Close">×</button>
+      <iframe title="Radio interview" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
 
   <!-- CONTACT -->
   <section class="jp-section jp-contact" id="contact">
@@ -559,8 +423,7 @@
         <nav aria-label="Footer">
           <a href="#portfolio">Work</a>
           <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="Julie-Dion-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+                    <a href="Julie-Dion-Resume.pdf" target="_blank" rel="noopener">Resume</a>
           <a href="#contact">Contact</a>
           <a href="https://www.linkedin.com/in/julie-aileen-dion/" target="_blank" rel="noopener">LinkedIn</a>
         </nav>

@@ -3481,3 +3481,63 @@ body.jp-home { background: var(--navy-deep); }
 .jp-footer a { color: rgba(3,19,38,0.8); }
 .jp-footer a:hover { color: var(--navy-deep); }
 .jp-footer img { filter: brightness(0); opacity: .85; }
+
+/* --- Hero role line + actions --- */
+.jp-hero-role {
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--teal-soft);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: jp-fade 1s var(--ease-out) .1s forwards;
+}
+.jp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  animation: jp-fade 1s var(--ease-out) 1s forwards;
+}
+
+/* --- Role + result line on featured cards --- */
+.jp-card-role { margin-top: 10px; font-size: 14px; color: var(--on-dark-2); }
+.jp-card-role strong { color: var(--teal-soft); font-weight: 500; }
+
+/* --- More work: compact tiles --- */
+.jp-more { margin: 96px 0 28px; }
+.jp-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+.jp-mini { display: block; color: var(--on-dark); }
+.jp-mini:hover { color: var(--on-dark); }
+.jp-mini-img {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #06203d;
+  margin-bottom: 14px;
+}
+.jp-mini-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top left;
+  transition: transform .8s var(--ease-out);
+}
+.jp-mini:hover .jp-mini-img img { transform: scale(1.04); }
+.jp-mini .jp-card-meta { margin-bottom: 6px; }
+.jp-mini-note {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(253,250,247,0.18);
+  font-size: 11px;
+}
+.jp-mini h3 { font-size: 16px; font-weight: 400; line-height: 1.4; color: var(--on-dark); }
+
+@media (prefers-reduced-motion: reduce) {
+  .jp-hero-role, .jp-hero-actions { animation: none; opacity: 1; }
+}
+.jp-section-head-center { margin-left: auto; margin-right: auto; text-align: center; }
